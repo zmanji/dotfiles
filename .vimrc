@@ -10,7 +10,7 @@ set ruler "Show the current position at the bottom
 set laststatus=2
 syntax on "Turn on syntax highlighting
 
-set encoding=utf-8 "Anything else is plan dumb
+set encoding=utf-8 "Anything else is plain dumb
 
 set nowrap "Don't wrap lines
 
