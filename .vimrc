@@ -39,6 +39,7 @@ set backspace=2 "Backspace does what it should do
 
 set numberwidth=5 "For those really long files
 set novisualbell "Don't blink please
+set noerrorbells "Don't make noise
 
 filetype plugin indent on "Automatically detect file types
 set history=1000 "Save a lot of history
