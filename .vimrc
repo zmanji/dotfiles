@@ -44,7 +44,4 @@ set noerrorbells "Don't make noise
 filetype plugin indent on "Automatically detect file types
 set history=1000 "Save a lot of history
 
-set backup "For swp files
-"Don't let swp files pollute my current directory
-set backupdir=~/.vim/backup
-
+set nobackup "No need for ~ files, I use git most of the time
