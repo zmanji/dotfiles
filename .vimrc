@@ -40,8 +40,20 @@ set backspace=2 "Backspace does what it should do
 set numberwidth=5 "For those really long files
 set novisualbell "Don't blink please
 set noerrorbells "Don't make noise
+set vb t_vb= "Disable any time of beeping or flashing
 
 filetype plugin indent on "Automatically detect file types
 set history=1000 "Save a lot of history
 
 set nobackup "No need for ~ files, I use git most of the time
+
+" To help me master vim
+" Disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
