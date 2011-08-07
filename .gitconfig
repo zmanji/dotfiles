@@ -3,3 +3,25 @@
 	email = zmanji@gmail.com
 [color]
 	ui = true
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	d = diff
+	dc = diff --cached
+	amend = commit --ammend
+	last = cat-file commit HEAD
+	lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[core]
+	editor = vim
