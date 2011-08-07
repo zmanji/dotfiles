@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-DOTFILES := .gemrc .gitconfig
+DOTFILES := .gemrc .gitconfig .gitignore
 
 
 all: link
