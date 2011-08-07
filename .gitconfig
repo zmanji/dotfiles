@@ -29,3 +29,5 @@
 	user = zmanji
 [diff]
 	mnemonicprefix = true
+[merge]
+	stat = true
