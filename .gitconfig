@@ -27,3 +27,5 @@
 	editor = vim
 [github]
 	user = zmanji
+[diff]
+	mnemonicprefix = true
