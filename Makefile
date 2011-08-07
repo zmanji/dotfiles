@@ -12,3 +12,6 @@ link: $(DOTFILES)
 clean: $(DOTFILES)
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
+
+rvm:
+	bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
