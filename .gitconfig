@@ -1,3 +1,5 @@
 [user]
 	name = Zameer Manji
 	email = zmanji@gmail.com
+[color]
+	ui = true
