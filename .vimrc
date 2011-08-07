@@ -1,6 +1,7 @@
 set nocompatible "Disable vi shit
 
 let mapleader = "," "Leader key
+let maplocalleader = "," "Without this, things might break
 
 "So I don't have to press shift
 nnoremap ; :
