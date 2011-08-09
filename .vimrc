@@ -1,5 +1,7 @@
 set nocompatible "Disable vi shit
 
+set notitle " Disable 'thanks for flying vim' thing
+
 let mapleader = "," "Leader key
 let maplocalleader = "," "Without this, things might break
 
