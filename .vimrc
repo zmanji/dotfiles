@@ -64,3 +64,7 @@ imap <right> <nop>
 " So splits work like in other programs I se
 set splitbelow "Split to the bottom
 set splitright "Split to the right
+
+"Color Options
+set background-dark
+colorscheme solarized
