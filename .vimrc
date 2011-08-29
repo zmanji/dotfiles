@@ -66,5 +66,5 @@ set splitbelow "Split to the bottom
 set splitright "Split to the right
 
 "Color Options
-set background-dark
+set background=dark
 colorscheme solarized
