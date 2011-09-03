@@ -1,5 +1,19 @@
 set nocompatible "Disable vi shit
 
+" Plugin installation (Vundle)
+
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+" required!
+Bundle "gmarik/vundle"
+
+" Solarized Colorscheme
+Bundle "altercation/vim-colors-solarized"
+
+" End Plugin installation
+
 set notitle " Disable 'thanks for flying vim' thing
 
 let mapleader = "," "Leader key
@@ -67,4 +81,4 @@ set splitright "Split to the right
 
 "Color Options
 set background=dark
-"colorscheme solarized
+colorscheme solarized
