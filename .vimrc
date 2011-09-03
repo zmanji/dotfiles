@@ -12,6 +12,21 @@ Bundle "gmarik/vundle"
 " Solarized Colorscheme
 Bundle "altercation/vim-colors-solarized"
 
+" In vim ack
+Bundle "mileszs/ack.vim"
+
+" Markdown syntax highlighting
+Bundle "tpope/vim-markdown"
+
+" HAML/SASS/SCSS syntax highlighting
+Bundle "tpope/vim-haml"
+
+" Detects incorrect syntax
+Bundle "scrooloose/syntastic"
+
+" Autocomplete trigged by tab
+Bundle "ervandew/supertab"
+
 " End Plugin installation
 
 set notitle " Disable 'thanks for flying vim' thing
