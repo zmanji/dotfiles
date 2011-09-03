@@ -63,6 +63,7 @@ set smartcase "If I do use a captial letter in the search, be case-sensitive
 "Clear highlights by doing ,/
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+set wildmenu "Tab autocompletion
 
 set autoread "Automatically read files that are modified outside of vim
 set autowrite "Auto-save a modified buffer before switching to another buffer
