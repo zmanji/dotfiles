@@ -27,6 +27,9 @@ Bundle "scrooloose/syntastic"
 " Autocomplete trigged by tab
 Bundle "ervandew/supertab"
 
+" File browsing
+Bundle "scrooloose/nerdtree"
+
 " End Plugin installation
 
 set notitle " Disable 'thanks for flying vim' thing
@@ -98,3 +101,8 @@ set splitright "Split to the right
 "Color Options
 set background=dark
 colorscheme solarized
+
+" Plugim Configuration
+
+" NERDTree
+map <Leader>n :NERDTreeToggle<CR> ",n will open or close the nerd tree buffer
