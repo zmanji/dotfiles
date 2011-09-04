@@ -34,6 +34,8 @@ Bundle "scrooloose/nerdtree"
 
 set notitle " Disable 'thanks for flying vim' thing
 
+set hidden " Allows me to have unsaved changes in a buffer when switching to another one
+
 let mapleader = "," "Leader key
 let maplocalleader = "," "Without this, things might break
 
@@ -54,6 +56,7 @@ set tabstop=2
 set softtabstop=2 "When backspacing, kill two spaces
 set sw=2
 set expandtab "Death to tabs
+set shiftround "use a mutliple of shiftwidth (sw) when using < and >
 
 "Show trailing whitespace and tabs
 set list listchars=tab:\ \ ,trail:·
