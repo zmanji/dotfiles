@@ -109,3 +109,6 @@ colorscheme solarized
 
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR> ",n will open or close the nerd tree buffer
+
+" Enable Syntastic
+let g:syntastic_enable_signs=1
