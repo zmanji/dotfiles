@@ -3,7 +3,7 @@ SHELL := /bin/bash
 DOTFILES := .gemrc .gitconfig .gitignore_global .vim .vimrc .gvimrc
 
 
-all: link
+all: submodules link
 
 link: $(DOTFILES)
 	@echo Installing $^; \
@@ -13,5 +13,8 @@ clean: $(DOTFILES)
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 
-rvm:
-	bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+submodules:
+	git submodule init
+	git submodule update
+	git submodule foreach git pull origin master
+
