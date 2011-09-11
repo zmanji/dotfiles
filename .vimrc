@@ -24,18 +24,31 @@ Bundle "tpope/vim-haml"
 " Detects incorrect syntax
 Bundle "scrooloose/syntastic"
 
+" Enable Syntastic
+let g:syntastic_enable_signs=1
+
 " Autocomplete trigged by tab
 Bundle "ervandew/supertab"
 
 " File browsing
 Bundle "scrooloose/nerdtree"
+map <Leader>n :NERDTreeToggle<CR>
+",n will open or close the nerd tree buffer
 
 " Project File Open
 Bundle "wincent/Command-T"
 
+" Command-T configuration
+set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif " Ignore these filetypes
+
+" Note that Command-T takes <Leader>t to open up the file browser and
+" <Leader>b for the buffer browser
+
 " End Plugin installation
 
 set notitle " Disable 'thanks for flying vim' thing
+
+set mouse=a " Enable mouse in gui in terminal (just in case)
 
 set hidden " Allows me to have unsaved changes in a buffer when switching to another one
 
@@ -91,14 +104,19 @@ set nobackup "No need for ~ files, I use git most of the time
 
 " To help me master vim
 " Disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+vnoremap <left> <nop>
+vnoremap <right> <nop>
+
 
 " So splits work like in other programs I se
 set splitbelow "Split to the bottom
@@ -107,17 +125,3 @@ set splitright "Split to the right
 "Color Options
 set background=dark
 colorscheme solarized
-
-" Plugim Configuration
-
-" NERDTree
-map <Leader>n :NERDTreeToggle<CR> ",n will open or close the nerd tree buffer
-
-" Enable Syntastic
-let g:syntastic_enable_signs=1
-
-" Command-T configuration
-set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif " Ignore these filetypes
-
-" Note that Command-T takes <Leader>t to open up the file browser and
-" <Leader>b for the buffer browser
