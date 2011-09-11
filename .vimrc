@@ -91,14 +91,14 @@ set nobackup "No need for ~ files, I use git most of the time
 
 " To help me master vim
 " Disable arrow keys
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-"imap <up> <nop>
-"imap <down> <nop>
-"imap <left> <nop>
-"imap <right> <nop>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 " So splits work like in other programs I se
 set splitbelow "Split to the bottom
@@ -118,3 +118,6 @@ let g:syntastic_enable_signs=1
 
 " Command-T configuration
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif " Ignore these filetypes
+
+" Note that Command-T takes <Leader>t to open up the file browser and
+" <Leader>b for the buffer browser
