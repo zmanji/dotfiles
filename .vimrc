@@ -30,6 +30,9 @@ Bundle "ervandew/supertab"
 " File browsing
 Bundle "scrooloose/nerdtree"
 
+" Project File Open
+Bundle "wincent/Command-T"
+
 " End Plugin installation
 
 set notitle " Disable 'thanks for flying vim' thing
@@ -112,3 +115,6 @@ map <Leader>n :NERDTreeToggle<CR> ",n will open or close the nerd tree buffer
 
 " Enable Syntastic
 let g:syntastic_enable_signs=1
+
+" Command-T configuration
+set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif " Ignore these filetypes

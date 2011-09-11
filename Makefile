@@ -18,3 +18,9 @@ submodules:
 	git submodule update
 	git submodule foreach git pull origin master
 
+native: CommandT
+
+CommandT:
+	cd ~/.vim/bundle/Command-T/ruby/command-t && \
+	ruby extconf.rb && \
+	make
