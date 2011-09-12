@@ -1,5 +1,8 @@
 set nocompatible "Disable vi shit
 
+let mapleader = "," "Leader key
+let maplocalleader = "," "Without this, things might break
+
 " Plugin installation (Vundle)
 
 filetype off
@@ -32,7 +35,7 @@ Bundle "ervandew/supertab"
 
 " File browsing
 Bundle "scrooloose/nerdtree"
-map <Leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 ",n will open or close the nerd tree buffer
 
 " Project File Open
@@ -51,9 +54,6 @@ set notitle " Disable 'thanks for flying vim' thing
 set mouse=a " Enable mouse in gui in terminal (just in case)
 
 set hidden " Allows me to have unsaved changes in a buffer when switching to another one
-
-let mapleader = "," "Leader key
-let maplocalleader = "," "Without this, things might break
 
 "So I don't have to press shift
 nnoremap ; :
