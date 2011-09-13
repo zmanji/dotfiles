@@ -21,6 +21,9 @@ Bundle "mileszs/ack.vim"
 " Markdown syntax highlighting
 Bundle "tpope/vim-markdown"
 
+" CoffeeScript (and bonus eco) highlighting
+Bundle "kchmck/vim-coffee-script"
+
 " HAML/SASS/SCSS syntax highlighting
 Bundle "tpope/vim-haml"
 
