@@ -47,6 +47,12 @@ set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif " Ignore these filetypes
 " Note that Command-T takes <Leader>t to open up the file browser and
 " <Leader>b for the buffer browser
 
+" A GUI for Vims undo
+Bundle "sjl/gundo.vim"
+
+" Use ,u to open Gundo only in normal mode
+nmap <Leader>u :GundoToggle<CR>
+
 " End Plugin installation
 
 set notitle " Disable 'thanks for flying vim' thing
