@@ -18,8 +18,11 @@ Bundle "altercation/vim-colors-solarized"
 " In vim ack
 Bundle "mileszs/ack.vim"
 
-" Markdown syntax highlighting
-Bundle "tpope/vim-markdown"
+" Pandoc (including Markdown) syntax highlighting
+Bundle "vim-pandoc/vim-pandoc"
+
+" Disable the folding by the pandoc plugin
+let g:pandoc_no_folding = 1
 
 " CoffeeScript (and bonus eco) highlighting
 Bundle "kchmck/vim-coffee-script"
