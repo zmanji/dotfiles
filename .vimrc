@@ -59,6 +59,9 @@ Bundle "sjl/gundo.vim"
 " Use ,u to open Gundo only in normal mode
 nmap <Leader>u :GundoToggle<CR>
 
+" Rails integration
+Bundle "tpope/vim-rails"
+
 " End Plugin installation
 
 set notitle " Disable 'thanks for flying vim' thing
@@ -128,6 +131,10 @@ vnoremap <up> <nop>
 vnoremap <down> <nop>
 vnoremap <left> <nop>
 vnoremap <right> <nop>
+
+" It's 2011.
+noremap j gj
+noremap k gk
 
 
 " So splits work like in other programs I se
