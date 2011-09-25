@@ -62,6 +62,10 @@ nmap <Leader>u :GundoToggle<CR>
 " Rails integration
 Bundle "tpope/vim-rails"
 
+" Tim Pope may actually be the best programmer alive
+" Best Git Integration Ever
+Bundle "tpope/vim-fugitive"
+
 " End Plugin installation
 
 set notitle " Disable 'thanks for flying vim' thing
