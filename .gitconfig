@@ -32,3 +32,4 @@
 	mnemonicprefix = true
 [merge]
 	stat = true
+	tool = vimdiff
