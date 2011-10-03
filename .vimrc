@@ -49,9 +49,8 @@ Bundle "wincent/Command-T"
 
 " Command-T configuration
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif " Ignore these filetypes
-
-" Note that Command-T takes <Leader>t to open up the file browser and
-" <Leader>b for the buffer browser
+nnoremap <leader>t :CommandT<CR>
+nnoremap <leader>b :CommandTBuffer<CR>
 
 " A GUI for Vims undo
 Bundle "sjl/gundo.vim"
@@ -76,9 +75,6 @@ set hidden " Allows me to have unsaved changes in a buffer when switching to ano
 
 "So I don't have to press shift
 nnoremap ; :
-" This is a terrible mapping but I need it to force me to use ; and not :
-" Remove this when I have stopped prefixing my commands by pressing shift
-nnoremap : <nop>
 
 set number "set line numbers
 set ruler "Show the current position at the bottom
