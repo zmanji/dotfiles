@@ -41,7 +41,7 @@ Bundle "ervandew/supertab"
 
 " File browsing
 Bundle "scrooloose/nerdtree"
-map <leader>n :NERDTreeToggle<CR>
+noremap <leader>n :NERDTreeToggle<CR>
 ",n will open or close the nerd tree buffer
 
 " Project File Open
@@ -57,7 +57,7 @@ set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif " Ignore these filetypes
 Bundle "sjl/gundo.vim"
 
 " Use ,u to open Gundo only in normal mode
-nmap <Leader>u :GundoToggle<CR>
+nnoremap <Leader>u :GundoToggle<CR>
 
 " Rails integration
 Bundle "tpope/vim-rails"
@@ -105,7 +105,7 @@ set incsearch "incremental search
 set ignorecase "case InSeNsTiVE
 set smartcase "If I do use a captial letter in the search, be case-sensitive
 "Clear highlights by doing ,/
-nmap <silent> <leader>/ :nohlsearch<CR>
+nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 set wildmenu "Tab autocompletion
 
