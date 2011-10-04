@@ -65,6 +65,9 @@ Bundle "tpope/vim-rails"
 " Best Git Integration Ever
 Bundle "tpope/vim-fugitive"
 
+" Commenting
+Bundle "tpope/vim-commentary"
+
 " End Plugin installation
 
 set notitle " Disable 'thanks for flying vim' thing
