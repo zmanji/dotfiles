@@ -49,8 +49,8 @@ Bundle "wincent/Command-T"
 
 " Command-T configuration
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif " Ignore these filetypes
-nnoremap <leader>t :CommandT<CR>
-nnoremap <leader>b :CommandTBuffer<CR>
+nnoremap <silent> <leader>t :CommandT<CR>
+nnoremap <silent> <leader>b :CommandTBuffer<CR>
 
 " A GUI for Vims undo
 Bundle "sjl/gundo.vim"
