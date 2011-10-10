@@ -1,8 +1,8 @@
 [user]
-	name = Zameer Manji
-	email = zmanji@gmail.com
+  name = Zameer Manji
+  email = zmanji@gmail.com
 [color]
-	ui = true
+  ui = true
 
 [color "branch"]
   current = yellow reverse
@@ -15,21 +15,21 @@
   untracked = cyan
 
 [alias]
-	st = status
-	ci = commit
-	co = checkout
-	d = diff
-	dc = diff --cached
-	amend = commit --amend
-	last = cat-file commit HEAD
-	lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  st = status
+  ci = commit
+  co = checkout
+  d = diff
+  dc = diff --cached
+  amend = commit --amend
+  last = cat-file commit HEAD
+  lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore_global
+  editor = vim
+  excludesfile = ~/.gitignore_global
 [github]
-	user = zmanji
+  user = zmanji
 [diff]
-	mnemonicprefix = true
+  mnemonicprefix = true
 [merge]
-	stat = true
-	tool = vimdiff
+  stat = true
+  tool = vimdiff
