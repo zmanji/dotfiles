@@ -29,7 +29,9 @@ let maplocalleader = ","
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-" This line lets Vundle manage itself. This is required.
+" This line lets Vundle manage itself. This is required. This will also ensure
+" that when you run `BundleInstall!` to update your plugins it will also
+" update vundle, which is very nice.
 Bundle "gmarik/vundle"
 
 " Solarized Colorscheme
