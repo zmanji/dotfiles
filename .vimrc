@@ -1,15 +1,35 @@
-set nocompatible "Disable vi shit
+" This is my `.vimrc`. These are my settings for Vim
+"
+" First disable Vi compatibility. This must be done first because it will
+" affect the other options
+set nocompatible
+" ###Leader Mappings###
+" These two mappings set up the leader key. The <leader> mapping defaults to
+" `\` but that key is hard to reach. I prefer to set it to `,`
+" `mapleader` is used for global mappings and `maplocalleader` is used for
+" buffer-local mappings.
 
-let mapleader = "," "Leader key
-let maplocalleader = "," "Without this, things might break
+let mapleader = ","
+let maplocalleader = ","
 
-" Plugin installation (Vundle)
+" ### Plugin Installation ###
+" Vim plugin management is difficult at best so we use [Vundle][vu] to help us
+" install and manage plugins.
+"
+" [vu]: https://github.com/gmarik/vundle
+"
+" These lines are required to set up vundle/
+" This assumes we have vundle installed in `/.vim/bundle/vundle`
+"
+" Vundle lets a very cool `Bundle` function become available. You can feed it
+" a string in the form from `user/repo` and will get the appropriate github
+" repo. Other strings could be a vim-script repo or a git url for a non github
+" repo.
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-" let Vundle manage Vundle
-" required!
+" This line lets Vundle manage itself. This is required.
 Bundle "gmarik/vundle"
 
 " Solarized Colorscheme
