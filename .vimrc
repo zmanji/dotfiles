@@ -7,7 +7,15 @@ set nocompatible
 " These two mappings set up the leader key. The <leader> mapping defaults to
 " `\` but that key is hard to reach. I prefer to set it to `,`
 " `mapleader` is used for global mappings and `maplocalleader` is used for
-" buffer-local mappings.
+" buffer-local mappings. For example the pandoc plugin has a few buffer local
+" mappings that make editing a pandoc document nicer.
+"
+" There can be some conflict with buffer local mappings and global mappings
+" from plugins and what I define if I set `mapleader` and `maplocalleader` to
+" be the same, but I prefer to deal with that when the problem arises.
+"
+" Note that these need to be defined here because all the plugins make use of
+" the leader key
 
 let mapleader = ","
 let maplocalleader = ","
@@ -16,15 +24,20 @@ let maplocalleader = ","
 " Vim plugin management is difficult at best so we use [Vundle][vu] to help us
 " install and manage plugins.
 "
+" Vundle lets a very cool `Bundle` function become available. You can feed it
+" a string in the form from `user/repo` and will get the appropriate github
+" repo. Other strings could be a vim-script repo or a git url for a non github
+" repo. The Vundle documentation has more information.
+"
+" I use Vundle over Pathogen because pathogen requires you to manage the
+" plugins externally and it would fill my `.vim/` will all sorts of stuff that
+" I did not write.
+"
 " [vu]: https://github.com/gmarik/vundle
 "
 " These lines are required to set up vundle/
 " This assumes we have vundle installed in `/.vim/bundle/vundle`
 "
-" Vundle lets a very cool `Bundle` function become available. You can feed it
-" a string in the form from `user/repo` and will get the appropriate github
-" repo. Other strings could be a vim-script repo or a git url for a non github
-" repo.
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -34,17 +47,23 @@ call vundle#rc()
 " update vundle, which is very nice.
 Bundle "gmarik/vundle"
 
-" Solarized Colorscheme
+" ####Solarized Colorscheme####
+" [Solarized][sol] is the only good colorscheme ever. This also ensures I
+" always have the latest version.
+"
+" [sol]: http://ethanschoonover.com/solarized
 Bundle "altercation/vim-colors-solarized"
 
-" In vim ack
+" ####Ack.vim####
+" `ack` is better than `grep` and [Ack.vim][ack] brings integration to Vim. It
+" acts as a replacement for Vim's `:grep` commands.
+"
+" [ack]: https://github.com/mileszs/ack.vim
 Bundle "mileszs/ack.vim"
 
-" Pandoc (including Markdown) syntax highlighting
+" ####Vim-Pandoc####
+" This plugin is a bundle of tools for Pandoc's extended markdown.
 Bundle "vim-pandoc/vim-pandoc"
-
-" Disable the folding by the pandoc plugin
-let g:pandoc_no_folding = 1
 
 " CoffeeScript (and bonus eco) highlighting
 Bundle "kchmck/vim-coffee-script"
