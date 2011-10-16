@@ -53,6 +53,10 @@ Bundle "gmarik/vundle"
 "
 " [sol]: http://ethanschoonover.com/solarized
 Bundle "altercation/vim-colors-solarized"
+" Enables solarized
+colorscheme solarized
+" Use dark solarized
+set background=dark
 
 " ####Ack.vim####
 " `ack` is better than `grep` and [Ack.vim][ack] brings integration to Vim. It
@@ -62,7 +66,13 @@ Bundle "altercation/vim-colors-solarized"
 Bundle "mileszs/ack.vim"
 
 " ####Vim-Pandoc####
-" This plugin is a bundle of tools for Pandoc's extended markdown.
+" This [plugin][pdc-vim] is a bundle of tools for [Pandoc][pdc]'s extended markdown. It
+" provides Pandoc and regular markdown syntax highlighting, folding and a few
+" useful local-leader mappings. Weird behaviour tends to happen when installed
+" with vim-markdown but this has most of that functionality.
+"
+" [pdc]: http://johnmacfarlane.net/pandoc/
+" [pdc-vim]: https://github.com/vim-pandoc/vim-pandoc
 Bundle "vim-pandoc/vim-pandoc"
 
 " CoffeeScript (and bonus eco) highlighting
@@ -108,6 +118,9 @@ Bundle "tpope/vim-fugitive"
 
 " Commenting
 Bundle "tpope/vim-commentary"
+
+" Surrounding things
+Bundle "tpope/vim-surround"
 
 " End Plugin installation
 
@@ -187,7 +200,3 @@ noremap k gk
 " So splits work like in other programs I se
 set splitbelow "Split to the bottom
 set splitright "Split to the right
-
-"Color Options
-set background=dark
-colorscheme solarized
