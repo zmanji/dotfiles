@@ -1,8 +1,9 @@
 " This is my `.vimrc`. These are my settings for Vim
 "
-" First disable Vi compatibility. This must be done first because it will
-" affect the other options
+" First disable Vi compatibility. This must be done first because it affects
+" every other option.
 set nocompatible
+
 " ###Leader Mappings###
 " These two mappings set up the leader key. The <leader> mapping defaults to
 " `\` but that key is hard to reach. I prefer to set it to `,`
@@ -15,7 +16,7 @@ set nocompatible
 " be the same, but I prefer to deal with that when the problem arises.
 "
 " Note that these need to be defined here because all the plugins make use of
-" the leader key
+" the leader key.
 
 let mapleader = ","
 let maplocalleader = ","
@@ -27,21 +28,24 @@ let maplocalleader = ","
 " Vundle lets a very cool `Bundle` function become available. You can feed it
 " a string in the form from `user/repo` and will get the appropriate github
 " repo. Other strings could be a vim-script repo or a git url for a non github
-" repo. The Vundle documentation has more information.
+" repo. Once this is done I have a `:BundleInstall` command available which
+" will download and install those packages for me.
 "
 " I use Vundle over Pathogen because pathogen requires you to manage the
 " plugins externally and it would fill my `.vim/` will all sorts of stuff that
-" I did not write.
+" I did not write. I don't want this to occur because I would like my dotfiles
+" repo to be for code that I wrote or need to bootstrap (like Vundle).
 "
 " [vu]: https://github.com/gmarik/vundle
 "
-" These lines are required to set up vundle/
-" This assumes we have vundle installed in `/.vim/bundle/vundle`
+" These lines are required to set up Vundle and they come from the Vundle
+" documentation.
 "
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
 " This line lets Vundle manage itself. This is required. This will also ensure
 " that when you run `BundleInstall!` to update your plugins it will also
 " update vundle, which is very nice.
@@ -53,9 +57,12 @@ Bundle "gmarik/vundle"
 "
 " [sol]: http://ethanschoonover.com/solarized
 Bundle "altercation/vim-colors-solarized"
-" Enables solarized
+" A solarized configuration option. This disables the solarized menu at the
+" top of the gui.
+let g:solarized_menu=0
+" This sets solarized to be the colorscheme.
 colorscheme solarized
-" Use dark solarized
+" This ensures that the dark solarized version is used.
 set background=dark
 
 " ####Ack.vim####
@@ -66,8 +73,8 @@ set background=dark
 Bundle "mileszs/ack.vim"
 
 " ####Vim-Pandoc####
-" This [plugin][pdc-vim] is a bundle of tools for [Pandoc][pdc]'s extended markdown. It
-" provides Pandoc and regular markdown syntax highlighting, folding and a few
+" This [plugin][pdc-vim] is a bundle of tools for [Pandoc][pdc]'s extended markdown.
+" It provides Pandoc and regular markdown syntax highlighting, folding and a few
 " useful local-leader mappings. Weird behaviour tends to happen when installed
 " with vim-markdown but this has most of that functionality.
 "
@@ -122,13 +129,12 @@ Bundle "tpope/vim-commentary"
 " Surrounding things
 Bundle "tpope/vim-surround"
 
-" End Plugin installation
-
-set notitle " Disable 'thanks for flying vim' thing
-
-set mouse=a " Enable mouse in gui in terminal (just in case)
-
-set hidden " Allows me to have unsaved changes in a buffer when switching to another one
+" Disable 'thanks for flying vim' thing
+set notitle
+" Enable mouse in gui in terminal (just in case)
+set mouse=a
+" Allows me to have unsaved changes in a buffer when switching to another one
+set hidden
 
 "So I don't have to press shift
 nnoremap ; :
@@ -177,8 +183,9 @@ set history=1000 "Save a lot of history
 
 set nobackup "No need for ~ files, I use git most of the time
 
-" To help me master vim
-" Disable arrow keys
+" In the ongoing journey to master Vim, it's useful to disable keys that
+" should not be used. These lines disable the arrow keys in normal, insert and
+" visual modes.
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -192,11 +199,13 @@ vnoremap <down> <nop>
 vnoremap <left> <nop>
 vnoremap <right> <nop>
 
-" It's 2011.
+" By default `j` and `k` both move in a file by lines delimited by `\n` which
+" is not helpful when linewrapping is enabled. These mappings ensure that I
+" move up and down by display lines and not just lines delimited by `\n`.
 noremap j gj
 noremap k gk
 
 
-" So splits work like in other programs I se
-set splitbelow "Split to the bottom
-set splitright "Split to the right
+" Sets the default splitting to be to the bottom and to the right.
+set splitbelow
+set splitright
