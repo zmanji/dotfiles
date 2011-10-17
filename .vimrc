@@ -1,4 +1,4 @@
-" This is my `.vimrc`. These are my settings for Vim
+" This is my `.vimrc`.
 "
 " First disable Vi compatibility. This must be done first because it affects
 " every other option.
@@ -16,7 +16,7 @@ set nocompatible
 " be the same, but I prefer to deal with that when the problem arises.
 "
 " Note that these need to be defined here because all the plugins make use of
-" the leader key.
+" the leader key. Also note that I lose the original function of the `,` key.
 
 let mapleader = ","
 let maplocalleader = ","
@@ -82,10 +82,18 @@ Bundle "mileszs/ack.vim"
 " [pdc-vim]: https://github.com/vim-pandoc/vim-pandoc
 Bundle "vim-pandoc/vim-pandoc"
 
-" CoffeeScript (and bonus eco) highlighting
+" ####Vim-CoffeeScript####
+" This [plugin][vim-cs] provides coffee-script support to Vim. It brings
+" syntax highlighting for coffee-script, eco, a `:CoffeMake` command and a lot
+" of configuration options.
+"
+" [vim-cs]: https://github.com/kchmck/vim-coffee-script
 Bundle "kchmck/vim-coffee-script"
 
-" HAML/SASS/SCSS syntax highlighting
+" ####Vim-Haml####
+" This [plugin][vim-haml] adds Haml, Sass and SCSS support to Vim.
+"
+" [vim-haml]: https://github.com/tpope/vim-haml
 Bundle "tpope/vim-haml"
 
 " Detects incorrect syntax
@@ -129,15 +137,25 @@ Bundle "tpope/vim-commentary"
 " Surrounding things
 Bundle "tpope/vim-surround"
 
-" Disable 'thanks for flying vim' thing
+" This disables Vim's ability to change the terminal title to "Thanks for
+" flying vim"
 set notitle
-" Enable mouse in gui in terminal (just in case)
+" This enables the use of a mouse in all modes. It is occasionally useful.
 set mouse=a
-" Allows me to have unsaved changes in a buffer when switching to another one
+" This allows me to have buffers that have unsaved changes. It's possible to
+" lose those changes if I am careless with `:q!` but this behaviour improves
+" my productivity.
 set hidden
 
-"So I don't have to press shift
+" I press the `:` key a lot in Vim and I often get typos such as `:W` because
+" I have to hold shift. I thus map it to `;`.
 nnoremap ; :
+
+" I don't want to lose the functionality of the `;` key so I map that
+" behaviour to the `:` key. This also disables the original function of the
+" `:` key which forces me to use the `;` key. This is really helpful in fixing
+" muscle memory.
+nnoremap : ;
 
 set number "set line numbers
 set ruler "Show the current position at the bottom
