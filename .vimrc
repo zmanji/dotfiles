@@ -144,7 +144,7 @@ set notitle
 set mouse=a
 " This allows me to have buffers that have unsaved changes. It's possible to
 " lose those changes if I am careless with `:q!` but this behaviour improves
-" my productivity.
+" my productivity because I frequently swap buffers around.
 set hidden
 
 " I press the `:` key a lot in Vim and I often get typos such as `:W` because
@@ -157,26 +157,42 @@ nnoremap ; :
 " muscle memory.
 nnoremap : ;
 
-set number "set line numbers
-set ruler "Show the current position at the bottom
+" I like line numbers.
+set number
+" This shows the position of the cursor at the bottom and the statusline.
+set ruler
+" This forces the statusline to always be visible
 set laststatus=2
-syntax on "Turn on syntax highlighting
+"Turn on syntax highlighting
+syntax on
+" UTF-8 is the only good encoding ever.
+set encoding=utf-8
+" This turns off line wrapping. I can't stand linewrapping and this forces me
+" to keep my code skinny.
+set nowrap
 
-set encoding=utf-8 "Anything else is plain dumb
-
-set nowrap "Don't wrap lines
-
-"Defaults for whitespace
+" ####Defaults for Whitespace####
+" These are the defaults for whitespae for all of my documents if there are no
+" file specific ones set. Normally they are overridden either by a plugin or by
+" something in my /.vim/ftplugins directory.
+"
+" This sets the number of spaces a tab counts for.
 set tabstop=2
-set softtabstop=2 "When backspacing, kill two spaces
-set sw=2
-set expandtab "Death to tabs
-set shiftround "use a mutliple of shiftwidth (sw) when using < and >
+" This sets the number of spaces a tab counts for during editing. This means
+" backspacing indentation will move this value.
+set softtabstop=2
+" This is the spaces to insert when using indenting functionality. I don't
+" know why this is and `softtabstop` exits but they should be equal.
+set shiftwidth=2
+" No real tab characters only spaces
+set expandtab
+" This ensures indents are a multiple of `shiftwidth`
+set shiftround
 
-"Show trailing whitespace and tabs
+" Show trailing whitespace
 set list listchars=tab:\ \ ,trail:·
 
-"Searching
+" ####Searching####
 set hlsearch "highlight searched text
 set incsearch "incremental search
 set ignorecase "case InSeNsTiVE
