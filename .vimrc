@@ -199,10 +199,11 @@ set ignorecase "case InSeNsTiVE
 set smartcase "If I do use a captial letter in the search, be case-sensitive
 "Clear highlights by doing ,/
 nnoremap <silent> <leader>/ :nohlsearch<CR>
-
-set wildmenu "Tab autocompletion
-
-set autoread "Automatically read files that are modified outside of vim
+" Tab autocompletion in all menus
+set wildmenu
+" Automatically read files that are modified outside of Vim. This is needed
+" when working with git.
+set autoread
 set autowrite "Auto-save a modified buffer before switching to another buffer
 
 set backspace=2 "Backspace does what it should do
@@ -214,8 +215,9 @@ set vb t_vb= "Disable any time of beeping or flashing
 
 filetype plugin indent on "Automatically detect file types
 set history=1000 "Save a lot of history
-
-set nobackup "No need for ~ files, I use git most of the time
+" No need for ~ files, I use git most of the time
+set nobackup
+set nowritebackup
 
 " In the ongoing journey to master Vim, it's useful to disable keys that
 " should not be used. These lines disable the arrow keys in normal, insert and
@@ -238,6 +240,10 @@ vnoremap <right> <nop>
 " move up and down by display lines and not just lines delimited by `\n`.
 noremap j gj
 noremap k gk
+" In order to not lose the original functionality of the `j` and `k` keys I
+" map their functionality to `gj` and `gk` respectively.
+noremap gj j
+noremap gk k
 
 
 " Sets the default splitting to be to the bottom and to the right.
