@@ -138,6 +138,9 @@ Bundle "tpope/vim-commentary"
 " Surrounding things
 Bundle "tpope/vim-surround"
 
+" The latest Vim Ruby runtime files
+Bundle "vim-ruby/vim-ruby"
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
