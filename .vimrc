@@ -104,6 +104,7 @@ let g:syntastic_enable_signs=1
 
 " Autocomplete trigged by tab
 Bundle "ervandew/supertab"
+let g:SuperTabDefaultCompletionType = "context"
 
 " File browsing
 Bundle "scrooloose/nerdtree"
@@ -249,3 +250,13 @@ noremap gk k
 " Sets the default splitting to be to the bottom and to the right.
 set splitbelow
 set splitright
+
+" This allows for faster navigation of windows/splits.
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Ctrl-tab to switch next/prev tab, like in FireFox, Chrome, etc.
+nnoremap <silent><C-S-Tab> :tabp<CR>
+nnoremap <silent><C-Tab> :tabn<CR>
