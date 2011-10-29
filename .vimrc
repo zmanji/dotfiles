@@ -141,6 +141,15 @@ Bundle "tpope/vim-surround"
 " The latest Vim Ruby runtime files
 Bundle "vim-ruby/vim-ruby"
 
+" The inserts 'end' magically when editing ruby
+Bundle "tpope/vim-endwise"
+
+" Inserts matching brackets in insert mode
+Bundle "Raimondi/delimitMate"
+
+" Lets me maximize a split when needed
+Bundle "ZoomWin"
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
