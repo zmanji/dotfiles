@@ -150,6 +150,9 @@ Bundle "Raimondi/delimitMate"
 " Lets me maximize a split when needed
 Bundle "ZoomWin"
 
+" Resizes splits according to the golden-ratio
+Bundle "roman/golden-ratio"
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
