@@ -154,6 +154,10 @@ Bundle "ZoomWin"
 " Resizes splits according to the golden-ratio
 Bundle "roman/golden-ratio"
 
+" Scratch Buffer plugin `scratch.vim`
+" Opens a scratch buffer with `:Scratch`
+Bundle "duff/vim-scratch"
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
@@ -208,6 +212,12 @@ set shiftround
 
 " Show trailing whitespace
 set list listchars=tab:\ \ ,trail:·
+
+" Highlight the currentline.
+set cursorline
+
+" Highlight the column after `textwidth`
+set colorcolumn=+1
 
 " ####Searching####
 set hlsearch "highlight searched text
@@ -268,10 +278,10 @@ set splitbelow
 set splitright
 
 " This allows for faster navigation of windows/splits.
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Ctrl-tab to switch next/prev tab, like in FireFox, Chrome, etc.
 nnoremap <silent><C-S-Tab> :tabp<CR>
