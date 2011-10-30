@@ -111,13 +111,16 @@ Bundle "scrooloose/nerdtree"
 noremap <leader>n :NERDTreeToggle<CR>
 ",n will open or close the nerd tree buffer
 
-" Project File Open
-Bundle "wincent/Command-T"
+" CtrlP File, Buffer and Most Recently Used finder
+Bundle "kien/ctrlp.vim"
 
-" Command-T configuration
-set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif " Ignore these filetypes
-nnoremap <silent> <leader>t :CommandT<CR>
-nnoremap <silent> <leader>b :CommandTBuffer<CR>
+" CtrlP settings
+" This will jump to a file that is already in an opened buffer if it is in
+" another tab.
+let g:ctrlp_jump_to_buffer = 2
+" This tells CtrlP to not manage the working directory as the other modes
+" become a little irksome over time. This is the same behaviour as Command-T.
+let g:ctrlp_working_path_mode = 0
 
 " A GUI for Vims undo
 Bundle "sjl/gundo.vim"
@@ -286,3 +289,6 @@ nnoremap <C-l> <C-w>l
 " Ctrl-tab to switch next/prev tab, like in FireFox, Chrome, etc.
 nnoremap <silent><C-S-Tab> :tabp<CR>
 nnoremap <silent><C-Tab> :tabn<CR>
+
+" Ignore these files for file selection menus
+set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
