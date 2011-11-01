@@ -155,7 +155,7 @@ Bundle "Raimondi/delimitMate"
 Bundle "ZoomWin"
 
 " Resizes splits according to the golden-ratio
-Bundle "roman/golden-ratio"
+" Bundle "roman/golden-ratio"
 
 " Scratch Buffer plugin `scratch.vim`
 " Opens a scratch buffer with `:Scratch`
