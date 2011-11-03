@@ -1,0 +1,22 @@
+#!/bin/sh
+# This is a set of sane OS X defaults
+# A lot of this was stolen from https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+
+# Enables key repeating
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Disable window animations
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# Automatically open a new Finder window when a volume is mounted
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
