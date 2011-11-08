@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-DOTFILES := .gemrc .gitconfig .gitignore_global .vim .vimrc .gvimrc .osx
+DOTFILES := .gemrc .gitconfig .gitignore_global .vim .vimrc .gvimrc .osx .ackrc
 
 
 all: submodules link
