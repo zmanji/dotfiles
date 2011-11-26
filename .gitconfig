@@ -26,10 +26,14 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
+  whitespace = trailing-space,space-before-tab
 [github]
   user = zmanji
 [diff]
   mnemonicprefix = true
+
+  ; Detect renames as well as copies
+  renames = copies
 [merge]
   stat = true
   tool = vimdiff
