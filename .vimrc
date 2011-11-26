@@ -296,3 +296,10 @@ nnoremap <silent><C-Tab> :tabn<CR>
 
 " Ignore these files for file selection menus
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
+set wildignore+=*.zip,*.tar,*.obj
+
+" Ignore the .sass-cache directory
+set wildignore+=.sass-cache/*
+
+" Automatically resize splits when the window is resized
+au VimResized * exe "normal! \<c-w>="
