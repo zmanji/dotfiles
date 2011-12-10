@@ -15,6 +15,7 @@ fi
 # Super useful aliases
 
 alias g='git'
+alias be='bundle exec'
 
 # opens file in new tab in existing vim
 alias vt='mvim --remote-tab-silent'
