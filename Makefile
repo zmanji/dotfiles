@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 DOTFILES := .gemrc .gitconfig .gitignore_global .vim .vimrc .gvimrc .osx .ackrc .inputrc \
-						.zshenv .zshrc
+						.zshenv .zshrc .tmux.conf
 
 
 all: submodules link
