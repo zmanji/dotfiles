@@ -165,6 +165,10 @@ Bundle "ZoomWin"
 " Opens a scratch buffer with `:Scratch`
 Bundle "duff/vim-scratch"
 
+" A way better Statusline
+Bundle "Lokaltog/vim-powerline"
+let g:Powerline_symbols = 'unicode'
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
