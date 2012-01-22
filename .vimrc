@@ -310,4 +310,4 @@ au VimResized * exe "normal! \<c-w>="
 
 " Use the system clipboard by default. So I don't need to specify
 " * + registers for every copy and paste action.
-set clipboard+=unnamed
+" set clipboard+=unnamed
