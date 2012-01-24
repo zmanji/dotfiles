@@ -82,6 +82,8 @@ Bundle "mileszs/ack.vim"
 " [pdc-vim]: https://github.com/vim-pandoc/vim-pandoc
 Bundle "vim-pandoc/vim-pandoc"
 
+let g:pandoc_no_folding = 1
+
 " ####Vim-CoffeeScript####
 " This [plugin][vim-cs] provides coffee-script support to Vim. It brings
 " syntax highlighting for coffee-script, eco, a `:CoffeMake` command and a lot
