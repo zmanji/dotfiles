@@ -171,6 +171,9 @@ Bundle "duff/vim-scratch"
 Bundle "Lokaltog/vim-powerline"
 let g:Powerline_symbols = 'unicode'
 
+" Java Autocomplete
+Bundle "vim-scripts/javacomplete"
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
@@ -302,7 +305,7 @@ nnoremap <silent><C-Tab> :tabn<CR>
 
 " Ignore these files for file selection menus
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
-set wildignore+=*.zip,*.tar,*.obj
+set wildignore+=*.zip,*.tar,*.obj,*.class
 
 " Ignore the .sass-cache directory
 set wildignore+=.sass-cache/*
