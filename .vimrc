@@ -171,9 +171,6 @@ Bundle "duff/vim-scratch"
 Bundle "Lokaltog/vim-powerline"
 let g:Powerline_symbols = 'unicode'
 
-" Java Autocomplete
-Bundle "vim-scripts/javacomplete"
-
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
