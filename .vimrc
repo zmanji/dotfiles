@@ -99,10 +99,10 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "tpope/vim-haml"
 
 " Detects incorrect syntax
-Bundle "scrooloose/syntastic"
+" Bundle "scrooloose/syntastic"
 
-" Enable Syntastic
-let g:syntastic_enable_signs=1
+" " Enable Syntastic
+" let g:syntastic_enable_signs=1
 
 " Autocomplete trigged by tab
 Bundle "ervandew/supertab"
