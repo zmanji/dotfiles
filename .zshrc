@@ -51,6 +51,9 @@ setopt auto_menu
 # Automatically list choices on ambiguous completion.
 setopt auto_list
 
+# No bell
+setopt NO_BEEP
+
 
 # Loadup Autocompletion
 autoload -Uz compinit
@@ -58,4 +61,4 @@ autoload -Uz compinit
 compinit -i
 
 
-# PS1='\h:\W \u\$ '
+export PS1='%m:%1~ %n%$ '
