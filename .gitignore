@@ -1,3 +1,4 @@
 .vim/bundle/
+.emacs.d/elpa/
 *.html
 doc*
