@@ -154,7 +154,7 @@ Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-endwise"
 
 " Inserts matching brackets in insert mode
-Bundle "Raimondi/delimitMate"
+Bundle "kana/vim-smartinput"
 
 " Lets me maximize a split when needed
 " Note that <C-w>o is mapped to toggling the zoomed window
