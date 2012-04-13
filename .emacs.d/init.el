@@ -24,8 +24,30 @@
           (assoc pkg package-archive-contents))
     (package-install pkg)))
 
+
+; Set up evil
 (require 'evil)
 (evil-mode 1)
+
+; Port some of my .vimrc here
+
+; Navigate Windows by using HJKL. I don't use those keys
+; and can't use C-h because it conflicts with help
+
+(define-key evil-normal-state-map "H" 'evil-window-left)
+(define-key evil-normal-state-map "J" 'evil-window-down)
+(define-key evil-normal-state-map "K" 'evil-window-up)
+(define-key evil-normal-state-map "L" 'evil-window-right)
+
+; Swap ; and :
+(define-key evil-motion-state-map ";" 'evil-ex)
+(define-key evil-motion-state-map ":" 'evil-repeat-find-char)
+
+; Enable Line Numbers globally
+(global-linum-mode 1)
+
+; Disable line wrapping
+(setq default-truncate-lines t)
 
 ; Fix $PATH on OSX.
 ; See: http://stackoverflow.com/questions/2266905/emacs-is-ignoring-my-path-when-it-runs-a-compile-command
