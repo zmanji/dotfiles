@@ -3,18 +3,23 @@
 
 ; Packages to install
 (setq zmanji-packages
-      '(evil
+      '(melpa ; Package for the melpa repo, adds utility functions
+	evil
+	solarized-theme
+        auctex
+        magit
+        python
          ))
 
-; Add the Marmalade package repository
+; Add the MELPA
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-; Add the ELPA
-(add-to-list 'package-archives
-             '("ELPA" . "http://tromey.com/elpa/"))
+	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 
 ; Boot Packages
 (package-initialize)
+
+(require 'melpa)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -24,12 +29,42 @@
           (assoc pkg package-archive-contents))
     (package-install pkg)))
 
+; Some UI Tweaks
+
+; Hide the toolbar
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+
+; Disable the startup screen
+(setq inhibit-startup-screen t)
+
+; Nicer scrolling
+(setq scroll-margin 0
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
+
+; Always have line number in mode line
+(line-number-mode t)
+; Always have column number in mode line
+(column-number-mode t)
+; Always have file size in mode line
+(size-indication-mode t)
+
+(require 'solarized-theme)
+; Use solarized as theme
+(load-theme 'solarized-dark t)
 
 ; Set up evil
 (require 'evil)
 (evil-mode 1)
 
+; From http://stackoverflow.com/questions/9900232/changing-color-themes-emacs-24-order-matters
+(setq evil-default-cursor t)
+
 ; Port some of my .vimrc here
+
+; shift width is 2 by default
+(setq evil-shift-width 2)
 
 ; Navigate Windows by using HJKL. I don't use those keys
 ; and can't use C-h because it conflicts with help
@@ -60,3 +95,30 @@
 
 (when (equal system-type 'darwin)
   (set-exec-path-from-shell-PATH))
+
+; Everyone tells me I need this
+(require 'cl)
+
+; Don't use tabs to indent
+(setq-default indent-tabs-mode nil)
+
+; Automatically re-load files that have been changed externally
+(global-auto-revert-mode t)
+
+; Indenting and matching braces
+(electric-pair-mode t)
+(electric-indent-mode t)
+(electric-layout-mode t)
+
+; show-paren-mode: subtle highlighting of matching parens
+(show-paren-mode t)
+(setq show-paren-style 'parenthesis)
+
+; highlight the current line
+(global-hl-line-mode +1)
+
+; ido-mode
+(ido-mode t)
+
+; auto-completion in minibuffer
+(icomplete-mode +1)
