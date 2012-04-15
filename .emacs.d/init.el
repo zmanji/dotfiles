@@ -4,16 +4,23 @@
 ; Packages to install
 (setq zmanji-packages
       '(melpa ; Package for the melpa repo, adds utility functions
-	evil
-	solarized-theme
+        evil
+        solarized-theme
         auctex
         magit
         python
+        slime
+        auto-complete
+        clojure-mode
+        ac-slime
+        pandoc-mode
          ))
 
 ; Add the MELPA
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+
+; Known problem with MELPA
+(setq url-http-attempt-keepalives nil)
 
 
 ; Boot Packages
@@ -32,8 +39,8 @@
 ; Some UI Tweaks
 
 ; Hide the toolbar
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ; Disable the startup screen
 (setq inhibit-startup-screen t)
@@ -98,6 +105,7 @@
 
 ; Everyone tells me I need this
 (require 'cl)
+(require 'ansi-color)
 
 ; Don't use tabs to indent
 (setq-default indent-tabs-mode nil)
@@ -122,3 +130,7 @@
 
 ; auto-completion in minibuffer
 (icomplete-mode +1)
+
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+(setq x-select-enable-clipboard t)
