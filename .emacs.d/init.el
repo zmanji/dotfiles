@@ -127,6 +127,9 @@
 
 ; ido-mode
 (ido-mode t)
+(setq
+  ido-everywhere t
+  ido-enable-flex-matching t)
 
 ; auto-completion in minibuffer
 (icomplete-mode +1)
@@ -134,3 +137,11 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq x-select-enable-clipboard t)
+
+; Set up autocomplete
+(require 'auto-complete-config)
+(ac-config-default)
+
+; Clojure/Slime Autocomplete
+(require 'ac-slime)
+(add-hook 'slime-mode-hook 'set-up-slime-ac)
