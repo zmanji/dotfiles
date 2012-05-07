@@ -174,6 +174,10 @@ let g:Powerline_symbols = 'unicode'
 " Python Mode
 Bundle "klen/python-mode"
 
+" Disable Python Folding
+let g:pymode_folding = 0
+
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
