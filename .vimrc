@@ -177,6 +177,10 @@ Bundle "klen/python-mode"
 " Disable Python Folding
 let g:pymode_folding = 0
 
+" Ignore E302 (Expected 2 blank lines not one)
+" Ignore E501 (Line too long)
+let g:pymode_lint_ignore = "E302,E501"
+
 
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
@@ -309,7 +313,7 @@ nnoremap <silent><C-Tab> :tabn<CR>
 
 " Ignore these files for file selection menus
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
-set wildignore+=*.zip,*.tar,*.obj,*.class
+set wildignore+=*.zip,*.tar,*.obj,*.class,*.pyc
 
 " Ignore the .sass-cache directory
 set wildignore+=.sass-cache/*
