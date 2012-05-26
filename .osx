@@ -38,3 +38,7 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCorner
 
 # Set a fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
+
+# Change default screenshot location from Desktop to ~/Screenshots
+defaults write com.apple.screencapture location ~/Screenshots/
+
