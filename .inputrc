@@ -6,3 +6,6 @@ set bell-style none
 
 # Case insensitive completion
 set completion-ignore-case on
+
+# Tab does completion
+tab: complete
