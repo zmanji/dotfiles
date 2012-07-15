@@ -9,3 +9,6 @@ set completion-ignore-case on
 
 # Tab does completion
 tab: complete
+
+# Setup Vi mode
+set editing-mode vi
