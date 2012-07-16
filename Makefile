@@ -5,7 +5,7 @@ DOTFILES := .ackrc \
 						.gitconfig .gitignore_global \
 						.vim .vimrc .gvimrc \
 						.osx .hushlogin \
-						.inputrc \
+						.inputrc .editrc \
 						.tmux.conf \
 						.zshenv .zshrc
 
