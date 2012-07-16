@@ -308,8 +308,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Ctrl-tab to switch next/prev tab, like in FireFox, Chrome, etc.
-nnoremap <silent><C-S-Tab> :tabp<CR>
-nnoremap <silent><C-Tab> :tabn<CR>
+noremap <silent><C-S-Tab> :tabp<CR>
+noremap <silent><C-Tab> :tabn<CR>
 
 " Ignore these files for file selection menus
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif

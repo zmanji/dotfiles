@@ -7,10 +7,6 @@
 # Cabal is the Haskell package manager. Need this for markdown2pdf mainly
 export PATH=~/.cabal/bin:$PATH
 
-# This came from the mysql install
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
-export PATH="/usr/local/mysql/bin:$PATH"
-
 # For binaries installed by homebrew
 export PATH="/usr/local/bin:$PATH"
 

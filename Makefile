@@ -1,8 +1,13 @@
 SHELL := /bin/bash
 
-DOTFILES := .gemrc .gitconfig .gitignore_global .vim .vimrc .gvimrc .osx .ackrc .inputrc \
-						.zshenv .zshrc .tmux.conf .hushlogin
-
+DOTFILES := .ackrc \
+						.gemrc \
+						.gitconfig .gitignore_global \
+						.vim .vimrc .gvimrc \
+						.osx .hushlogin \
+						.inputrc \
+						.tmux.conf \
+						.zshenv .zshrc
 
 all: submodules link
 
@@ -18,6 +23,3 @@ submodules:
 	git submodule init
 	git submodule update
 	git submodule foreach git pull origin master
-
-doc:
-	rocco --language=VimL --comment-chars=\" .vimrc

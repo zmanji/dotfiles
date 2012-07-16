@@ -1,5 +1,2 @@
+# Don't track the vundle installed vim plugins.
 .vim/bundle/
-.emacs.d/elpa/
-.emacs.d/auto-save-list/
-*.html
-doc*
