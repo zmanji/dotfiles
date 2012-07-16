@@ -181,6 +181,14 @@ let g:pymode_folding = 0
 " Ignore E501 (Line too long)
 let g:pymode_lint_ignore = "E302,E501"
 
+" Shows at match N out of M matches while searching
+Bundle "IndexedSearch"
+
+" Show Mark locations in gutter
+Bundle "VimEz/ShowMarks"
+
+" Supercharge the repeat "." command
+Bundle "tpope/vim-repeat"
 
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
