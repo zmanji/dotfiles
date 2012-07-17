@@ -190,6 +190,25 @@ Bundle "VimEz/ShowMarks"
 " Supercharge the repeat "." command
 Bundle "tpope/vim-repeat"
 
+" Fast cached autocomplete
+Bundle "Shougo/neocomplcache"
+
+" Enable it
+let g:neocomplcache_enable_at_startup = 1
+
+" Enable nicer matching
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_smart_case = 1
+
+" This makes sure we use neocomplcache completefunc instead of
+" the one in rails.vim, otherwise this plugin will crap out
+let g:neocomplcache_force_overwrite_completefunc = 1
+
+" Useful for browsing tags
+Bundle "majutsushi/tagbar"
+nnoremap <silent> <leader>t :TagbarToggle<CR>
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
