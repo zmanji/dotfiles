@@ -1,5 +1,5 @@
-# NOTE: The `~/.inputrc` file sets the options for GNU Readline. GNU Readline is used in bash
-# but also in a variety of other prompts.
+# NOTE: The `~/.inputrc` file sets the options for GNU Readline. GNU Readline
+# is used in bash but also in a variety of other prompts.
 
 # Do not ring the bell ever
 set bell-style none
