@@ -209,6 +209,9 @@ let g:neocomplcache_force_overwrite_completefunc = 1
 Bundle "majutsushi/tagbar"
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 
+" uC++ syntax files for CS343
+Bundle "flxf/uCpp.vim"
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
