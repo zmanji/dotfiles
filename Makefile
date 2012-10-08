@@ -6,8 +6,6 @@ DOTFILES := .ackrc \
 						.vim .vimrc .gvimrc \
 						.osx .hushlogin \
 						.inputrc .editrc \
-						.tmux.conf \
-						.zshenv .zshrc
 
 all: submodules link
 
