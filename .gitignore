@@ -1,2 +1,5 @@
 # Don't track the vundle installed vim plugins.
 .vim/bundle/
+
+# Don't track stuff installed by Emacs
+.emacs.d/elpa
