@@ -51,18 +51,10 @@ call vundle#rc()
 " update vundle, which is very nice.
 Bundle "gmarik/vundle"
 
-" ####Solarized Colorscheme####
-" [Solarized][sol] is the only good colorscheme ever. This also ensures I
-" always have the latest version.
-"
-" [sol]: http://ethanschoonover.com/solarized
-Bundle "altercation/vim-colors-solarized"
-" A solarized configuration option. This disables the solarized menu at the
-" top of the gui.
-let g:solarized_menu=0
-" This sets solarized to be the colorscheme.
-colorscheme solarized
-" This ensures that the dark solarized version is used.
+" ###Colorscheme####
+Bundle 'chriskempson/base16-vim'
+colorscheme base16-tomorrow
+" This ensures that the dark version is used.
 set background=dark
 
 " ####Ack.vim####
