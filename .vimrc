@@ -202,6 +202,9 @@ nnoremap <silent> <leader>t :TagbarToggle<CR>
 Bundle "Lokaltog/vim-easymotion"
 let g:EasyMotion_leader_key = '<space>'
 
+" Rust integration
+Bundle "mozilla/rust", {'rtp': 'src/etc/vim/'}
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
