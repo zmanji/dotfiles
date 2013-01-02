@@ -42,3 +42,8 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 # Change default screenshot location from Desktop to ~/Screenshots
 defaults write com.apple.screencapture location ~/Screenshots/
 
+# Hide the Spotlight Menu Icon in OS X Lion
+sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+
+# Need to restart UI for some changes to take effect.
+killall SystemUIServer
