@@ -183,7 +183,7 @@ Bundle "tpope/vim-repeat"
 Bundle "Shougo/neocomplcache"
 
 " Enable it
-let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_at_startup = 1
 
 " Enable nicer matching
 let g:neocomplcache_enable_camel_case_completion = 1
@@ -191,7 +191,8 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_smart_case = 1
 
 " This makes sure we use neocomplcache completefunc instead of
-" the one in rails.vim, otherwise this plugin will crap out
+" the one in rails.vim, otherwise this plugin will crap out.
+" This is also needed t prevent problems with clang_complete.
 let g:neocomplcache_force_overwrite_completefunc = 1
 
 " Useful for browsing tags
@@ -204,6 +205,20 @@ let g:EasyMotion_leader_key = '<space>'
 
 " Rust integration
 Bundle "mozilla/rust", {'rtp': 'src/etc/vim/'}
+
+" Good C++ Autocomplete using clang
+Bundle "Rip-Rip/clang_complete"
+" Use libclang instead of calling `clang`
+let g:clang_use_library=1
+" Disable auto completion, trigger it with <Tab> only.
+let g:clang_complete_auto = 0
+" Show clang errors in the quickfix window
+let g:clang_complete_copen = 1
+" Close preview window after a completion
+let g:clang_close_preview = 1
+
+" Clang Complete compatability with neocomlcache
+" Bundle "Shougo/neocomplcache-clang_complete"
 
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
