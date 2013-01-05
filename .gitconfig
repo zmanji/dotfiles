@@ -31,11 +31,14 @@
   user = zmanji
 [diff]
   mnemonicprefix = true
-
   ; Detect renames as well as copies
   renames = copies
 [merge]
   stat = true
-  tool = vimdiff
+  ; Use fugitive.vim as my git merge tool. Get the benefits of vimdiff and git
+  ; awareness at the same time.
+	tool = fugitive
 [push]
 	default = tracking
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
