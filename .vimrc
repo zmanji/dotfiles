@@ -100,15 +100,6 @@ Bundle "tpope/vim-haml"
 Bundle "ervandew/supertab"
 let g:SuperTabDefaultCompletionType = "context"
 
-" File browsing
-Bundle "scrooloose/nerdtree"
-
-",n will open or close the nerd tree buffer
-noremap <leader>n :NERDTreeToggle<CR>
-
-" Use arrows instead of the `+` and `~` characters
-let g:NERDTreeDirArrows=1
-
 " CtrlP File, Buffer and Most Recently Used finder
 Bundle "kien/ctrlp.vim"
 
