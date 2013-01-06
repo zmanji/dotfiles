@@ -354,3 +354,8 @@ set clipboard=unnamed
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
+
+" Local .vimrc for machine/environment specific configuration.
+if filereadable(glob("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
