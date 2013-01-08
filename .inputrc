@@ -12,3 +12,7 @@ tab: complete
 
 # Setup Vi mode
 set editing-mode vi
+
+# Enable clearing the screen in insert mode.
+set keymap vi-insert
+"\C-l": clear-screen
