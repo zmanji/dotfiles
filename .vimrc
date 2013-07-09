@@ -208,6 +208,8 @@ let g:clang_complete_copen = 1
 " Close preview window after a completion
 let g:clang_close_preview = 1
 
+Bundle "derekwyatt/vim-scala"
+
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
 set notitle
