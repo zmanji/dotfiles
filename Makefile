@@ -19,5 +19,5 @@ clean: $(DOTFILES)
 
 submodules:
 	git submodule init
-	git submodule update
+	git submodule update --recursive
 	git submodule foreach git pull origin master
