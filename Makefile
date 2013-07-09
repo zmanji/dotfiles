@@ -1,7 +1,6 @@
 SHELL := /bin/bash
 
-DOTFILES := .ackrc \
-						.gemrc \
+DOTFILES := .gemrc \
 						.gitconfig .gitignore_global \
 						.vim .vimrc .gvimrc \
 						.osx .hushlogin \
