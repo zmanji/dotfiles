@@ -1,22 +1,33 @@
 SHELL := /bin/bash
 
-DOTFILES := .gemrc \
-						.gitconfig .gitignore_global \
-						.vim .vimrc .gvimrc \
-						.osx .hushlogin \
-						.inputrc .editrc \
+all: submodules shells osx git vim
 
-all: submodules link
-
-link: $(DOTFILES)
+vim: .vim .vimrc .gvimrc
+	@echo removing $^; \
+	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
-clean: $(DOTFILES)
+git: .gitconfig .gitignore_global
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+
+shells: .editrc .gemrc .hushlogin .inputrc
+	@echo removing $^; \
+	$(foreach df, $^, rm -f ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+
+osx: .osx
+	@echo removing $^; \
+	$(foreach df, $^, rm -f ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+	@echo Running .osx; \
+	sh ~/.osx
 
 submodules:
 	git submodule init
 	git submodule update --recursive
-	git submodule foreach git pull origin master
