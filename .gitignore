@@ -1,8 +1,2 @@
 # Don't track the vundle installed vim plugins.
 .vim/bundle/
-
-# Don't track stuff installed by Emacs
-.emacs.d/elpa
-
-# Don't track the auto save files
-.emacs.d/auto-save-list
