@@ -117,9 +117,6 @@ Bundle "sjl/gundo.vim"
 " Use ,u to open Gundo only in normal mode
 nnoremap <Leader>u :GundoToggle<CR>
 
-" Rails integration
-Bundle "tpope/vim-rails"
-
 " Tim Pope may actually be the best programmer alive
 " Best Git Integration Ever
 Bundle "tpope/vim-fugitive"
