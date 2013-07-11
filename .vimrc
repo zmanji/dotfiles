@@ -107,10 +107,6 @@ Bundle "IndexedSearch"
 " Supercharge the repeat "." command
 Bundle "tpope/vim-repeat"
 
-" Useful for browsing tags
-Bundle "majutsushi/tagbar"
-nnoremap <silent> <leader>t :TagbarToggle<CR>
-
 " Easymotion is faster vim motions
 Bundle "Lokaltog/vim-easymotion"
 let g:EasyMotion_leader_key = '<space>'
