@@ -185,22 +185,6 @@ set history=1000 "Save a lot of history
 set nobackup
 set nowritebackup
 
-" In the ongoing journey to master Vim, it's useful to disable keys that
-" should not be used. These lines disable the arrow keys in normal, insert and
-" visual modes.
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
-
 " By default `j` and `k` both move in a file by lines delimited by `\n` which
 " is not helpful when linewrapping is enabled. These mappings ensure that I
 " move up and down by display lines and not just lines delimited by `\n`.
