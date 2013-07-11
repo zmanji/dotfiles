@@ -20,13 +20,6 @@ colorscheme base16-tomorrow
 " This ensures that the dark version is used.
 set background=dark
 
-" ####Ack.vim####
-" `ack` is better than `grep` and [Ack.vim][ack] brings integration to Vim. It
-" acts as a replacement for Vim's `:grep` commands.
-"
-" [ack]: https://github.com/mileszs/ack.vim
-Bundle "mileszs/ack.vim"
-
 " ####Vim-Pandoc####
 " This [plugin][pdc-vim] is a bundle of tools for [Pandoc][pdc]'s extended markdown.
 " It provides Pandoc and regular markdown syntax highlighting, folding and a few
@@ -38,14 +31,6 @@ Bundle "mileszs/ack.vim"
 Bundle "vim-pandoc/vim-pandoc"
 
 let g:pandoc_no_folding = 1
-
-" ####Vim-CoffeeScript####
-" This [plugin][vim-cs] provides coffee-script support to Vim. It brings
-" syntax highlighting for coffee-script, eco, a `:CoffeMake` command and a lot
-" of configuration options.
-"
-" [vim-cs]: https://github.com/kchmck/vim-coffee-script
-Bundle "kchmck/vim-coffee-script"
 
 " Autocomplete trigged by tab
 Bundle "ervandew/supertab"
@@ -248,10 +233,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Ctrl-tab to switch next/prev tab, like in FireFox, Chrome, etc.
-noremap <silent><C-S-Tab> :tabp<CR>
-noremap <silent><C-Tab> :tabn<CR>
 
 " Ignore these files for file selection menus
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
