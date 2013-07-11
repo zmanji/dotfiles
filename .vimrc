@@ -1,46 +1,9 @@
-" This is my `.vimrc`.
-"
-" First disable Vi compatibility. This must be done first because it affects
-" every other option.
 set nocompatible
 
 " ###Leader Mappings###
-" These two mappings set up the leader key. The <leader> mapping defaults to
-" `\` but that key is hard to reach. I prefer to set it to `,`
-" `mapleader` is used for global mappings and `maplocalleader` is used for
-" buffer-local mappings. For example the pandoc plugin has a few buffer local
-" mappings that make editing a pandoc document nicer.
-"
-" There can be some conflict with buffer local mappings and global mappings
-" from plugins and what I define if I set `mapleader` and `maplocalleader` to
-" be the same, but I prefer to deal with that when the problem arises.
-"
-" Note that these need to be defined here because all the plugins make use of
-" the leader key. Also note that I lose the original function of the `,` key.
 
 let mapleader = ","
 let maplocalleader = ","
-
-" ### Plugin Installation ###
-" Vim plugin management is difficult at best so we use [Vundle][vu] to help us
-" install and manage plugins.
-"
-" Vundle lets a very cool `Bundle` function become available. You can feed it
-" a string in the form from `user/repo` and will get the appropriate github
-" repo. Other strings could be a vim-script repo or a git url for a non github
-" repo. Once this is done I have a `:BundleInstall` command available which
-" will download and install those packages for me.
-"
-" I use Vundle over Pathogen because pathogen requires you to manage the
-" plugins externally and it would fill my `.vim/` will all sorts of stuff that
-" I did not write. I don't want this to occur because I would like my dotfiles
-" repo to be for code that I wrote or need to bootstrap (like Vundle).
-"
-" [vu]: https://github.com/gmarik/vundle
-"
-" These lines are required to set up Vundle and they come from the Vundle
-" documentation.
-"
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -123,10 +86,6 @@ Bundle "tpope/vim-endwise"
 
 " Inserts matching brackets in insert mode
 Bundle "kana/vim-smartinput"
-
-" Scratch Buffer plugin `scratch.vim`
-" Opens a scratch buffer with `:Scratch`
-Bundle "duff/vim-scratch"
 
 " A way better Statusline
 Bundle "Lokaltog/vim-powerline"
