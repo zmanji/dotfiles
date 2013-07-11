@@ -1,7 +1,5 @@
 set nocompatible
 
-" ###Leader Mappings###
-
 let mapleader = ","
 let maplocalleader = ","
 
@@ -14,20 +12,11 @@ call vundle#rc()
 " update vundle, which is very nice.
 Bundle "gmarik/vundle"
 
-" ###Colorscheme####
 Bundle 'chriskempson/base16-vim'
 colorscheme base16-tomorrow
 " This ensures that the dark version is used.
 set background=dark
 
-" ####Vim-Pandoc####
-" This [plugin][pdc-vim] is a bundle of tools for [Pandoc][pdc]'s extended markdown.
-" It provides Pandoc and regular markdown syntax highlighting, folding and a few
-" useful local-leader mappings. Weird behaviour tends to happen when installed
-" with vim-markdown but this has most of that functionality.
-"
-" [pdc]: http://johnmacfarlane.net/pandoc/
-" [pdc-vim]: https://github.com/vim-pandoc/vim-pandoc
 Bundle "vim-pandoc/vim-pandoc"
 
 let g:pandoc_no_folding = 1
@@ -162,7 +151,7 @@ set expandtab
 set shiftround
 
 " Show trailing whitespace
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:▸\ ,eol:¬,trail:·
 
 " Highlight the currentline.
 set cursorline
@@ -170,7 +159,6 @@ set cursorline
 " Highlight the column after `textwidth`
 set colorcolumn=+1
 
-" ####Searching####
 set hlsearch "highlight searched text
 set incsearch "incremental search
 set ignorecase "case InSeNsTiVE
