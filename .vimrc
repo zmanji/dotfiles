@@ -20,6 +20,12 @@ set background=dark
 Bundle "vim-pandoc/vim-pandoc"
 
 let g:pandoc_no_folding = 1
+Bundle "vim-ruby/vim-ruby"
+
+Bundle "klen/python-mode"
+let g:pymode_folding = 0
+
+Bundle "derekwyatt/vim-scala"
 
 " Autocomplete trigged by tab
 Bundle "ervandew/supertab"
@@ -52,28 +58,12 @@ Bundle "tpope/vim-commentary"
 " Surrounding things
 Bundle "tpope/vim-surround"
 
-" The latest Vim Ruby runtime files
-Bundle "vim-ruby/vim-ruby"
-
-" The inserts 'end' magically when editing ruby
-Bundle "tpope/vim-endwise"
-
 " Inserts matching brackets in insert mode
 Bundle "kana/vim-smartinput"
 
 " A way better Statusline
 Bundle "Lokaltog/vim-powerline"
 let g:Powerline_symbols = 'unicode'
-
-" Python Mode
-Bundle "klen/python-mode"
-
-" Disable Python Folding
-let g:pymode_folding = 0
-
-" Ignore E302 (Expected 2 blank lines not one)
-" Ignore E501 (Line too long)
-let g:pymode_lint_ignore = "E302,E501"
 
 " Shows at match N out of M matches while searching
 Bundle "IndexedSearch"
@@ -96,7 +86,6 @@ let g:clang_complete_copen = 1
 " Close preview window after a completion
 let g:clang_close_preview = 1
 
-Bundle "derekwyatt/vim-scala"
 
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
