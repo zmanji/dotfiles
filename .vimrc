@@ -160,7 +160,7 @@ set wildmenu
 set autoread
 set autowrite "Auto-save a modified buffer before switching to another buffer
 
-set backspace=2 "Backspace does what it should do
+set backspace=indent,eol,start "Backspace does what it should do
 
 set numberwidth=5 "For those really long files
 set novisualbell "Don't blink please
@@ -183,6 +183,8 @@ noremap k gk
 noremap gj j
 noremap gk k
 
+" Make Y consistent with C and D.  See :help Y.
+nnoremap Y y$
 
 " Sets the default splitting to be to the bottom and to the right.
 set splitbelow
