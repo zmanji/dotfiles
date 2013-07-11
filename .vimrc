@@ -136,13 +136,6 @@ Bundle "tpope/vim-endwise"
 " Inserts matching brackets in insert mode
 Bundle "kana/vim-smartinput"
 
-" Lets me maximize a split when needed
-" Note that <C-w>o is mapped to toggling the zoomed window
-Bundle "ZoomWin"
-
-" Resizes splits according to the golden-ratio
-" Bundle "roman/golden-ratio"
-
 " Scratch Buffer plugin `scratch.vim`
 " Opens a scratch buffer with `:Scratch`
 Bundle "duff/vim-scratch"
