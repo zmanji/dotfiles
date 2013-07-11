@@ -84,18 +84,6 @@ let g:pandoc_no_folding = 1
 " [vim-cs]: https://github.com/kchmck/vim-coffee-script
 Bundle "kchmck/vim-coffee-script"
 
-" ####Vim-Haml####
-" This [plugin][vim-haml] adds Haml, Sass and SCSS support to Vim.
-"
-" [vim-haml]: https://github.com/tpope/vim-haml
-Bundle "tpope/vim-haml"
-
-" Detects incorrect syntax
-" Bundle "scrooloose/syntastic"
-
-" " Enable Syntastic
-" let g:syntastic_enable_signs=1
-
 " Autocomplete trigged by tab
 Bundle "ervandew/supertab"
 let g:SuperTabDefaultCompletionType = "context"
@@ -183,9 +171,6 @@ nnoremap <silent> <leader>t :TagbarToggle<CR>
 " Easymotion is faster vim motions
 Bundle "Lokaltog/vim-easymotion"
 let g:EasyMotion_leader_key = '<space>'
-
-" Rust integration
-Bundle "mozilla/rust", {'rtp': 'src/etc/vim/'}
 
 " Good C++ Autocomplete using clang
 Bundle "Rip-Rip/clang_complete"
