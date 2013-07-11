@@ -132,10 +132,9 @@ set encoding=utf-8
 " to keep my code skinny.
 set nowrap
 
-" ####Defaults for Whitespace####
 " These are the defaults for whitespae for all of my documents if there are no
-" file specific ones set. Normally they are overridden either by a plugin or by
-" something in my /.vim/ftplugins directory.
+" file specific ones set. Normally they are overridden either by a plugin or
+" by something in my /.vim/ftplugins directory.
 "
 " This sets the number of spaces a tab counts for.
 set tabstop=2
