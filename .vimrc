@@ -50,10 +50,6 @@ NeoBundle "Lokaltog/vim-easymotion"
 let g:EasyMotion_leader_key = '<space>'
 
 NeoBundle "tpope/vim-fugitive"
-NeoBundleLazy 'gregsexton/gitv', {
-      \ 'depends':['tpope/vim-fugitive'],
-      \ 'autoload':{'commands':'Gitv'}
-      \ }
 
 NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
 
