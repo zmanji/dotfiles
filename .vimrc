@@ -1,69 +1,67 @@
 set nocompatible
 
-
-
 let mapleader = ","
 let maplocalleader = ","
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" This line lets Vundle manage itself. This is required. This will also ensure
-" that when you run `BundleInstall!` to update your plugins it will also
-" update vundle, which is very nice.
-Bundle "gmarik/vundle"
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-Bundle 'chriskempson/base16-vim'
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'chriskempson/base16-vim'
 colorscheme base16-tomorrow
 " This ensures that the dark version is used.
 set background=dark
 
-Bundle "vim-pandoc/vim-pandoc"
+NeoBundle "vim-pandoc/vim-pandoc"
 
 let g:pandoc_no_folding = 1
-Bundle "vim-ruby/vim-ruby"
+NeoBundle "vim-ruby/vim-ruby"
 
-Bundle "klen/python-mode"
+NeoBundle "klen/python-mode"
 let g:pymode_folding = 0
 
-Bundle "derekwyatt/vim-scala"
+NeoBundle "derekwyatt/vim-scala"
 
 " A GUI for Vims undo
-Bundle "sjl/gundo.vim"
+NeoBundle "sjl/gundo.vim"
 
 " Use ,u to open Gundo only in normal mode
 nnoremap <Leader>u :GundoToggle<CR>
 
 " Tim Pope may actually be the best programmer alive
 " Best Git Integration Ever
-Bundle "tpope/vim-fugitive"
+NeoBundle "tpope/vim-fugitive"
 
 " Commenting
-Bundle "tpope/vim-commentary"
+NeoBundle "tpope/vim-commentary"
 
 " Surrounding things
-Bundle "tpope/vim-surround"
+NeoBundle "tpope/vim-surround"
 
 " Inserts matching brackets in insert mode
-Bundle "kana/vim-smartinput"
+NeoBundle "kana/vim-smartinput"
 
 " A way better Statusline
-Bundle "Lokaltog/vim-powerline"
+NeoBundle "Lokaltog/vim-powerline"
 let g:Powerline_symbols = 'unicode'
 
 " Shows at match N out of M matches while searching
-Bundle "IndexedSearch"
+NeoBundle "IndexedSearch"
 
 " Supercharge the repeat "." command
-Bundle "tpope/vim-repeat"
+NeoBundle "tpope/vim-repeat"
 
 " Easymotion is faster vim motions
-Bundle "Lokaltog/vim-easymotion"
+NeoBundle "Lokaltog/vim-easymotion"
 let g:EasyMotion_leader_key = '<space>'
 
 " Good C++ Autocomplete using clang
-Bundle "Rip-Rip/clang_complete"
+NeoBundle "Rip-Rip/clang_complete"
 " Use libclang instead of calling `clang`
 let g:clang_use_library=1
 " Disable auto completion, trigger it with <Tab> only.
