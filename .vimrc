@@ -1,5 +1,7 @@
 set nocompatible
 
+
+
 let mapleader = ","
 let maplocalleader = ","
 
@@ -26,21 +28,6 @@ Bundle "klen/python-mode"
 let g:pymode_folding = 0
 
 Bundle "derekwyatt/vim-scala"
-
-" Autocomplete trigged by tab
-Bundle "ervandew/supertab"
-let g:SuperTabDefaultCompletionType = "context"
-
-" CtrlP File, Buffer and Most Recently Used finder
-Bundle "kien/ctrlp.vim"
-
-" CtrlP settings
-" This will jump to a file that is already in an opened buffer if it is in
-" another tab.
-let g:ctrlp_jump_to_buffer = 2
-" This tells CtrlP to not manage the working directory as the other modes
-" become a little irksome over time. This is the same behaviour as Command-T.
-let g:ctrlp_working_path_mode = 0
 
 " A GUI for Vims undo
 Bundle "sjl/gundo.vim"
