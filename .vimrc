@@ -97,6 +97,15 @@ let g:neocomplete#force_omni_input_patterns.ruby =
 NeoBundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
 
+NeoBundle 'Shougo/neosnippet'
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 NeoBundle 'chriskempson/base16-vim'
 colorscheme base16-tomorrow
