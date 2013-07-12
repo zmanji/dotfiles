@@ -1,5 +1,8 @@
 set nocompatible
 
+let mapleader = ","
+let maplocalleader = ","
+
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -111,13 +114,35 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+NeoBundle 'Shougo/unite.vim'
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+let g:unite_enable_start_insert = 1
+let g:unite_enable_short_source_names = 1
+let g:unite_data_directory='~/.vim/.cache/unite'
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable=1
+let g:unite_source_rec_max_cache_files=5000
+let g:unite_prompt='»'
+
+function! s:unite_settings()
+  " Play nice with supertab
+  let b:SuperTabDisabled=1
+  " Enable navigation with control-j and control-k in insert mode
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+endfunction
+autocmd FileType unite call s:unite_settings()
+nnoremap <leader>f :Unite -start-insert file_rec/async<cr>
+nnoremap <leader>y :Unite -buffer-name=yanks history/yank<cr>
+
+NeoBundleLazy 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
+nnoremap <leader>o :Unite -auto-resize -buffer-name=outline outline<cr>
+
 NeoBundle 'chriskempson/base16-vim'
 colorscheme base16-tomorrow
 " This ensures that the dark version is used.
 set background=dark
-
-let mapleader = ","
-let maplocalleader = ","
 
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
