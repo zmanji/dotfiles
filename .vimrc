@@ -131,8 +131,16 @@ set list listchars=tab:▸\ ,eol:¬,trail:·
 " Highlight the currentline.
 set cursorline
 
+" Hide the cursor line when the split is not in focus
+autocmd WinLeave * setlocal nocursorline
+autocmd WinEnter * setlocal cursorline
+
 " Highlight the column after `textwidth`
 set colorcolumn=+1
+
+" Hide the column line when the split is not in focus
+autocmd WinLeave * setlocal nocursorcolumn
+autocmd WinEnter * setlocal cursorcolumn
 
 set hlsearch "highlight searched text
 set incsearch "incremental search
