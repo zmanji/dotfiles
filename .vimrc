@@ -1,64 +1,61 @@
 set nocompatible
 
-let mapleader = ","
-let maplocalleader = ","
-
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
-
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'chriskempson/base16-vim'
-colorscheme base16-tomorrow
-" This ensures that the dark version is used.
-set background=dark
+" Core Improvements to Vim
+NeoBundle 'matchit.zip'
+NeoBundle "tpope/vim-surround"
+NeoBundle "tpope/vim-repeat"
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle "tpope/vim-commentary"
+NeoBundle "IndexedSearch"
+
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'nmake -f make_msvc.mak nodebug=1',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+
+" Better Language Support
+NeoBundleLazy 'tpope/vim-haml', {
+      \ 'autoload':{'filetypes':['haml','scss','sass']}
+      \ }
+NeoBundleLazy 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
+NeoBundleLazy 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']}}
+NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
 
 NeoBundle "vim-pandoc/vim-pandoc"
-
 let g:pandoc_no_folding = 1
-NeoBundle "vim-ruby/vim-ruby"
-
-NeoBundle "klen/python-mode"
+NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 let g:pymode_folding = 0
-
 NeoBundle "derekwyatt/vim-scala"
 
-" A GUI for Vims undo
 NeoBundle "sjl/gundo.vim"
-
 " Use ,u to open Gundo only in normal mode
 nnoremap <Leader>u :GundoToggle<CR>
 
-" Tim Pope may actually be the best programmer alive
-" Best Git Integration Ever
-NeoBundle "tpope/vim-fugitive"
-
-" Commenting
-NeoBundle "tpope/vim-commentary"
-
-" Surrounding things
-NeoBundle "tpope/vim-surround"
-
-" Inserts matching brackets in insert mode
-NeoBundle "kana/vim-smartinput"
-
-" A way better Statusline
 NeoBundle "Lokaltog/vim-powerline"
 let g:Powerline_symbols = 'unicode'
 
-" Shows at match N out of M matches while searching
-NeoBundle "IndexedSearch"
-
-" Supercharge the repeat "." command
-NeoBundle "tpope/vim-repeat"
-
-" Easymotion is faster vim motions
 NeoBundle "Lokaltog/vim-easymotion"
 let g:EasyMotion_leader_key = '<space>'
+
+NeoBundle "tpope/vim-fugitive"
+NeoBundleLazy 'gregsexton/gitv', {
+      \ 'depends':['tpope/vim-fugitive'],
+      \ 'autoload':{'commands':'Gitv'}
+      \ }
+
+NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
 
 " Good C++ Autocomplete using clang
 NeoBundle "Rip-Rip/clang_complete"
@@ -71,6 +68,13 @@ let g:clang_complete_copen = 1
 " Close preview window after a completion
 let g:clang_close_preview = 1
 
+NeoBundle 'chriskempson/base16-vim'
+colorscheme base16-tomorrow
+" This ensures that the dark version is used.
+set background=dark
+
+let mapleader = ","
+let maplocalleader = ","
 
 " This disables Vim's ability to change the terminal title to "Thanks for
 " flying vim"
