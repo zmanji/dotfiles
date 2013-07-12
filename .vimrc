@@ -38,6 +38,19 @@ let g:pandoc_no_folding = 1
 NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 let g:pymode_folding = 0
 NeoBundle "derekwyatt/vim-scala"
+NeoBundleLazy 'Rip-Rip/clang_complete', {
+      \ 'autoload' : {
+      \     'filetypes' : ['c', 'cpp'],
+      \    },
+      \ }
+" Use libclang instead of calling `clang`
+let g:clang_use_library=1
+" Disable auto completion, trigger it with <Tab> only.
+let g:clang_complete_auto = 0
+" Show clang errors in the quickfix window
+let g:clang_complete_copen = 1
+" Close preview window after a completion
+let g:clang_close_preview = 1
 
 NeoBundle "sjl/gundo.vim"
 " Use ,u to open Gundo only in normal mode
@@ -53,16 +66,6 @@ NeoBundle "tpope/vim-fugitive"
 
 NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
 
-" Good C++ Autocomplete using clang
-NeoBundle "Rip-Rip/clang_complete"
-" Use libclang instead of calling `clang`
-let g:clang_use_library=1
-" Disable auto completion, trigger it with <Tab> only.
-let g:clang_complete_auto = 0
-" Show clang errors in the quickfix window
-let g:clang_complete_copen = 1
-" Close preview window after a completion
-let g:clang_close_preview = 1
 
 NeoBundle 'chriskempson/base16-vim'
 colorscheme base16-tomorrow
