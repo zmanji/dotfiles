@@ -97,7 +97,11 @@ let g:neocomplete#force_omni_input_patterns.ruby =
 NeoBundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
 
+
+NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/neosnippet'
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#enable_snipmate_compatibility=1
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
