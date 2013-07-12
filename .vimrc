@@ -36,7 +36,13 @@ NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
 NeoBundle "vim-pandoc/vim-pandoc"
 let g:pandoc_no_folding = 1
 NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
+let g:pymode_rope=0
 let g:pymode_folding = 0
+let g:pymode_lint_ignore = "E501"
+NeoBundleLazy 'davidhalter/jedi-vim', {'autoload':{'filetypes':['python']}}
+let g:jedi#popup_on_dot=0
+let g:jedi#auto_vim_configuration = 0
+
 NeoBundle "derekwyatt/vim-scala"
 NeoBundleLazy 'Rip-Rip/clang_complete', {
       \ 'autoload' : {
@@ -47,6 +53,7 @@ NeoBundleLazy 'Rip-Rip/clang_complete', {
 let g:clang_use_library=1
 " Disable auto completion, trigger it with <Tab> only.
 let g:clang_complete_auto = 0
+let g:clang_auto_select = 0
 " Show clang errors in the quickfix window
 let g:clang_complete_copen = 1
 " Close preview window after a completion
@@ -65,6 +72,28 @@ let g:EasyMotion_leader_key = '<space>'
 NeoBundle "tpope/vim-fugitive"
 
 NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
+
+NeoBundleLazy 'Shougo/neocomplete.vim', {'autoload':{'insert':1}}
+let g:neocomplete#enable_at_startup=1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
+let g:neocomplete#enable_auto_delimiter=1
+let g:neocomplete#enable_refresh_always=1
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_overwrite_completefunc = 1
+let g:neocomplete#force_omni_input_patterns.c =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#force_omni_input_patterns.cpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns.objc =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#force_omni_input_patterns.objcpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+
+NeoBundle 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "context"
 
 
 NeoBundle 'chriskempson/base16-vim'

@@ -1,2 +1,4 @@
 # Don't track the vundle installed vim plugins.
 .vim/bundle/
+# Don't track cache folder
+.vim/.cache/
