@@ -1,3 +1,5 @@
+" TODO: Use augroups, regorganize code to be clearer.
+
 set nocompatible
 
 let mapleader = ","
