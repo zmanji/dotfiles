@@ -225,8 +225,8 @@ autocmd WinEnter * setlocal cursorline
 set colorcolumn=+1
 
 " Hide the column line when the split is not in focus
-autocmd WinLeave * setlocal nocursorcolumn
-autocmd WinEnter * setlocal cursorcolumn
+autocmd WinLeave * setlocal colorcolumn=""
+autocmd WinEnter * setlocal colorcolumn=+1
 
 set hlsearch "highlight searched text
 set incsearch "incremental search
