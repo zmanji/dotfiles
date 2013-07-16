@@ -261,6 +261,7 @@ set expandtab
 set shiftround
 " }}}
 
+" Highlights {{{
 " Highlight the currentline.
 set cursorline
 
@@ -274,6 +275,7 @@ set colorcolumn=+1
 " Hide the column line when the split is not in focus
 autocmd WinLeave * setlocal colorcolumn=""
 autocmd WinEnter * setlocal colorcolumn=+1
+" }}}
 
 " Searching {{{
 set hlsearch "highlight searched text
