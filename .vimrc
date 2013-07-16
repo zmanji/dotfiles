@@ -205,6 +205,11 @@ set notitle
 set mouse=a
 set laststatus=2
 set history=1000
+" Force myself to keep text skinny.
+set nowrap
+" Sets the default splitting to be to the bottom and to the right.
+set splitbelow
+set splitright
 " }}}
 
 " Backups and Undo {{{
@@ -237,10 +242,7 @@ nnoremap ; :
 " muscle memory.
 nnoremap : ;
 
-" This turns off line wrapping. I can't stand linewrapping and this forces me
-" to keep my code skinny.
-set nowrap
-
+" Whitespace {{{
 " These are the defaults for whitespae for all of my documents if there are no
 " file specific ones set. Normally they are overridden either by a plugin or
 " by something in my /.vim/ftplugins directory.
@@ -257,6 +259,7 @@ set shiftwidth=2
 set expandtab
 " This ensures indents are a multiple of `shiftwidth`
 set shiftround
+" }}}
 
 " Highlight the currentline.
 set cursorline
@@ -272,12 +275,14 @@ set colorcolumn=+1
 autocmd WinLeave * setlocal colorcolumn=""
 autocmd WinEnter * setlocal colorcolumn=+1
 
+" Searching {{{
 set hlsearch "highlight searched text
 set incsearch "incremental search
 set ignorecase "case InSeNsTiVE
 set smartcase "If I do use a captial letter in the search, be case-sensitive
 "Clear highlights by doing ,/
 nnoremap <silent> <leader>/ :nohlsearch<CR>
+" }}}
 
 set numberwidth=5 "For those really long files
 set novisualbell "Don't blink please
@@ -296,10 +301,6 @@ noremap gk k
 
 " Make Y consistent with C and D.  See :help Y.
 nnoremap Y y$
-
-" Sets the default splitting to be to the bottom and to the right.
-set splitbelow
-set splitright
 
 " This allows for faster navigation of windows/splits.
 nnoremap <C-h> <C-w>h
