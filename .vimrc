@@ -210,6 +210,9 @@ set nowrap
 " Sets the default splitting to be to the bottom and to the right.
 set splitbelow
 set splitright
+set novisualbell "Don't blink please
+set noerrorbells "Don't make noise
+set vb t_vb= "Disable any time of beeping or flashing
 " }}}
 
 " Backups and Undo {{{
@@ -231,16 +234,6 @@ if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
 " }}}
-
-" I press the `:` key a lot in Vim and I often get typos such as `:W` because
-" I have to hold shift. I thus map it to `;`.
-nnoremap ; :
-
-" I don't want to lose the functionality of the `;` key so I map that
-" behaviour to the `:` key. This also disables the original function of the
-" `:` key which forces me to use the `;` key. This is really helpful in fixing
-" muscle memory.
-nnoremap : ;
 
 " Whitespace {{{
 " These are the defaults for whitespae for all of my documents if there are no
@@ -286,9 +279,17 @@ set smartcase "If I do use a captial letter in the search, be case-sensitive
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 " }}}
 
-set novisualbell "Don't blink please
-set noerrorbells "Don't make noise
-set vb t_vb= "Disable any time of beeping or flashing
+" Mappings {{{
+
+" I press the `:` key a lot in Vim and I often get typos such as `:W` because
+" I have to hold shift. I thus map it to `;`.
+nnoremap ; :
+
+" I don't want to lose the functionality of the `;` key so I map that
+" behaviour to the `:` key. This also disables the original function of the
+" `:` key which forces me to use the `;` key. This is really helpful in fixing
+" muscle memory.
+nnoremap : ;
 
 " By default `j` and `k` both move in a file by lines delimited by `\n` which
 " is not helpful when linewrapping is enabled. These mappings ensure that I
@@ -309,6 +310,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+" }}}
+
 " Wildmenu {{{
 set wildmenu
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
@@ -322,10 +328,6 @@ au VimResized * exe "normal! \<c-w>="
 " Use the system clipboard by default. So I don't need to specify
 " * + registers for every copy and paste action.
 set clipboard=unnamed
-
-" Reselect visual block after indent/outdent
-vnoremap < <gv
-vnoremap > >gv
 
 " Local .vimrc {{{
 if filereadable(glob("~/.vimrc.local"))
