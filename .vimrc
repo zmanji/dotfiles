@@ -260,17 +260,11 @@ set ignorecase "case InSeNsTiVE
 set smartcase "If I do use a captial letter in the search, be case-sensitive
 "Clear highlights by doing ,/
 nnoremap <silent> <leader>/ :nohlsearch<CR>
-" Tab autocompletion in all menus
-set wildmenu
 
 set numberwidth=5 "For those really long files
 set novisualbell "Don't blink please
 set noerrorbells "Don't make noise
 set vb t_vb= "Disable any time of beeping or flashing
-
-" No need for ~ files, I use git most of the time
-set nobackup
-set nowritebackup
 
 " By default `j` and `k` both move in a file by lines delimited by `\n` which
 " is not helpful when linewrapping is enabled. These mappings ensure that I
@@ -295,7 +289,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Wildignore {{{
+" Wildmenu {{{
+set wildmenu
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
 set wildignore+=*.zip,*.tar,*.obj,*.class,*.pyc
 set wildignore+=.sass-cache/*
