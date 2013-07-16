@@ -1,10 +1,16 @@
+" vim:fdm=marker
 " TODO: Use augroups, regorganize code to be clearer.
 
-set nocompatible
+" Basics {{{
+  set nocompatible
+""}}}
 
-let mapleader = ","
-let maplocalleader = ","
+" Map Leaders {{{
+  let mapleader = ","
+  let maplocalleader = ","
+" }}}
 
+" NeoBundle {{{
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -12,8 +18,11 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
+" }}}
 
-" Core Improvements to Vim
+" Plugins {{{
+
+" Core Improvements {{{
 NeoBundle 'matchit.zip'
 NeoBundle "tpope/vim-surround"
 NeoBundle "tpope/vim-repeat"
@@ -29,8 +38,9 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
+" }}}
 
-" Better Language Support
+" Language Support {{{
 NeoBundleLazy 'tpope/vim-haml', {
       \ 'autoload':{'filetypes':['haml','scss','sass']}
       \ }
@@ -63,21 +73,27 @@ let g:clang_auto_select = 0
 let g:clang_complete_copen = 1
 " Close preview window after a completion
 let g:clang_close_preview = 1
+" }}}
 
+" UI Improvements {{{
 NeoBundle "sjl/gundo.vim"
 " Use ,u to open Gundo only in normal mode
 nnoremap <Leader>u :GundoToggle<CR>
 
 NeoBundle "Lokaltog/vim-powerline"
 let g:Powerline_symbols = 'unicode'
+" }}}
 
+" Misc {{{
 NeoBundle "Lokaltog/vim-easymotion"
 let g:EasyMotion_leader_key = '<space>'
 
 NeoBundle "tpope/vim-fugitive"
 
 NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
+" }}}
 
+" AutoComplete {{{
 NeoBundleLazy 'Shougo/neocomplete.vim', {'autoload':{'insert':1}}
 let g:neocomplete#enable_at_startup=1
 let g:neocomplete#enable_smart_case = 1
@@ -102,7 +118,9 @@ let g:neocomplete#force_omni_input_patterns.ruby =
 NeoBundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
 
+" }}}
 
+" Snippets {{{
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/neosnippet'
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
@@ -115,7 +133,9 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+" }}}
 
+" Unite {{{
 NeoBundle 'Shougo/unite.vim'
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
@@ -156,21 +176,38 @@ function! s:vimshell_settings()
   call vimshell#altercmd#define('g', 'git')
 endfunction
 autocmd FileType vimshell call s:vimshell_settings()
+" }}}
 
+" Colors {{{
 NeoBundle 'chriskempson/base16-vim'
-colorscheme base16-tomorrow
-" This ensures that the dark version is used.
-set background=dark
+" }}}
 
-" This disables Vim's ability to change the terminal title to "Thanks for
-" flying vim"
-set notitle
-" This enables the use of a mouse in all modes. It is occasionally useful.
-set mouse=a
-" This allows me to have buffers that have unsaved changes. It's possible to
-" lose those changes if I am careless with `:q!` but this behaviour improves
-" my productivity because I frequently swap buffers around.
+" }}}
+
+" Colorscheme {{{
+colorscheme base16-tomorrow
+set background=dark
+syntax on
+" }}}
+
+" Basic Options {{{
+filetype plugin indent on
+set encoding=utf-8
+set number
+set ruler
+set list listchars=tab:▸\ ,eol:¬,trail:·
+set showbreak=↪
+set autoread
+set autowrite
 set hidden
+set backspace=indent,eol,start
+set notitle
+set mouse=a
+set laststatus=2
+set history=1000
+" }}}
+
+" This enables the use of a mouse in all modes. It is occasionally useful.
 
 " I press the `:` key a lot in Vim and I often get typos such as `:W` because
 " I have to hold shift. I thus map it to `;`.
@@ -182,16 +219,6 @@ nnoremap ; :
 " muscle memory.
 nnoremap : ;
 
-" I like line numbers.
-set number
-" This shows the position of the cursor at the bottom and the statusline.
-set ruler
-" This forces the statusline to always be visible
-set laststatus=2
-"Turn on syntax highlighting
-syntax on
-" UTF-8 is the only good encoding ever.
-set encoding=utf-8
 " This turns off line wrapping. I can't stand linewrapping and this forces me
 " to keep my code skinny.
 set nowrap
@@ -212,9 +239,6 @@ set shiftwidth=2
 set expandtab
 " This ensures indents are a multiple of `shiftwidth`
 set shiftround
-
-" Show trailing whitespace
-set list listchars=tab:▸\ ,eol:¬,trail:·
 
 " Highlight the currentline.
 set cursorline
@@ -238,20 +262,12 @@ set smartcase "If I do use a captial letter in the search, be case-sensitive
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 " Tab autocompletion in all menus
 set wildmenu
-" Automatically read files that are modified outside of Vim. This is needed
-" when working with git.
-set autoread
-set autowrite "Auto-save a modified buffer before switching to another buffer
-
-set backspace=indent,eol,start "Backspace does what it should do
 
 set numberwidth=5 "For those really long files
 set novisualbell "Don't blink please
 set noerrorbells "Don't make noise
 set vb t_vb= "Disable any time of beeping or flashing
 
-filetype plugin indent on "Automatically detect file types
-set history=1000 "Save a lot of history
 " No need for ~ files, I use git most of the time
 set nobackup
 set nowritebackup
@@ -279,12 +295,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Ignore these files for file selection menus
+" Wildignore {{{
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
 set wildignore+=*.zip,*.tar,*.obj,*.class,*.pyc
-
-" Ignore the .sass-cache directory
 set wildignore+=.sass-cache/*
+" }}}
 
 " Automatically resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
@@ -297,7 +312,8 @@ set clipboard=unnamed
 vnoremap < <gv
 vnoremap > >gv
 
-" Local .vimrc for machine/environment specific configuration.
+" Local .vimrc {{{
 if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
+"}}}
