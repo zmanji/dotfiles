@@ -207,7 +207,25 @@ set laststatus=2
 set history=1000
 " }}}
 
-" This enables the use of a mouse in all modes. It is occasionally useful.
+" Backups and Undo {{{
+set nobackup
+set writebackup
+set undofile
+
+set undodir=~/.vim/tmp/undo//
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+" }}}
 
 " I press the `:` key a lot in Vim and I often get typos such as `:W` because
 " I have to hold shift. I thus map it to `;`.
