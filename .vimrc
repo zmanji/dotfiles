@@ -286,7 +286,6 @@ set smartcase "If I do use a captial letter in the search, be case-sensitive
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 " }}}
 
-set numberwidth=5 "For those really long files
 set novisualbell "Don't blink please
 set noerrorbells "Don't make noise
 set vb t_vb= "Disable any time of beeping or flashing
