@@ -326,7 +326,7 @@ set wildignore+=.sass-cache/*
 " }}}
 
 " Automatically resize splits when the window is resized
-au VimResized * exe "normal! \<c-w>="
+au VimResized * :wincmd =
 
 
 " Local .vimrc {{{
