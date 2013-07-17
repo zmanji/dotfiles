@@ -117,6 +117,7 @@ let g:neocomplete#force_omni_input_patterns.ruby =
 
 NeoBundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 NeoBundle 'ujihisa/neco-look'
 
@@ -355,6 +356,26 @@ set wildmenu
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
 set wildignore+=*.zip,*.tar,*.obj,*.class,*.pyc
 set wildignore+=.sass-cache/*
+" }}}
+
+" File Type Configurations {{{
+
+" C {{{
+augroup ft_c
+  autocmd!
+  autocmd FileType c setlocal tabstop=4
+  autocmd FileType c setlocal softtabstop=4
+  autocmd FileType c setlocal shiftwidth=4
+  autocmd FileType c setlocal textwidth=80
+  autocmd FileType c setlocal smarttab
+  autocmd FileType c setlocal expandtab
+  autocmd FileType c setlocal foldmethod=syntax
+  autocmd FileType c setlocal omnifunc=ClangComplete
+  " Disable 'preview' option, so there is no popup window with clang_complete.
+  autocmd FileType c setlocal completeopt-=preview
+augroup END
+" }}}
+
 " }}}
 
 " Local .vimrc {{{
