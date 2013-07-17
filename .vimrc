@@ -1,5 +1,5 @@
 " vim:fdm=marker
-" TODO: Use augroups, regorganize code, auto install bundles
+" TODO: Move ftplugins info here, regorganize code, auto install bundles
 
 " Basics {{{
   set nocompatible
@@ -156,7 +156,12 @@ function! s:unite_settings()
   imap <buffer> <C-j>   <Plug>(unite_select_next_line)
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
-autocmd FileType unite call s:unite_settings()
+
+augroup ft_unite
+  autocmd!
+  autocmd FileType unite call s:unite_settings()
+augroup END
+
 nnoremap <leader>f :Unite -start-insert file_rec/async<cr>
 nnoremap <leader>y :Unite -buffer-name=yanks history/yank<cr>
 
@@ -177,7 +182,10 @@ let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 function! s:vimshell_settings()
   call vimshell#altercmd#define('g', 'git')
 endfunction
-autocmd FileType vimshell call s:vimshell_settings()
+augroup ft_vimshell
+  autocmd!
+  autocmd FileType vimshell call s:vimshell_settings()
+augroup END
 " }}}
 
 " Colors {{{
@@ -219,7 +227,10 @@ set vb t_vb= "Disable any time of beeping or flashing
 " registers for every copy and paste action.
 set clipboard=unnamed
 " Automatically resize splits when the window is resized
-au VimResized * :wincmd =
+augroup basic_options
+  autocmd!
+  autocmd VimResized * :wincmd =
+augroup END
 " }}}
 
 " Backups and Undo {{{
@@ -264,17 +275,18 @@ set shiftround
 " Highlights {{{
 " Highlight the currentline.
 set cursorline
-
-" Hide the cursor line when the split is not in focus
-autocmd WinLeave * setlocal nocursorline
-autocmd WinEnter * setlocal cursorline
-
 " Highlight the column after `textwidth`
 set colorcolumn=+1
 
-" Hide the column line when the split is not in focus
-autocmd WinLeave * setlocal colorcolumn=""
-autocmd WinEnter * setlocal colorcolumn=+1
+augroup highlights
+  autocmd!
+  " Hide the cursor line when the split is not in focus
+  autocmd WinLeave * setlocal nocursorline
+  autocmd WinEnter * setlocal cursorline
+  " Hide the column line when the split is not in focus
+  autocmd WinLeave * setlocal colorcolumn=""
+  autocmd WinEnter * setlocal colorcolumn=+1
+augroup END
 " }}}
 
 " Searching {{{
