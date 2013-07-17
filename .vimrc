@@ -213,6 +213,9 @@ set splitright
 set novisualbell "Don't blink please
 set noerrorbells "Don't make noise
 set vb t_vb= "Disable any time of beeping or flashing
+" Use the system clipboard by default. So I don't need to specify * +
+" registers for every copy and paste action.
+set clipboard=unnamed
 " }}}
 
 " Backups and Undo {{{
@@ -325,9 +328,6 @@ set wildignore+=.sass-cache/*
 " Automatically resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
-" Use the system clipboard by default. So I don't need to specify
-" * + registers for every copy and paste action.
-set clipboard=unnamed
 
 " Local .vimrc {{{
 if filereadable(glob("~/.vimrc.local"))
