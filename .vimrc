@@ -218,6 +218,8 @@ set vb t_vb= "Disable any time of beeping or flashing
 " Use the system clipboard by default. So I don't need to specify * +
 " registers for every copy and paste action.
 set clipboard=unnamed
+" Automatically resize splits when the window is resized
+au VimResized * :wincmd =
 " }}}
 
 " Backups and Undo {{{
@@ -326,10 +328,6 @@ set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
 set wildignore+=*.zip,*.tar,*.obj,*.class,*.pyc
 set wildignore+=.sass-cache/*
 " }}}
-
-" Automatically resize splits when the window is resized
-au VimResized * :wincmd =
-
 
 " Local .vimrc {{{
 if filereadable(glob("~/.vimrc.local"))
