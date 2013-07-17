@@ -203,6 +203,11 @@ augroup END
 NeoBundle 'chriskempson/base16-vim'
 " }}}
 
+" Install Plugins and Clean {{{
+NeoBundleCheck
+silent NeoBundleClean!
+" }}}
+
 " }}}
 
 " Colorscheme {{{
