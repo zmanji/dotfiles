@@ -1,5 +1,5 @@
 " vim:fdm=marker
-" TODO: Use augroups, regorganize code to be clearer.
+" TODO: Use augroups, regorganize code, auto install bundles
 
 " Basics {{{
   set nocompatible
@@ -117,6 +117,8 @@ let g:neocomplete#force_omni_input_patterns.ruby =
 
 NeoBundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
+
+NeoBundle 'ujihisa/neco-look'
 
 " }}}
 
