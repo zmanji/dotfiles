@@ -122,7 +122,6 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
   endfunction "}}}
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " NeoBundle 'ervandew/supertab'
 " let g:SuperTabDefaultCompletionType = "context"
 " let g:SuperTabClosePreviewOnPopupClose = 1
