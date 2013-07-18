@@ -148,13 +148,6 @@ let g:unite_source_history_yank_enable=1
 let g:unite_source_rec_max_cache_files=5000
 let g:unite_prompt='»'
 
-" By Default Unite.vim's async/file_rec uses ag over find if it finds it. But
-" the configuration it specifies for ag hides dot files while find shows them
-" If we have ag, we need to adjust the options to be similar.
-if executable("ag")
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup --hidden -g ""'
-endif
-
 function! s:unite_settings()
   " Play nice with supertab
   let b:SuperTabDisabled=1
