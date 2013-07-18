@@ -156,7 +156,7 @@ function! s:unite_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 
   call unite#custom#source('file_rec,file_rec/async',
-        \ 'matchers', ['matcher_fuzzy', 'matcher_hide_hidden_files'])
+        \ 'matchers', 'matcher_fuzzy')
 
   call unite#custom#source('file_rec,file_rec/async',
         \ 'sorters', 'sorter_rank')
@@ -361,7 +361,6 @@ augroup ft_c
   autocmd FileType c setlocal shiftwidth=4
   autocmd FileType c setlocal textwidth=80
   autocmd FileType c setlocal smarttab
-  autocmd FileType c setlocal expandtab
   autocmd FileType c setlocal foldmethod=syntax
   autocmd FileType c setlocal omnifunc=ClangComplete
   " Disable 'preview' option, so there is no popup window with clang_complete.
@@ -369,15 +368,27 @@ augroup ft_c
 augroup END
 " }}}
 
+" TeX {{{
 augroup ft_tex
   autocmd!
   autocmd FileType tex setlocal textwidth=80
   autocmd FileType tex setlocal smarttab
-  autocmd FileType tex setlocal expandtab
   autocmd FileType tex setlocal cole=2
   autocmd FileType tex setlocal spell
   autocmd FileType tex setlocal autoindent
 augroup END
+" }}}
+
+" Pandoc {{{
+augroup ft_pandoc
+  autocmd!
+  autocmd FileType pandoc setlocal spell
+  autocmd FileType pandoc setlocal cole=2
+  autocmd FileType pandoc setlocal textwidth=80
+  autocmd FileType pandoc setlocal smarttab
+  autocmd FileType pandoc setlocal autoindent
+augroup END
+" }}}
 
 " }}}
 
