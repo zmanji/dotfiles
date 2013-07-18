@@ -369,6 +369,16 @@ augroup ft_c
 augroup END
 " }}}
 
+augroup ft_tex
+  autocmd!
+  autocmd FileType tex setlocal textwidth=80
+  autocmd FileType tex setlocal smarttab
+  autocmd FileType tex setlocal expandtab
+  autocmd FileType tex setlocal cole=2
+  autocmd FileType tex setlocal spell
+  autocmd FileType tex setlocal autoindent
+augroup END
+
 " }}}
 
 " Local .vimrc {{{
