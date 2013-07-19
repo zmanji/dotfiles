@@ -112,8 +112,13 @@ let g:neocomplete#force_omni_input_patterns.objc =
       \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 let g:neocomplete#force_omni_input_patterns.objcpp =
       \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.ruby =
+
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.ruby =
       \ '[^. *\t]\.\w*\|\h\w*::'
+
 " For smart TAB completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
@@ -122,9 +127,6 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
   endfunction "}}}
-" NeoBundle 'ervandew/supertab'
-" let g:SuperTabDefaultCompletionType = "context"
-" let g:SuperTabClosePreviewOnPopupClose = 1
 
 NeoBundle 'ujihisa/neco-look'
 
