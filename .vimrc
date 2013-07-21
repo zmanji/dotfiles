@@ -200,6 +200,7 @@ endfunction
 augroup ft_vimshell
   autocmd!
   autocmd FileType vimshell call s:vimshell_settings()
+  autocmd FileType vimshell setlocal colorcolumn=""
 augroup END
 " }}}
 
