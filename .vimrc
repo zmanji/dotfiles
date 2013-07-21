@@ -379,6 +379,22 @@ augroup ft_c
 augroup END
 " }}}
 
+" CPP {{{
+" Should be the same as C
+augroup ft_c
+  autocmd!
+  autocmd FileType cpp setlocal tabstop=4
+  autocmd FileType cpp setlocal softtabstop=4
+  autocmd FileType cpp setlocal shiftwidth=4
+  autocmd FileType cpp setlocal textwidth=80
+  autocmd FileType cpp setlocal smarttab
+  autocmd FileType cpp setlocal foldmethod=syntax
+  autocmd FileType cpp setlocal omnifunc=ClangComplete
+  " Disable 'preview' option, so there is no popup window with clang_complete.
+  autocmd FileType cpp setlocal completeopt-=preview
+augroup END
+" }}}
+
 " TeX {{{
 augroup ft_tex
   autocmd!
