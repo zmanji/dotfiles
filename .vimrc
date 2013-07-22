@@ -74,6 +74,8 @@ let g:clang_auto_select = 0
 let g:clang_complete_copen = 1
 " Close preview window after a completion
 let g:clang_close_preview = 1
+" compile all sources as c++11
+let g:clang_user_options = '-std=c++11'
 " }}}
 
 " UI Improvements {{{
