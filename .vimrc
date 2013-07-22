@@ -435,6 +435,17 @@ augroup ft_python
 augroup END
 " }}}
 
+" Java {{{
+augroup ft_java
+  autocmd!
+  autocmd FileType java setlocal tabstop=4
+  autocmd FileType java setlocal softtabstop=4
+  autocmd FileType java setlocal shiftwidth=4
+  autocmd FileType java setlocal smarttab
+  autocmd FileType java setlocal expandtab
+augroup END
+" }}}
+
 " }}}
 
 " Local .vimrc {{{
