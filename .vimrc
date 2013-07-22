@@ -381,7 +381,7 @@ augroup END
 
 " CPP {{{
 " Should be the same as C
-augroup ft_c
+augroup ft_cpp
   autocmd!
   autocmd FileType cpp setlocal tabstop=4
   autocmd FileType cpp setlocal softtabstop=4
@@ -424,6 +424,14 @@ augroup ft_ruby
   let g:rubycomplete_buffer_loading=1
   let g:rubycomplete_classes_in_global=1
   let g:rubycomplete_rails=1
+augroup END
+" }}}
+
+" Python {{{
+augroup ft_python
+  autocmd!
+  autocmd FileType python setlocal omnifunc=jedi#complete
+  autocmd FileType python setlocal smarttab
 augroup END
 " }}}
 
