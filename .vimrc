@@ -81,8 +81,7 @@ NeoBundle "sjl/gundo.vim"
 " Use ,u to open Gundo only in normal mode
 nnoremap <Leader>u :GundoToggle<CR>
 
-NeoBundle "Lokaltog/vim-powerline"
-let g:Powerline_symbols = 'unicode'
+NeoBundle "bling/vim-airline"
 " }}}
 
 " Misc {{{
