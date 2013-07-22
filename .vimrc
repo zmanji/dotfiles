@@ -1,5 +1,5 @@
 " vim:fdm=marker
-" TODO: Move ftplugins info here, regorganize code
+" TODO: Regorganize code
 
 " Basics {{{
   set nocompatible
