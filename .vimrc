@@ -123,6 +123,8 @@ let g:neocomplete#sources#omni#input_patterns.ruby =
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
         \ neocomplete#start_manual_complete()
+
+inoremap <expr><s-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
   function! s:check_back_space() "{{{
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
