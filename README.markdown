@@ -1,5 +1,4 @@
-Zameer Manji's Dotfiles Files
-==================================
+Zameer Manji's Dotfiles
+========================
 
-These are my dotfiles. I use OSX so they expect to run on that. Feel free to
-steal any parts that you want.
+These are my .dotfiles. There are many like them, but these ones are mine.
