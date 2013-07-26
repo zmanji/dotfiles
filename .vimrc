@@ -293,6 +293,8 @@ set shiftwidth=2
 set expandtab
 " This ensures indents are a multiple of `shiftwidth`
 set shiftround
+
+set textwidth=80
 " }}}
 
 " Highlights {{{
