@@ -47,6 +47,7 @@ NeoBundleLazy 'tpope/vim-haml', {
 NeoBundleLazy 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
 NeoBundleLazy 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']}}
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
+NeoBundleLazy 'tpope/vim-markdown', {'autoload: {filetypes':['markdown']}
 
 NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 let g:pymode_rope=0
