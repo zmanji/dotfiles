@@ -254,6 +254,8 @@ augroup basic_options
   autocmd!
   autocmd VimResized * :wincmd =
 augroup END
+" Custom dictionary
+set spellfile=~/.vim/custom-dictionary.utf8.add
 " }}}
 
 " Backups and Undo {{{
