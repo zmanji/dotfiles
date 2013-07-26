@@ -255,7 +255,7 @@ augroup basic_options
   autocmd VimResized * :wincmd =
 augroup END
 " Custom dictionary
-set spellfile=~/.vim/custom-dictionary.utf8.add
+set spellfile=~/.vim/custom-dictionary.en.utf8.add
 " }}}
 
 " Backups and Undo {{{
@@ -409,6 +409,13 @@ augroup ft_tex
   autocmd FileType tex setlocal cole=2
   autocmd FileType tex setlocal spell
   autocmd FileType tex setlocal autoindent
+augroup END
+" }}}
+
+" Markdown {{{
+augroup ft_markdown
+  autocmd!
+  autocmd FileType markdown setlocal spell
 augroup END
 " }}}
 
