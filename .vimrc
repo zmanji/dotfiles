@@ -48,8 +48,6 @@ NeoBundleLazy 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
 NeoBundleLazy 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']}}
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
 
-NeoBundle "vim-pandoc/vim-pandoc"
-let g:pandoc_no_folding = 1
 NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 let g:pymode_rope=0
 let g:pymode_folding = 0
@@ -406,17 +404,6 @@ augroup ft_tex
   autocmd FileType tex setlocal cole=2
   autocmd FileType tex setlocal spell
   autocmd FileType tex setlocal autoindent
-augroup END
-" }}}
-
-" Pandoc {{{
-augroup ft_pandoc
-  autocmd!
-  autocmd FileType pandoc setlocal spell
-  autocmd FileType pandoc setlocal cole=2
-  autocmd FileType pandoc setlocal textwidth=80
-  autocmd FileType pandoc setlocal smarttab
-  autocmd FileType pandoc setlocal autoindent
 augroup END
 " }}}
 
