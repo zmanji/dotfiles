@@ -1,5 +1,10 @@
 " vim:fdm=marker
 " TODO: Regorganize code
+" Plugins to Consider:
+" * vim-tabpagecd - https://github.com/kana/vim-tabpagecd
+" * vim-eunuch - https://github.com/tpope/vim-eunuch
+" * bufkill.vim - https://github.com/vim-scripts/bufkill.vim
+" * vim-signify - https://github.com/mhinz/vim-signify
 
 " Basics {{{
   set nocompatible
@@ -92,6 +97,11 @@ let g:EasyMotion_leader_key = '<leader><leader>'
 NeoBundle "tpope/vim-fugitive"
 
 NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
+
+" Quick tmp files, saved in ~/.vim_junk
+NeoBundle "Shougo/junkfile.vim"
+
+NeoBundle "tpope/vim-characterize"
 " }}}
 
 " AutoComplete {{{
