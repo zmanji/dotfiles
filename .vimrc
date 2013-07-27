@@ -438,6 +438,7 @@ augroup END
 augroup ft_markdown
   autocmd!
   autocmd FileType markdown setlocal spell
+  autocmd FileType markdown setlocal foldlevel=1
 augroup END
 " }}}
 
