@@ -3,8 +3,9 @@
 " Plugins to Consider:
 " * vim-tabpagecd - https://github.com/kana/vim-tabpagecd
 " * vim-eunuch - https://github.com/tpope/vim-eunuch
-" * bufkill.vim - https://github.com/vim-scripts/bufkill.vim
 " * vim-signify - https://github.com/mhinz/vim-signify
+"
+" TODO: Fork bufkill.vim to not add keyboard mappings.
 
 " Basics {{{
   set nocompatible
@@ -102,6 +103,17 @@ NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
 NeoBundle "Shougo/junkfile.vim"
 
 NeoBundle "tpope/vim-characterize"
+
+NeoBundle "bufkill.vim"
+
+NeoBundle "cmdalias.vim"
+
+augroup init_aliases
+  autocmd!
+  " Alias internal :bd to use buffkill's :BD
+  autocmd VimEnter * :call CmdAlias('bd', 'BD')
+augroup END
+
 " }}}
 
 " AutoComplete {{{
