@@ -2,10 +2,10 @@
 " TODO: Regorganize code
 " Plugins to Consider:
 " * vim-tabpagecd - https://github.com/kana/vim-tabpagecd
-" * vim-eunuch - https://github.com/tpope/vim-eunuch
 " * vim-signify - https://github.com/mhinz/vim-signify
 "
 " TODO: Fork bufkill.vim to not add keyboard mappings.
+" TODO: Add the function to remove trailing whitespace on save.
 
 " Basics {{{
   set nocompatible
@@ -113,6 +113,8 @@ augroup init_aliases
   " Alias internal :bd to use buffkill's :BD
   autocmd VimEnter * :call CmdAlias('bd', 'BD')
 augroup END
+
+NeoBundle "tpope/vim-eunuch"
 
 " }}}
 
