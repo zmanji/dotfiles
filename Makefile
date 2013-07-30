@@ -2,13 +2,13 @@ SHELL := /bin/bash
 
 all: submodules shells osx git vim
 
-vim: .vim .vimrc .gvimrc
+git: .gitconfig .gitignore_global
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
-git: .gitconfig .gitignore_global
+vim: .vim .vimrc .gvimrc
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
