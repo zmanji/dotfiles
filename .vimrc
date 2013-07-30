@@ -88,6 +88,19 @@ NeoBundle "sjl/gundo.vim"
 " Use ,u to open Gundo only in normal mode
 nnoremap <Leader>u :GundoToggle<CR>
 
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_alt_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_alt_sep = '◀'
+let g:airline_linecolumn_prefix = '␊ '
+let g:airline_linecolumn_prefix = '␤ '
+let g:airline_linecolumn_prefix = '¶ '
+let g:airline_branch_prefix = '⎇ '
+let g:airline_paste_symbol = 'ρ'
+let g:airline_paste_symbol = 'Þ'
+let g:airline_paste_symbol = '∥'
 NeoBundle "bling/vim-airline"
 " }}}
 
