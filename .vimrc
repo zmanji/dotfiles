@@ -5,7 +5,6 @@
 " * vim-signify - https://github.com/mhinz/vim-signify
 " TODO: Use the escape codes here for iTerm2, http://git.io/zvDeWQ
 " TODO: Fork bufkill.vim to not add keyboard mappings.
-" TODO: Add the function to remove trailing whitespace on save.
 
 " Basics {{{
   set nocompatible
@@ -52,7 +51,12 @@ NeoBundleLazy 'tpope/vim-haml', {
       \ }
 NeoBundleLazy 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
 NeoBundleLazy 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']}}
+
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
+let g:rubycomplete_buffer_loading=1
+let g:rubycomplete_classes_in_global=1
+let g:rubycomplete_rails=1
+
 NeoBundleLazy 'tpope/vim-markdown', {'autoload: {filetypes':['markdown']}
 
 NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
@@ -336,6 +340,21 @@ set expandtab
 set shiftround
 
 set textwidth=80
+
+" Function to remove trailing whitespace from a file, used in autocmds for
+" different files.
+" Taken from http://vimcasts.org/episodes/tidying-whitespace/
+function! <SID>strip_trailing_whitespace()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
 " }}}
 
 " Highlights {{{
@@ -421,6 +440,9 @@ augroup ft_c
   autocmd FileType c setlocal omnifunc=ClangComplete
   " Disable 'preview' option, so there is no popup window with clang_complete.
   autocmd FileType c setlocal completeopt-=preview
+  autocmd BufWritePre * if &ft == "c" |
+        \ :call <SID>strip_trailing_whitespace() |
+        \ endif
 augroup END
 " }}}
 
@@ -437,6 +459,9 @@ augroup ft_cpp
   autocmd FileType cpp setlocal omnifunc=ClangComplete
   " Disable 'preview' option, so there is no popup window with clang_complete.
   autocmd FileType cpp setlocal completeopt-=preview
+  autocmd BufWritePre * if &ft == "cpp" |
+        \ :call <SID>strip_trailing_whitespace() |
+        \ endif
 augroup END
 " }}}
 
@@ -448,6 +473,9 @@ augroup ft_tex
   autocmd FileType tex setlocal cole=2
   autocmd FileType tex setlocal spell
   autocmd FileType tex setlocal autoindent
+  autocmd BufWritePre * if &ft == "tex" |
+        \ :call <SID>strip_trailing_whitespace() |
+        \ endif
 augroup END
 " }}}
 
@@ -456,6 +484,9 @@ augroup ft_markdown
   autocmd!
   autocmd FileType markdown setlocal spell
   autocmd FileType markdown setlocal foldlevel=1
+  autocmd BufWritePre * if &ft == "markdown" |
+        \ :call <SID>strip_trailing_whitespace() |
+        \ endif
 augroup END
 " }}}
 
@@ -463,9 +494,9 @@ augroup END
 augroup ft_ruby
   autocmd!
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-  let g:rubycomplete_buffer_loading=1
-  let g:rubycomplete_classes_in_global=1
-  let g:rubycomplete_rails=1
+  autocmd BufWritePre * if &ft == "ruby" |
+        \ :call <SID>strip_trailing_whitespace() |
+        \ endif
 augroup END
 " }}}
 
@@ -476,6 +507,9 @@ augroup ft_python
   autocmd FileType python setlocal smarttab
   " Disable 'preview' option, so there is no popup window with vim-jedi
   autocmd FileType python setlocal completeopt-=preview
+  autocmd BufWritePre * if &ft == "python" |
+        \ :call <SID>strip_trailing_whitespace() |
+        \ endif
 augroup END
 " }}}
 
@@ -487,6 +521,9 @@ augroup ft_java
   autocmd FileType java setlocal shiftwidth=4
   autocmd FileType java setlocal smarttab
   autocmd FileType java setlocal expandtab
+  autocmd BufWritePre * if &ft == "java" |
+        \ :call <SID>strip_trailing_whitespace() |
+        \ endif
 augroup END
 " }}}
 
