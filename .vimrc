@@ -3,7 +3,7 @@
 " Plugins to Consider:
 " * vim-tabpagecd - https://github.com/kana/vim-tabpagecd
 " * vim-signify - https://github.com/mhinz/vim-signify
-"
+" TODO: Use the escape codes here for iTerm2, http://git.io/zvDeWQ
 " TODO: Fork bufkill.vim to not add keyboard mappings.
 " TODO: Add the function to remove trailing whitespace on save.
 
