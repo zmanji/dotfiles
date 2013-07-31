@@ -3,7 +3,6 @@
 " Plugins to Consider:
 " * vim-tabpagecd - https://github.com/kana/vim-tabpagecd
 " * vim-signify - https://github.com/mhinz/vim-signify
-" TODO: Use the escape codes here for iTerm2, http://git.io/zvDeWQ
 " TODO: Fork bufkill.vim to not add keyboard mappings.
 
 " Basics {{{
@@ -299,6 +298,25 @@ augroup END
 set spellfile=~/.vim/custom-dictionary.en.utf8.add
 " Less delay between escape and normal mode.
 set ttimeoutlen=50
+
+" Use DECSCUSR escape codes on iTerm2/xterm to change cursor shape in terminal
+" vim. See http://git.io/zvDeWQ for example code.
+if !has("gui_running") && !exists("$TMUX")
+  if &term =~ "xterm"
+    " Enter Insert Mode (Cursor Shape: vertical bar)
+    let &t_SI = "\<Esc>[6 q"
+    " Leave Insert Mode (Cursor Shape: block)
+    let &t_EI = "\<Esc>[2 q"
+    " Set Cursor shape to block when starting vim (start in normal mode)
+    let &t_ti = "\<Esc>[2 q" . &t_ti
+    augroup curorshape_reset
+      autocmd!
+      " Restore cursor shape to vertical bar when quitting
+      autocmd VimLeave * let &t_te = "\<Esc>[6 q" . &t_te
+    augroup END
+  endif
+endif
+
 " }}}
 
 " Backups and Undo {{{
