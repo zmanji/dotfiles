@@ -4,6 +4,8 @@
 " * vim-tabpagecd - https://github.com/kana/vim-tabpagecd
 " * vim-signify - https://github.com/mhinz/vim-signify
 " TODO: Fork bufkill.vim to not add keyboard mappings.
+" TODO: add mkspell! here to regen spellfile so you don't need to check in
+" compiled file.
 
 " Basics {{{
   set nocompatible
