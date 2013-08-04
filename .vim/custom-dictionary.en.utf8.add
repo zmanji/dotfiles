@@ -3,3 +3,4 @@ Manji
 timestamp
 Serializability
 serializable
+Linearizability
