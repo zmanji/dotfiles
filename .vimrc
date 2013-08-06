@@ -504,6 +504,7 @@ augroup ft_markdown
   autocmd!
   autocmd FileType markdown setlocal spell
   autocmd FileType markdown setlocal foldlevel=1
+  autocmd FileType markdown setlocal autoindent
   autocmd BufWritePre * if &ft == "markdown" |
         \ :call <SID>strip_trailing_whitespace() |
         \ endif

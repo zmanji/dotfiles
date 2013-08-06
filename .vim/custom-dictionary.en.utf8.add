@@ -4,3 +4,9 @@ timestamp
 Serializability
 serializable
 Linearizability
+linearizability
+Debugability
+prescaler
+Hyperperiod
+hyperperiod
+offline
