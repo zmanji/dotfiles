@@ -3,7 +3,6 @@
 " Plugins to Consider:
 " * vim-tabpagecd - https://github.com/kana/vim-tabpagecd
 " * vim-signify - https://github.com/mhinz/vim-signify
-" TODO: Fork bufkill.vim to not add keyboard mappings.
 " TODO: add mkspell! here to regen spellfile so you don't need to check in
 " compiled file.
 
@@ -122,13 +121,21 @@ NeoBundle "Shougo/junkfile.vim"
 
 NeoBundle "tpope/vim-characterize"
 
-NeoBundle "bufkill.vim"
+" bufkill.vim
+" It seems the <script name> input to NeoBundle pulls it from the vim-scripts
+" mirror on github which is outaded. bufkill.vim 1.11 added the ability to
+" prevent creating keymappings. This is better than forking it myself.
+" Do not create keyboard mappings.
+
+let g:BufKillCreateMappings = 0
+NeoBundle 'http://www.vim.org/scripts/download_script.php?src_id=19161',
+\ { 'type__filename' : 'bufkill.vim', 'script_type' : 'plugin' }
 
 NeoBundle "cmdalias.vim"
 
 augroup init_aliases
   autocmd!
-  " Alias internal :bd to use buffkill's :BD
+  " Alias internal :bd to use bufkill's :BD
   autocmd VimEnter * :call CmdAlias('bd', 'BD')
 augroup END
 
