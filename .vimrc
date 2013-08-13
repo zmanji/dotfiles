@@ -121,22 +121,19 @@ NeoBundle "Shougo/junkfile.vim"
 
 NeoBundle "tpope/vim-characterize"
 
-" bufkill.vim
-" It seems the <script name> input to NeoBundle pulls it from the vim-scripts
-" mirror on github which is outaded. bufkill.vim 1.11 added the ability to
-" prevent creating keymappings. This is better than forking it myself.
-" Do not create keyboard mappings.
+" vim-bbye
+" A minimal version of bufkill.vim that adds a :Bdelete command that closes the
+" file in the window and does not modify the window. Better than bufkill.vim
+" because it can accept numbered arguments.
 
-let g:BufKillCreateMappings = 0
-NeoBundle 'http://www.vim.org/scripts/download_script.php?src_id=19161',
-\ { 'type__filename' : 'bufkill.vim', 'script_type' : 'plugin' }
+NeoBundle "moll/vim-bbye"
 
 NeoBundle "cmdalias.vim"
 
 augroup init_aliases
   autocmd!
   " Alias internal :bd to use bufkill's :BD
-  autocmd VimEnter * :call CmdAlias('bd', 'BD')
+  autocmd VimEnter * :call CmdAlias('bd', 'Bdelete')
 augroup END
 
 NeoBundle "tpope/vim-eunuch"
