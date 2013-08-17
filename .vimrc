@@ -85,6 +85,9 @@ let g:clang_complete_copen = 1
 let g:clang_close_preview = 1
 " compile all sources as c++11
 let g:clang_user_options = '-std=c++11'
+
+NeoBundle 'https://code.google.com/p/asciidoc/', {'rtp': 'vim'}
+
 " }}}
 
 " UI Improvements {{{
@@ -510,6 +513,18 @@ augroup ft_markdown
   autocmd FileType markdown setlocal foldlevel=1
   autocmd FileType markdown setlocal autoindent
   autocmd BufWritePre * if &ft == "markdown" |
+        \ :call <SID>strip_trailing_whitespace() |
+        \ endif
+augroup END
+" }}}
+
+" AsciiDoc {{{
+augroup ft_asciidoc
+  autocmd!
+  autocmd BufNewFile,BufRead *.asciidoc set filetype=asciidoc
+  autocmd FileType asciidoc setlocal spell
+  autocmd FileType asciidoc setlocal autoindent
+  autocmd BufWritePre * if &ft == "asciidoc" |
         \ :call <SID>strip_trailing_whitespace() |
         \ endif
 augroup END
