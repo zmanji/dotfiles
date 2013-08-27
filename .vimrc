@@ -63,9 +63,10 @@ NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 let g:pymode_rope=0
 let g:pymode_folding = 0
 let g:pymode_lint_ignore = "E501"
-NeoBundleLazy 'davidhalter/jedi-vim', {'autoload':{'filetypes':['python']}}
+
 let g:jedi#auto_initialization=0
 let g:jedi#auto_vim_configuration=0
+NeoBundleLazy 'davidhalter/jedi-vim', {'autoload':{'filetypes':['python']}}
 let g:jedi#popup_on_dot=0
 
 NeoBundle "derekwyatt/vim-scala"
