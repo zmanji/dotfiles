@@ -66,8 +66,8 @@ let g:pymode_lint_ignore = "E501"
 
 let g:jedi#auto_initialization=0
 let g:jedi#auto_vim_configuration=0
-NeoBundleLazy 'davidhalter/jedi-vim', {'autoload':{'filetypes':['python']}}
 let g:jedi#popup_on_dot=0
+NeoBundleLazy 'davidhalter/jedi-vim', {'autoload':{'filetypes':['python']}}
 
 NeoBundle "derekwyatt/vim-scala"
 NeoBundleLazy 'Rip-Rip/clang_complete', {
