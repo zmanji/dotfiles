@@ -58,6 +58,7 @@ let g:rubycomplete_classes_in_global=1
 let g:rubycomplete_rails=1
 
 NeoBundleLazy 'tpope/vim-markdown', {'autoload: {filetypes':['markdown']}
+NeoBundle 'vim-pandoc/vim-pandoc'
 
 NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 let g:pymode_rope=0
