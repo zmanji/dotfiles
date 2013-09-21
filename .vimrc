@@ -67,7 +67,7 @@ let g:pymode_lint_ignore = "E501"
 let g:jedi#auto_initialization=0
 let g:jedi#auto_vim_configuration=0
 let g:jedi#popup_on_dot=0
-NeoBundleLazy 'davidhalter/jedi-vim', {'autoload':{'filetypes':['python']}}
+NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundle "derekwyatt/vim-scala"
 NeoBundleLazy 'Rip-Rip/clang_complete', {
@@ -544,7 +544,7 @@ augroup END
 " Python {{{
 augroup ft_python
   autocmd!
-  autocmd FileType python setlocal omnifunc=jedi#complete
+  autocmd FileType python setlocal omnifunc=jedi#completions
   autocmd FileType python setlocal smarttab
   " Disable 'preview' option, so there is no popup window with vim-jedi
   autocmd FileType python setlocal completeopt-=preview
