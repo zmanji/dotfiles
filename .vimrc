@@ -485,9 +485,9 @@ augroup ft_cpp
   autocmd FileType cpp setlocal textwidth=80
   autocmd FileType cpp setlocal smarttab
   autocmd FileType cpp setlocal foldmethod=syntax
-  autocmd FileType cpp setlocal omnifunc=ClangComplete
+  " autocmd FileType cpp setlocal omnifunc=ClangComplete
   " Disable 'preview' option, so there is no popup window with clang_complete.
-  autocmd FileType cpp setlocal completeopt-=preview
+  " autocmd FileType cpp setlocal completeopt-=preview
   autocmd BufWritePre * if &ft == "cpp" |
         \ :call <SID>strip_trailing_whitespace() |
         \ endif
@@ -517,6 +517,8 @@ augroup ft_markdown
   autocmd BufWritePre * if &ft == "markdown" |
         \ :call <SID>strip_trailing_whitespace() |
         \ endif
+
+  let g:pandoc_use_hard_wraps = 1
 augroup END
 " }}}
 
@@ -545,7 +547,7 @@ augroup END
 " Python {{{
 augroup ft_python
   autocmd!
-  autocmd FileType python setlocal omnifunc=jedi#completions
+  " autocmd FileType python setlocal omnifunc=jedi#completions
   autocmd FileType python setlocal smarttab
   " Disable 'preview' option, so there is no popup window with vim-jedi
   autocmd FileType python setlocal completeopt-=preview
