@@ -28,4 +28,20 @@
 ; Shorter y/n
 (fset 'yes-or-no-p 'y-or-n-p)
 
+; Show whitespace
+; (global-whitespace-mode t)
+; (setq-default show-trailing-whitespace t)
+; Minimal style (similar to vim) see
+; http://ergoemacs.org/emacs/whitespace-mode.html
+; (setq whitespace-style (quote (face tabs trailing newline space-mark tab-mark newline-mark)))
+; (setq whitespace-display-mappings
+;       '(
+;         (space-mark 32 [183])
+;         (newline-mark 10 [172 10])
+;         (tab-mark 9 [9655 9])
+;         ))
+
+; TODO(zmanji): Strip trailing whitespace
+; TODO(zmanji): Show line numbers
+
 (require 'package)
