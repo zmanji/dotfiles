@@ -43,5 +43,19 @@
 
 ; TODO(zmanji): Strip trailing whitespace
 ; TODO(zmanji): Show line numbers
+; TODO(zmanji): Show vim style 'ruler'
+; TODO(zmanji): Set encoding of everything to utf-8
+; TODO(zmanji): Show soft line breaks
+; TODO(zmanji): autoread/autowrite
+; TODO(zmanji): Enable mouse in the terminal
+; TODO(zmanji): Don't wrap long lines insert hard newlines
+; TODO(zmanji): Integrate with system clipboard
+; TODO(zmanji): Setup custom spelling
+; TODO(zmanji): Setup backup/undo
+; TODO(zmanji): Configure whitespace to be <tab> = 2 spc
+; TODO(zmanji): Configure whitespace to be textwidth = 80
+; TODO(zmanji): Highlight the current line and 81st column
+; TODO(zmanji): Setup file type specific preferences
+; TODO(zmanji): Check .vimrc for anything else that is needed
 
 (require 'package)
