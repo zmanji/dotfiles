@@ -25,4 +25,7 @@
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
 
+; Shorter y/n
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (require 'package)
