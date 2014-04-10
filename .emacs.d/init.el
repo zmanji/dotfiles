@@ -15,6 +15,10 @@
 ; Uniquify Buffer Names
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
+; TODO(zmanji): Investigate the following:
+; (setq uniquify-separator "/")
+; (setq uniquify-after-kill-buffer-p t) ; rename after killing uniquified
+; (setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
 
 ; Show matching parens like vim
 (show-paren-mode 1)
@@ -22,6 +26,8 @@
 
 ; Don't use tabs for indentation
 (setq-default indent-tabs-mode nil)
+; Set tab display to be equal to 2 spaces
+(setq-default tab-width 2)
 
 ; Save curor position
 (require 'saveplace)
@@ -36,7 +42,15 @@
 (column-number-mode t)
 (size-indication-mode t)
 
-; TODO(zmanji) Show tabs as ▸ and eol as ¬
+; Reload buffers which have been modified externally
+(global-auto-revert-mode t)
+
+; Highlight the current line
+; TODO(zmanji): enable this when the color scheme doesn't make it unreadable.
+;(global-hl-line-mode +1)
+
+; TODO(zmanji): Show tabs as ▸ and eol as ¬
+; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
 ; TODO(zmanji): Strip trailing whitespace
 ; TODO(zmanji): Show line numbers
@@ -44,20 +58,29 @@
 ; TODO(zmanji): Set encoding of everything to utf-8
 ; TODO(zmanji): Figure out how to highlight TODO/XXX/HACK etc
 ; TODO(zmanji): Show soft line breaks
-; TODO(zmanji): autoread/autowrite
+; TODO(zmanji): autowrite style functionality
 ; TODO(zmanji): Enable mouse in the terminal
 ; TODO(zmanji): Don't wrap long lines insert hard newlines
 ; TODO(zmanji): Integrate with system clipboard
 ; TODO(zmanji): Setup custom spelling
 ; TODO(zmanji): Setup backup/undo
-; TODO(zmanji): Configure whitespace to be <tab> = 2 spc (tab-width) ?
 ; TODO(zmanji): Configure whitespace to be textwidth = 80
-; TODO(zmanji): Highlight the current line and 81st column
+; TODO(zmanji): Highlight the 81st column
 ; TODO(zmanji): Possibly investigate disabling highlighting on unfocus
 ; TODO(zmanji): Setup file type specific preferences
 ; TODO(zmanji): Figure out how to change the cursor in terminal when entering/exiting insert mode.
 ; TODO(zmanji): Bind '\\' to comment/uncomment line/region
 ; TODO(zmanji): Check .vimrc for anything else that is needed
+; TODO(zmanji): Figure out folding
+; TODO(zmanji): Use <TAB> to autocomplete and indent (tab-always-indent 'complete) ?
+; TODO(zmanji): Get smartparens (auto insert ']' after '[' )
+; TODO(zmanji): Investigate 'savehist or similar for saving some state between sessions
+; TODO(zmanji): Investigate setting up 'tramp for remote access
+; TODO(zmanji): Investigate anzu: https://github.com/syohex/emacs-anzu to show how many search
+; matches are in buffer
+; TODO(zmanji): Investigate dired and dired-x
+; TODO(zmanji): Configure 'eshell:
+; https://github.com/bbatsov/prelude/blob/master/core/prelude-editor.el#L363
 
 (require 'package)
 ; TODO(zmanji): Consider using the stable melpa repo and pinning certain
@@ -77,11 +100,12 @@
 ; evil-*-state-modes like evil-emacs-state-modes
 ; TODO(zmanji): Invesigate evil-motion-state-map defaults
 ; TODO(zmanji): Investigate elscreen to emulate vim tabs
-
-; TODO(zmanji): Add auto-complete or company-mode
+; TODO(zmanji): Investigate flyspell
+; TODO(zmanji): Add auto-complete or company-mode and look at hippie-expand
 ; TODO(zmanji): Configure buffer auto completion for dictionary words
 ; TODO(zmanji): Add YASnipped
-; TODO(zmanji): Add projectile
+; TODO(zmanji): Add projectile See:
+; https://github.com/bbatsov/prelude/blob/master/core/prelude-editor.el#L264 for basic config
 ; TODO(zmanji): Add helm/ido
 ; TODO(zmanji): Configure helm/ido for M-x or get smex
 ; TODO(zmanji): Investigate and setup RTM integration
