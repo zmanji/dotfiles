@@ -53,6 +53,15 @@
 ; TODO(zmanji): Check .vimrc for anything else that is needed
 
 (require 'package)
+; TODO(zmanji): Consider using the stable melpa repo and pinning certain
+; packages (ie evil-mode) to that repo. Can pin certain packages to certain
+; repos using package-pinned-packages.
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+; Package management philosophy: Just use M-x package install and git commit the
+; state of the elpa folder delete/update folder as needed.
+
 ; TODO(zmanji): Add evil-mode
 ; TODO(zmanji): Add auto-complete or company-mode
 ; TODO(zmanji): Configure buffer auto completion for dictionary words
