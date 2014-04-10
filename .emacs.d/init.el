@@ -49,12 +49,15 @@
 ; TODO(zmanji): enable this when the color scheme doesn't make it unreadable.
 ;(global-hl-line-mode +1)
 
+; Show line numbers
+(global-linum-mode t)
+
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
 ; TODO(zmanji): Strip trailing whitespace
-; TODO(zmanji): Show line numbers
 ; TODO(zmanji): Show vim style 'ruler'
+; TODO(zmanji): Tweak linum-mode to have more space between number and start of line.
 ; TODO(zmanji): Set encoding of everything to utf-8
 ; TODO(zmanji): Figure out how to highlight TODO/XXX/HACK etc
 ; TODO(zmanji): Show soft line breaks
