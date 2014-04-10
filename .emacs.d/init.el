@@ -51,13 +51,14 @@
 
 ; Show line numbers
 (global-linum-mode t)
+; Put a space after the number so it is seperated from the buffer.
+(setq linum-format "%d ")
 
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
 ; TODO(zmanji): Strip trailing whitespace
 ; TODO(zmanji): Show vim style 'ruler'
-; TODO(zmanji): Tweak linum-mode to have more space between number and start of line.
 ; TODO(zmanji): Set encoding of everything to utf-8
 ; TODO(zmanji): Figure out how to highlight TODO/XXX/HACK etc
 ; TODO(zmanji): Show soft line breaks
