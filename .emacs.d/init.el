@@ -62,7 +62,7 @@
 ; Package management philosophy: Just use M-x package install and git commit the
 ; state of the elpa folder delete/update folder as needed.
 
-; TODO(zmanji): Add evil-mode
+; TODO(zmanji): Configure evil-mode
 ; TODO(zmanji): Add auto-complete or company-mode
 ; TODO(zmanji): Configure buffer auto completion for dictionary words
 ; TODO(zmanji): Add YASnipped
