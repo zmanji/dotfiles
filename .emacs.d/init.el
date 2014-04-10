@@ -38,6 +38,7 @@
 ; TODO(zmanji): Show line numbers
 ; TODO(zmanji): Show vim style 'ruler'
 ; TODO(zmanji): Set encoding of everything to utf-8
+; TODO(zmanji): Figure out how to highlight TODO/XXX/HACK etc
 ; TODO(zmanji): Show soft line breaks
 ; TODO(zmanji): autoread/autowrite
 ; TODO(zmanji): Enable mouse in the terminal
