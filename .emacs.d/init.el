@@ -72,5 +72,9 @@
 ; TODO(zmanji): Setup graphical undo tree
 ; TODO(zmanji): Setup a powerline
 ; TODO(zmanji): Inestigate magit
+; TODO(zmanji): Figure out way to show kill/yank ring
+; TODO(zmanji): Investigate ace-jump (easymotion style)
+; TODO(zmanji): Investigate exec-path-with-shell because GUI Emacs might not use
+; the shell's $PATH on OSX.
 ; TODO(zmanji): Add language specific modes: c, c++, rust, pandoc, markdown,
 ; haml, ruby, python, scala, latex,
