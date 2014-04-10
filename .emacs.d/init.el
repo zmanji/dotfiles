@@ -55,7 +55,22 @@
 ; TODO(zmanji): Configure whitespace to be <tab> = 2 spc
 ; TODO(zmanji): Configure whitespace to be textwidth = 80
 ; TODO(zmanji): Highlight the current line and 81st column
+; TODO(zmanji): Possibly investigate disabling highlighting on unfocus
 ; TODO(zmanji): Setup file type specific preferences
 ; TODO(zmanji): Check .vimrc for anything else that is needed
 
 (require 'package)
+; TODO(zmanji): Add evil-mode
+; TODO(zmanji): Add auto-complete or company-mode
+; TODO(zmanji): Configure buffer auto completion for dictionary words
+; TODO(zmanji): Add YASnipped
+; TODO(zmanji): Add projectile 
+; TODO(zmanji): Add helm/ido
+; TODO(zmanji): Configure helm/ido for M-x or get smex
+; TODO(zmanji): Investigate and setup RTM integration
+; TODO(zmanji): Investigate org-mode
+; TODO(zmanji): Setup graphical undo tree
+; TODO(zmanji): Setup a powerline
+; TODO(zmanji): Inestigate magit
+; TODO(zmanji): Add language specific modes: c, c++, rust, pandoc, markdown,
+; haml, ruby, python, scala, latex,
