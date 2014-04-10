@@ -57,7 +57,7 @@
 ; TODO(zmanji): Add auto-complete or company-mode
 ; TODO(zmanji): Configure buffer auto completion for dictionary words
 ; TODO(zmanji): Add YASnipped
-; TODO(zmanji): Add projectile 
+; TODO(zmanji): Add projectile
 ; TODO(zmanji): Add helm/ido
 ; TODO(zmanji): Configure helm/ido for M-x or get smex
 ; TODO(zmanji): Investigate and setup RTM integration
