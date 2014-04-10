@@ -31,6 +31,7 @@
 ; Shorter y/n
 (fset 'yes-or-no-p 'y-or-n-p)
 
+
 ; TODO(zmanji) Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Figure out how to show trailing whitespace
 ; TODO(zmanji): Strip trailing whitespace
@@ -44,7 +45,7 @@
 ; TODO(zmanji): Integrate with system clipboard
 ; TODO(zmanji): Setup custom spelling
 ; TODO(zmanji): Setup backup/undo
-; TODO(zmanji): Configure whitespace to be <tab> = 2 spc
+; TODO(zmanji): Configure whitespace to be <tab> = 2 spc (tab-width) ?
 ; TODO(zmanji): Configure whitespace to be textwidth = 80
 ; TODO(zmanji): Highlight the current line and 81st column
 ; TODO(zmanji): Possibly investigate disabling highlighting on unfocus
@@ -61,7 +62,7 @@
 ; TODO(zmanji): Configure helm/ido for M-x or get smex
 ; TODO(zmanji): Investigate and setup RTM integration
 ; TODO(zmanji): Investigate org-mode
-; TODO(zmanji): Setup graphical undo tree
+; TODO(zmanji): Setup graphical undo tree (global-undo-tree-mode) ?
 ; TODO(zmanji): Setup a powerline
 ; TODO(zmanji): Inestigate magit
 ; TODO(zmanji): Figure out way to show kill/yank ring
