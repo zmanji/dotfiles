@@ -51,6 +51,7 @@
 ; TODO(zmanji): Highlight the current line and 81st column
 ; TODO(zmanji): Possibly investigate disabling highlighting on unfocus
 ; TODO(zmanji): Setup file type specific preferences
+; TODO(zmanji): Figure out how to change the cursor in terminal when entering/exiting insert mode.
 ; TODO(zmanji): Check .vimrc for anything else that is needed
 
 (require 'package)
