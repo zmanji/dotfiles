@@ -31,6 +31,10 @@
 ; Shorter y/n
 (fset 'yes-or-no-p 'y-or-n-p)
 
+; Position/Size in modeline
+(line-number-mode t)
+(column-number-mode t)
+(size-indication-mode t)
 
 ; TODO(zmanji) Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Figure out how to show trailing whitespace
@@ -52,6 +56,7 @@
 ; TODO(zmanji): Possibly investigate disabling highlighting on unfocus
 ; TODO(zmanji): Setup file type specific preferences
 ; TODO(zmanji): Figure out how to change the cursor in terminal when entering/exiting insert mode.
+; TODO(zmanji): Bind '\\' to comment/uncomment line/region
 ; TODO(zmanji): Check .vimrc for anything else that is needed
 
 (require 'package)
