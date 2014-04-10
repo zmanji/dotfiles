@@ -62,7 +62,15 @@
 ; Package management philosophy: Just use M-x package install and git commit the
 ; state of the elpa folder delete/update folder as needed.
 
+(require 'evil)
+(evil-mode 1)
 ; TODO(zmanji): Configure evil-mode
+; TODO(zmanji): look at evil-overriding-maps and evil-intercept-maps
+; TODO(zmanji): investigate default evil-states for motions via
+; evil-*-state-modes like evil-emacs-state-modes
+; TODO(zmanji): Invesigate evil-motion-state-map defaults
+; TODO(zmanji): Investigate elscreen to emulate vim tabs
+
 ; TODO(zmanji): Add auto-complete or company-mode
 ; TODO(zmanji): Configure buffer auto completion for dictionary words
 ; TODO(zmanji): Add YASnipped
