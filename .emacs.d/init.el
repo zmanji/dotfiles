@@ -1,6 +1,9 @@
 (when (< emacs-major-version 24)
   (error "Need Emacs v24 or higher. Currently have: v%d" emacs-major-version))
 
+(setq user-full-name "Zameer Manji")
+(setq user-mail-address "zmanji@gmail.com")
+
 ; TODO(zmanji): Put non-package configuration elsewhere.
 
 ; Remove unused GUI components.
