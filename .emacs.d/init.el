@@ -89,6 +89,7 @@
 ; TODO(zmanji): Consider using the stable melpa repo and pinning certain
 ; packages (ie evil-mode) to that repo. Can pin certain packages to certain
 ; repos using package-pinned-packages.
+; See https://github.com/milkypostman/melpa#stable-packages for stable package repo
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
@@ -102,6 +103,7 @@
 ; TODO(zmanji): investigate default evil-states for motions via
 ; evil-*-state-modes like evil-emacs-state-modes
 ; TODO(zmanji): Invesigate evil-motion-state-map defaults
+; TODO(zmanji): Investigate key mappings here: http://stackoverflow.com/a/10166400/2874
 ; TODO(zmanji): Investigate elscreen to emulate vim tabs
 ; TODO(zmanji): Investigate flyspell
 ; TODO(zmanji): Add auto-complete or company-mode and look at hippie-expand
