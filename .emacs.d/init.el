@@ -58,7 +58,6 @@
 ; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
 ; TODO(zmanji): Strip trailing whitespace
-; TODO(zmanji): Show vim style 'ruler'
 ; TODO(zmanji): Set encoding of everything to utf-8
 ; TODO(zmanji): Figure out how to highlight TODO/XXX/HACK etc
 ; TODO(zmanji): Show soft line breaks
