@@ -54,6 +54,9 @@
 ; Put a space after the number so it is seperated from the buffer.
 (setq linum-format "%d ")
 
+; TODO(zmanji): Take more core config from:
+; https://github.com/bling/dotemacs/blob/master/config/init-core.el
+
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
@@ -129,3 +132,5 @@
 ; the shell's $PATH on OSX.
 ; TODO(zmanji): Add language specific modes: c, c++, rust, pandoc, markdown,
 ; haml, ruby, python, scala, latex,
+; TODO(zmanji): Investigate 'diminsh to simplify modeline
+; TODO(zmanji): Investigate 'pretty-symbols, 'color-identifiers-mode, 'fancy-narrow
