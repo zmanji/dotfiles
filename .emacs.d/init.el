@@ -104,6 +104,10 @@
 ; evil-*-state-modes like evil-emacs-state-modes
 ; TODO(zmanji): Invesigate evil-motion-state-map defaults
 ; TODO(zmanji): Investigate key mappings here: http://stackoverflow.com/a/10166400/2874
+; TODO(zmanji): Take evil configuration from:
+; https://github.com/bling/dotemacs/blob/master/config/init-evil.el
+; TODO(zmanji): Take bindings from
+; https://github.com/bling/dotemacs/blob/master/config/init-bindings.el
 ; TODO(zmanji): Investigate elscreen to emulate vim tabs
 ; TODO(zmanji): Investigate flyspell
 ; TODO(zmanji): Add auto-complete or company-mode and look at hippie-expand
@@ -113,6 +117,7 @@
 ; https://github.com/bbatsov/prelude/blob/master/core/prelude-editor.el#L264 for basic config
 ; TODO(zmanji): Add helm/ido
 ; TODO(zmanji): Configure helm/ido for M-x or get smex
+; TODO(zmanji): Consider helm extentions like helm-swoop, helm-config
 ; TODO(zmanji): Investigate and setup RTM integration
 ; TODO(zmanji): Investigate org-mode
 ; TODO(zmanji): Setup graphical undo tree (global-undo-tree-mode) ?
