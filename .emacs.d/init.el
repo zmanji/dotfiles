@@ -8,6 +8,9 @@
 
 ; Remove unused GUI components.
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+; Show it in GUI OSX because it doesn't take up any space
+(when (eq window-system 'ns)
+  (menu-bar-mode 1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (setq inhibit-startup-screen t)
@@ -56,9 +59,6 @@
 ; Put a space after the number so it is seperated from the buffer.
 (setq linum-format "%d ")
 
-; Improve dired
-(require 'dired-x)
-
 ; UTF-8 everything taken from: http://stackoverflow.com/a/2903256/2874
 (setq utf-translate-cjk-mode nil) ; disable CJK coding/encoding
 (set-language-environment 'utf-8)
@@ -76,12 +76,14 @@
 ; Seed the random number generator
 (random t)
 
+; The below thing won't clobber system clipboard on kill
 ; Consider using (setq save-interprogram-paste-before-kill t) once clipboard integration works.
 
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
-; TODO(zmanji): Strip trailing whitespace
+; TODO(zmanji): Strip trailing whitespace:
+; (add-hook 'write-file-hooks 'delete-trailing-whitespace) ?
 ; TODO(zmanji): Figure out how to highlight TODO/XXX/HACK etc
 ; TODO(zmanji): Show soft line breaks
 ; TODO(zmanji): autowrite style functionality
@@ -107,6 +109,8 @@
 ; TODO(zmanji): Investigate dired and dired-x
 ; TODO(zmanji): Configure 'eshell:
 ; https://github.com/bbatsov/prelude/blob/master/core/prelude-editor.el#L363
+; TODO(zmanji): Setup (global-font-lock-mode) for syntax highlighting?
+; TODO(zmanji): Consider 'dired 'dired-x and similar
 
 (require 'package)
 ; TODO(zmanji): Consider using the stable melpa repo and pinning certain
