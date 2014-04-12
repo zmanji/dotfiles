@@ -78,9 +78,6 @@
 
 ; Consider using (setq save-interprogram-paste-before-kill t) once clipboard integration works.
 
-; TODO(zmanji): Take more core config from:
-; https://github.com/bling/dotemacs/blob/master/config/init-core.el
-
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
