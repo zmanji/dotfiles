@@ -4,6 +4,18 @@
 (setq user-full-name "Zameer Manji")
 (setq user-mail-address "zmanji@gmail.com")
 
+; Package management at the start so we can assume everything is loaded.
+(require 'package)
+; TODO(zmanji): Consider using the stable melpa repo and pinning certain
+; packages (ie evil-mode) to that repo. Can pin certain packages to certain
+; repos using package-pinned-packages.
+; See https://github.com/milkypostman/melpa#stable-packages for stable package repo
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+; Package management philosophy: Just use M-x package install and git commit the
+; state of the elpa folder delete/update folder as needed.
+
 ; TODO(zmanji): Put non-package configuration elsewhere.
 
 ; Remove unused GUI components.
@@ -99,6 +111,11 @@
 ; Don't clobber system clipboard on kill
 (setq save-interprogram-paste-before-kill t)
 
+; On OSX, GUI Emacs does not have the same environment as terminal environment
+(when (eq system-type 'darwin)
+  (when (display-graphic-p)
+    (exec-path-from-shell-initialize)))
+
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
@@ -131,16 +148,6 @@
 ; TODO(zmanji): Setup (global-font-lock-mode) for syntax highlighting?
 ; TODO(zmanji): Consider 'dired 'dired-x and similar
 
-(require 'package)
-; TODO(zmanji): Consider using the stable melpa repo and pinning certain
-; packages (ie evil-mode) to that repo. Can pin certain packages to certain
-; repos using package-pinned-packages.
-; See https://github.com/milkypostman/melpa#stable-packages for stable package repo
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(package-initialize)
-; Package management philosophy: Just use M-x package install and git commit the
-; state of the elpa folder delete/update folder as needed.
 
 (require 'evil)
 (evil-mode 1)
@@ -171,8 +178,6 @@
 ; TODO(zmanji): Inestigate magit
 ; TODO(zmanji): Figure out way to show kill/yank ring
 ; TODO(zmanji): Investigate ace-jump (easymotion style)
-; TODO(zmanji): Investigate exec-path-with-shell because GUI Emacs might not use
-; the shell's $PATH on OSX.
 ; TODO(zmanji): Add language specific modes: c, c++, rust, pandoc, markdown,
 ; haml, ruby, python, scala, latex,
 ; TODO(zmanji): Investigate 'diminsh to simplify modeline
