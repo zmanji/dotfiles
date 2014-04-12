@@ -76,8 +76,28 @@
 ; Seed the random number generator
 (random t)
 
-; The below thing won't clobber system clipboard on kill
-; Consider using (setq save-interprogram-paste-before-kill t) once clipboard integration works.
+; Terminal Emacs on OSX needs to use pbpaste/pbcopy
+(when (eq system-type 'darwin)
+  ; When in a terminal
+  (unless (display-graphic-p)
+    ; Mainly from https://gist.github.com/the-kenny/267162
+    (defun zmanji/copy-from-osx ()
+      "Copies the current clipboard content using the `pbcopy` command"
+      (shell-command-to-string "pbpaste"))
+
+    (defun zmanji/paste-to-osx (text &optional push)
+          "Copies the top of the kill ring stack to the OSX clipboard"
+          (let ((process-connection-type nil))
+            (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+              (process-send-string proc text)
+              (process-send-eof proc))))
+
+    (setq interprogram-cut-function 'zmanji/paste-to-osx)
+    (setq interprogram-paste-function 'zmanji/copy-from-osx)
+))
+
+; Don't clobber system clipboard on kill
+(setq save-interprogram-paste-before-kill t)
 
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
@@ -89,7 +109,6 @@
 ; TODO(zmanji): autowrite style functionality
 ; TODO(zmanji): Enable mouse in the terminal
 ; TODO(zmanji): Don't wrap long lines insert hard newlines
-; TODO(zmanji): Integrate with system clipboard
 ; TODO(zmanji): Setup custom spelling
 ; TODO(zmanji): Setup backup/undo
 ; TODO(zmanji): Configure whitespace to be textwidth = 80
