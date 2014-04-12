@@ -54,6 +54,24 @@
 ; Put a space after the number so it is seperated from the buffer.
 (setq linum-format "%d ")
 
+; Improve dired
+(require 'dired-x)
+
+; UTF-8 everything taken from: http://stackoverflow.com/a/2903256/2874
+(setq utf-translate-cjk-mode nil) ; disable CJK coding/encoding
+(set-language-environment 'utf-8)
+(setq locale-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(unless (eq system-type 'windows-nt)
+ (set-selection-coding-system 'utf-8))
+(prefer-coding-system 'utf-8)
+
+; Improve scrolling
+(setq scroll-conservatively 9999)
+(setq scroll-preserve-screen-position t)
+
+
 ; TODO(zmanji): Take more core config from:
 ; https://github.com/bling/dotemacs/blob/master/config/init-core.el
 
@@ -61,7 +79,6 @@
 ; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
 ; TODO(zmanji): Strip trailing whitespace
-; TODO(zmanji): Set encoding of everything to utf-8
 ; TODO(zmanji): Figure out how to highlight TODO/XXX/HACK etc
 ; TODO(zmanji): Show soft line breaks
 ; TODO(zmanji): autowrite style functionality
