@@ -11,6 +11,8 @@
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (setq inhibit-startup-screen t)
+(setq inhibit-startup-echo-area-message t)
+(setq inhibit-startup-message t)
 
 ; Uniquify Buffer Names
 (require 'uniquify)
@@ -71,6 +73,10 @@
 (setq scroll-conservatively 9999)
 (setq scroll-preserve-screen-position t)
 
+; Seed the random number generator
+(random t)
+
+; Consider using (setq save-interprogram-paste-before-kill t) once clipboard integration works.
 
 ; TODO(zmanji): Take more core config from:
 ; https://github.com/bling/dotemacs/blob/master/config/init-core.el
