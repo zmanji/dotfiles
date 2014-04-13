@@ -16,6 +16,7 @@
 ; Package management philosophy: Just use M-x package install and git commit the
 ; state of the elpa folder delete/update folder as needed.
 
+
 ; TODO(zmanji): Put non-package configuration elsewhere.
 
 ; Remove unused GUI components.
@@ -182,3 +183,13 @@
 ; haml, ruby, python, scala, latex,
 ; TODO(zmanji): Investigate 'diminsh to simplify modeline
 ; TODO(zmanji): Investigate 'pretty-symbols, 'color-identifiers-mode, 'fancy-narrow
+
+
+; To load themes installed manually we need to add the location of the themes to
+; 'custom-theme-load-path.
+; See: http://batsov.com/articles/2012/02/19/color-theming-in-emacs-reloaded/
+(add-to-list 'custom-theme-load-path
+             (expand-file-name "themes" user-emacs-directory))
+(load-theme 'base16-tomorrow-dark t)
+; Use terminal background when possible instead of base16 bg
+(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
