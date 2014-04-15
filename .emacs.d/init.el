@@ -4,6 +4,9 @@
 (setq user-full-name "Zameer Manji")
 (setq user-mail-address "zmanji@gmail.com")
 
+; TODO(zmanji): Consider using use-package to cleanup package mangement code:
+; https://github.com/jwiegley/use-package
+
 ; Package management at the start so we can assume everything is loaded.
 (require 'package)
 ; TODO(zmanji): Consider using the stable melpa repo and pinning certain
