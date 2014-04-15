@@ -67,8 +67,7 @@
 (global-auto-revert-mode t)
 
 ; Highlight the current line
-; TODO(zmanji): enable this when the color scheme doesn't make it unreadable.
-;(global-hl-line-mode +1)
+(global-hl-line-mode +1)
 
 ; Show line numbers
 (global-linum-mode t)
