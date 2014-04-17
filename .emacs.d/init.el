@@ -119,6 +119,7 @@
   (when (display-graphic-p)
     (exec-path-from-shell-initialize)))
 
+; TODO(zmanji): Consider 'auto-mode-alist for automatically activating major modes.
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
 ; TODO(zmanji): Figure out how to show trailing whitespace
