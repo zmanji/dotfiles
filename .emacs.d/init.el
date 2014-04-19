@@ -156,6 +156,7 @@
 ; Change the cursor to be a pipe in insert mode and a block when in
 ; normal mode when in the terminal. This uses the DECSCUSR escape
 ; codes on iTerm2/xterm. See http://git.io/zvDeWQ for example code.
+; TODO(zmanji): Get the cursors to blink in the terminal.
 (defun zmanji/evil-terminal-cursor-change ()
   (when (and (null (getenv "TMUX")) (null (display-graphic-p)))
     ; TODO(zmanji): Put a guard to ensure we are in an xterm like terminal.
