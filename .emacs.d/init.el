@@ -134,7 +134,6 @@
 ; TODO(zmanji): Setup backup/undo
 ; TODO(zmanji): Configure whitespace to be textwidth = 80
 ; TODO(zmanji): Highlight the 81st column
-; TODO(zmanji): Possibly investigate disabling highlighting on unfocus
 ; TODO(zmanji): Setup file type specific preferences
 ; TODO(zmanji): Figure out how to change the cursor in terminal when entering/exiting insert mode.
 ; TODO(zmanji): Bind '\\' to comment/uncomment line/region
