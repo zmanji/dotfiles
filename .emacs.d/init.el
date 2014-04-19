@@ -135,7 +135,6 @@
 ; TODO(zmanji): Configure whitespace to be textwidth = 80
 ; TODO(zmanji): Highlight the 81st column
 ; TODO(zmanji): Setup file type specific preferences
-; TODO(zmanji): Figure out how to change the cursor in terminal when entering/exiting insert mode.
 ; TODO(zmanji): Bind '\\' to comment/uncomment line/region
 ; TODO(zmanji): Check .vimrc for anything else that is needed
 ; TODO(zmanji): Figure out folding
@@ -154,6 +153,23 @@
 
 (require 'evil)
 (evil-mode 1)
+; Change the cursor to be a pipe in insert mode and a block when in
+; normal mode when in the terminal. This uses the DECSCUSR escape
+; codes on iTerm2/xterm. See http://git.io/zvDeWQ for example code.
+(defun zmanji/evil-terminal-cursor-change ()
+  (when (and (null (getenv "TMUX")) (null (display-graphic-p)))
+    ; TODO(zmanji): Put a guard to ensure we are in an xterm like terminal.
+    ; Enter Insert Mode (Cursor Shape: vertical bar)
+    (add-hook 'evil-insert-state-entry-hook (lambda () (send-string-to-terminal "\e[6 q")))
+    ; Leave Insert Mode (Cursor Shape: block)
+    (add-hook 'evil-insert-state-exit-hook (lambda () (send-string-to-terminal "\e[2 q")))
+    ; Restore cursor shape to vertical bar when quitting
+    (add-hook 'kill-emacs-hook (lambda () (send-string-to-terminal "\e[6 q")))
+    ; Ensure the cursor is a block shape when we enter normal mode or motion mode
+    (add-hook 'evil-normal-state-entry-hook (lambda () (send-string-to-terminal "\e[2 q")))
+    (add-hook 'evil-motion-state-entry-hook (lambda () (send-string-to-terminal "\e[2 q")))
+))
+(zmanji/evil-terminal-cursor-change)
 ; TODO(zmanji): Configure evil-mode
 ; TODO(zmanji): look at evil-overriding-maps and evil-intercept-maps
 ; TODO(zmanji): investigate default evil-states for motions via
