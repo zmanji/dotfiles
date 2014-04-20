@@ -150,7 +150,6 @@
 ; TODO(zmanji): Setup (global-font-lock-mode) for syntax highlighting?
 ; TODO(zmanji): Consider 'dired 'dired-x and similar
 
-
 (require 'evil)
 (evil-mode 1)
 ; Change the cursor to be a pipe in insert mode and a block when in
@@ -171,12 +170,21 @@
     (add-hook 'evil-motion-state-entry-hook (lambda () (send-string-to-terminal "\e[2 q")))
 ))
 (zmanji/evil-terminal-cursor-change)
+
+; ESC quits everything as expected taken from: http://stackoverflow.com/a/10166400/2874
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+
 ; TODO(zmanji): Configure evil-mode
 ; TODO(zmanji): look at evil-overriding-maps and evil-intercept-maps
 ; TODO(zmanji): investigate default evil-states for motions via
 ; evil-*-state-modes like evil-emacs-state-modes
 ; TODO(zmanji): Invesigate evil-motion-state-map defaults
-; TODO(zmanji): Investigate key mappings here: http://stackoverflow.com/a/10166400/2874
 ; TODO(zmanji): Take evil configuration from:
 ; https://github.com/bling/dotemacs/blob/master/config/init-evil.el
 ; TODO(zmanji): Take bindings from
