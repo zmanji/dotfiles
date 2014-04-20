@@ -218,7 +218,8 @@
 ; TODO(zmanji): Add language specific modes: c, c++, rust, pandoc, markdown,
 ; haml, ruby, python, scala, latex,
 ; TODO(zmanji): Investigate 'diminsh to simplify modeline
-; TODO(zmanji): Investigate 'pretty-symbols, 'color-identifiers-mode, 'fancy-narrow
+; TODO(zmanji): Investigate 'pretty-symbols or 'pretty-mode,
+; 'color-identifiers-mode, 'fancy-narrow
 
 
 ; To load themes installed manually we need to add the location of the themes to
