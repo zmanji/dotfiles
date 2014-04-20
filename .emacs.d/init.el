@@ -129,6 +129,10 @@
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+; Enable auto indentation on newline globally
+; NOTE: can use 'electric-indent-local-mode' to disable in modes that don't play well
+(electric-indent-mode 1)
+
 ; TODO(zmanji): Consider 'auto-mode-alist for automatically activating major modes.
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
