@@ -119,6 +119,12 @@
   (when (display-graphic-p)
     (exec-path-from-shell-initialize)))
 
+; Enable smartparens for smart pair matching.
+; TODO(zmanji): Enable for latex/html as well
+(require 'smartparens)
+(require 'smartparens-config)
+(add-hook 'prog-mode-hook (lambda () (smartparens-mode +1)))
+
 ; TODO(zmanji): Consider 'auto-mode-alist for automatically activating major modes.
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
@@ -139,7 +145,6 @@
 ; TODO(zmanji): Check .vimrc for anything else that is needed
 ; TODO(zmanji): Figure out folding
 ; TODO(zmanji): Use <TAB> to autocomplete and indent (tab-always-indent 'complete) ?
-; TODO(zmanji): Get smartparens (auto insert ']' after '[' )
 ; TODO(zmanji): Investigate 'savehist or similar for saving some state between sessions
 ; TODO(zmanji): Investigate setting up 'tramp for remote access
 ; TODO(zmanji): Investigate anzu: https://github.com/syohex/emacs-anzu to show how many search
