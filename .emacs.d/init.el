@@ -125,6 +125,10 @@
 (require 'smartparens-config)
 (add-hook 'prog-mode-hook (lambda () (smartparens-mode +1)))
 
+; Color parens differently depending on nesting
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 ; TODO(zmanji): Consider 'auto-mode-alist for automatically activating major modes.
 ; TODO(zmanji): Show tabs as ▸ and eol as ¬
 ; TODO(zmanji): Show line-wraps as ↪
