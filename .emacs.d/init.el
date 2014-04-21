@@ -196,6 +196,8 @@
 (projectile-global-mode t)
 
 ; TODO(zmanji): Fix helm color scheme because it is unreadable right now.
+; Take the definitions from:
+; https://github.com/gvalkov/dotfiles-emacs/blob/master/colors/base16-tomorrow-theme.el#L65
 (require 'helm)
 (helm-mode 1)
 
