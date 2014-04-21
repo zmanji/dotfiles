@@ -206,8 +206,12 @@
 ; TODO(zmanji): Add auto-complete or company-mode and look at hippie-expand
 ; TODO(zmanji): Configure buffer auto completion for dictionary words
 ; TODO(zmanji): Add YASnipped
+
+(require 'projectile)
+(projectile-global-mode t)
 ; TODO(zmanji): Add projectile See:
 ; https://github.com/bbatsov/prelude/blob/master/core/prelude-editor.el#L264 for basic config
+
 ; TODO(zmanji): Add helm/ido
 ; TODO(zmanji): Configure helm/ido for M-x or get smex
 ; TODO(zmanji): Consider helm extentions like helm-swoop, helm-config
