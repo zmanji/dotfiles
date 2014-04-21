@@ -220,8 +220,6 @@
 ; TODO(zmanji): Configure buffer auto completion for dictionary words
 ; TODO(zmanji): Add YASnipped
 
-; TODO(zmanji): Configure helm/ido for M-x or get smex
-; TODO(zmanji): Consider helm extentions like helm-swoop, helm-config
 ; TODO(zmanji): Investigate and setup RTM integration
 ; TODO(zmanji): Investigate org-mode
 ; TODO(zmanji): Setup graphical undo tree (global-undo-tree-mode) ?
