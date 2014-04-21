@@ -192,6 +192,15 @@
 (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 
+(require 'projectile)
+(projectile-global-mode t)
+
+(require 'evil-leader)
+(global-evil-leader-mode)
+; Experiment with leader key being space
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key "f" 'projectile-find-file)
+
 ; TODO(zmanji): Configure evil-mode
 ; TODO(zmanji): look at evil-overriding-maps and evil-intercept-maps
 ; TODO(zmanji): investigate default evil-states for motions via
@@ -207,10 +216,6 @@
 ; TODO(zmanji): Configure buffer auto completion for dictionary words
 ; TODO(zmanji): Add YASnipped
 
-(require 'projectile)
-(projectile-global-mode t)
-; TODO(zmanji): Add projectile See:
-; https://github.com/bbatsov/prelude/blob/master/core/prelude-editor.el#L264 for basic config
 
 ; TODO(zmanji): Add helm/ido
 ; TODO(zmanji): Configure helm/ido for M-x or get smex
