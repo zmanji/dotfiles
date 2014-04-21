@@ -197,7 +197,6 @@
 
 ; TODO(zmanji): Fix helm color scheme because it is unreadable right now.
 (require 'helm)
-(require 'helm-config)
 (helm-mode 1)
 
 (require 'evil-leader)
