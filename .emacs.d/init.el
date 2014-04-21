@@ -195,11 +195,16 @@
 (require 'projectile)
 (projectile-global-mode t)
 
+; TODO(zmanji): Fix helm color scheme because it is unreadable right now.
+(require 'helm)
+(require 'helm-config)
+(helm-mode 1)
+
 (require 'evil-leader)
 (global-evil-leader-mode)
 ; Experiment with leader key being space
 (evil-leader/set-leader "<SPC>")
-(evil-leader/set-key "f" 'projectile-find-file)
+(evil-leader/set-key "f" 'helm-projectile)
 
 ; TODO(zmanji): Configure evil-mode
 ; TODO(zmanji): look at evil-overriding-maps and evil-intercept-maps
@@ -216,8 +221,6 @@
 ; TODO(zmanji): Configure buffer auto completion for dictionary words
 ; TODO(zmanji): Add YASnipped
 
-
-; TODO(zmanji): Add helm/ido
 ; TODO(zmanji): Configure helm/ido for M-x or get smex
 ; TODO(zmanji): Consider helm extentions like helm-swoop, helm-config
 ; TODO(zmanji): Investigate and setup RTM integration
