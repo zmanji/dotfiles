@@ -198,14 +198,14 @@
 ; TODO(zmanji): Fix helm color scheme because it is unreadable right now.
 ; Take the definitions from:
 ; https://github.com/gvalkov/dotfiles-emacs/blob/master/colors/base16-tomorrow-theme.el#L65
-(require 'helm)
-(helm-mode 1)
+; (require 'helm)
+; (helm-mode 1)
 
-(require 'evil-leader)
-(global-evil-leader-mode)
+; (require 'evil-leader)
+; (global-evil-leader-mode)
 ; Experiment with leader key being space
-(evil-leader/set-leader "<SPC>")
-(evil-leader/set-key "f" 'helm-projectile)
+; (evil-leader/set-leader "<SPC>")
+; (evil-leader/set-key "f" 'helm-projectile)
 
 ; TODO(zmanji): Configure evil-mode
 ; TODO(zmanji): look at evil-overriding-maps and evil-intercept-maps
