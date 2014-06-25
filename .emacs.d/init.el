@@ -50,11 +50,6 @@
 ; Set tab display to be equal to 2 spaces
 (setq-default tab-width 2)
 
-; Save curor position
-(require 'saveplace)
-(setq-default save-place t)
-(setq save-place-file (concat user-emacs-directory "places"))
-
 ; Shorter y/n
 (fset 'yes-or-no-p 'y-or-n-p)
 
