@@ -60,33 +60,7 @@ let g:rubycomplete_rails=1
 NeoBundleLazy 'tpope/vim-markdown', {'autoload: {filetypes':['markdown']}
 NeoBundle 'vim-pandoc/vim-pandoc'
 
-" NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
-" let g:pymode_rope=0
-" let g:pymode_folding = 0
-" let g:pymode_lint_ignore = "E501"
-
-let g:jedi#auto_initialization=0
-let g:jedi#auto_vim_configuration=0
-let g:jedi#popup_on_dot=0
-NeoBundle 'davidhalter/jedi-vim'
-
 NeoBundle "derekwyatt/vim-scala"
-NeoBundleLazy 'Rip-Rip/clang_complete', {
-      \ 'autoload' : {
-      \     'filetypes' : ['c', 'cpp'],
-      \    },
-      \ }
-" Use libclang instead of calling `clang`
-let g:clang_use_library=1
-" Disable auto completion, trigger it with <Tab> only.
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
-" Show clang errors in the quickfix window
-let g:clang_complete_copen = 1
-" Close preview window after a completion
-let g:clang_close_preview = 1
-" compile all sources as c++11
-let g:clang_user_options = '-std=c++11'
 
 NeoBundle 'https://code.google.com/p/asciidoc/', {'rtp': 'vim'}
 
