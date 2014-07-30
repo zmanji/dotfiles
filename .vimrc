@@ -62,8 +62,6 @@ NeoBundle 'vim-pandoc/vim-pandoc'
 
 NeoBundle "derekwyatt/vim-scala"
 
-NeoBundle 'https://code.google.com/p/asciidoc/', {'rtp': 'vim'}
-
 " }}}
 
 " UI Improvements {{{
@@ -95,9 +93,6 @@ NeoBundle "tpope/vim-fugitive"
 
 NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
 
-" Quick tmp files, saved in ~/.vim_junk
-NeoBundle "Shougo/junkfile.vim"
-
 NeoBundle "tpope/vim-characterize"
 
 " vim-bbye
@@ -126,19 +121,6 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 let g:neocomplete#enable_auto_delimiter=1
 let g:neocomplete#enable_refresh_always=1
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_overwrite_completefunc = 1
-let g:neocomplete#force_omni_input_patterns.c =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.cpp =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.objc =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.objcpp =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
@@ -440,9 +422,6 @@ augroup ft_c
   autocmd FileType c setlocal textwidth=80
   autocmd FileType c setlocal smarttab
   autocmd FileType c setlocal foldmethod=syntax
-  autocmd FileType c setlocal omnifunc=ClangComplete
-  " Disable 'preview' option, so there is no popup window with clang_complete.
-  autocmd FileType c setlocal completeopt-=preview
   autocmd BufWritePre * if &ft == "c" |
         \ :call <SID>strip_trailing_whitespace() |
         \ endif
@@ -459,9 +438,6 @@ augroup ft_cpp
   autocmd FileType cpp setlocal textwidth=80
   autocmd FileType cpp setlocal smarttab
   autocmd FileType cpp setlocal foldmethod=syntax
-  " autocmd FileType cpp setlocal omnifunc=ClangComplete
-  " Disable 'preview' option, so there is no popup window with clang_complete.
-  " autocmd FileType cpp setlocal completeopt-=preview
   autocmd BufWritePre * if &ft == "cpp" |
         \ :call <SID>strip_trailing_whitespace() |
         \ endif
@@ -493,18 +469,6 @@ augroup ft_markdown
         \ endif
 
   let g:pandoc_use_hard_wraps = 1
-augroup END
-" }}}
-
-" AsciiDoc {{{
-augroup ft_asciidoc
-  autocmd!
-  autocmd BufNewFile,BufRead *.asciidoc set filetype=asciidoc
-  autocmd FileType asciidoc setlocal spell
-  autocmd FileType asciidoc setlocal autoindent
-  autocmd BufWritePre * if &ft == "asciidoc" |
-        \ :call <SID>strip_trailing_whitespace() |
-        \ endif
 augroup END
 " }}}
 
