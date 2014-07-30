@@ -485,10 +485,7 @@ augroup END
 " Python {{{
 augroup ft_python
   autocmd!
-  " autocmd FileType python setlocal omnifunc=jedi#completions
   autocmd FileType python setlocal smarttab
-  " Disable 'preview' option, so there is no popup window with vim-jedi
-  autocmd FileType python setlocal completeopt-=preview
   autocmd BufWritePre * if &ft == "python" |
         \ :call <SID>strip_trailing_whitespace() |
         \ endif
