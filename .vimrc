@@ -232,7 +232,8 @@ if !has("gui_running") && !exists("$TMUX")
 endif
 " Enable better matching with '%'
 runtime macros/matchit.vim
-
+" Fixes a problem with pathogen and sessions
+set sessionoptions-=options
 " }}}
 
 " Backups and Undo {{{
