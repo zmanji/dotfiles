@@ -135,14 +135,6 @@ let g:vimfiler_marked_file_icon = '✓'
 
 " }}}
 
-" Colors {{{
-NeoBundle 'chriskempson/base16-vim'
-" }}}
-
-" Install Plugins and Clean {{{
-NeoBundleCheck
-silent NeoBundleClean!
-" }}}
 
 " }}}
 
