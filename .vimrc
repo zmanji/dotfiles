@@ -19,7 +19,6 @@ execute pathogen#infect()
 " Plugins {{{
 
 " Core Improvements {{{
-NeoBundle 'Raimondi/delimitMate'
 NeoBundle "tpope/vim-commentary"
 NeoBundle "IndexedSearch"
 
