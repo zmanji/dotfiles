@@ -24,7 +24,6 @@ NeoBundle 'vim-pandoc/vim-pandoc'
 " }}}
 
 " UI Improvements {{{
-NeoBundle "sjl/gundo.vim"
 " Use ,u to open Gundo only in normal mode
 nnoremap <Leader>u :GundoToggle<CR>
 
