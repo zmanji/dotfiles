@@ -55,3 +55,9 @@
 [submodule ".vim/bundle/neco-look"]
 	path = .vim/bundle/neco-look
 	url = https://github.com/ujihisa/neco-look
+[submodule ".vim/bundle/cmdalias.vim"]
+	path = .vim/bundle/cmdalias.vim
+	url = https://github.com/vim-scripts/cmdalias.vim
+[submodule ".vim/bundle/vim-bbye"]
+	path = .vim/bundle/vim-bbye
+	url = https://github.com/moll/vim-bbye

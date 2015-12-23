@@ -39,15 +39,6 @@ NeoBundle "bling/vim-airline"
 " }}}
 
 " Misc {{{
-" vim-bbye
-" A minimal version of bufkill.vim that adds a :Bdelete command that closes the
-" file in the window and does not modify the window. Better than bufkill.vim
-" because it can accept numbered arguments.
-
-NeoBundle "moll/vim-bbye"
-
-NeoBundle "cmdalias.vim"
-
 augroup init_aliases
   autocmd!
   " Alias internal :bd to use bufkill's :BD
