@@ -18,17 +18,6 @@ execute pathogen#infect()
 
 " Plugins {{{
 
-" Core Improvements {{{
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'nmake -f make_msvc.mak nodebug=1',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-" }}}
-
 " Language Support {{{
 NeoBundle 'vim-pandoc/vim-pandoc'
 

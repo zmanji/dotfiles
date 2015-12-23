@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/vim-indexed-search"]
 	path = .vim/bundle/vim-indexed-search
 	url = https://github.com/henrik/vim-indexed-search
+[submodule ".vim/bundle/vimproc.vim"]
+	path = .vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim
