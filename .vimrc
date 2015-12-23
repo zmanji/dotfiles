@@ -1,8 +1,4 @@
 " vim:fdm=marker
-" TODO: Regorganize code
-" Plugins to Consider:
-" * vim-tabpagecd - https://github.com/kana/vim-tabpagecd
-" * vim-signify - https://github.com/mhinz/vim-signify
 " TODO: add mkspell! here to regen spellfile so you don't need to check in
 " compiled file.
 
