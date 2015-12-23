@@ -51,8 +51,6 @@ NeoBundleLazy 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']
 NeoBundleLazy 'tpope/vim-markdown', {'autoload: {filetypes':['markdown']}
 NeoBundle 'vim-pandoc/vim-pandoc'
 
-NeoBundle "derekwyatt/vim-scala"
-
 " }}}
 
 " UI Improvements {{{
