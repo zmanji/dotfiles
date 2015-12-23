@@ -130,21 +130,6 @@ NeoBundle 'ujihisa/neco-look'
 
 " }}}
 
-" Snippets {{{
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'Shougo/neosnippet'
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-let g:neosnippet#enable_snipmate_compatibility=1
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-" }}}
-
 " Unite {{{
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert = 1
