@@ -82,9 +82,6 @@ NeoBundle "bling/vim-airline"
 " }}}
 
 " Misc {{{
-NeoBundle "Lokaltog/vim-easymotion"
-let g:EasyMotion_leader_key = '<leader><leader>'
-
 NeoBundle "tpope/vim-fugitive"
 
 NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
