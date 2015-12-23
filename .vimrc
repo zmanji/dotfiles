@@ -200,17 +200,6 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
 
-NeoBundle 'Shougo/vimshell'
-let g:vimshell_prompt = "$ "
-let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-function! s:vimshell_settings()
-  call vimshell#altercmd#define('g', 'git')
-endfunction
-augroup ft_vimshell
-  autocmd!
-  autocmd FileType vimshell call s:vimshell_settings()
-  autocmd FileType vimshell setlocal colorcolumn=""
-augroup END
 " }}}
 
 " Colors {{{
