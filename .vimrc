@@ -35,7 +35,6 @@ let g:airline_branch_prefix = '⎇ '
 let g:airline_paste_symbol = 'ρ'
 let g:airline_paste_symbol = 'Þ'
 let g:airline_paste_symbol = '∥'
-NeoBundle "bling/vim-airline"
 " }}}
 
 " Misc {{{
