@@ -24,7 +24,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Plugins {{{
 
 " Core Improvements {{{
-NeoBundle 'matchit.zip'
 NeoBundle "tpope/vim-surround"
 NeoBundle "tpope/vim-repeat"
 NeoBundle 'Raimondi/delimitMate'
@@ -42,13 +41,6 @@ NeoBundle 'Shougo/vimproc', {
 " }}}
 
 " Language Support {{{
-NeoBundleLazy 'tpope/vim-haml', {
-      \ 'autoload':{'filetypes':['haml','scss','sass']}
-      \ }
-NeoBundleLazy 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
-NeoBundleLazy 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']}}
-
-NeoBundleLazy 'tpope/vim-markdown', {'autoload: {filetypes':['markdown']}
 NeoBundle 'vim-pandoc/vim-pandoc'
 
 " }}}
@@ -243,6 +235,8 @@ if !has("gui_running") && !exists("$TMUX")
     augroup END
   endif
 endif
+" Enable better matching with '%'
+runtime macros/matchit.vim
 
 " }}}
 
