@@ -48,11 +48,6 @@ NeoBundleLazy 'tpope/vim-haml', {
 NeoBundleLazy 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
 NeoBundleLazy 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']}}
 
-NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
-let g:rubycomplete_buffer_loading=1
-let g:rubycomplete_classes_in_global=1
-let g:rubycomplete_rails=1
-
 NeoBundleLazy 'tpope/vim-markdown', {'autoload: {filetypes':['markdown']}
 NeoBundle 'vim-pandoc/vim-pandoc'
 
