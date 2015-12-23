@@ -40,3 +40,18 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/bundle/unite.vim"]
+	path = .vim/bundle/unite.vim
+	url = https://github.com/Shougo/unite.vim
+[submodule ".vim/bundle/unite-outline"]
+	path = .vim/bundle/unite-outline
+	url = https://github.com/Shougo/unite-outline
+[submodule ".vim/bundle/vimfiler.vim"]
+	path = .vim/bundle/vimfiler.vim
+	url = https://github.com/Shougo/vimfiler.vim
+[submodule ".vim/bundle/neocomplete.vim"]
+	path = .vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim
+[submodule ".vim/bundle/neco-look"]
+	path = .vim/bundle/neco-look
+	url = https://github.com/ujihisa/neco-look

@@ -57,7 +57,6 @@ augroup END
 " }}}
 
 " AutoComplete {{{
-NeoBundleLazy 'Shougo/neocomplete.vim', {'autoload':{'insert':1}}
 let g:neocomplete#enable_at_startup=1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
@@ -80,12 +79,9 @@ inoremap <expr><s-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
     return !col || getline('.')[col - 1]  =~ '\s'
   endfunction "}}}
 
-NeoBundle 'ujihisa/neco-look'
-
 " }}}
 
 " Unite {{{
-NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert = 1
 let g:unite_enable_short_source_names = 1
 let g:unite_data_directory='~/.vim/.cache/unite'
@@ -116,19 +112,16 @@ augroup END
 nnoremap <leader>f :Unite -start-insert file_rec/async:!<cr>
 nnoremap <leader>y :Unite -buffer-name=yanks history/yank<cr>
 
-NeoBundleLazy 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
 nnoremap <leader>o :Unite -auto-resize -buffer-name=outline outline<cr>
+" }}}
 
-NeoBundle 'Shougo/vimfiler.vim'
+
 let g:vimfiler_as_default_explorer=1
 let g:vimfiler_data_directory='~/.vim/.cache/vimfiler'
 let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
-
-" }}}
-
 
 " }}}
 
