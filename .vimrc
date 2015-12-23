@@ -19,7 +19,6 @@ execute pathogen#infect()
 " Plugins {{{
 
 " Core Improvements {{{
-NeoBundle "tpope/vim-commentary"
 NeoBundle "IndexedSearch"
 
 NeoBundle 'Shougo/vimproc', {
