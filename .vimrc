@@ -39,12 +39,6 @@ NeoBundle "bling/vim-airline"
 " }}}
 
 " Misc {{{
-NeoBundle "tpope/vim-fugitive"
-
-NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
-
-NeoBundle "tpope/vim-characterize"
-
 " vim-bbye
 " A minimal version of bufkill.vim that adds a :Bdelete command that closes the
 " file in the window and does not modify the window. Better than bufkill.vim
