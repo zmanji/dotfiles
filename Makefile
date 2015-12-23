@@ -28,12 +28,6 @@ osx: .osx
 	@echo Running .osx; \
 	sh ~/.osx
 
-emacs: .emacs.d
-	@echo removing $^; \
-	$(foreach df, $^, rm -f ~/$(df))
-	@echo Installing $^; \
-	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
-
 submodules:
 	git submodule init
 	git submodule update --recursive
