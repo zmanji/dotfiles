@@ -60,8 +60,6 @@ augroup init_aliases
   autocmd VimEnter * :call CmdAlias('bd', 'Bdelete')
 augroup END
 
-NeoBundle "tpope/vim-eunuch"
-
 " }}}
 
 " AutoComplete {{{
