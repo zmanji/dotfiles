@@ -19,8 +19,6 @@ execute pathogen#infect()
 " Plugins {{{
 
 " Core Improvements {{{
-NeoBundle "IndexedSearch"
-
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'nmake -f make_msvc.mak nodebug=1',
