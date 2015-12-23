@@ -18,11 +18,6 @@ execute pathogen#infect()
 
 " Plugins {{{
 
-" Language Support {{{
-NeoBundle 'vim-pandoc/vim-pandoc'
-
-" }}}
-
 " UI Improvements {{{
 " Use ,u to open Gundo only in normal mode
 nnoremap <Leader>u :GundoToggle<CR>
