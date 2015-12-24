@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-all: submodules shells osx git vim
+all: submodules shells osx git vim karabiner
 
 git: .gitconfig .gitignore_global
 	@echo removing $^; \
@@ -27,6 +27,11 @@ osx: .osx
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 	@echo Running .osx; \
 	sh ~/.osx
+
+karabiner: karabiner.sh private.xml
+	rm ~/Library/Application\ Support/Karabiner/private.xml
+	ln -s $(CURDIR)/private.xml ~/Library/Application\ Support/Karabiner/private.xml
+	sh ./karabiner.sh
 
 submodules:
 	git submodule init
