@@ -46,7 +46,10 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCorner
 defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Change default screenshot location from Desktop to ~/Screenshots
+mkdir -p ~/Screenshots/
 defaults write com.apple.screencapture location ~/Screenshots/
+# Save screenshots in PNG format
+defaults write com.apple.screencapture type -string "png"
 
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
