@@ -1,6 +1,4 @@
 " vim:fdm=marker
-" TODO: add mkspell! here to regen spellfile so you don't need to check in
-" compiled file.
 
 " Basics {{{
   set nocompatible
@@ -159,6 +157,7 @@ augroup basic_options
 augroup END
 " Custom dictionary
 set spellfile=~/.vim/custom-dictionary.en.utf8.add
+silent mkspell! ~/.vim/custom-dictionary.en.utf8.add
 " Less delay between escape and normal mode.
 set ttimeoutlen=50
 

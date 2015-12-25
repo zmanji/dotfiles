@@ -2,3 +2,5 @@
 .vim/.cache/
 # Don't track the tmp folder.
 .vim/tmp/
+# Don't track the compiled wordlist.
+.vim/custom-dictionary.en.utf8.add.spl
