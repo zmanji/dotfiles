@@ -19,3 +19,5 @@ set keymap vi-insert
 
 # Show vi mode in prompt
 set show-mode-in-prompt on
+
+set skip-completed-text on
