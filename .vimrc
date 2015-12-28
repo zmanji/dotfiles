@@ -404,6 +404,13 @@ augroup ft_java
 augroup END
 " }}}
 
+" Man {{{
+augroup ft_man
+  autocmd!
+  autocmd FileType man setlocal textwidth=0
+augroup END
+" }}}
+
 " }}}
 
 " Local .vimrc {{{
