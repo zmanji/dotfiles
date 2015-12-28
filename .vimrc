@@ -254,6 +254,11 @@ augroup highlights
   " Hide the column line when the split is not in focus
   autocmd WinLeave * setlocal colorcolumn=""
   autocmd WinEnter * setlocal colorcolumn=+1
+
+  " Weird hack to make vim-pager nicer, disable colorcolumn (via text width)
+  " when reading from stdin (only way that vim-pager is invoked)
+  autocmd StdinReadPost * setlocal textwidth=0
+
 augroup END
 " }}}
 
