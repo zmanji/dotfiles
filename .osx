@@ -27,6 +27,9 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+# Graphite instead of Blue system color
+defaults write NSGlobalDomain AppleAquaColorVariant -int 6
+
 # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
