@@ -27,6 +27,9 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+# Enable Dark Mode
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
 # Graphite instead of Blue system color
 defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 
@@ -58,4 +61,4 @@ defaults write com.apple.screencapture type -string "png"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Need to restart UI for some changes to take effect.
-killall SystemUIServer
+killall SystemUIServer Dock
