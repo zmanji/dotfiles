@@ -84,8 +84,6 @@ let g:unite_source_rec_max_cache_files=5000
 let g:unite_prompt='»'
 
 function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
   " Enable navigation with control-j and control-k in insert mode
   imap <buffer> <C-j>   <Plug>(unite_select_next_line)
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
