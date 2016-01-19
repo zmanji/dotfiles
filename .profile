@@ -12,5 +12,4 @@ export CLICOLOR=1
 if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 if command -v pyenv >/dev/null 2>&1; then eval "$(pyenv init -)"; fi
 
-export PAGER="vim -c PAGER -"
 export MANPAGER="vim -c MANPAGER -"
