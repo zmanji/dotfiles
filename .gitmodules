@@ -67,6 +67,3 @@
 [submodule ".vim/bundle/vim-plugin-AnsiEsc"]
 	path = .vim/bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
-[submodule ".vim/bundle/vim-manpager"]
-	path = .vim/bundle/vim-manpager
-	url = https://github.com/lambdalisue/vim-manpager
