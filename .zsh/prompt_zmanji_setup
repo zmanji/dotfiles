@@ -1,10 +1,12 @@
-# TODO(zmanji): Add color.
 # TODO: Consider multiline promprt with prompt_newline function
 
 prompt_zmanji_setup() {
+  GIT_PS1_SHOWDIRTYSTATE=1
   # Workaround for https://github.com/Homebrew/homebrew/issues/48428
   source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
 
-  PROMPT='%~ $(__git_ps1 "(%s)") %# '
+  autoload -U colors && colors
+
+  PROMPT='%{$fg[cyan]%}%~%{$reset_color%} %{$fg[green]%}$(__git_ps1 "(%s)")%{$reset_color%} %# '
   RPROMPT='%*'
 }

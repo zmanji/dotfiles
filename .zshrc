@@ -46,9 +46,6 @@ setopt PROMPT_SUBST
 # Report CPU Usuage for commands running longer than 10 seconds
 REPORTTIME=10
 
-
-autoload -U colors && colors
-
 fpath=(~/.zsh $(brew --prefix)/share/zsh-completions $fpath)
 
 autoload -Uz compinit
