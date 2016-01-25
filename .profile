@@ -5,6 +5,7 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 export CLICOLOR=1
+# TODO: set LSCOLORS here.
 
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
 export LESS_TERMCAP_md=$(tput bold; tput setaf 6) # cyan
