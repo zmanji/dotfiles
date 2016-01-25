@@ -14,7 +14,7 @@ vim: .vim .vimrc .gvimrc
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
-shells: .editrc .gemrc .hushlogin .inputrc .profile
+shells: .editrc .gemrc .hushlogin .inputrc .profile .zshrc .zsh
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
