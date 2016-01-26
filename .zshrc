@@ -52,6 +52,8 @@ autoload -Uz compinit
 compinit
 
 zstyle ':completion:*' menu select
+# Case Insensitive Auto Complete
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # History Completion
 zstyle ':completion:*:history-words' stop yes
