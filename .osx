@@ -10,6 +10,7 @@ chflags nohidden ~/Library
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Expand print panel by default
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
@@ -26,6 +27,9 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Avoid creatng .DS_Store files on USB volumes
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Enable Dark Mode
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
@@ -59,6 +63,9 @@ defaults write com.apple.screencapture type -string "png"
 
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Stop iTunes from responding to Key Presses
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
 # Need to restart UI for some changes to take effect.
 killall SystemUIServer Dock
