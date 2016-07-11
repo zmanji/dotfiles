@@ -35,7 +35,7 @@ karabiner: karabiner.sh private.xml
 
 hammerspoon: .hammerspoon
 	@echo removing $^; \
-	$(foreach df, $^, rm -f ~/$(df))
+	$(foreach df, $^, rm -rf ~/$(df))
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
