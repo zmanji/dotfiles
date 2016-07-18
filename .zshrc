@@ -105,6 +105,4 @@ bindkey -M vicmd 'j' history-substring-search-down
 # Get bacspace to work
 bindkey -M viins "^?" backward-delete-char
 
-
-# TODO: Get base16-tomorrow-dark colors:
-# https://github.com/chriskempson/base16-shell/blob/master/base16-tomorrow.dark.sh
+source ~/.zsh/3rdparty/base16-tomorrow-night.sh
