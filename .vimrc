@@ -117,6 +117,9 @@ let g:vimfiler_marked_file_icon = '✓'
 " }}}
 
 " Colorscheme {{{
+let g:base16_shell_path='~/.zsh/3rdparty'
+set t_Co=256
+let base16colorspace=256
 colorscheme base16-tomorrow
 set background=dark
 syntax on
