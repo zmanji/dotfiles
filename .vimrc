@@ -119,7 +119,7 @@ let g:vimfiler_marked_file_icon = '✓'
 " Colorscheme {{{
 let g:base16_shell_path='~/.zsh/3rdparty'
 let base16colorspace=256
-colorscheme base16-tomorrow-night
+colorscheme base16-tomorrow
 set background=dark
 syntax on
 " }}}
