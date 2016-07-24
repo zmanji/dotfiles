@@ -1,3 +1,6 @@
+# A basic ~/.profile for bash. This is read from ~/.zshenv so only set
+# environment variables here.
+
 export PATH="$(brew --prefix)/bin:${PATH}"
 export PATH="${HOME}/bin:${PATH}"
 
@@ -20,9 +23,3 @@ export LESS_TERMCAP_ZN=$(tput ssubm)
 export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
-
-# Jumping Time
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
-if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
-if command -v pyenv >/dev/null 2>&1; then eval "$(pyenv init -)"; fi
