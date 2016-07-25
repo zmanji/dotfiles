@@ -1,7 +1,7 @@
 # A basic ~/.profile for bash. This is read from ~/.zshenv so only set
 # environment variables here.
 
-export PATH="$(brew --prefix)/bin:${PATH}"
+export PATH="$(/usr/local/bin/brew --prefix)/bin:${PATH}"
 export PATH="${HOME}/bin:${PATH}"
 
 export VISUAL=vim
