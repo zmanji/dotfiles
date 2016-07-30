@@ -169,13 +169,6 @@ if !has("gui_running") && !exists("$TMUX")
     let &t_SI = "\<Esc>[6 q"
     " Leave Insert Mode (Cursor Shape: block)
     let &t_EI = "\<Esc>[2 q"
-    " Set Cursor shape to block when starting vim (start in normal mode)
-    let &t_ti = "\<Esc>[2 q" . &t_ti
-    augroup curorshape_reset
-      autocmd!
-      " Restore cursor shape to vertical bar when quitting
-      autocmd VimLeave * let &t_te = "\<Esc>[6 q" . &t_te
-    augroup END
   endif
 endif
 " Enable better matching with '%'
