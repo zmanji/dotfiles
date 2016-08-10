@@ -106,6 +106,7 @@ nnoremap <leader>y :Unite -buffer-name=yanks history/yank<cr>
 nnoremap <leader>o :Unite -auto-resize -buffer-name=outline outline<cr>
 " }}}
 
+" Vimfiler {{{
 
 let g:vimfiler_as_default_explorer=1
 let g:vimfiler_data_directory='~/.vim/.cache/vimfiler'
@@ -113,6 +114,13 @@ let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
+
+" }}}
+
+" Goyo {{{
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+" }}}
 
 " }}}
 
