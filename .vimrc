@@ -154,6 +154,7 @@ set splitbelow
 set splitright
 set novisualbell "Don't blink please
 set noerrorbells "Don't make noise
+set showcmd " Show the current command in the status line.
 set vb t_vb= "Disable any time of beeping or flashing
 " Use the system clipboard by default. So I don't need to specify * +
 " registers for every copy and paste action.
