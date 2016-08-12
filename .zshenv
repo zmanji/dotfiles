@@ -1,5 +1,4 @@
 export PATH="$(/usr/local/bin/brew --prefix)/bin:${PATH}"
-export PATH="${HOME}/bin:${PATH}"
 
 export VISUAL=vim
 export EDITOR=$VISUAL
