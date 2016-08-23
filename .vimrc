@@ -413,6 +413,17 @@ augroup ft_man
 augroup END
 " }}}
 
+let g:vimwiki_folding='syntax'
+" VimWiki {{{
+augroup ft_vimwiki
+  autocmd!
+  autocmd FileType vimwiki setlocal spell
+  autocmd FileType vimwiki setlocal foldlevel=2
+  autocmd FileType vimwiki setlocal autoindent
+  autocmd FileType vimwiki setlocal foldmethod=syntax
+augroup END
+" }}}
+
 " }}}
 
 " Local .vimrc {{{
