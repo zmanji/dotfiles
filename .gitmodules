@@ -82,3 +82,6 @@
 [submodule ".vim/bundle/vim-puppet"]
 	path = .vim/bundle/vim-puppet
 	url = git://github.com/rodjek/vim-puppet.git
+[submodule ".vim/bundle/vim-obsession"]
+	path = .vim/bundle/vim-obsession
+	url = git://github.com/tpope/vim-obsession.git
