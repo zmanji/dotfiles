@@ -7,6 +7,6 @@ prompt_zmanji_setup() {
 
   autoload -U colors && colors
 
-  PROMPT='%{$fg[cyan]%}%~%{$reset_color%}%{$fg[green]%}$(__git_ps1 " (%s)")%{$reset_color%} %# '
+  PROMPT='%{$fg[cyan]%}%~%{$reset_color%}%{$fg[green]%}$(__git_ps1 " (%s)")%{$reset_color%} ◆ '
   RPROMPT='%*'
 }
