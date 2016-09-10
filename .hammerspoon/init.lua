@@ -74,11 +74,3 @@ end)
 hs.hotkey.bind(mash, "H", function()
   hs.hints.windowHints()
 end)
-
-hs.hotkey.bind(mash, "S", function()
-  hs.application.launchOrFocus("Spotify")
-end)
-
-hs.hotkey.bind(mash, "C", function()
-  hs.application.launchOrFocus("Google Chrome")
-end)
