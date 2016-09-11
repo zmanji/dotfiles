@@ -113,6 +113,4 @@
       KeyCode::VK_OPEN_URL_RTM
     </autogen>
   </item>
-
-  <!-- TODO: Consider double shift -> Toggle CapsLock -->
 </root>

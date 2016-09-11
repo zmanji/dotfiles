@@ -12,6 +12,8 @@ $cli set private.hyper_iterm 1
 /bin/echo -n .
 $cli set private.hyper_key 1
 /bin/echo -n .
+$cli set private.hyper_rtm 1
+/bin/echo -n .
 $cli set remap.controlL2controlL_escape 1
 /bin/echo -n .
 $cli set repeat.initial_wait 200
