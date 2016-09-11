@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
+<!-- Useful inspiration:
+     https://github.com/jasonrudolph/keyboard/blob/master/karabiner/private.xml -->
 <root>
   <!-- Taken From http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#better-shifting -->
   <item>
@@ -44,8 +46,9 @@
     <appendix>Right Option to Hyper (Virtual)</appendix>
     <identifier>private.hyper_key</identifier>
     <autogen>
+      <!-- The ModifierFlag::NONE ensures this is only active iff OPTION_R is pressed -->
       __KeyToKey__
-      KeyCode::OPTION_R,
+      KeyCode::OPTION_R, ModifierFlag::OPTION_R | ModifierFlag::NONE,
       KeyCode::VK_MODIFIER_HYPER
     </autogen>
   </item>
@@ -60,7 +63,7 @@
     <identifier>private.hyper_chrome</identifier>
     <autogen>
       __KeyToKey__
-      KeyCode::C, ModifierFlag::HYPER,
+      KeyCode::C, ModifierFlag::HYPER | ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_Chrome
     </autogen>
   </item>
@@ -76,7 +79,7 @@
     <identifier>private.hyper_hints</identifier>
     <autogen>
       __KeyToKey__
-      KeyCode::H, ModifierFlag::HYPER,
+      KeyCode::H, ModifierFlag::HYPER | ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_Window_Hints
     </autogen>
   </item>
@@ -91,9 +94,10 @@
     <identifier>private.hyper_iterm</identifier>
     <autogen>
       __KeyToKey__
-      KeyCode::T, ModifierFlag::HYPER,
+      KeyCode::T, ModifierFlag::HYPER | ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_iTerm
     </autogen>
   </item>
 
+  <!-- TODO: Consider double shift -> Toggle CapsLock -->
 </root>

@@ -65,7 +65,9 @@ hs.hotkey.bind(window_mash, "F", function()
   win:setFrame(f, 0)
 end)
 
+noop = function()
+end
 
 hs.urlevent.bind("hints", function(eventName, params)
-  hs.hints.windowHints()
+  hs.hints.windowHints(nil, noop, true)
 end)
