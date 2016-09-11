@@ -99,5 +99,20 @@
     </autogen>
   </item>
 
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_RTM</name>
+    <url type="file">/Applications/Remember The Milk.app/</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Hyper+M to open Remember The Milk</name>
+    <identifier>private.hyper_rtm</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::M, ModifierFlag::HYPER | ModifierFlag::NONE,
+      KeyCode::VK_OPEN_URL_RTM
+    </autogen>
+  </item>
+
   <!-- TODO: Consider double shift -> Toggle CapsLock -->
 </root>
