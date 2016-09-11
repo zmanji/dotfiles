@@ -1,4 +1,3 @@
-local mash = {"cmd", "alt", "ctrl"}
 local window_mash = {"cmd", "alt"}
 
 hs.hotkey.bind(window_mash, "Left", function()
@@ -67,10 +66,6 @@ hs.hotkey.bind(window_mash, "F", function()
 end)
 
 
-hs.hotkey.bind(mash, "R", function()
-  hs.reload()
-end)
-
-hs.hotkey.bind(mash, "H", function()
+hs.urlevent.bind("hints", function(eventName, params)
   hs.hints.windowHints()
 end)
