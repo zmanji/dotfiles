@@ -2,6 +2,7 @@ export PATH="$(/usr/local/bin/brew --prefix)/bin:${PATH}"
 
 export VISUAL=vim
 export EDITOR=$VISUAL
+export ALTERNATE_EDITOR=""
 
 export CLICOLOR=1
 
