@@ -2,88 +2,89 @@
 <!-- Useful inspiration:
      https://github.com/jasonrudolph/keyboard/blob/master/karabiner/private.xml -->
 <root>
-  <modifierdef>HYPER</modifierdef>
+  <!-- Hyper didn't work out -->
+  <!-- <modifierdef>HYPER</modifierdef> -->
 
-  <item>
-    <name>Hyper Mode</name>
-    <appendix>Space to Hyper (Virtual)</appendix>
-    <identifier>private.hyper_key</identifier>
+  <!-- <item> -->
+  <!--   <name>Hyper Mode</name> -->
+  <!--   <appendix>Space to Hyper (Virtual)</appendix> -->
+  <!--   <identifier>private.hyper_key</identifier> -->
 
-    <!-- See
-         https://github.com/wincent/wincent/commit/22b8898742d111b566d491b047de7524ff685f8c -->
+  <!--   <!-\- See -->
+  <!--        https://github.com/wincent/wincent/commit/22b8898742d111b566d491b047de7524ff685f8c -\-> -->
 
-    <autogen>
-      --KeyOverlaidModifierWithRepeat--
-      KeyCode::SPACE,
-      KeyCode::VK_MODIFIER_HYPER,
-      ModifierFlag::HYPER,
-      KeyCode::SPACE
-    </autogen>
-    <block>
-      <modifier_only>ModifierFlag::HYPER</modifier_only>
-      <autogen>__BlockUntilKeyUp__ KeyCode::SPACE</autogen>
-    </block>
+  <!--   <autogen> -->
+  <!--     -\-KeyOverlaidModifierWithRepeat-\- -->
+  <!--     KeyCode::SPACE, -->
+  <!--     KeyCode::VK_MODIFIER_HYPER, -->
+  <!--     ModifierFlag::HYPER, -->
+  <!--     KeyCode::SPACE -->
+  <!--   </autogen> -->
+  <!--   <block> -->
+  <!--     <modifier_only>ModifierFlag::HYPER</modifier_only> -->
+  <!--     <autogen>__BlockUntilKeyUp__ KeyCode::SPACE</autogen> -->
+  <!--   </block> -->
 
-  </item>
+  <!-- </item> -->
 
-  <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_Chrome</name>
-    <url type="file">/Applications/Google Chrome.app</url>
-  </vkopenurldef>
+  <!-- <vkopenurldef> -->
+  <!--   <name>KeyCode::VK_OPEN_URL_Chrome</name> -->
+  <!--   <url type="file">/Applications/Google Chrome.app</url> -->
+  <!-- </vkopenurldef> -->
 
-  <item>
-    <name>Hyper+C to open Google Chrome</name>
-    <identifier>private.hyper_chrome</identifier>
-    <autogen>
-      __KeyToKey__
-      KeyCode::C, ModifierFlag::HYPER | ModifierFlag::NONE,
-      KeyCode::VK_OPEN_URL_Chrome
-    </autogen>
-  </item>
+  <!-- <item> -->
+  <!--   <name>Hyper+C to open Google Chrome</name> -->
+  <!--   <identifier>private.hyper_chrome</identifier> -->
+  <!--   <autogen> -->
+  <!--     __KeyToKey__ -->
+  <!--     KeyCode::C, ModifierFlag::HYPER | ModifierFlag::NONE, -->
+  <!--     KeyCode::VK_OPEN_URL_Chrome -->
+  <!--   </autogen> -->
+  <!-- </item> -->
 
-  <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_Window_Hints</name>
-    <url>hammerspoon://hints</url>
-    <background/>
-  </vkopenurldef>
+  <!-- <vkopenurldef> -->
+  <!--   <name>KeyCode::VK_OPEN_URL_Window_Hints</name> -->
+  <!--   <url>hammerspoon://hints</url> -->
+  <!--   <background/> -->
+  <!-- </vkopenurldef> -->
 
-  <item>
-    <name>Hyper+H for Window Hints</name>
-    <identifier>private.hyper_hints</identifier>
-    <autogen>
-      __KeyToKey__
-      KeyCode::H, ModifierFlag::HYPER | ModifierFlag::NONE,
-      KeyCode::VK_OPEN_URL_Window_Hints
-    </autogen>
-  </item>
+  <!-- <item> -->
+  <!--   <name>Hyper+H for Window Hints</name> -->
+  <!--   <identifier>private.hyper_hints</identifier> -->
+  <!--   <autogen> -->
+  <!--     __KeyToKey__ -->
+  <!--     KeyCode::H, ModifierFlag::HYPER | ModifierFlag::NONE, -->
+  <!--     KeyCode::VK_OPEN_URL_Window_Hints -->
+  <!--   </autogen> -->
+  <!-- </item> -->
 
-  <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_iTerm</name>
-    <url type="file">/Applications/iTerm.app</url>
-  </vkopenurldef>
+  <!-- <vkopenurldef> -->
+  <!--   <name>KeyCode::VK_OPEN_URL_iTerm</name> -->
+  <!--   <url type="file">/Applications/iTerm.app</url> -->
+  <!-- </vkopenurldef> -->
 
-  <item>
-    <name>Hyper+T to open iTerm</name>
-    <identifier>private.hyper_iterm</identifier>
-    <autogen>
-      __KeyToKey__
-      KeyCode::T, ModifierFlag::HYPER | ModifierFlag::NONE,
-      KeyCode::VK_OPEN_URL_iTerm
-    </autogen>
-  </item>
+  <!-- <item> -->
+  <!--   <name>Hyper+T to open iTerm</name> -->
+  <!--   <identifier>private.hyper_iterm</identifier> -->
+  <!--   <autogen> -->
+  <!--     __KeyToKey__ -->
+  <!--     KeyCode::T, ModifierFlag::HYPER | ModifierFlag::NONE, -->
+  <!--     KeyCode::VK_OPEN_URL_iTerm -->
+  <!--   </autogen> -->
+  <!-- </item> -->
 
-  <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_RTM</name>
-    <url type="file">/Applications/Remember The Milk.app/</url>
-  </vkopenurldef>
+  <!-- <vkopenurldef> -->
+  <!--   <name>KeyCode::VK_OPEN_URL_RTM</name> -->
+  <!--   <url type="file">/Applications/Remember The Milk.app/</url> -->
+  <!-- </vkopenurldef> -->
 
-  <item>
-    <name>Hyper+M to open Remember The Milk</name>
-    <identifier>private.hyper_rtm</identifier>
-    <autogen>
-      __KeyToKey__
-      KeyCode::M, ModifierFlag::HYPER | ModifierFlag::NONE,
-      KeyCode::VK_OPEN_URL_RTM
-    </autogen>
-  </item>
+  <!-- <item> -->
+  <!--   <name>Hyper+M to open Remember The Milk</name> -->
+  <!--   <identifier>private.hyper_rtm</identifier> -->
+  <!--   <autogen> -->
+  <!--     __KeyToKey__ -->
+  <!--     KeyCode::M, ModifierFlag::HYPER | ModifierFlag::NONE, -->
+  <!--     KeyCode::VK_OPEN_URL_RTM -->
+  <!--   </autogen> -->
+  <!-- </item> -->
 </root>
