@@ -28,11 +28,6 @@ osx: .osx
 	@echo Running .osx; \
 	sh ~/.osx
 
-karabiner: karabiner.sh private.xml
-	rm ~/Library/Application\ Support/Karabiner/private.xml
-	ln -s $(CURDIR)/private.xml ~/Library/Application\ Support/Karabiner/private.xml
-	sh ./karabiner.sh
-
 hammerspoon: .hammerspoon
 	@echo removing $^; \
 	$(foreach df, $^, rm -rf ~/$(df))
