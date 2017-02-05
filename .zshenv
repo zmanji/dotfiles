@@ -1,5 +1,7 @@
 export PATH="$(/usr/local/bin/brew --prefix)/bin:${PATH}"
 
+# TODO(zmanji): Make emacsclient the default here.
+# For example `/usr/local/bin/emacsclient -c "$@"`
 export VISUAL=vim
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=""
