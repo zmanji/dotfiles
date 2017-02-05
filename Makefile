@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-all: submodules shells osx git vim karabiner hammerspoon
+all: submodules shells osx git vim hammerspoon
 
 git: .gitconfig .gitignore_global
 	@echo removing $^; \
