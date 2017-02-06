@@ -32,6 +32,7 @@
   (setq-default cursor-in-non-selected-windows nil)
 
   ;; Make alt/option meta and command do nothing
+  ;; https://gist.github.com/railwaycat/3498096
   (setq mac-option-modifier 'meta)
   (setq mac-command-modifier 'super)
 
