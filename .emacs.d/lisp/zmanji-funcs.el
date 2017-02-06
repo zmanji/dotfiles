@@ -31,6 +31,10 @@
   (menu-bar-mode -1)
   (setq-default cursor-in-non-selected-windows nil)
 
+  ;; Make alt/option meta and command do nothing
+  (setq mac-option-modifier 'meta)
+  (setq mac-command-modifier 'super)
+
   ;; http://stackoverflow.com/a/3985487/2874
   (setq default-frame-alist '((font . "SF Mono 12")))
 
