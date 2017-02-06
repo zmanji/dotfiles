@@ -36,9 +36,6 @@
   (setq mac-option-modifier 'meta)
   (setq mac-command-modifier 'super)
 
-  ;; http://stackoverflow.com/a/3985487/2874
-  (setq default-frame-alist '((font . "SF Mono 12")))
-
 )
 
 (defun zmanji/setup-modeline ()
