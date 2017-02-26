@@ -57,6 +57,7 @@
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
   (setq-default evil-shift-width 2)
+  (setq-default fill-column 80)
 )
 
 (defun zmanji/disable-custom ()

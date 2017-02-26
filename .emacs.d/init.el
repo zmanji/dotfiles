@@ -163,7 +163,7 @@
   (show-paren-mode 1)
   (setq show-paren-delay 0))
 
-;; TODO(zmanji): Investigate `org-journal', `org-agenda', `org-habit'
+;; TODO(zmanji): Investigate `org-agenda', `org-habit'
 ;; Reading Material:
 ;; http://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
 ;; https://github.com/tarleb/evil-rebellion/blob/master/evil-org-rebellion.el
@@ -182,6 +182,26 @@
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
     :config
     (setq org-bullets-bullet-list '("◉" "○")))
+  ;; Simple journal integrated with org-mode, vimwiki style
+  ;; https://github.com/bastibe/org-journal
+  (use-package org-journal
+    :config
+    ;; Need to use use `custom-set-variables' here.
+    ;; See http://emacs.stackexchange.com/a/134/8591
+    ;; Changing these custom variables should trigger some lambdas.
+    (custom-set-variables
+     '(org-journal-dir "~/journal")
+     '(org-journal-file-format "%Y-%m-%d.org")
+     '(org-journal-date-format "%A, %d-%m-%Y")
+     '(org-journal-hide-entries-p nil)
+     ;; TODO(zmanji): Consider setting `org-journal-date-prefix' to be `#+TITLE'
+     ;; so the files have titles.
+     )
+
+    (general-nmap
+     :prefix ","
+     "j" 'org-journal-new-entry)
+    )
   ;; Some evil friendly keybindings taken from evil-org-mode:
   ;; https://github.com/edwtjo/evil-org-mode
   (general-mmap
@@ -227,7 +247,11 @@
   (general-nmap
    :keymaps 'org-mode-map
    "<return>" 'org-return
-   ))
+   )
+
+  ;; Auto hard wrap text in org mode files.
+  (add-hook 'text-mode-hook 'turn-on-auto-fill)
+  )
 
 (use-package hl-todo
   :init
