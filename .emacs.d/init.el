@@ -221,6 +221,8 @@
 
   (setq org-hide-emphasis-markers t)
 
+  (setq org-startup-folded nil)
+
   (setq org-return-follows-link t)
   (general-nmap
    :keymaps 'org-mode-map
