@@ -8,6 +8,7 @@
 ;; TODO(zmanji): Consider flycheck
 ;; TODO(zmanji): Create evil friendly bindings for occur-mode
 ;; TODO(zmanji): Consider view-mode: https://www.emacswiki.org/emacs/ViewMode
+;; http://pragmaticemacs.com/emacs/view-mode-makes-for-great-read-only-reading/
 ;; TODO(zmanji): Consider creating a `view' like binary.
 ;; TODO(zmanji): Consider setting up `ediff' and `ediff-evil' and magit
 ;; integration: http://oremacs.com/2015/01/17/setting-up-ediff/
@@ -166,7 +167,6 @@
 ;; Reading Material:
 ;; http://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
 ;; https://github.com/tarleb/evil-rebellion/blob/master/evil-org-rebellion.el
-;; http://www.xiangji.me/2015/07/13/a-few-of-my-org-mode-customizations/
 ;; https://writequit.org/eos/eos-org.html
 ;; https://github.com/jcf/emacs.d/blob/master/init-org.org
 ;; https://github.com/purcell/emacs.d/blob/master/lisp/init-org.el
@@ -225,9 +225,7 @@
   (general-nmap
    :keymaps 'org-mode-map
    "<return>" 'org-return
-   )
-
-  )
+   ))
 
 (use-package hl-todo
   :init
