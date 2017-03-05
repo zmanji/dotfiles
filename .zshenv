@@ -4,6 +4,9 @@ export VISUAL='emacsclient -a ""'
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=""
 
+# For hunspell.
+export DICPATH=~/Library/Spelling/
+
 export CLICOLOR=1
 
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
