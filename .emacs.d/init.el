@@ -201,6 +201,10 @@
     (general-nmap
      :prefix ","
      "j" 'org-journal-new-entry)
+
+    ;; To ensure that evil folding works correctly, we need to add
+    ;; org-journal-mode to the list of fold entries.
+    (zmanji/copy-evil-fold-actions 'org-mode 'org-journal)
     )
   ;; Some evil friendly keybindings taken from evil-org-mode:
   ;; https://github.com/edwtjo/evil-org-mode
@@ -510,11 +514,10 @@ eyebrowse tab before calling the actual function."
 
   ;; NOTE: add future backends here on a mode by mode basis
   )
-
 (use-package origami
   :init
-  (global-origami-mode)
-  )
+  (origami-mode 1)
+)
 
 (zmanji/setup-gui)
 (zmanji/setup-modeline)

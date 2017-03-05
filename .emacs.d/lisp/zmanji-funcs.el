@@ -91,6 +91,25 @@
               (lambda () (zmanji//send-string-to-terminal-if-in-terminal "\e[2 q")))
     (add-hook 'evil-motion-state-entry-hook
               (lambda () (zmanji//send-string-to-terminal-if-in-terminal "\e[2 q")))
-)
+    )
+
+(defun zmanji//evil-fold-actions (mode)
+  (let* (r)
+    (setq r nil)
+    (dolist (elt evil-fold-list r)
+      (if
+          (member mode (car elt))
+          (setq r (cdr elt))
+          )
+      )
+    )
+  )
+
+(defun zmanji/copy-evil-fold-actions (existing-mode new-mode)
+  (let* (actions)
+    (setq actions (zmanji//evil-fold-actions existing-mode))
+    (add-to-list 'evil-fold-list (list (list new-mode) actions))
+    )
+  )
 
 (provide 'zmanji-funcs)
