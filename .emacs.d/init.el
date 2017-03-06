@@ -7,6 +7,7 @@
 
 ;; TODO(zmanji): Consider flycheck
 ;; TODO(zmanji): Create evil friendly bindings for occur-mode
+;; TODO(zmanji): Consider configuring eshell
 ;; TODO(zmanji): Consider view-mode: https://www.emacswiki.org/emacs/ViewMode
 ;; http://pragmaticemacs.com/emacs/view-mode-makes-for-great-read-only-reading/
 ;; TODO(zmanji): Consider creating a `view' like binary.
@@ -402,6 +403,12 @@ eyebrowse tab before calling the actual function."
 
   )
 
+(use-package eshell
+  :config
+  (setq eshell-error-if-no-glob t)
+  (setq eshell-hist-ignoredups t)
+)
+
 (use-package with-editor
   :config
   ;; Bind :cq to something reasonable
@@ -410,7 +417,7 @@ eyebrowse tab before calling the actual function."
   (add-hook 'shell-mode-hook  'with-editor-export-editor)
   (add-hook 'term-exec-hook   'with-editor-export-editor)
   (add-hook 'eshell-mode-hook 'with-editor-export-editor)
-)
+  )
 
 (use-package magit
   :config
