@@ -407,6 +407,9 @@ eyebrowse tab before calling the actual function."
   ;; Bind :cq to something reasonable
   (define-key with-editor-mode-map [remap evil-quit-all-with-error-code] 'with-editor-cancel)
   (define-key with-editor-mode-map [remap evil-quit] 'with-editor-finish)
+  (add-hook 'shell-mode-hook  'with-editor-export-editor)
+  (add-hook 'term-exec-hook   'with-editor-export-editor)
+  (add-hook 'eshell-mode-hook 'with-editor-export-editor)
 )
 
 (use-package magit
