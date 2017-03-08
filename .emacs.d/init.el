@@ -407,6 +407,8 @@ eyebrowse tab before calling the actual function."
   :config
   (setq eshell-error-if-no-glob t)
   (setq eshell-hist-ignoredups t)
+  (setq eshell-scroll-to-bottom-on-input 'this)
+  (setq eshell-list-files-after-cd t)
 )
 
 (use-package with-editor
