@@ -1,6 +1,7 @@
 [user]
   name = Zameer Manji
   email = zmanji@gmail.com
+  useConfigOnly = true
 [color]
   ui = true
 
@@ -36,8 +37,11 @@
   stat = true
   ; Use fugitive.vim as my git merge tool. Get the benefits of vimdiff and git
   ; awareness at the same time.
-	tool = fugitive
-[push]
-	default = tracking
+  tool = fugitive
+  conflictStyle = diff3
+[status]
+  showUntrackedFiles = all
 [mergetool "fugitive"]
-	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[rebase]
+  autostash = true
