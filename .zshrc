@@ -90,7 +90,7 @@ typeset -U path cdpath fpath manpath
 
 # Order of these two matters
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/opt/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 bindkey -v
 
