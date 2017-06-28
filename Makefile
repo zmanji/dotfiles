@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 .PHONY: all
-all: submodules shells osx git vim hammerspoon emacs hunspell bin
+all: submodules shells osx git vim hammerspoon emacs hunspell bin karabiner
 
 .PHONY: git
 git: .gitconfig .gitignore_global
@@ -46,6 +46,14 @@ hammerspoon: .hammerspoon
 	$(foreach df, $^, rm -rf ~/$(df))
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+
+.PHONY: karabiner
+karabiner: .config/karabiner
+	$(shell mkdir -p ~/.config)
+	@echo removing $^; \
+	$(shell rm -rf ~/$^)
+	@echo Installing $^; \
+	$(shell ln -s $(CURDIR)/$^ ~/$^)
 
 .PHONY: hunspell
 hunspell: .hunspell_en_CA
