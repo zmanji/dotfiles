@@ -65,6 +65,12 @@ hs.hotkey.bind(window_mash, "F", function()
   win:setFrame(f, 0)
 end)
 
+hs.hints.style = "vimperator"
+
+hs.hotkey.bind(window_mash, "H", function()
+  hs.hints.windowHints(nil, nil, true)
+end)
+
 -- http://www.hammerspoon.org/docs/hs.usb.watcher.html
 swich_karabiner_profile = function(usb_table)
   -- Sculpt Keyboard IDs
