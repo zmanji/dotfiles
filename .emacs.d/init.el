@@ -30,6 +30,7 @@
 (require 'use-package)
 
 (use-package general
+  :ensure t
   ;; Good README here: https://github.com/noctuid/general.el
   :config
   (general-evil-setup))
@@ -40,11 +41,13 @@
   (unless (server-running-p) (server-start)))
 
 (use-package exec-path-from-shell
+  :ensure t
   :init
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)))
 
 (use-package undo-tree
+  :ensure t
   :init
   (global-undo-tree-mode)
   :diminish undo-tree-mode
@@ -82,18 +85,21 @@
   (setq evil-vsplit-window-right t)
 
   (use-package evil-commentary
+    :ensure t
     :init
     (evil-commentary-mode)
     :diminish evil-commentary-mode
     )
 
   (use-package evil-anzu
+    :ensure t
     :init
     (global-anzu-mode +1)
     :diminish anzu-mode
     )
 
   (use-package evil-matchit
+    :ensure t
     :init
     (global-evil-matchit-mode 1)
     )
@@ -142,23 +148,28 @@
   (setq which-key-show-operator-state-maps t))
 
 (use-package base16-theme
+  :ensure t
   :init
   (load-theme 'base16-tomorrow-night t))
 
 (use-package smooth-scrolling
+  :ensure t
   :init
   (setq smooth-scroll-margin 1)
   (smooth-scrolling-mode))
 
-(use-package pbcopy)
+(use-package pbcopy
+  :ensure t)
 
 (use-package uniquify
+  :ensure t
   :config
   (setq uniquify-buffer-name-style 'forward)
   ;; Ignore special buffers
   (setq uniquify-ignore-buffers-re "^\\*"))
 
 (use-package paren
+  :ensure t
   :config
   ;; Show matching parens like vim
   (show-paren-mode 1)
@@ -259,10 +270,12 @@
   )
 
 (use-package hl-todo
+  :ensure t
   :init
   (global-hl-todo-mode))
 
 (use-package whitespace
+  :ensure t
   :diminish global-whitespace-mode
   :init
   (global-whitespace-mode)
@@ -288,6 +301,7 @@
   newline-mark)))
 
 (use-package saveplace
+  :ensure t
   :init
   (save-place-mode))
 
@@ -296,11 +310,13 @@
   (electric-pair-mode))
 
 (use-package ag
+  :ensure t
   :config
   (setq ag-highlight-search t)
 )
 
 (use-package projectile
+  :ensure t
   :init
   (projectile-mode)
   :config
@@ -316,6 +332,7 @@
 ;; XXX: See `ispell-help' for more information
 ;; See http://blog.binchen.org/posts/what-s-the-best-spell-check-set-up-in-emacs.html
 (use-package flyspell
+  :ensure t
   :diminish flyspell-mode
   :init
   (add-hook 'prog-mode-hook 'flyspell-prog-mode)
@@ -347,21 +364,25 @@
 )
 
 (use-package hl-line
+  :ensure t
   :init
   (global-hl-line-mode)
 )
 
 (use-package linum
+  :ensure t
   :init
   (global-linum-mode)
 )
 
 (use-package restart-emacs
+  :ensure t
   :init
   (evil-ex-define-cmd "restart" 'restart-emacs)
 )
 
 (use-package eyebrowse
+  :ensure t
   :init
   (eyebrowse-mode)
   :config
@@ -412,6 +433,7 @@ eyebrowse tab before calling the actual function."
 )
 
 (use-package with-editor
+  :ensure t
   :config
   ;; Bind :cq to something reasonable
   (define-key with-editor-mode-map [remap evil-quit-all-with-error-code] 'with-editor-cancel)
@@ -422,8 +444,10 @@ eyebrowse tab before calling the actual function."
   )
 
 (use-package magit
+  :ensure t
   :config
-  (use-package evil-magit)
+  (use-package evil-magit
+    :ensure t)
 
   (general-nmap
    :prefix ","
@@ -443,6 +467,7 @@ eyebrowse tab before calling the actual function."
 ;; TODO(zmanji): Consider adding custom ivy action that opens file in split.
 ;; TODO(zmanji): Read docs here: http://oremacs.com/swiper/
 (use-package ivy
+  :ensure t
   :init
   (ivy-mode)
   :diminish ivy-mode
@@ -457,6 +482,7 @@ eyebrowse tab before calling the actual function."
  )
 
 (use-package counsel
+  :ensure t
   :init
   (counsel-mode)
   :diminish counsel-mode
@@ -467,6 +493,7 @@ eyebrowse tab before calling the actual function."
 )
 
 (use-package winner
+  :ensure t
   :init
   (winner-mode)
   :config
@@ -476,6 +503,7 @@ eyebrowse tab before calling the actual function."
   )
 
 (use-package deft
+  :ensure t
   :config
   (setq deft-extentions '("org"))
   (setq deft-default-extension "org")
@@ -490,6 +518,7 @@ eyebrowse tab before calling the actual function."
   )
 
 (use-package company
+  :ensure t
   :diminish company-mode
   :init
   (global-company-mode)
@@ -527,6 +556,7 @@ eyebrowse tab before calling the actual function."
   ;; NOTE: add future backends here on a mode by mode basis
   )
 (use-package origami
+  :ensure t
   :init
   (origami-mode 1)
 )
