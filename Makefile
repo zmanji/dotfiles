@@ -1,5 +1,7 @@
 SHELL := /bin/bash
 
+# TODO(zmanji): Replace this with an easier to understand shell script.
+
 .PHONY: all
 all: submodules shells osx git vim hammerspoon emacs hunspell bin karabiner
 
@@ -63,11 +65,19 @@ hunspell: .hunspell_en_CA
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
 .PHONY: bin
-bin: git-squash
+bin: git-squash emacs-bin
 
 # Sub targets for bin
 .PHONY: git-squash
 git-squash: ~/bin/git-squash
+
+.PHONY: emacs-bin
+emacs-bin: bin/README.emacs bin/ec bin/emacs bin/emacsc bin/emacst bin/et
+	$(shell mkdir -p ~/bin)
+	@echo removing $^; \
+	$(foreach df, $^, rm -rf ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~/$(df); )
 
 ~/bin/git-squash:
 	mkdir -p ~/bin/
