@@ -36,6 +36,24 @@
   (setq mac-option-modifier 'meta)
   (setq mac-command-modifier 'super)
 
+  ;; Ensure when a new GUI frame is launched on OSX, focus is shifted to it
+  ;; https://korewanetadesu.com/emacs-on-os-x.html
+  (when (featurep 'ns)
+    (defun ns-raise-emacs ()
+      "Raise Emacs."
+      (ns-do-applescript "tell application \"Emacs\" to activate"))
+
+    (defun ns-raise-emacs-with-frame (frame)
+      "Raise Emacs and select the provided frame."
+      (with-selected-frame frame
+        (when (display-graphic-p)
+          (ns-raise-emacs))))
+
+  (add-hook 'after-make-frame-functions 'ns-raise-emacs-with-frame)
+
+  (when (display-graphic-p)
+    (ns-raise-emacs)))
+
 )
 
 (defun zmanji/setup-modeline ()
