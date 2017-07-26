@@ -341,10 +341,12 @@
   (setq ispell-program-name "/usr/local/bin/hunspell")
   (setq ispell-silently-savep t)
 
-  (general-nmap
-   :keymaps 'flyspell-mode-map
-   "]s" 'flyspell-goto-next-error
-   )
+  (general-define-key
+    :keymaps 'flyspell-mode-map
+    :states '(normal)
+    :prefix "]"
+    "s" 'flyspell-goto-next-error
+    )
   ;; TODO(zmanji): Add a binding `zg' to store misspelled word in
   ;; personal dictionary
 )
