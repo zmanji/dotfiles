@@ -576,3 +576,5 @@ eyebrowse tab before calling the actual function."
 (setq-default tab-always-indent 'complete)
 
 (setq ring-bell-function 'ignore)
+
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
