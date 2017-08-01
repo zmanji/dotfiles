@@ -69,3 +69,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
 # Need to restart UI for some changes to take effect.
 killall SystemUIServer Dock
+
+# Enable loading of iterm2 config from dotfiles.
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm2"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true

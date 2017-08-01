@@ -3,7 +3,7 @@ SHELL := /bin/bash
 # TODO(zmanji): Replace this with an easier to understand shell script.
 
 .PHONY: all
-all: submodules shells osx git vim hammerspoon emacs hunspell bin karabiner
+all: submodules shells osx git vim hammerspoon emacs hunspell bin karabiner iterm2
 
 .PHONY: git
 git: .gitconfig .gitignore_global
@@ -56,6 +56,15 @@ karabiner: .config/karabiner
 	$(shell rm -rf ~/$^)
 	@echo Installing $^; \
 	$(shell ln -s $(CURDIR)/$^ ~/$^)
+
+.PHONY: iterm2
+iterm2: .config/iterm2
+	$(shell mkdir -p ~/.config)
+	@echo removing $^; \
+	$(shell rm -rf ~/$^)
+	@echo Installing $^; \
+	$(shell ln -s $(CURDIR)/$^ ~/$^)
+
 
 .PHONY: hunspell
 hunspell: .hunspell_en_CA
