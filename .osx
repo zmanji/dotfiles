@@ -53,7 +53,8 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
 
 # Set a fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 25
 
 # Change default screenshot location from Desktop to ~/Screenshots
 mkdir -p ~/Screenshots/
@@ -64,8 +65,8 @@ defaults write com.apple.screencapture type -string "png"
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Stop iTunes from responding to Key Presses
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+# Disable “natural” (Lion-style) scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Need to restart UI for some changes to take effect.
 killall SystemUIServer Dock
