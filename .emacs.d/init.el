@@ -589,3 +589,4 @@ eyebrowse tab before calling the actual function."
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
 (set-face-attribute 'default nil :family "DejaVu Sans Mono")
 (set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono")
+(set-face-attribute 'variable-pitch nil :family "DejaVu Sans")
