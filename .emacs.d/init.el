@@ -571,6 +571,20 @@ eyebrowse tab before calling the actual function."
          ("\\.markdown\\'" . markdown-mode))
   )
 
+(use-package edit-server
+  :ensure t
+  :init
+  (edit-server-start)
+  :config
+  ;; Bind :cq and :q to something reasonable
+  (define-key edit-server-edit-mode-map [remap evil-quit-all-with-error-code] 'edit-server-abort)
+  (define-key edit-server-edit-mode-map [remap evil-quit] 'edit-server-done)
+  (define-key edit-server-edit-mode-map [remap evil-save] 'edit-server-save)
+  (define-key edit-server-edit-mode-map [remap evil-write] 'edit-server-save)
+  (define-key edit-server-edit-mode-map [remap evil-save-and-close] 'edit-server-done)
+  (define-key edit-server-edit-mode-map [remap evil-save-modified-and-close] 'edit-server-done)
+  )
+
 (zmanji/setup-gui)
 (zmanji/setup-modeline)
 (zmanji/setup-editing)
