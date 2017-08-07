@@ -587,6 +587,14 @@ eyebrowse tab before calling the actual function."
   (define-key edit-server-edit-mode-map [remap evil-save-modified-and-close] 'edit-server-done)
   )
 
+(use-package better-shell
+  :ensure t
+  :init
+  (evil-ex-define-cmd "shell" 'better-shell-for-current-dir)
+  (evil-ex-define-cmd "ssh" 'better-shell-remote-open)
+  (evil-ex-define-cmd "sudo" 'better-shell-sudo-here)
+  )
+
 (zmanji/setup-gui)
 (zmanji/setup-modeline)
 (zmanji/setup-editing)
