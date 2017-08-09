@@ -595,6 +595,18 @@ eyebrowse tab before calling the actual function."
   (evil-ex-define-cmd "sudo" 'better-shell-sudo-here)
   )
 
+(use-package comint
+  :init
+  (general-nmap
+   :keymaps 'comint-mode-map
+   "C-l" 'comint-clear-buffer
+   )
+  (general-imap
+   :keymaps 'comint-mode-map
+   "C-l" 'comint-clear-buffer
+   )
+)
+
 (zmanji/setup-gui)
 (zmanji/setup-modeline)
 (zmanji/setup-editing)
