@@ -600,6 +600,8 @@ eyebrowse tab before calling the actual function."
   (general-nmap
    :keymaps 'comint-mode-map
    "C-l" 'comint-clear-buffer
+   "C-j" 'comint-next-input
+   "C-k" 'comint-previous-input
    )
   (general-imap
    :keymaps 'comint-mode-map
