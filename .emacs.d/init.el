@@ -17,7 +17,7 @@
 
 (require 'package)
 ;; TODO(zmanji): Consider using stable melpa
-;; TODO(zmanji): Consider versioning elpa/ directory.
+;; TODO(zmanji): Consider versioning elpa/ directory or using straight.el
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
