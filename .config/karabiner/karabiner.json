@@ -109,7 +109,7 @@
             },
             "devices": [
                 {
-                    "disable_built_in_keyboard_if_exists": true,
+                    "disable_built_in_keyboard_if_exists": false,
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
@@ -117,6 +117,16 @@
                         "vendor_id": 1118
                     },
                     "ignore": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 4871,
+                        "vendor_id": 65261
+                    },
+                    "ignore": true
                 }
             ],
             "fn_function_keys": {
