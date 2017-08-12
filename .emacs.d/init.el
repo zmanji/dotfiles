@@ -78,6 +78,10 @@
 
   (define-key evil-window-map "q" 'evil-window-delete)
 
+  ;; Swap ; and :
+  (define-key evil-motion-state-map ";" 'evil-ex)
+  (define-key evil-motion-state-map ":" 'evil-repeat-find-char)
+
   (zmanji/evil-terminal-cursor-change)
 
   (evil-ex-define-cmd "fullscreen" 'toggle-frame-fullscreen)
