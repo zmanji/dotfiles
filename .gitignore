@@ -4,3 +4,5 @@
 .vim/tmp/
 # Don't track the compiled wordlist.
 .vim/custom-dictionary.en.utf8.add.spl
+# Don't track emacs tramp connection histroy.
+.emacs.d/tramp
