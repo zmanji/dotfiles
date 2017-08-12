@@ -31,6 +31,9 @@
   (menu-bar-mode -1)
   (setq-default cursor-in-non-selected-windows nil)
 
+  ;; Typing out 'yes' is too much
+  (fset 'yes-or-no-p 'y-or-n-p)
+
   ;; Make alt/option meta and command do nothing
   ;; https://gist.github.com/railwaycat/3498096
   (setq mac-option-modifier 'meta)
