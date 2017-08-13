@@ -133,4 +133,16 @@
     )
   )
 
+(defun zmanji/delete-file-and-buffer ()
+  "Kills the current buffer and deletes the associated file if any."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (if filename
+        (delete-file filename)
+      )
+    )
+  (kill-buffer)
+  ;; TODO(zmanji): Consider deleting the current window as well.
+  )
+
 (provide 'zmanji-funcs)

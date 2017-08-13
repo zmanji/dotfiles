@@ -85,6 +85,7 @@
   (zmanji/evil-terminal-cursor-change)
 
   (evil-ex-define-cmd "fullscreen" 'toggle-frame-fullscreen)
+  (evil-ex-define-cmd "rm" 'zmanji/delete-file-and-buffer)
 
   (setq evil-vsplit-window-right t)
 
@@ -505,7 +506,7 @@ eyebrowse tab before calling the actual function."
   :config
   (define-key evil-window-map "u" 'winner-undo)
   (define-key evil-window-map "r" 'winner-redo)
-  (setq winner-boring-buffers '("*Completions*" "*Help*"))
+  (setq winner-boring-buffers '("*Completions*"))
   )
 
 (use-package deft
@@ -628,7 +629,17 @@ eyebrowse tab before calling the actual function."
 
 (setq ring-bell-function 'ignore)
 
+;; Prevent disaster with deletes
+(setq delete-by-moving-to-trash t)
+
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
 (set-face-attribute 'default nil :family "DejaVu Sans Mono")
 (set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono")
 (set-face-attribute 'variable-pitch nil :family "DejaVu Sans")
+
+
+;; Ensure 'q' in help mode does the same thing as C-w q
+(general-nmap
+  :keymaps 'help-mode-map
+  "q" 'evil-window-delete
+  )

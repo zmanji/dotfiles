@@ -12,3 +12,8 @@ TAGS
 !TAGS/
 tags
 !tags/
+
+# Ignore emacs files
+*~
+\#*\#
+.\#*
