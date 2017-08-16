@@ -26,7 +26,7 @@ prompt_zmanji_setup() {
   PROMPT='┌─ %{$fg[cyan]%}%~ %{$reset_color%}%{$fg[green]%}$(__zmanji_git)%{$reset_color%}$(__zmanji_venv)$prompt_newline└─ ◆ '
 
   # Sigh: https://superuser.com/a/737454/69306
-  local _lineup=$'\e[1A'
-  local _linedown=$'\e[1B'
+  _lineup=$'\e[1A'
+  _linedown=$'\e[1B'
   RPROMPT='%{${_lineup}%}%*%{${_linedown}%}'
 }
