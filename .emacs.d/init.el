@@ -336,6 +336,7 @@
 
 ;; XXX: See `ispell-help' for more information
 ;; See http://blog.binchen.org/posts/what-s-the-best-spell-check-set-up-in-emacs.html
+;; NOTE: The dictionaries have to come from here: http://wordlist.aspell.net/dicts/
 (use-package flyspell
   :ensure t
   :diminish flyspell-mode
