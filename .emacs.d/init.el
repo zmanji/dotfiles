@@ -356,6 +356,7 @@
     )
   ;; TODO(zmanji): Add a binding `zg' to store misspelled word in
   ;; personal dictionary
+  ;; See this for inspiration: https://stackoverflow.com/a/22116480/2874
 )
 
 (use-package browse-url
