@@ -614,7 +614,24 @@ eyebrowse tab before calling the actual function."
    :keymaps 'comint-mode-map
    "C-l" 'comint-clear-buffer
    )
-)
+  )
+
+(use-package rust-mode
+  :ensure t
+  :config
+  (setq rust-format-on-save t)
+  )
+(use-package racer
+  :ensure t
+  :config
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+  (general-define-key
+    :keymaps 'racer-mode-map
+    :states '(normal)
+    "K" 'racer-find-definition
+    )
+  )
 
 (zmanji/setup-gui)
 (zmanji/setup-modeline)
@@ -641,7 +658,19 @@ eyebrowse tab before calling the actual function."
 
 
 ;; Ensure 'q' in help mode does the same thing as C-w q
+;; NOTE: This seems undesirable since help mode can also replace an existing
+;; window
 (general-nmap
   :keymaps 'help-mode-map
   "q" 'evil-window-delete
+  )
+
+
+;; Make compilation mode tolerable, not evil defaults it to motion mode
+(unbind-key "g" compilation-mode-map)
+(general-define-key
+  :keymaps 'compilation-mode-map
+  :states '(motion)
+  "h" 'evil-backward-char
+  "r" 'recompile
   )
