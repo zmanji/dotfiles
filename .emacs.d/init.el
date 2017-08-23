@@ -326,13 +326,19 @@
   (projectile-mode)
   :config
   (setq projectile-enable-caching t)
+  (setq projectile-require-project-root nil)
   (use-package counsel-projectile
     :config
     (general-nmap
     :prefix ","
     "f" 'counsel-projectile-find-file)
     )
-)
+  ;; projectile-mode-hook doesn't run for every buffer
+  ;; Emacs has no generic "open file buffer hook" so this is a weak emulation
+  ;; If this doesn't work need to advice create-file-buffer like uniquify
+  (add-hook 'prog-mode-hook 'zmanji/set-default-directory-projectile-root)
+  (add-hook 'text-mode-hook 'zmanji/set-default-directory-projectile-root)
+  )
 
 ;; XXX: See `ispell-help' for more information
 ;; See http://blog.binchen.org/posts/what-s-the-best-spell-check-set-up-in-emacs.html

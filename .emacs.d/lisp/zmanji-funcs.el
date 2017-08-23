@@ -145,4 +145,12 @@
   ;; TODO(zmanji): Consider deleting the current window as well.
   )
 
+(defun zmanji/set-default-directory-projectile-root ()
+  (let ((dir (projectile-project-root)))
+    (when dir
+       (setq-local default-directory dir)
+      )
+    )
+  )
+
 (provide 'zmanji-funcs)
