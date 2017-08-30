@@ -3,7 +3,15 @@ SHELL := /bin/bash
 # TODO(zmanji): Replace this with an easier to understand shell script.
 
 .PHONY: all
-all: submodules shells osx git vim hammerspoon emacs hunspell bin karabiner iterm2
+
+all: submodules shells osx git vim hammerspoon emacs hunspell bin karabiner iterm2 tmux
+
+.PHONY: tmux
+tmux: .tmux.conf
+	@echo removing $^; \
+	$(foreach df, $^, rm -f ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
 .PHONY: git
 git: .gitconfig .gitignore_global
