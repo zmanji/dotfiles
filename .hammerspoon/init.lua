@@ -1,6 +1,7 @@
 local window_mash = {"cmd", "alt"}
 
-hs.hotkey.bind(window_mash, "Left", function()
+
+hs.hotkey.bind(window_mash, "H", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -13,7 +14,7 @@ hs.hotkey.bind(window_mash, "Left", function()
   win:setFrame(f, 0)
 end)
 
-hs.hotkey.bind(window_mash, "Right", function()
+hs.hotkey.bind(window_mash, "L", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -26,7 +27,7 @@ hs.hotkey.bind(window_mash, "Right", function()
   win:setFrame(f, 0)
 end)
 
-hs.hotkey.bind(window_mash, "Up", function()
+hs.hotkey.bind(window_mash, "K", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -39,7 +40,7 @@ hs.hotkey.bind(window_mash, "Up", function()
   win:setFrame(f, 0)
 end)
 
-hs.hotkey.bind(window_mash, "Down", function()
+hs.hotkey.bind(window_mash, "J", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -63,12 +64,6 @@ hs.hotkey.bind(window_mash, "F", function()
   f.w = max.w
   f.h = max.h
   win:setFrame(f, 0)
-end)
-
-hs.hints.style = "vimperator"
-
-hs.hotkey.bind(window_mash, "H", function()
-  hs.hints.windowHints(nil, nil, true)
 end)
 
 -- http://www.hammerspoon.org/docs/hs.usb.watcher.html
