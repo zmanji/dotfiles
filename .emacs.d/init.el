@@ -6,7 +6,6 @@
 (require 'zmanji-funcs)
 
 ;; TODO(zmanji): Consider flycheck
-;; TODO(zmanji): Create evil friendly bindings for occur-mode
 ;; TODO(zmanji): Consider configuring eshell
 ;; TODO(zmanji): Consider view-mode: https://www.emacswiki.org/emacs/ViewMode
 ;; http://pragmaticemacs.com/emacs/view-mode-makes-for-great-read-only-reading/
@@ -54,11 +53,9 @@
   :config
   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
   (setq undo-tree-auto-save-history t)
-  (general-nmap
-   :prefix ","
-   "u" 'undo-tree-visualize)
 )
 
+;; TODO(zmanji): Consider making space the leader key and not ','
 (use-package evil
   :ensure t
   :init
@@ -142,6 +139,24 @@
   (define-key evil-normal-state-map [remap evil-shift-right] 'zmanji/evil-shift-right)
   (define-key evil-normal-state-map [remap evil-shift-left] 'zmanji/evil-shift-left)
 
+  ;; Evil friendly bindings for occur-mode
+  (add-to-list 'evil-motion-state-modes 'occur-mode)
+  (general-mmap
+   :keymaps 'occur-mode-map
+   "RET" 'occur-mode-goto-occurrence
+   )
+
+  ;; Make leader keyspace
+  ;; Pattern from https://github.com/noctuid/evil-guide#leader-key
+  (define-prefix-command 'zmanji/leader-map)
+  ;; Unbind ',' in motion mode so it can be a leader key
+  (define-key evil-motion-state-map "," 'zmanji/leader-map)
+  (define-key zmanji/leader-map "j" 'org-journal-new-entry)
+  (define-key zmanji/leader-map "f" 'counsel-projectile-find-file)
+  (define-key zmanji/leader-map "g" 'magit-status)
+  (define-key zmanji/leader-map "b" 'ivy-switch-buffer)
+  (define-key zmanji/leader-map "u" 'undo-tree-visualize)
+
 )
 
 (use-package which-key
@@ -214,10 +229,6 @@
      ;; TODO(zmanji): Consider setting `org-journal-date-prefix' to be `#+TITLE'
      ;; so the files have titles.
      )
-
-    (general-nmap
-     :prefix ","
-     "j" 'org-journal-new-entry)
 
     ;; To ensure that evil folding works correctly, we need to add
     ;; org-journal-mode to the list of fold entries.
@@ -327,12 +338,7 @@
   :config
   (setq projectile-enable-caching t)
   (setq projectile-require-project-root nil)
-  (use-package counsel-projectile
-    :config
-    (general-nmap
-    :prefix ","
-    "f" 'counsel-projectile-find-file)
-    )
+  (use-package counsel-projectile)
   ;; projectile-mode-hook doesn't run for every buffer
   ;; Emacs has no generic "open file buffer hook" so this is a weak emulation
   ;; If this doesn't work need to advice create-file-buffer like uniquify
@@ -388,12 +394,6 @@
   :ensure t
   :init
   (global-linum-mode)
-)
-
-(use-package restart-emacs
-  :ensure t
-  :init
-  (evil-ex-define-cmd "restart" 'restart-emacs)
 )
 
 (use-package eyebrowse
@@ -464,9 +464,6 @@ eyebrowse tab before calling the actual function."
   (use-package evil-magit
     :ensure t)
 
-  (general-nmap
-   :prefix ","
-   "g" 'magit-status)
 )
 
 (use-package dired
@@ -490,10 +487,6 @@ eyebrowse tab before calling the actual function."
   (define-key ivy-minibuffer-map (kbd "C-j") 'ivy-next-line)
   (define-key ivy-minibuffer-map (kbd "C-k") 'ivy-previous-line)
   (define-key ivy-minibuffer-map (kbd "<escape>") 'zmanji/minibuffer-keyboard-quit)
-
-  (general-nmap
-   :prefix ","
-   "b" 'ivy-switch-buffer)
  )
 
 (use-package counsel
