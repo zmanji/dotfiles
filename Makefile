@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells osx git vim hammerspoon emacs hunspell bin karabiner iterm2 tmux
+all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -89,7 +89,7 @@ bin: git-squash emacs-bin
 git-squash: ~/bin/git-squash
 
 .PHONY: emacs-bin
-emacs-bin: bin/README.emacs bin/ec bin/emacs bin/emacsc bin/emacst bin/et
+emacs-bin: bin/README.emacs bin/ec bin/emacs bin/et
 	$(shell mkdir -p ~/bin)
 	@echo removing $^; \
 	$(foreach df, $^, rm -rf ~/$(df))
