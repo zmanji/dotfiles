@@ -44,6 +44,8 @@ unsetopt FLOW_CONTROL
 
 setopt NO_BEEP
 
+setopt INTERACTIVECOMMENTS
+
 setopt NO_CLOBBER
 
 setopt PROMPT_SUBST
