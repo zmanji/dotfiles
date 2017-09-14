@@ -673,3 +673,7 @@ eyebrowse tab before calling the actual function."
   "h" 'evil-backward-char
   "r" 'recompile
   )
+
+;; When in the ZSH cli a command is edited with edit-command-line (aka v in
+;; vicmd mode), the filename is /tmp/zshXXXXXX where the X is a random character
+(add-to-list 'auto-mode-alist '("/tmp/zsh[[:alnum:]]\\{6\\}" . sh-mode))
