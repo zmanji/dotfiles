@@ -156,6 +156,7 @@
   (define-key zmanji/leader-map "g" 'magit-status)
   (define-key zmanji/leader-map "b" 'ivy-switch-buffer)
   (define-key zmanji/leader-map "u" 'undo-tree-visualize)
+  (define-key zmanji/leader-map "p" 'projectile-switch-project)
 
 )
 
