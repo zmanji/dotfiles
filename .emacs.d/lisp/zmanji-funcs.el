@@ -39,6 +39,8 @@
   (setq mac-option-modifier 'meta)
   (setq mac-command-modifier 'super)
 
+  (setq x-stretch-cursor t)
+
   ;; Ensure when a new GUI frame is launched on OSX, focus is shifted to it
   ;; https://korewanetadesu.com/emacs-on-os-x.html
   (when (featurep 'ns)
