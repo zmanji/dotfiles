@@ -22,6 +22,7 @@
   d = diff
   dc = diff --cached
   amend = commit --amend
+  wip = commit -m "WIP"
   lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 
 [core]
