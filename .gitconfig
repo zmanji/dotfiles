@@ -2,6 +2,7 @@
   name = Zameer Manji
   email = zmanji@gmail.com
   useConfigOnly = true
+
 [color]
   ui = true
 
@@ -28,21 +29,26 @@
 [core]
   excludesfile = ~/.gitignore_global
   whitespace = trailing-space,space-before-tab
+
 [github]
   user = zmanji
+
 [diff]
   mnemonicprefix = true
   ; Detect renames as well as copies
   renames = copies
+  algorithm = patience
+
 [merge]
   stat = true
-  ; Use fugitive.vim as my git merge tool. Get the benefits of vimdiff and git
-  ; awareness at the same time.
-  tool = fugitive
   conflictStyle = diff3
+  ff = only
+
 [status]
   showUntrackedFiles = all
-[mergetool "fugitive"]
-  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+
 [rebase]
   autostash = true
+
+[rerere]
+  enabled = true
