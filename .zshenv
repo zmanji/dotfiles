@@ -1,4 +1,5 @@
 export PATH="$(/usr/local/bin/brew --prefix)/bin:${PATH}"
+export PATH="$(/usr/local/bin/brew --prefix)/sbin:${PATH}"
 
 export VISUAL='emacsclient -a ""'
 export EDITOR=$VISUAL
