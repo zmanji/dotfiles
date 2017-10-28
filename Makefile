@@ -82,11 +82,19 @@ hunspell: .hunspell_en_CA
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
 .PHONY: bin
-bin: git-squash emacs-bin
+bin: git-squash emacs-bin git-bin
 
 # Sub targets for bin
 .PHONY: git-squash
 git-squash: ~/bin/git-squash
+
+.PHONY: git-bin
+git-bin: bin/git-fb
+	$(shell mkdir -p ~/bin)
+	@echo removing $^; \
+	$(foreach df, $^, rm -rf ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~/$(df); )
 
 .PHONY: emacs-bin
 emacs-bin: bin/README.emacs bin/ec bin/emacs bin/et
