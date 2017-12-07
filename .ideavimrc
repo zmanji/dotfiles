@@ -1,0 +1,68 @@
+" Cribbed from .vimrc
+set nocompatible
+let mapleader = ","
+let maplocalleader = ","
+
+" Emulate vim-surround
+set surround
+
+filetype plugin indent on
+set encoding=utf-8
+set number
+set ruler
+set list listchars=tab:▸\ ,eol:¬,trail:·
+set showbreak=↪
+set autoread
+set autowrite
+set hidden
+set backspace=indent,eol,start
+set notitle
+set mouse=a
+set laststatus=2
+set history=1000
+set splitbelow
+set splitright
+set novisualbell "Don't blink please
+set noerrorbells "Don't make noise
+set showcmd " Show the current command in the status line.
+set clipboard=unnamed
+set cursorline
+set colorcolumn=+1
+set hlsearch "highlight searched text
+set incsearch "incremental search
+set ignorecase "case InSeNsTiVE
+set smartcase "If I do use a captial letter in the search, be case-sensitive
+
+" I press the `:` key a lot in Vim and I often get typos such as `:W` because
+" I have to hold shift. I thus map it to `;`.
+nnoremap ; :
+
+" I don't want to lose the functionality of the `;` key so I map that
+" behaviour to the `:` key. This also disables the original function of the
+" `:` key which forces me to use the `;` key. This is really helpful in fixing
+" muscle memory.
+nnoremap : ;
+
+" By default `j` and `k` both move in a file by lines delimited by `\n` which
+" is not helpful when linewrapping is enabled. These mappings ensure that I
+" move up and down by display lines and not just lines delimited by `\n`.
+noremap j gj
+noremap k gk
+" In order to not lose the original functionality of the `j` and `k` keys I
+" map their functionality to `gj` and `gk` respectively.
+noremap gj j
+noremap gk k
+
+" Make Y consistent with C and D.  See :help Y.
+nnoremap Y y$
+
+" This allows for faster navigation of windows/splits.
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+

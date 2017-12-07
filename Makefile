@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux
+all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -73,9 +73,15 @@ iterm2: .config/iterm2
 	@echo Installing $^; \
 	$(shell ln -s $(CURDIR)/$^ ~/$^)
 
-
 .PHONY: hunspell
 hunspell: .hunspell_en_CA
+	@echo removing $^; \
+	$(foreach df, $^, rm -f ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+
+.PHONY: idea
+idea: .ideavimrc
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
