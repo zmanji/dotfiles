@@ -1,5 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+ARG=${1:-}
+
 # git fuzzy branch
-git branch -vv | fzf +m | awk '{print $1}' | xargs git checkout
+git branch -vv | fzf +m -1 --query=$ARG | awk '{print $1}' | xargs git checkout
