@@ -57,7 +57,15 @@
   (add-hook 'after-make-frame-functions 'ns-raise-emacs-with-frame)
 
   (when (display-graphic-p)
-    (ns-raise-emacs)))
+    (ns-raise-emacs))
+
+  ;; Have the titlebar color of the gui match the theme (Emacs 26.1)
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark))
+  (setq ns-use-proxy-icon nil)
+  (setq frame-title-format nil)
+
+  )
 
 )
 
