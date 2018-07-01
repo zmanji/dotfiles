@@ -572,9 +572,8 @@ eyebrowse tab before calling the actual function."
 
 (use-package markdown-mode
   :ensure t
-  :commands (markdown-mode gfm-mode)
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
+  :commands (markdown-mode)
+  :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :config
   (setq markdown-command "pandoc -r commonmark -w html5 -s")
