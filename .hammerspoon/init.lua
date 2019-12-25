@@ -70,6 +70,17 @@ hs.hotkey.bind(window_mash, "W", function()
   hs.hints.windowHints()
 end)
 
+-- TODO(zmanji): Consider a window filter to allow for 'invisible'/'minimized'
+-- windows like spotify or more sophisticated behaviour
+local switcher = hs.window.switcher.new()
+hs.hotkey.bind(window_mash, "tab", function()
+  switcher:next()
+end,
+nil,
+function ()
+  switcher:next()
+end)
+
 -- http://www.hammerspoon.org/docs/hs.usb.watcher.html
 swich_karabiner_profile = function(usb_table)
   -- Sculpt Keyboard IDs
