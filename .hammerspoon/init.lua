@@ -67,7 +67,7 @@ hs.hotkey.bind(window_mash, "F", function()
 end)
 
 local expose = hs.expose.new()
-hs.hotkey.bind(window_mash, "W", function()
+hs.hotkey.bind(window_mash, "space", function()
   expose:show()
 end)
 
