@@ -66,6 +66,10 @@ hs.hotkey.bind(window_mash, "F", function()
   win:setFrame(f, 0)
 end)
 
+hs.hotkey.bind(window_mash, "W", function()
+  hs.hints.windowHints()
+end)
+
 -- http://www.hammerspoon.org/docs/hs.usb.watcher.html
 swich_karabiner_profile = function(usb_table)
   -- Sculpt Keyboard IDs
