@@ -66,8 +66,9 @@ hs.hotkey.bind(window_mash, "F", function()
   win:setFrame(f, 0)
 end)
 
+local expose = hs.expose.new()
 hs.hotkey.bind(window_mash, "W", function()
-  hs.hints.windowHints()
+  expose:show()
 end)
 
 -- TODO(zmanji): Consider a window filter to allow for 'invisible'/'minimized'
