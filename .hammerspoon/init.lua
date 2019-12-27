@@ -1,4 +1,5 @@
 local window_mash = {"cmd", "alt"}
+local reverse_window_mash = {"shift", "cmd", "alt"}
 
 
 hs.hotkey.bind(window_mash, "H", function()
@@ -81,6 +82,14 @@ end,
 nil,
 function ()
   switcher:next()
+end)
+
+hs.hotkey.bind(reverse_window_mash, "tab", function()
+  switcher:previous()
+end,
+nil,
+function ()
+  switcher:previous()
 end)
 
 -- http://www.hammerspoon.org/docs/hs.usb.watcher.html
