@@ -1,5 +1,4 @@
 local window_mash = {"cmd", "alt"}
-local reverse_window_mash = {"shift", "cmd", "alt"}
 
 
 hs.hotkey.bind(window_mash, "H", function()
@@ -76,7 +75,7 @@ end)
 -- TODO(zmanji): Consider a window filter to allow for 'invisible'/'minimized'
 -- windows like spotify or more sophisticated behaviour
 local switcher = hs.window.switcher.new()
-hs.hotkey.bind(window_mash, "tab", function()
+hs.hotkey.bind({"cmd"}, "f19", function()
   switcher:next()
 end,
 nil,
@@ -84,7 +83,7 @@ function ()
   switcher:next()
 end)
 
-hs.hotkey.bind(reverse_window_mash, "tab", function()
+hs.hotkey.bind({"cmd", "shift"}, "f19", function()
   switcher:previous()
 end,
 nil,

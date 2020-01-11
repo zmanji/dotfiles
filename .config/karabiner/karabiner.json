@@ -159,6 +159,29 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Rebind Cmd-Tab to Cmd-F19",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "f19",
+                                    "modifiers": "left_command"
+                                },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
