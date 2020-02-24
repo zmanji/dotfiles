@@ -110,9 +110,10 @@ emacs-bin: bin/README.emacs bin/ec bin/emacs bin/et
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~/$(df); )
 
+.PHONY: ~/bin/git-squash
 ~/bin/git-squash:
 	mkdir -p ~/bin/
-	wget -O ~/bin/git-squash https://github.com/zmanji/git-squash/releases/download/0.0.1/git-squash-0.0.1.pex
+	wget -O ~/bin/git-squash https://github.com/zmanji/git-squash-rs/releases/download/0.2.0/git-squash-rs.stable-x86_64-apple-darwin
 	chmod +x ~/bin/git-squash
 
 submodules:
