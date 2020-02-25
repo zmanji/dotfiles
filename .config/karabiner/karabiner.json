@@ -245,7 +245,7 @@
                         ]
                     },
                     {
-                        "description": "Rebind Cmd-Tab to Cmd-F19",
+                        "description": "Rebind Cmd-Tab to Cmd-F19 for Hammerspoon",
                         "manipulators": [
                             {
                                 "from": {
@@ -261,6 +261,29 @@
                                 },
                                 "to": {
                                     "key_code": "f19",
+                                    "modifiers": "left_command"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Rebind Cmd-` to Cmd-F18 for Hammerspoon",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "grave_accent_and_tilde",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "f18",
                                     "modifiers": "left_command"
                                 },
                                 "type": "basic"

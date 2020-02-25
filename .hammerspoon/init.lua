@@ -1,5 +1,6 @@
 local window_mash = {"cmd", "alt"}
 
+local log = hs.logger.new('zmanji')
 
 hs.hotkey.bind(window_mash, "H", function()
   local win = hs.window.focusedWindow()
@@ -81,7 +82,7 @@ end,
 nil,
 function ()
   switcher:next()
-end)
+ end)
 
 hs.hotkey.bind({"cmd", "shift"}, "f19", function()
   switcher:previous()
@@ -89,4 +90,26 @@ end,
 nil,
 function ()
   switcher:previous()
+end)
+
+-- within app only window switching, activeApplication=true doesn't work for
+-- some reason
+local appFilter = hs.window.filter.new(function (w)
+  return w:application():isFrontmost()
+end)
+local appSwitcher = hs.window.switcher.new(appFilter)
+hs.hotkey.bind({"cmd"}, "f18", function()
+  appSwitcher:next()
+end,
+nil,
+function ()
+  appSwitcher:next()
+ end)
+
+hs.hotkey.bind({"cmd", "shift"}, "f18", function()
+  appSwitcher:previous()
+end,
+nil,
+function ()
+  appSwitcher:previous()
 end)
