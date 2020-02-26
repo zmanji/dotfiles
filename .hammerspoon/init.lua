@@ -72,7 +72,7 @@ end)
 -- NOTE: This sometimes doesn't see windows in other spaces
 local expose = hs.expose.new()
 hs.hotkey.bind(window_mash, "space", function()
-  expose:show()
+  expose:toggleShow()
 end)
 
 local filter = hs.window.filter.new(function (w)
