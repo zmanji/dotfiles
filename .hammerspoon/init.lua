@@ -2,6 +2,8 @@ local window_mash = {"cmd", "alt"}
 
 local log = hs.logger.new('zmanji')
 
+hs.window.filter.forceRefreshOnSpaceChange = true
+
 hs.hotkey.bind(window_mash, "H", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
