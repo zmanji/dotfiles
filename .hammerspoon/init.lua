@@ -75,9 +75,10 @@ hs.hotkey.bind(window_mash, "space", function()
   expose:show()
 end)
 
--- TODO(zmanji): Consider a window filter to allow for 'invisible'/'minimized'
--- windows like spotify or more sophisticated behaviour
-local switcher = hs.window.switcher.new()
+local filter = hs.window.filter.new(function (w)
+  return w:isStandard()
+end)
+local switcher = hs.window.switcher.new(filter)
 hs.hotkey.bind({"cmd"}, "f19", function()
   switcher:next()
 end,
@@ -97,7 +98,7 @@ end)
 -- within app only window switching, activeApplication=true doesn't work for
 -- some reason
 local appFilter = hs.window.filter.new(function (w)
-  return w:application():isFrontmost()
+  return w:application():isFrontmost() and w:isStandard()
 end)
 local appSwitcher = hs.window.switcher.new(appFilter)
 hs.hotkey.bind({"cmd"}, "f18", function()
