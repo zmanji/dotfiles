@@ -13,6 +13,7 @@ map('K', 'R')
 map('H', 'S')
 map('L', 'D')
 map('i', '<Alt-i>')
+map('F', 'gf')
 
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /messenger.com/)
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /mail.google.com/)
