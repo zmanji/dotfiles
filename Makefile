@@ -21,7 +21,7 @@ git: .gitconfig .gitignore_global
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
 .PHONY: vim
-vim: .vim .vimrc .gvimrc
+vim: .vim .vimrc .gvimrc .surfingkeys.js
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
