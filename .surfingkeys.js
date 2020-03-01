@@ -1,3 +1,10 @@
+
+settings.theme = `
+    #sk_status, #sk_find {
+        font-family:system-ui;
+        right: 5%;
+    }
+}`;
 settings.showModeStatus = true
 settings.smoothScroll = false
 
