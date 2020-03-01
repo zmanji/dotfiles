@@ -8,9 +8,11 @@ unmap('j', navSites);
 unmap('k', navSites);
 
 
-// cvim link bindings
+// cvim like bindings
 map('J', 'E')
 map('K', 'R')
+map('H', 'S')
+map('L', 'D')
 
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /messenger.com/)
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /mail.google.com/)
