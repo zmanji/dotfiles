@@ -13,6 +13,7 @@ map('J', 'E')
 map('K', 'R')
 
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /messenger.com/)
+unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /mail.google.com/)
 
 
 Hints.style('font-family:system-ui;font-weight: normal;');
