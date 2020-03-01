@@ -1,4 +1,3 @@
-settings.startToShowEmoji = 0;
 settings.showModeStatus = true
 settings.smoothScroll = false
 
@@ -20,3 +19,5 @@ unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /mail.google.com/)
 
 
 Hints.style('font-family:system-ui;font-weight: normal;');
+
+iunmap(":");
