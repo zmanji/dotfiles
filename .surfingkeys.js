@@ -8,7 +8,7 @@ settings.theme = `
 settings.showModeStatus = true
 settings.smoothScroll = false
 
-var navSites = /gmail.com|twitter.com|feedly.com/
+var navSites = /gmail.com|twitter.com|feedly.com|reddit.com/
 
 unmap('j', navSites);
 unmap('k', navSites);
