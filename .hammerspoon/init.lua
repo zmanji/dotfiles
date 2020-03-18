@@ -1,10 +1,11 @@
 local window_mash = {"cmd", "alt"}
+local meh = {"ctrl", "shift", "alt", "cmd"}
 
 local log = hs.logger.new('zmanji')
 
 hs.window.filter.forceRefreshOnSpaceChange = true
 
-hs.hotkey.bind(window_mash, "H", function()
+function move_left()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -15,9 +16,19 @@ hs.hotkey.bind(window_mash, "H", function()
   f.w = max.w / 2
   f.h = max.h
   win:setFrame(f, 0)
+end
+
+-- laptop
+hs.hotkey.bind(window_mash, "H", function()
+  move_left()
 end)
 
-hs.hotkey.bind(window_mash, "L", function()
+-- redox
+hs.hotkey.bind(meh, "H", function()
+  move_left()
+end)
+
+function move_right()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -28,9 +39,19 @@ hs.hotkey.bind(window_mash, "L", function()
   f.w = max.w / 2
   f.h = max.h
   win:setFrame(f, 0)
+end
+
+-- laptop
+hs.hotkey.bind(window_mash, "L", function()
+  move_right()
 end)
 
-hs.hotkey.bind(window_mash, "K", function()
+--redox
+hs.hotkey.bind(meh, "L", function()
+  move_right()
+end)
+
+function move_up()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -41,9 +62,19 @@ hs.hotkey.bind(window_mash, "K", function()
   f.w = max.w
   f.h = max.h / 2
   win:setFrame(f, 0)
+end
+
+-- laptop
+hs.hotkey.bind(window_mash, "K", function()
+  move_up()
 end)
 
-hs.hotkey.bind(window_mash, "J", function()
+-- redox
+hs.hotkey.bind(meh, "K", function()
+  move_up()
+end)
+
+function move_down()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -54,9 +85,19 @@ hs.hotkey.bind(window_mash, "J", function()
   f.w = max.w
   f.h = max.h / 2
   win:setFrame(f, 0)
+end
+
+-- laptop
+hs.hotkey.bind(window_mash, "J", function()
+  move_down()
 end)
 
-hs.hotkey.bind(window_mash, "F", function()
+-- redox
+hs.hotkey.bind(meh, "J", function()
+  move_down()
+end)
+
+function full()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -67,6 +108,16 @@ hs.hotkey.bind(window_mash, "F", function()
   f.w = max.w
   f.h = max.h
   win:setFrame(f, 0)
+end
+
+-- laptop
+hs.hotkey.bind(window_mash, "F", function()
+  full()
+end)
+
+-- redox
+hs.hotkey.bind(meh, "F", function()
+  full()
 end)
 
 -- TODO: find a way to visually indicate the active modal
