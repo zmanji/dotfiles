@@ -326,12 +326,6 @@
   :init
   (electric-pair-mode))
 
-(use-package ag
-  :ensure t
-  :config
-  (setq ag-highlight-search t)
-)
-
 (use-package projectile
   :ensure t
   :init
@@ -607,23 +601,6 @@ eyebrowse tab before calling the actual function."
    :keymaps 'comint-mode-map
    "C-l" 'comint-clear-buffer
    )
-  )
-
-(use-package rust-mode
-  :ensure t
-  :config
-  (setq rust-format-on-save t)
-  )
-(use-package racer
-  :ensure t
-  :config
-  (add-hook 'rust-mode-hook #'racer-mode)
-  (add-hook 'racer-mode-hook #'eldoc-mode)
-  (general-define-key
-    :keymaps 'racer-mode-map
-    :states '(normal)
-    "K" 'racer-find-definition
-    )
   )
 
 (zmanji/setup-gui)
