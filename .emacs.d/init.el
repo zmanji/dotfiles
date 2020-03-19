@@ -391,12 +391,6 @@
   (global-hl-line-mode)
 )
 
-(use-package linum
-  :ensure t
-  :init
-  (global-linum-mode)
-)
-
 (use-package eyebrowse
   :ensure t
   :init

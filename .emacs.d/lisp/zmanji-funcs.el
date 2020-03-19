@@ -89,6 +89,7 @@
   (setq-default tab-width 2)
   (setq-default evil-shift-width 2)
   (setq-default fill-column 80)
+  (global-display-line-numbers-mode t)
 )
 
 (defun zmanji/disable-custom ()
