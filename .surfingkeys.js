@@ -13,6 +13,8 @@ var navSites = /gmail.com|twitter.com|feedly.com|reddit.com/
 unmap('j', navSites);
 unmap('k', navSites);
 
+unmap('l', /twitter.com/)
+
 
 // cvim like bindings
 map('J', 'E')
