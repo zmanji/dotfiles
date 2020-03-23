@@ -458,7 +458,6 @@ eyebrowse tab before calling the actual function."
 (use-package dired
   :config
   (use-package dired-x)
-  (use-package dired+)
   ;; Use coreutils for dired
   (let ((gls (executable-find "gls")))
     (when gls (setq insert-directory-program gls)))
