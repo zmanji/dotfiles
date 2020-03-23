@@ -6,3 +6,5 @@
 .vim/custom-dictionary.en.utf8.add.spl
 # Don't track emacs tramp connection histroy.
 .emacs.d/tramp
+# don't track this junk
+.emacs.d/transient/
