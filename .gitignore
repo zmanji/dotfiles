@@ -8,3 +8,4 @@
 .emacs.d/tramp
 # don't track this junk
 .emacs.d/transient/
+.emacs.d/org-journal.cache

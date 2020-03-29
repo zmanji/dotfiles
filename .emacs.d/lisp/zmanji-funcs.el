@@ -65,6 +65,9 @@
   (setq ns-use-proxy-icon nil)
   (setq frame-title-format "%b %F")
 
+  ;; use existing emacs frames
+  (setq ns-pop-up-frames nil)
+
   )
 
 )
