@@ -232,8 +232,18 @@
      )
 
     ;; To ensure that evil folding works correctly, we need to add
-    ;; org-journal-mode to the list of fold entries.
-    (zmanji/copy-evil-fold-actions 'org-mode 'org-journal)
+    ;; org-journal-mode to the list of fold entries. We just call whatever
+    ;; the action is for org-mode
+      (add-to-list 'evil-fold-list
+                   `((org-journal-mode)
+                     :open-all   ,(lambda () (evil-fold-action (org-mode) :open-all))
+                     :close-all  ,(lambda () (evil-fold-action (org-mode) :close-all))
+                     :toggle     ,(lambda () (evil-fold-action (org-mode) :toggle))
+                     :open       ,(lambda () (evil-fold-action (org-mode) :open))
+                     :open-rec   ,(lambda () (evil-fold-action (org-mode) :open-rec))
+                     :close      ,(lambda () (evil-fold-action (org-mode) :close))))
+
+
     )
   ;; Some evil friendly keybindings taken from evil-org-mode:
   ;; https://github.com/edwtjo/evil-org-mode
