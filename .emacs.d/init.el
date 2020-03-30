@@ -461,6 +461,10 @@ eyebrowse tab before calling the actual function."
   ;; Use coreutils for dired
   (let ((gls (executable-find "gls")))
     (when gls (setq insert-directory-program gls)))
+  (general-nmap
+    :keymaps 'dired-mode-map
+    ";" 'evil-ex)
+
 )
 
 ;; TODO(zmanji): Consider more key bindings with ivy/swiper/counsel.
