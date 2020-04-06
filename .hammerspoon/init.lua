@@ -144,6 +144,11 @@ hs.hotkey.bind(window_mash, "space", function()
   hyperModal:exit()
 end)
 
+-- redox
+hs.hotkey.bind(meh, "space", function()
+  expose:toggleShow()
+end)
+
 local filter = hs.window.filter.new(function (w)
   return w:isStandard()
 end)
