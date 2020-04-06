@@ -6,7 +6,6 @@
 (require 'zmanji-funcs)
 
 ;; TODO(zmanji): Consider flycheck
-;; TODO(zmanji): Consider configuring eshell
 ;; TODO(zmanji): Consider view-mode: https://www.emacswiki.org/emacs/ViewMode
 ;; http://pragmaticemacs.com/emacs/view-mode-makes-for-great-read-only-reading/
 ;; TODO(zmanji): Consider creating a `view' like binary.
@@ -444,6 +443,20 @@ eyebrowse tab before calling the actual function."
   (setq eshell-hist-ignoredups t)
   (setq eshell-scroll-to-bottom-on-input 'this)
   (setq eshell-list-files-after-cd t)
+
+  ;; eshell-mode-map is reset every time the mode starts
+  (add-hook 'eshell-first-time-mode-hook (lambda ()
+    (general-nmap
+    :keymaps 'eshell-mode-map
+    "M-j" 'eshell-next-prompt
+    "M-k" 'eshell-previous-prompt
+    "j" 'eshell-next-input
+    "k" 'eshell-previous-input
+    "C-j" 'evil-next-line
+    "C-k" 'evil-previous-line
+    "^"   'eshell-bol
+    )
+  ))
 )
 
 (use-package with-editor
