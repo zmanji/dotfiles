@@ -116,6 +116,15 @@ emacs-bin: bin/README.emacs bin/ec bin/emacs bin/et
 	wget -O ~/bin/git-squash https://github.com/zmanji/git-squash-rs/releases/download/0.2.0/git-squash-rs.stable-x86_64-apple-darwin
 	chmod +x ~/bin/git-squash
 
+.PHONY: launchd
+launchd: launchd/zmanji.emacs.plist
+	mkdir -p ~/Library/LaunchAgents/
+	@echo removing $^; \
+	$(foreach df, $^, rm -rf ~/Library/LaunchAgents/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~/Library/LaunchAgents/$(notdir $(df)); )
+
+
 submodules:
 	git submodule init
 	git submodule update --recursive
