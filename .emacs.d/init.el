@@ -41,7 +41,7 @@
 (use-package exec-path-from-shell
   :ensure t
   :init
-  (when (memq window-system '(mac ns x))
+  (when (memq window-system '(mac ns x nil))
     (exec-path-from-shell-initialize)))
 
 (use-package undo-tree
@@ -455,6 +455,7 @@ eyebrowse tab before calling the actual function."
     "C-j" 'evil-next-line
     "C-k" 'evil-previous-line
     "^"   'eshell-bol
+    "<return>" 'eshell-send-input
     )
   ))
 )
@@ -605,14 +606,6 @@ eyebrowse tab before calling the actual function."
   (define-key edit-server-edit-mode-map [remap evil-write] 'edit-server-save)
   (define-key edit-server-edit-mode-map [remap evil-save-and-close] 'edit-server-done)
   (define-key edit-server-edit-mode-map [remap evil-save-modified-and-close] 'edit-server-done)
-  )
-
-(use-package better-shell
-  :ensure t
-  :init
-  (evil-ex-define-cmd "shell" 'better-shell-for-current-dir)
-  (evil-ex-define-cmd "ssh" 'better-shell-remote-open)
-  (evil-ex-define-cmd "sudo" 'better-shell-sudo-here)
   )
 
 (use-package comint
