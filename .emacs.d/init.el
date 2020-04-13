@@ -105,7 +105,6 @@
     (global-evil-matchit-mode 1)
     )
 
-  ;; TOOD(zmanji): Consider using advice here
   (evil-define-operator zmanji/evil-shift-left (beg end &optional count preserve-empty)
     "Wrapper around evil-shift-left that preserves visual selection"
     :type line
