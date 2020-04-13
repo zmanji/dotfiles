@@ -148,4 +148,13 @@
     )
   )
 
+
+(defun zmanji/vsplit-eshell ()
+  "vertically splits the window to open an ehell buffer for the current project"
+  (interactive)
+  (evil-window-vsplit)
+  (projectile-run-eshell nil)
+
+  )
+
 (provide 'zmanji-funcs)

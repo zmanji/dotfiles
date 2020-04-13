@@ -348,7 +348,11 @@
   ;; Emacs has no generic "open file buffer hook" so this is a weak emulation
   ;; If this doesn't work need to advice create-file-buffer like uniquify
   (add-hook 'prog-mode-hook 'zmanji/set-default-directory-projectile-root)
-  (add-hook 'text-mode-hook 'zmanji/set-default-directory-projectile-root))
+  (add-hook 'text-mode-hook 'zmanji/set-default-directory-projectile-root)
+
+
+  (evil-ex-define-cmd "vsh" 'zmanji/vsplit-eshell)
+)
 
 ;; XXX: See `ispell-help' for more information
 ;; See http://blog.binchen.org/posts/what-s-the-best-spell-check-set-up-in-emacs.html
@@ -457,6 +461,10 @@ eyebrowse tab before calling the actual function."
     "^"   'eshell-bol
     "<return>" 'eshell-send-input
     )
+    ))
+
+  (add-hook 'eshell-mode-hook (lambda ()
+    (setenv "PAGER" "cat")
   ))
 )
 
