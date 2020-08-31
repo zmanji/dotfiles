@@ -120,28 +120,10 @@ hs.hotkey.bind(meh, "F", function()
   full()
 end)
 
--- TODO: find a way to visually indicate the active modal
-local hyperModal = hs.hotkey.modal.new({}, "f17", nil)
-
-hyperModal:bind({}, "escape", function()
-  hyperModal:exit()
-end)
-
-hyperModal:bind({}, "k", function()
-  hs.application.launchOrFocusByBundleID("com.googlecode.iterm2")
-  hyperModal:exit()
-end)
-
-hyperModal:bind({}, "j", function()
-  hs.application.launchOrFocusByBundleID("com.google.Chrome")
-  hyperModal:exit()
-end)
-
 -- NOTE: This sometimes doesn't see windows in other spaces
 local expose = hs.expose.new()
 hs.hotkey.bind(window_mash, "space", function()
   expose:toggleShow()
-  hyperModal:exit()
 end)
 
 -- redox
@@ -155,7 +137,6 @@ end)
 local switcher = hs.window.switcher.new(filter)
 hs.hotkey.bind({"cmd"}, "f19", function()
   switcher:next()
-  hyperModal:exit()
 end,
 nil,
 function ()
@@ -164,7 +145,6 @@ function ()
 
 hs.hotkey.bind({"cmd", "shift"}, "f19", function()
   switcher:previous()
-  hyperModal:exit()
 end,
 nil,
 function ()
@@ -179,7 +159,6 @@ end)
 local appSwitcher = hs.window.switcher.new(appFilter)
 hs.hotkey.bind({"cmd"}, "f18", function()
   appSwitcher:next()
-  hyperModal:exit()
 end,
 nil,
 function ()
@@ -188,7 +167,6 @@ function ()
 
 hs.hotkey.bind({"cmd", "shift"}, "f18", function()
   appSwitcher:previous()
-  hyperModal:exit()
 end,
 nil,
 function ()
