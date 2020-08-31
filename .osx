@@ -68,6 +68,12 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 # Disable “natural” (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# Disable three finger swipe for expose, mission control and launchpad
+# Goal is to drive keyboard usage
+defaults write com.apple.dock showAppExposeGestureEnabled -bool false
+defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
+defaults write com.apple.dock showMissionControlGestureEnabled -bool false
+
 # Need to restart UI for some changes to take effect.
 killall SystemUIServer Dock
 
