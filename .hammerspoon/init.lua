@@ -7,6 +7,25 @@ hs.window.filter.forceRefreshOnSpaceChange = true
 hs.window.animationDuration = 0
 hs.window.setFrameCorrectness = true
 
+
+-- Window Management Objects
+-- NOTE: This sometimes doesn't see windows in other spaces
+local expose = hs.expose.new()
+
+
+local filter = hs.window.filter.new(function (w)
+  return w:isStandard()
+end)
+local switcher = hs.window.switcher.new(filter)
+-- within app only window switching, activeApplication=true doesn't work for
+-- some reason
+local appFilter = hs.window.filter.new(function (w)
+  return w:application():isFrontmost() and w:isStandard()
+end)
+local appSwitcher = hs.window.switcher.new(appFilter)
+
+-- Window Management Functions
+
 function move_left()
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -19,16 +38,6 @@ function move_left()
   f.h = max.h
   win:setFrame(f, 0)
 end
-
--- laptop
-hs.hotkey.bind(window_mash, "H", function()
-  move_left()
-end)
-
--- redox
-hs.hotkey.bind(meh, "H", function()
-  move_left()
-end)
 
 function move_right()
   local win = hs.window.focusedWindow()
@@ -43,16 +52,6 @@ function move_right()
   win:setFrame(f, 0)
 end
 
--- laptop
-hs.hotkey.bind(window_mash, "L", function()
-  move_right()
-end)
-
---redox
-hs.hotkey.bind(meh, "L", function()
-  move_right()
-end)
-
 function move_up()
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -65,16 +64,6 @@ function move_up()
   f.h = max.h / 2
   win:setFrame(f, 0)
 end
-
--- laptop
-hs.hotkey.bind(window_mash, "K", function()
-  move_up()
-end)
-
--- redox
-hs.hotkey.bind(meh, "K", function()
-  move_up()
-end)
 
 function move_down()
   local win = hs.window.focusedWindow()
@@ -89,16 +78,6 @@ function move_down()
   win:setFrame(f, 0)
 end
 
--- laptop
-hs.hotkey.bind(window_mash, "J", function()
-  move_down()
-end)
-
--- redox
-hs.hotkey.bind(meh, "J", function()
-  move_down()
-end)
-
 function full()
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -112,31 +91,94 @@ function full()
   win:setFrame(f, 0)
 end
 
--- laptop
-hs.hotkey.bind(window_mash, "F", function()
+-- Key bindings
+-- Laptop
+local laptopHotkeys = {}
+table.insert(laptopHotkeys, hs.hotkey.new(window_mash, "H", function()
+  move_left()
+end)
+)
+
+
+table.insert(laptopHotkeys, hs.hotkey.new(window_mash, "L", function()
+  move_right()
+end)
+)
+
+table.insert(laptopHotkeys, hs.hotkey.new(window_mash, "K", function()
+  move_up()
+end)
+)
+
+table.insert(laptopHotkeys, hs.hotkey.new(window_mash, "J", function()
+  move_down()
+end)
+)
+
+
+table.insert(laptopHotkeys, hs.hotkey.new(window_mash, "F", function()
   full()
 end)
+)
 
--- redox
-hs.hotkey.bind(meh, "F", function()
+table.insert(laptopHotkeys, hs.hotkey.new(window_mash, "space", function()
+  expose:toggleShow()
+end)
+)
+
+
+function bindLaptopHotkeys()
+  for i, hk in ipairs(laptopHotkeys) do
+    hk:enable()
+  end
+end
+
+bindLaptopHotkeys()
+
+-- Redox
+local redoxHotkeys = {}
+table.insert(redoxHotkeys, hs.hotkey.new(meh, "H", function()
+  move_left()
+end)
+)
+
+table.insert(redoxHotkeys, hs.hotkey.new(meh, "L", function()
+  move_right()
+end)
+)
+
+table.insert(redoxHotkeys, hs.hotkey.new(meh, "K", function()
+  move_up()
+end)
+)
+
+table.insert(redoxHotkeys, hs.hotkey.new(meh, "J", function()
+  move_down()
+end)
+)
+
+table.insert(redoxHotkeys, hs.hotkey.new(meh, "F", function()
   full()
 end)
+)
 
--- NOTE: This sometimes doesn't see windows in other spaces
-local expose = hs.expose.new()
-hs.hotkey.bind(window_mash, "space", function()
+table.insert(redoxHotkeys, hs.hotkey.new(meh, "space", function()
   expose:toggleShow()
 end)
+)
 
--- redox
-hs.hotkey.bind(meh, "space", function()
-  expose:toggleShow()
-end)
 
-local filter = hs.window.filter.new(function (w)
-  return w:isStandard()
-end)
-local switcher = hs.window.switcher.new(filter)
+function bindRedoxHotkeys()
+  for i, hk in ipairs(redoxHotkeys) do
+    hk:enable()
+  end
+end
+
+bindRedoxHotkeys()
+
+-- Global Shortcuts
+-- F19 and F18 come from Karabiner highjacking cmd-tab and cmd-`
+
 hs.hotkey.bind({"cmd"}, "f19", function()
   switcher:next()
 end,
@@ -153,12 +195,6 @@ function ()
   switcher:previous()
 end)
 
--- within app only window switching, activeApplication=true doesn't work for
--- some reason
-local appFilter = hs.window.filter.new(function (w)
-  return w:application():isFrontmost() and w:isStandard()
-end)
-local appSwitcher = hs.window.switcher.new(appFilter)
 hs.hotkey.bind({"cmd"}, "f18", function()
   appSwitcher:next()
 end,
