@@ -4,6 +4,8 @@ local meh = {"ctrl", "shift", "alt", "cmd"}
 local log = hs.logger.new('zmanji')
 
 hs.window.filter.forceRefreshOnSpaceChange = true
+hs.window.animationDuration = 0
+hs.window.setFrameCorrectness = true
 
 function move_left()
   local win = hs.window.focusedWindow()
