@@ -133,7 +133,12 @@ function bindLaptopHotkeys()
   end
 end
 
-bindLaptopHotkeys()
+function unbindLaptopHotkeys()
+  for i, hk in ipairs(laptopHotkeys) do
+    hk:disable()
+  end
+end
+
 
 -- Redox
 local redoxHotkeys = {}
@@ -174,7 +179,36 @@ function bindRedoxHotkeys()
   end
 end
 
-bindRedoxHotkeys()
+function unbindRedoxHotkeys()
+  for i, hk in ipairs(redoxHotkeys) do
+    hk:disable()
+  end
+end
+
+-- Hotkey setup
+-- Always bind the laptop hotkeys
+bindLaptopHotkeys()
+
+--- http://www.hammerspoon.org/docs/hs.usb.watcher.html
+rotateHotkeys = function(usb_table)
+  -- Redox uses QMK so the vendor id and product id comes from the firmware
+  -- 0xFEED = 65261 is the default vendor id
+  -- 0 is the default product id for any keyboard
+  -- Falbatech is the vendor which should be good enough to uniqely identify
+  if usb_table.vendorID == 65261 and usb_table.productID == 0 and usb_table.vendorName == "Falbatech" then
+    if usb_table.eventType == 'added' then
+      bindRedoxHotkeys()
+      unbindlaptophotkeys()
+    elseif usb_table.eventType == 'removed' then
+      unbindRedoxHotkeys()
+      bindLaptopHotkeys()
+    end
+  end
+end
+
+watcher = hs.usb.watcher.new(rotateHotkeys)
+watcher:start()
+
 
 -- Global Shortcuts
 -- F19 and F18 come from Karabiner highjacking cmd-tab and cmd-`
