@@ -10,9 +10,12 @@ hs.window.setFrameCorrectness = true
 
 -- Window Management Objects
 -- NOTE: This sometimes doesn't see windows in other spaces
+
+hs.expose.ui.fontName = ".AppleSystemUIFont"
+
 local expose = hs.expose.new()
 
-
+hs.window.switcher.ui.fontName = ".AppleSystemUIFont"
 local filter = hs.window.filter.new(function (w)
   return w:isStandard()
 end)
