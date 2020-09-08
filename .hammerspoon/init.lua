@@ -189,8 +189,24 @@ function unbindRedoxHotkeys()
 end
 
 -- Hotkey setup
--- Always bind the laptop hotkeys
-bindLaptopHotkeys()
+-- If the keyboard is connected, bind them otherwise bind the laptop
+-- This is key when hammerspoon is reset when the keyboard is already
+-- connected
+
+local usbDevices = hs.usb.attachedDevices()
+local hasKeyboard = false
+for i in pairs(usbDevices) do
+  -- See below for info about these values
+  if usbDevices[i].vendorID == 65261 and usbDevices[i].productID == 0 and usbDevices[i].vendorName == "Falbatech" then
+    hasKeyboard = true
+  end
+end
+
+if hasKeyboard then
+  bindRedoxHotkeys()
+else
+  bindLaptopHotkeys()
+end
 
 --- http://www.hammerspoon.org/docs/hs.usb.watcher.html
 rotateHotkeys = function(usb_table)
