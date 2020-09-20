@@ -99,7 +99,6 @@ end
 function window_chooser()
 
   local chooser = hs.chooser.new(function(choice)
-    log:e(hs.inspect(choice))
     if choice then
       -- For reasons unknown looking up the window id if the window id
       -- is not in this space fails
@@ -108,7 +107,6 @@ function window_chooser()
       local w = hs.fnutils.find(filter:getWindows(), function(w)
         return w:id() == window_id
       end)
-      log:e(hs.inspect(w))
       if w then
         w:focus()
       end
@@ -127,6 +125,11 @@ function window_chooser()
     local app = w:application()
     local title = w:title()
     local fText = app:name() .. " " .. title
+    fText = hs.styledtext.new(
+      fText,
+      {font = {name = ".AppleSystemUIFont", size = 16.0},
+      color = hs.drawing.color.definedCollections["hammerspoon"]["white"] }
+      )
 
     local icon = hs.image.imageFromAppBundle(app:bundleID())
 
