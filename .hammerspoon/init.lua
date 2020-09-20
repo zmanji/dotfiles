@@ -116,8 +116,14 @@ function window_chooser()
    end)
 
   local options = {}
+  local current_focus = hs.window.focusedWindow()
 
   hs.fnutils.ieach(filter:getWindows(), function(w)
+    -- Don't add the currently focused window here
+    if current_focus:id() == w:id() then
+      return
+    end
+
     local app = w:application()
     local title = w:title()
     local fText = app:name() .. " " .. title
