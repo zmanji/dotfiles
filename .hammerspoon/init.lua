@@ -7,6 +7,8 @@ hs.window.filter.forceRefreshOnSpaceChange = true
 hs.window.animationDuration = 0
 hs.window.setFrameCorrectness = true
 
+-- Disable default callback for hs.chooser
+hs.chooser.globalCallback = function(a) end
 
 -- Window Management Objects
 -- NOTE: This sometimes doesn't see windows in other spaces
@@ -94,6 +96,42 @@ function full()
   win:setFrame(f, 0)
 end
 
+function window_chooser()
+
+  local chooser = hs.chooser.new(function(choice)
+    log:e(hs.inspect(choice))
+    if choice then
+      -- For reasons unknown looking up the window id if the window id
+      -- is not in this space fails
+      -- recall the filter again here
+      local window_id = choice["window_id"]
+      local w = hs.fnutils.find(filter:getWindows(), function(w)
+        return w:id() == window_id
+      end)
+      log:e(hs.inspect(w))
+      if w then
+        w:focus()
+      end
+    end
+   end)
+
+  local options = {}
+
+  hs.fnutils.ieach(filter:getWindows(), function(w)
+    local app = w:application()
+    local title = w:title()
+    local fText = app:name() .. " " .. title
+
+    local icon = hs.image.imageFromAppBundle(app:bundleID())
+
+    table.insert(options, {text = fText, image = icon, window_id = w:id()})
+  end)
+
+  chooser:choices(options)
+  chooser:show()
+end
+
+
 -- Key bindings
 -- Laptop
 local laptopHotkeys = {}
@@ -125,7 +163,7 @@ end)
 )
 
 table.insert(laptopHotkeys, hs.hotkey.new(window_mash, "space", function()
-  expose:toggleShow()
+  window_chooser()
 end)
 )
 
@@ -171,7 +209,7 @@ end)
 )
 
 table.insert(redoxHotkeys, hs.hotkey.new(meh, "space", function()
-  expose:toggleShow()
+  window_chooser()
 end)
 )
 
@@ -263,3 +301,4 @@ nil,
 function ()
   appSwitcher:previous()
 end)
+
