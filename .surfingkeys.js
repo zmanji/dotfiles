@@ -25,6 +25,24 @@ map('i', '<Alt-i>')
 map('F', 'gf')
 
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /messenger.com/)
+mapkey('<Ctrl-j>', 'next convo', function () {
+    document
+        .querySelector('[aria-label="Conversation List"] > [aria-relevant]')
+        .nextSibling
+        .querySelector('a')
+        .click()
+}, {domain: /messenger.com/})
+
+
+mapkey('<Ctrl-k>', 'next convo', function () {
+    document
+        .querySelector('[aria-label="Conversation List"] > [aria-relevant]')
+        .previousElementSibling
+        .querySelector('a')
+        .click()
+}, {domain: /messenger.com/})
+
+
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /mail.google.com/)
 
 
