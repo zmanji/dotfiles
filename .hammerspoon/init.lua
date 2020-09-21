@@ -127,7 +127,7 @@ function window_chooser()
       local app = w:application()
       local title = w:title()
       local fText = app:name() .. " " .. title
-      fText = hs.styledtext.new(
+      local styledText = hs.styledtext.new(
         fText,
         {font = {name = ".AppleSystemUIFont", size = 16.0},
         color = hs.drawing.color.definedCollections["hammerspoon"]["white"] }
@@ -135,11 +135,72 @@ function window_chooser()
 
       local icon = hs.image.imageFromAppBundle(app:bundleID())
 
-      table.insert(options, {text = fText, image = icon, window_id = w:id()})
+      table.insert(options, {
+          text = styledText,
+          rawText = fText,
+          image = icon,
+          window_id = w:id()}
+      )
     end)
 
-    return options
+    -- filter the table using fzf if there is a query
+    local q = chooser:query()
+
+    if q == nil then
+      return options
+    end
+
+    if q == "" then
+      return options
+    end
+
+    -- Write data to temp file for fzf since piping to a process in lua is not
+    -- easy
+    local temp_file = os.tmpname()
+    local f = io.open(temp_file, "w")
+    hs.fnutils.ieach(options, function(w)
+      f:write(w["rawText"])
+      f:write("\t")
+      f:write(w["window_id"])
+      f:write("\t")
+      f:write("\n")
+    end)
+    f:close()
+
+    -- call fzf with file
+    local command = "cat " .. temp_file .. " | /usr/local/bin/fzf --delimiter '\\t' --nth=1 --filter '" .. q .. "' | cut -f 2"
+    -- log:e(command)
+
+    local output, status, type, rc = hs.execute(command)
+
+    -- log:e(hs.inspect(output))
+    -- log:e(hs.inspect(status))
+    -- log:e(type)
+    -- log:e(hs.inspect(rc))
+    -- cleanup file
+    os.remove(temp_file)
+
+    local matching_window_ids = {}
+    for s in output:gmatch("[^\n]+") do
+      matching_window_ids[tonumber(s)] = true
+    end
+
+    local filtered_options = {}
+
+    hs.fnutils.ieach(options, function(w)
+      id = w["window_id"]
+      if matching_window_ids[id] then
+        table.insert(filtered_options, w)
+      end
+    end)
+
+    return filtered_options
   end)
+
+  chooser:queryChangedCallback(function(q)
+    chooser:refreshChoicesCallback()
+  end)
+
   chooser:show()
 end
 
