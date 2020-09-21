@@ -18,7 +18,27 @@ hs.expose.ui.fontName = ".AppleSystemUIFont"
 local expose = hs.expose.new()
 
 function is_important_window(w)
-  return w:isStandard() or w:application():bundleID() == "com.apple.iChat"
+    -- Messages isn't a 'standard' app. Use the ax api to determine if it is a
+    -- proper window or not.
+    if w:application():bundleID() == "com.apple.iChat" then
+      -- If the window is not "AXWindow" role then it isn't visible
+      -- get the pid and then traverse the accessibility tree
+      -- axuielement.windowElement is not reliable enough
+      -- can crash when given window id, or doesn't work with
+      -- a window object
+      -- Also the role of a visible window can be empty
+      local pid = w:application():pid()
+      local ax = hs.axuielement.applicationElementForPID(pid)
+      -- iterate over the windows and see if it is this one we are checking
+      for i, axw in ipairs(ax["AXWindows"]) do
+        if axw:asHSWindow():id() == w:id() then
+          return true
+        end
+      end
+      return false
+    end
+
+    return w:isStandard()
 end
 
 hs.window.switcher.ui.fontName = ".AppleSystemUIFont"
