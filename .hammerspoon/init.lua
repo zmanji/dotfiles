@@ -113,30 +113,33 @@ function window_chooser()
     end
    end)
 
-  local options = {}
-  local current_focus = hs.window.focusedWindow()
 
-  hs.fnutils.ieach(filter:getWindows(), function(w)
-    -- Don't add the currently focused window here
-    if current_focus:id() == w:id() then
-      return
-    end
+  chooser:choices(function()
+    local options = {}
+    local current_focus = hs.window.focusedWindow()
 
-    local app = w:application()
-    local title = w:title()
-    local fText = app:name() .. " " .. title
-    fText = hs.styledtext.new(
-      fText,
-      {font = {name = ".AppleSystemUIFont", size = 16.0},
-      color = hs.drawing.color.definedCollections["hammerspoon"]["white"] }
-      )
+    hs.fnutils.ieach(filter:getWindows(), function(w)
+      -- Don't add the currently focused window here
+      if current_focus:id() == w:id() then
+        return
+      end
 
-    local icon = hs.image.imageFromAppBundle(app:bundleID())
+      local app = w:application()
+      local title = w:title()
+      local fText = app:name() .. " " .. title
+      fText = hs.styledtext.new(
+        fText,
+        {font = {name = ".AppleSystemUIFont", size = 16.0},
+        color = hs.drawing.color.definedCollections["hammerspoon"]["white"] }
+        )
 
-    table.insert(options, {text = fText, image = icon, window_id = w:id()})
+      local icon = hs.image.imageFromAppBundle(app:bundleID())
+
+      table.insert(options, {text = fText, image = icon, window_id = w:id()})
+    end)
+
+    return options
   end)
-
-  chooser:choices(options)
   chooser:show()
 end
 
