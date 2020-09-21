@@ -17,15 +17,19 @@ hs.expose.ui.fontName = ".AppleSystemUIFont"
 
 local expose = hs.expose.new()
 
+function is_important_window(w)
+  return w:isStandard() or w:application():bundleID() == "com.apple.iChat"
+end
+
 hs.window.switcher.ui.fontName = ".AppleSystemUIFont"
 local filter = hs.window.filter.new(function (w)
-  return w:isStandard()
+  return is_important_window(w)
 end)
 local switcher = hs.window.switcher.new(filter)
 -- within app only window switching, activeApplication=true doesn't work for
 -- some reason
 local appFilter = hs.window.filter.new(function (w)
-  return w:application():isFrontmost() and w:isStandard()
+  return w:application():isFrontmost() and is_important_window(w)
 end)
 local appSwitcher = hs.window.switcher.new(appFilter)
 
