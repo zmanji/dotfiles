@@ -194,6 +194,13 @@ function window_chooser()
       end
     end)
 
+    -- auto select if there is only one entry
+    if #filtered_options == 1 then
+      hs.timer.doAfter(0.1, function()
+        chooser:select()
+      end)
+    end
+
     return filtered_options
   end)
 
