@@ -26,21 +26,39 @@ map('F', 'gf')
 
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /messenger.com/)
 mapkey('<Ctrl-j>', 'next convo', function () {
-    document
+    var sibling = document
         .querySelector('[aria-label="Conversation List"] > [aria-relevant]')
-        .nextSibling
-        .querySelector('a')
-        .click()
+        .nextSibling;
+
+    if (sibling !== null) {
+        sibling
+            .querySelector('a')
+            .click()
+    }
+
+
 }, {domain: /messenger.com/})
 
 
 mapkey('<Ctrl-k>', 'next convo', function () {
-    document
+    var sibling = document
         .querySelector('[aria-label="Conversation List"] > [aria-relevant]')
-        .previousElementSibling
-        .querySelector('a')
-        .click()
+        .previousElementSibling;
+
+    if (sibling !== null) {
+        sibling
+            .querySelector('a')
+            .click()
+    }
+
 }, {domain: /messenger.com/})
+
+if ( document.origin === "https://www.messenger.com" ) {
+    // don't focus input box
+    console.log('hello')
+    settings.stealFocusOnLoad = true;
+}
+
 
 
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /mail.google.com/)
