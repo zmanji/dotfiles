@@ -22,41 +22,49 @@ map('K', 'R')
 map('H', 'S')
 map('L', 'D')
 map('i', '<Alt-i>')
-map('F', 'gf')
+map('F', 'ff')
 
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /messenger.com/)
-mapkey('<Ctrl-j>', 'next convo', function () {
+
+var godown = function () {
     var sibling = document
         .querySelector('[aria-label="Conversation List"] > [aria-relevant]')
         .nextSibling;
 
     if (sibling !== null) {
-        sibling
-            .querySelector('a')
-            .click()
+        var link = sibling.querySelector('[role=link]');
+        if (link !== null) {
+          link.click();
+        }
     }
 
 
-}, {domain: /messenger.com/})
+};
 
 
-mapkey('<Ctrl-k>', 'next convo', function () {
+mapkey('<Ctrl-j>', 'next convo', godown, {domain: /messenger\.com/i});
+imapkey('<Ctrl-j>', 'next convo', godown, {domain: /messenger\.com/i});
+
+var goup = function () {
     var sibling = document
         .querySelector('[aria-label="Conversation List"] > [aria-relevant]')
         .previousElementSibling;
 
     if (sibling !== null) {
-        sibling
-            .querySelector('a')
-            .click()
+        var link = sibling.querySelector('[role=link]');
+        if (link !== null) {
+          link.click();
+        }
     }
 
-}, {domain: /messenger.com/})
+};
 
-if ( document.origin === "https://www.messenger.com" ) {
+mapkey('<Ctrl-k>', 'next convo', goup, {domain: /messenger\.com/i});
+imapkey('<Ctrl-k>', 'next convo', goup, {domain: /messenger\.com/i});
+
+if (self.origin === "https://www.messenger.com" ) {
     // don't focus input box
-    console.log('hello')
-    settings.stealFocusOnLoad = true;
+    settings.enableAutoFocus = true;
 }
 
 
