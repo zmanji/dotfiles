@@ -89,6 +89,13 @@ end
 
 function full()
   local win = hs.window.focusedWindow()
+
+  if win:application():bundleID() == "com.todoist.mac.Todoist" then
+    -- do native fullscreen
+    win:setFullscreen(true)
+    return
+  end
+
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
