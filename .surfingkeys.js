@@ -22,7 +22,7 @@ map('K', 'R')
 map('H', 'S')
 map('L', 'D')
 map('i', '<Alt-i>')
-map('F', 'ff')
+map('F', 'C')
 
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /messenger.com/)
 
