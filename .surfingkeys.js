@@ -24,6 +24,9 @@ map('L', 'D')
 map('i', '<Alt-i>')
 map('F', 'C')
 
+
+unmapAllExcept(['f', 'J', 'K', '<Esc>'], /todoist.com/)
+
 unmapAllExcept(['i', 'f', 'J', 'K', '<Esc>'], /messenger.com/)
 
 var godown = function () {
