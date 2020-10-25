@@ -18,7 +18,7 @@ hs.expose.ui.fontName = ".AppleSystemUIFont"
 local expose = hs.expose.new()
 
 function is_important_window(w)
-    return w:isStandard()
+    return w:isStandard() and w:isVisible()
 end
 
 hs.window.switcher.ui.fontName = ".AppleSystemUIFont"
