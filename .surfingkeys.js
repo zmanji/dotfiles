@@ -15,6 +15,8 @@ unmap('k', navSites);
 
 unmap('l', /twitter.com/)
 
+unmap('r', /feedly.com/)
+
 
 // cvim like bindings
 map('J', 'E')
