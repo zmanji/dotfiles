@@ -1,0 +1,29 @@
+" This wipes all existing settings. This means that if a setting in this file
+" is removed, then it will return to default. In other words, this file serves
+" as an enforced single point of truth for Tridactyl's configuration.
+sanitize tridactyllocal tridactylsync
+
+set newtab moz-extension://43c759b0-6a71-2648-9428-5fcca5f301e9/index.html
+
+set editorcmd /usr/local/bin/emacsclient -c -a ""
+
+unbindurl twitter.com --mode=normal j
+unbindurl twitter.com --mode=normal k
+unbindurl twitter.com --mode=normal l
+
+unbindurl feedly.com --mode=normal j
+unbindurl feedly.com --mode=normal k
+
+unbindurl reddit.com --mode=normal j
+unbindurl reddit.com --mode=normal k
+
+bind --mode=ex <C-j> ex.next_completion
+bind --mode=ex <C-k> ex.prev_completion
+
+set colors dark
+
+set smoothscroll true
+bind j scrollline 5
+bind k scrollline -5
+
+bind x tabclose
