@@ -13,6 +13,7 @@ unbindurl twitter.com --mode=normal l
 
 unbindurl feedly.com --mode=normal j
 unbindurl feedly.com --mode=normal k
+unbindurl feedly.com --mode=normal r
 
 unbindurl reddit.com --mode=normal j
 unbindurl reddit.com --mode=normal k
