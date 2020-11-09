@@ -21,7 +21,7 @@ git: .gitconfig .gitignore_global
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
 .PHONY: vim
-vim: .vim .vimrc .gvimrc .surfingkeys.js .tridactylrc
+vim: .vim .vimrc .gvimrc .surfingkeys.js
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
@@ -67,6 +67,14 @@ karabiner: .config/karabiner
 
 .PHONY: iterm2
 iterm2: .config/iterm2
+	$(shell mkdir -p ~/.config)
+	@echo removing $^; \
+	$(shell rm -rf ~/$^)
+	@echo Installing $^; \
+	$(shell ln -s $(CURDIR)/$^ ~/$^)
+
+.PHONY: tridactyl
+tridactyl: .config/tridactyl
 	$(shell mkdir -p ~/.config)
 	@echo removing $^; \
 	$(shell rm -rf ~/$^)
