@@ -28,6 +28,8 @@ bindurl messenger.com --mode=insert <C-k> js -r messenger-prev-convo.js
 bind --mode=ex <C-j> ex.next_completion
 bind --mode=ex <C-k> ex.prev_completion
 
+unbind --mode=normal <Escape>
+
 set colors dark
 
 set smoothscroll true
