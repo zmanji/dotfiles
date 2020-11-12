@@ -18,6 +18,8 @@ unbindurl feedly.com --mode=normal r
 unbindurl reddit.com --mode=normal j
 unbindurl reddit.com --mode=normal k
 
+unbindurl mail.google.com --mode=normal j
+unbindurl mail.google.com --mode=normal k
 
 bindurl messenger.com --mode=normal <C-j> js -r messenger-next-convo.js
 bindurl messenger.com --mode=insert <C-j> js -r messenger-next-convo.js
@@ -29,6 +31,7 @@ bind --mode=ex <C-j> ex.next_completion
 bind --mode=ex <C-k> ex.prev_completion
 
 unbind --mode=normal <Escape>
+unbind --mode=normal <AS-ArrowUp><AS-ArrowUp><AS-ArrowDown><AS-ArrowDown><AS-ArrowLeft><AS-ArrowRight><AS-ArrowLeft><AS-ArrowRight>ba
 
 set colors dark
 
