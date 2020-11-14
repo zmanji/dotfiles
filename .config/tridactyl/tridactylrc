@@ -27,6 +27,8 @@ bindurl messenger.com --mode=insert <C-j> js -r messenger-next-convo.js
 bindurl messenger.com --mode=normal <C-k> js -r messenger-prev-convo.js
 bindurl messenger.com --mode=insert <C-k> js -r messenger-prev-convo.js
 
+bindurl messenger.com --mode=normal i js -r messenger-focus-input.js
+
 bind --mode=ex <C-j> ex.next_completion
 bind --mode=ex <C-k> ex.prev_completion
 
