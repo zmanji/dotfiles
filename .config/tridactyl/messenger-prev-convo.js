@@ -1,15 +1,34 @@
 var goup = function () {
-    var current = document
-        .querySelector('[aria-label="Conversation List"] > [aria-relevant]:not([aria-live="polite"])')
+    var links = Array.from(document.querySelectorAll('[role=navigation] a[role=link][href^="/t"]'));
 
-    var sibling = current.previousElementSibling;
+    var current = links.filter(l => {
+      var u = new URL(l.href)
+      return u.href === window.location.href || u.href.startsWith(window.location.href) || window.location.href.startsWith(u.href);
+    })
 
-    if (sibling !== null) {
-        var link = sibling.querySelector('[role=link]');
-        if (link !== null) {
-          link.click();
-        }
+
+    if (current.length > 0) {
+      current = current[0]
+    } else {
+      return;
     }
+
+   var beforeCurrent = null;
+
+   if (current !== null) {
+     for (const l of links) {
+      if (l === current) {
+        if (beforeCurrent != null) {
+          beforeCurrent.click();
+          return;
+        } else {
+          return;
+        }
+      }
+      beforeCurrent = l;
+
+     }
+   }
 
 };
 
