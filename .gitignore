@@ -9,3 +9,4 @@
 # don't track this junk
 .emacs.d/transient/
 .emacs.d/org-journal.cache
+.config/iterm2/AppSupport
