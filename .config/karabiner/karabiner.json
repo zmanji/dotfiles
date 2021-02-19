@@ -213,7 +213,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.apple\\.iChat$"
+                                            "^com\\.apple\\.MobileSMS$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -245,7 +245,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.apple\\.iChat$"
+                                            "^com\\.apple\\.MobileSMS$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
