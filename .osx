@@ -105,6 +105,40 @@ defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 27
   </dict>
 "
 
+
+# Disable Cmd-Alt-Space show finder search window
+defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 65 "
+  <dict>
+    <key>enabled</key><false/>
+    <key>value</key><dict>
+      <key>type</key><string>standard</string>
+      <key>parameters</key>
+      <array>
+        <integer>32</integer>
+        <integer>49</integer>
+        <integer>1572864</integer>
+      </array>
+    </dict>
+  </dict>
+"
+
+
+# Disable Cmd-Space show spotlight search
+defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 64 "
+  <dict>
+    <key>enabled</key><false/>
+    <key>value</key><dict>
+      <key>type</key><string>standard</string>
+      <key>parameters</key>
+      <array>
+        <integer>32</integer>
+        <integer>49</integer>
+        <integer>1048576</integer>
+      </array>
+    </dict>
+  </dict>
+"
+
 # Need to restart UI for some changes to take effect.
 killall SystemUIServer Dock
 
