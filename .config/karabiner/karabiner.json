@@ -284,6 +284,10 @@
                                                 "vendor_id": 1452
                                             },
                                             {
+                                                "product_id": 832,
+                                                "vendor_id": 1452
+                                            },
+                                            {
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
@@ -322,6 +326,10 @@
                                                 "vendor_id": 1452
                                             },
                                             {
+                                                "product_id": 832,
+                                                "vendor_id": 1452
+                                            },
+                                            {
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
@@ -354,6 +362,10 @@
                                         "identifiers": [
                                             {
                                                 "product_id": 628,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 832,
                                                 "vendor_id": 1452
                                             },
                                             {
@@ -397,6 +409,10 @@
                                                 "vendor_id": 1452
                                             },
                                             {
+                                                "product_id": 832,
+                                                "vendor_id": 1452
+                                            },
+                                            {
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
@@ -429,6 +445,10 @@
                                         "identifiers": [
                                             {
                                                 "product_id": 628,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 832,
                                                 "vendor_id": 1452
                                             },
                                             {
@@ -467,6 +487,10 @@
                                                 "vendor_id": 1452
                                             },
                                             {
+                                                "product_id": 832,
+                                                "vendor_id": 1452
+                                            },
+                                            {
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
@@ -499,6 +523,10 @@
                                         "identifiers": [
                                             {
                                                 "product_id": 628,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 832,
                                                 "vendor_id": 1452
                                             },
                                             {
