@@ -48,9 +48,11 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # Enable tap to click (Trackpad)
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
 # Map bottom right Trackpad corner to right-click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
 
 # Set a fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
