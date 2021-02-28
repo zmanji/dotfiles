@@ -80,6 +80,15 @@ defaults write com.apple.dock mru-spaces -bool false
 # Wipe all (default) app icons from the Dock
 defaults write com.apple.dock persistent-apps -array
 
+# Don't play user interface sound effects
+defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -bool false
+
+# Don't play feedback when volume is changed
+defaults write NSGlobalDomain com.apple.sound.beep.feedback -bool false
+
+# Don't flash the screen when an alert sound occurs (accessibility)
+defaults write NSGlobalDomain com.apple.sound.beep.flash -bool false
+
 # Need to restart UI for some changes to take effect.
 killall SystemUIServer Dock
 

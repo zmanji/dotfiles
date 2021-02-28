@@ -21,17 +21,10 @@ function is_important_window(w)
     return w:isStandard() and w:isVisible()
 end
 
-hs.window.switcher.ui.fontName = ".AppleSystemUIFont"
+-- hs.window.switcher.ui.fontName = ".AppleSystemUIFont"
 local filter = hs.window.filter.new(function (w)
   return is_important_window(w)
 end)
-local switcher = hs.window.switcher.new(filter)
--- within app only window switching, activeApplication=true doesn't work for
--- some reason
-local appFilter = hs.window.filter.new(function (w)
-  return w:application():isFrontmost() and is_important_window(w)
-end)
-local appSwitcher = hs.window.switcher.new(appFilter)
 
 -- Window Management Functions
 
@@ -357,39 +350,4 @@ end
 watcher = hs.usb.watcher.new(rotateHotkeys)
 watcher:start()
 
-
--- Global Shortcuts
--- F19 and F18 come from Karabiner highjacking cmd-tab and cmd-`
-
-hs.hotkey.bind({"cmd"}, "f19", function()
-  switcher:next()
-end,
-nil,
-function ()
-  switcher:next()
- end)
-
-hs.hotkey.bind({"cmd", "shift"}, "f19", function()
-  switcher:previous()
-end,
-nil,
-function ()
-  switcher:previous()
-end)
-
-hs.hotkey.bind({"cmd"}, "f18", function()
-  appSwitcher:next()
-end,
-nil,
-function ()
-  appSwitcher:next()
- end)
-
-hs.hotkey.bind({"cmd", "shift"}, "f18", function()
-  appSwitcher:previous()
-end,
-nil,
-function ()
-  appSwitcher:previous()
-end)
 
