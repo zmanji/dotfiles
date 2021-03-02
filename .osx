@@ -142,7 +142,10 @@ defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 64
 "
 
 # Need to restart UI for some changes to take effect.
-killall SystemUIServer Dock
+killall SystemUIServer Dock "System Preferences"
+
+defaults write com.apple.activatesettings log true
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 # Enable loading of iterm2 config from dotfiles.
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm2"
