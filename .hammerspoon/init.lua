@@ -5,7 +5,7 @@ local log = hs.logger.new('zmanji')
 
 hs.window.filter.forceRefreshOnSpaceChange = true
 hs.window.animationDuration = 0
-hs.window.setFrameCorrectness = true
+-- hs.window.setFrameCorrectness = true
 
 -- Disable default callback for hs.chooser
 hs.chooser.globalCallback = function(a) end
