@@ -35,13 +35,13 @@ function move_left()
   -- if moving to position for the first time then always half width
   -- is the screen not on the left half of the screen?
   if (f.x > 0.5) then
-    win:moveToUnit({0, 0, 0.5, 1})
+    win:move({0, 0, 0.5, 1}, nil, true)
   elseif math.abs(f.w - 0.5) <= 0.1 then
-    win:moveToUnit({0, 0, 1/3, 1})
+    win:move({0, 0, 1/3, 1}, nil, true)
   elseif math.abs(f.w - 1/3) <= 0.1 then
-    win:moveToUnit({0, 0, 2/3, 1})
+    win:move({0, 0, 2/3, 1}, nil, true)
   else
-    win:moveToUnit({0, 0, 0.5, 1})
+    win:move({0, 0, 0.5, 1}, nil, true)
   end
 end
 
@@ -52,26 +52,26 @@ function move_right()
   -- if moving to position for the first time then always half width
   -- is the screen not on the right half of the screen?
   if (f.x < 0.5) then
-    win:moveToUnit({0.5, 0, 0.5, 1})
+    win:move({0.5, 0, 0.5, 1}, nil, true)
   -- otherwise regular logic to size
   elseif math.abs(f.w - 0.5) <= 0.1 then
-    win:moveToUnit({2/3, 0, 1/3, 1})
+    win:move({2/3, 0, 1/3, 1}, nil, true)
   elseif math.abs(f.w - 1/3) <= 0.1 then
-    win:moveToUnit({1/3, 0, 2/3, 1})
+    win:move({1/3, 0, 2/3, 1}, nil, true)
   else
-    win:moveToUnit({0.5, 0, 0.5, 1})
+    win:move({0.5, 0, 0.5, 1}, nil, true)
   end
 
 end
 
 function move_up()
   local win = hs.window.focusedWindow()
-  win:moveToUnit({0, 0, 1, 0.5})
+  win:move({0, 0, 1, 0.5}, nil, true)
 end
 
 function move_down()
   local win = hs.window.focusedWindow()
-  win:moveToUnit({0, 0.5, 1, 0.5})
+  win:move({0, 0.5, 1, 0.5}, nil, true)
 end
 
 function full()
