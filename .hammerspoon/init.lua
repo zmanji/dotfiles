@@ -34,9 +34,23 @@ function move_left()
   local screen = win:screen()
   local max = screen:frame()
 
+  local half_width = math.floor(max.w / 2)
+  local third_width = math.floor(max.w / 3)
+  local two_thirds_width = math.floor(max.w * 2 / 3)
+
+  -- if moving to position for the first time then always half width
+  if math.abs(f.x - max.x) > 10 then
+    f.w = half_width
+  elseif math.abs(f.w - half_width) <= 10 then
+    f.w = third_width
+  elseif math.abs(f.w - third_width) <= 10 then
+    f.w = two_thirds_width
+  else
+    f.w = half_width
+  end
+
   f.x = max.x
   f.y = max.y
-  f.w = max.w / 2
   f.h = max.h
   win:setFrame(f, 0)
 end
@@ -47,9 +61,28 @@ function move_right()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.x = max.x + (max.w / 2)
+  local half_width = math.floor(max.w / 2)
+  local third_width = math.floor(max.w / 3)
+  local two_thirds_width = math.floor(max.w * 2 / 3)
+
+  -- if moving to position for the first time then always half width
+  -- is the screen not on the right half of the screen?
+  if (f.x < (max.w / 2)) then
+    f.w = half_width
+    f.x = max.x + (max.w / 2)
+  -- otherwise regular logic to size
+  elseif math.abs(f.w - half_width) <= 10 then
+    f.w = third_width
+    f.x = max.x + (max.w * 2 / 3)
+  elseif math.abs(f.w - third_width) <= 10 then
+    f.w = two_thirds_width
+    f.x = max.x + (max.w * 1 / 3)
+  else
+    f.w = half_width
+    f.x = max.x + (max.w / 2)
+  end
+
   f.y = max.y
-  f.w = max.w / 2
   f.h = max.h
   win:setFrame(f, 0)
 end
