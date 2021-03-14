@@ -30,87 +30,48 @@ end)
 
 function move_left()
   local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  local half_width = math.floor(max.w / 2)
-  local third_width = math.floor(max.w / 3)
-  local two_thirds_width = math.floor(max.w * 2 / 3)
+  local f = win:frame():toUnitRect(win:screen():frame())
 
   -- if moving to position for the first time then always half width
-  if math.abs(f.x - max.x) > 10 then
-    f.w = half_width
-  elseif math.abs(f.w - half_width) <= 10 then
-    f.w = third_width
-  elseif math.abs(f.w - third_width) <= 10 then
-    f.w = two_thirds_width
+  -- is the screen not on the left half of the screen?
+  if (f.x > 0.5) then
+    win:moveToUnit({0, 0, 0.5, 1})
+  elseif math.abs(f.w - 0.5) <= 0.1 then
+    win:moveToUnit({0, 0, 1/3, 1})
+  elseif math.abs(f.w - 1/3) <= 0.1 then
+    win:moveToUnit({0, 0, 2/3, 1})
   else
-    f.w = half_width
+    win:moveToUnit({0, 0, 0.5, 1})
   end
-
-  f.x = max.x
-  f.y = max.y
-  f.h = max.h
-  win:setFrame(f, 0)
 end
 
 function move_right()
   local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  local half_width = math.floor(max.w / 2)
-  local third_width = math.floor(max.w / 3)
-  local two_thirds_width = math.floor(max.w * 2 / 3)
+  local f = win:frame():toUnitRect(win:screen():frame())
 
   -- if moving to position for the first time then always half width
   -- is the screen not on the right half of the screen?
-  if (f.x < (max.w / 2)) then
-    f.w = half_width
-    f.x = max.x + (max.w / 2)
+  if (f.x < 0.5) then
+    win:moveToUnit({0.5, 0, 0.5, 1})
   -- otherwise regular logic to size
-  elseif math.abs(f.w - half_width) <= 10 then
-    f.w = third_width
-    f.x = max.x + (max.w * 2 / 3)
-  elseif math.abs(f.w - third_width) <= 10 then
-    f.w = two_thirds_width
-    f.x = max.x + (max.w * 1 / 3)
+  elseif math.abs(f.w - 0.5) <= 0.1 then
+    win:moveToUnit({2/3, 0, 1/3, 1})
+  elseif math.abs(f.w - 1/3) <= 0.1 then
+    win:moveToUnit({1/3, 0, 2/3, 1})
   else
-    f.w = half_width
-    f.x = max.x + (max.w / 2)
+    win:moveToUnit({0.5, 0, 0.5, 1})
   end
 
-  f.y = max.y
-  f.h = max.h
-  win:setFrame(f, 0)
 end
 
 function move_up()
   local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w
-  f.h = max.h / 2
-  win:setFrame(f, 0)
+  win:moveToUnit({0, 0, 1, 0.5})
 end
 
 function move_down()
   local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.x = max.x
-  f.y = max.y + (max.h / 2)
-  f.w = max.w
-  f.h = max.h / 2
-  win:setFrame(f, 0)
+  win:moveToUnit({0, 0.5, 1, 0.5})
 end
 
 function full()
