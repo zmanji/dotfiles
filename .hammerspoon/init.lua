@@ -34,7 +34,7 @@ function move_left()
 
   -- if moving to position for the first time then always half width
   -- is the screen not on the left half of the screen?
-  if (f.x > 0.5) then
+  if (f.x >= 0.5) then
     win:move({0, 0, 0.5, 1}, nil, true)
   elseif math.abs(f.w - 0.5) <= 0.1 then
     win:move({0, 0, 1/3, 1}, nil, true)
