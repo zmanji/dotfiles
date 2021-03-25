@@ -56,6 +56,7 @@
   (define-key evil-motion-state-map ";" 'evil-ex)
   (define-key evil-motion-state-map ":" 'evil-repeat-find-char)
 
+
   (zmanji/evil-terminal-cursor-change)
 
   (evil-ex-define-cmd "fullscreen" 'toggle-frame-fullscreen)
@@ -67,7 +68,23 @@
     :custom
     (evil-collection-setup-minibuffer t)
     :config
-    (evil-collection-init))
+    (evil-collection-init)
+    ; More consistent c-j / c-k in minibuffer
+    (general-imap
+      :keymaps 'evil-ex-completion-map
+      "C-j" 'next-complete-history-element
+      "C-k" 'previous-complete-history-element
+     )
+
+    (general-nmap
+      :keymaps 'evil-ex-completion-map
+      "C-j" 'next-history-element
+      "C-k" 'previous-history-element
+    )
+
+
+    )
+
 
   (use-package evil-commentary
     :init
