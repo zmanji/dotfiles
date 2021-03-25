@@ -45,17 +45,10 @@
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
   :config
-  ;; ESC quits everything as expected taken from: http://stackoverflow.com/a/10166400/2874
-  (define-key minibuffer-local-isearch-map [escape] 'zmanji/minibuffer-keyboard-quit)
   (define-key evil-normal-state-map [escape] 'keyboard-quit)
   (define-key evil-visual-state-map [escape] 'keyboard-quit)
   ;; Fixes some jank in the terminal.
   (define-key evil-insert-state-map "\e" 'evil-normal-state)
-  (define-key minibuffer-local-map [escape] 'zmanji/minibuffer-keyboard-quit)
-  (define-key minibuffer-local-ns-map [escape] 'zmanji/minibuffer-keyboard-quit)
-  (define-key minibuffer-local-completion-map [escape] 'zmanji/minibuffer-keyboard-quit)
-  (define-key minibuffer-local-must-match-map [escape] 'zmanji/minibuffer-keyboard-quit)
-  (define-key minibuffer-local-isearch-map [escape] 'zmanji/minibuffer-keyboard-quit)
 
   (define-key evil-window-map "q" 'evil-window-delete)
 
@@ -483,9 +476,11 @@ eyebrowse tab before calling the actual function."
   (ivy-mode)
   :diminish ivy-mode
   :config
-  (define-key ivy-minibuffer-map (kbd "C-j") 'ivy-next-line)
-  (define-key ivy-minibuffer-map (kbd "C-k") 'ivy-previous-line)
-  (define-key ivy-minibuffer-map (kbd "<escape>") 'zmanji/minibuffer-keyboard-quit)
+  (general-imap
+    :keymaps 'ivy-minibuffer-map
+    "C-j" 'ivy-next-line
+    "C-k" 'ivy-previous-line
+   )
  )
 
 (use-package counsel

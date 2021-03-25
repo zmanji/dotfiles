@@ -1,16 +1,5 @@
 ; Functions to be used elsewhere
 
-; Taken from http://stackoverflow.com/a/10166400/2874
-(defun zmanji/minibuffer-keyboard-quit ()
-  "Abort recursive edit.
-  In Delete Selection mode, if the mark is active, just deactivate it;
-  then it takes a second \\[keyboard-quit] to abort the minibuffer."
-  (interactive)
-  (if (and delete-selection-mode transient-mark-mode mark-active)
-      (setq deactivate-mark  t)
-      (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
-      (abort-recursive-edit)))
-
 ; Taken from http://stackoverflow.com/a/2903256/2874
 (defun zmanji//utf8-everywhere ()
   ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
