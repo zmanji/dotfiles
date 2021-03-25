@@ -42,6 +42,8 @@
 (use-package evil
   :init
   (evil-mode 1)
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
   :config
   ;; ESC quits everything as expected taken from: http://stackoverflow.com/a/10166400/2874
   (define-key minibuffer-local-isearch-map [escape] 'zmanji/minibuffer-keyboard-quit)
@@ -67,6 +69,12 @@
   (evil-ex-define-cmd "rm" 'zmanji/delete-file-and-buffer)
 
   (setq evil-vsplit-window-right t)
+
+  (use-package evil-collection
+    :custom
+    (evil-collection-setup-minibuffer t)
+    :config
+    (evil-collection-init))
 
   (use-package evil-commentary
     :init
@@ -161,7 +169,7 @@
   :straight (:type built-in)
   :config
   (setq uniquify-buffer-name-style 'forward)
-  (setq uniquify-after-kill-buffer-p t) 
+  (setq uniquify-after-kill-buffer-p t)
   ;; Ignore special buffers
   (setq uniquify-ignore-buffers-re "*[^*]+*"))
 
@@ -450,10 +458,7 @@ eyebrowse tab before calling the actual function."
   (add-hook 'eshell-mode-hook 'with-editor-export-editor)
   )
 
-(use-package magit
-  :config
-  (use-package evil-magit)
-)
+(use-package magit)
 
 (use-package dired
   :straight (:type built-in)
