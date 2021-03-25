@@ -10,3 +10,6 @@
 .emacs.d/transient/
 .emacs.d/org-journal.cache
 .config/iterm2/AppSupport
+.emacs.d/straight/build
+.emacs.d/straight/repos/
+.emacs.d/straight/build-cache.el

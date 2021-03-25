@@ -13,22 +13,8 @@
 ;; integration: http://oremacs.com/2015/01/17/setting-up-ediff/
 ;; https://github.com/justbur/evil-ediff
 
-(require 'package)
-;; TODO(zmanji): Consider using stable melpa
-;; TODO(zmanji): Consider versioning elpa/ directory or using straight.el
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-
-(package-initialize)
-
-;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
 
 (use-package general
-  :ensure t
   ;; Good README here: https://github.com/noctuid/general.el
   :config
   (general-evil-setup))
@@ -39,13 +25,11 @@
   (unless (server-running-p) (server-start)))
 
 (use-package exec-path-from-shell
-  :ensure t
   :init
   (when (memq window-system '(mac ns x nil))
     (exec-path-from-shell-initialize)))
 
 (use-package undo-tree
-  :ensure t
   :init
   (global-undo-tree-mode)
   :diminish undo-tree-mode
@@ -56,7 +40,6 @@
 
 ;; TODO(zmanji): Consider making space the leader key and not ','
 (use-package evil
-  :ensure t
   :init
   (evil-mode 1)
   :config
@@ -86,21 +69,18 @@
   (setq evil-vsplit-window-right t)
 
   (use-package evil-commentary
-    :ensure t
     :init
     (evil-commentary-mode)
     :diminish evil-commentary-mode
     )
 
   (use-package evil-anzu
-    :ensure t
     :init
     (global-anzu-mode +1)
     :diminish anzu-mode
     )
 
   (use-package evil-matchit
-    :ensure t
     :init
     (global-evil-matchit-mode 1)
     )
@@ -159,7 +139,6 @@
 )
 
 (use-package which-key
-  :ensure t
   :diminish which-key-mode
   :init
   (which-key-mode)
@@ -167,28 +146,26 @@
   (setq which-key-show-operator-state-maps t))
 
 (use-package base16-theme
-  :ensure t
   :init
   (setq base16-theme-256-color-source "base16-shell")
   (load-theme 'base16-tomorrow-night t))
 
 (use-package smooth-scrolling
-  :ensure t
   :init
   (setq smooth-scroll-margin 1)
   (smooth-scrolling-mode))
 
-(use-package pbcopy
-  :ensure t)
+(use-package pbcopy)
 
 (use-package uniquify
+  :straight (:type built-in)
   :config
   (setq uniquify-buffer-name-style 'forward)
+  (setq uniquify-after-kill-buffer-p t) 
   ;; Ignore special buffers
-  (setq uniquify-ignore-buffers-re "^\\*"))
+  (setq uniquify-ignore-buffers-re "*[^*]+*"))
 
 (use-package paren
-  :ensure t
   :config
   ;; Show matching parens like vim
   (show-paren-mode 1)
@@ -205,7 +182,6 @@
 ;; http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/
 ;; http://www.cachestocaches.com/2016/9/my-workflow-org-agenda/
 (use-package org
-  :ensure org-plus-contrib
   :config
   (setq org-log-done 'time)
   (use-package org-bullets
@@ -295,12 +271,10 @@
   )
 
 (use-package hl-todo
-  :ensure t
   :init
   (global-hl-todo-mode))
 
 (use-package whitespace
-  :ensure t
   :diminish global-whitespace-mode
   :init
   (global-whitespace-mode)
@@ -326,7 +300,7 @@
   newline-mark)))
 
 (use-package saveplace
-  :ensure t
+  :straight (:type built-in)
   :init
   (save-place-mode))
 
@@ -335,7 +309,6 @@
   (electric-pair-mode))
 
 (use-package projectile
-  :ensure t
   :init
   (projectile-mode)
   :config
@@ -357,7 +330,6 @@
 ;; See http://blog.binchen.org/posts/what-s-the-best-spell-check-set-up-in-emacs.html
 ;; NOTE: The dictionaries have to come from here: http://wordlist.aspell.net/dicts/
 (use-package flyspell
-  :ensure t
   :diminish flyspell-mode
   :init
   (add-hook 'prog-mode-hook 'flyspell-prog-mode)
@@ -386,19 +358,19 @@
 
 ;; Reload buffers which have been modified externally
 (use-package autorevert
+  :straight (:type built-in)
   :diminish auto-revert-mode
   :init
   (global-auto-revert-mode t)
 )
 
 (use-package hl-line
-  :ensure t
+  :straight (:type built-in)
   :init
   (global-hl-line-mode)
 )
 
 (use-package eyebrowse
-  :ensure t
   :init
   (eyebrowse-mode)
   :config
@@ -441,6 +413,7 @@ eyebrowse tab before calling the actual function."
   )
 
 (use-package eshell
+  :straight (:type built-in)
   :config
   (setq eshell-error-if-no-glob t)
   (setq eshell-hist-ignoredups t)
@@ -468,7 +441,6 @@ eyebrowse tab before calling the actual function."
 )
 
 (use-package with-editor
-  :ensure t
   :config
   ;; Bind :cq to something reasonable
   (define-key with-editor-mode-map [remap evil-quit-all-with-error-code] 'with-editor-cancel)
@@ -479,16 +451,16 @@ eyebrowse tab before calling the actual function."
   )
 
 (use-package magit
-  :ensure t
   :config
-  (use-package evil-magit
-    :ensure t)
-
+  (use-package evil-magit)
 )
 
 (use-package dired
+  :straight (:type built-in)
   :config
-  (use-package dired-x)
+  (use-package dired-x
+    :straight (:type built-in)
+  )
   ;; Use coreutils for dired
   (let ((gls (executable-find "gls")))
     (when gls (setq insert-directory-program gls)))
@@ -502,7 +474,6 @@ eyebrowse tab before calling the actual function."
 ;; TODO(zmanji): Consider adding custom ivy action that opens file in split.
 ;; TODO(zmanji): Read docs here: http://oremacs.com/swiper/
 (use-package ivy
-  :ensure t
   :init
   (ivy-mode)
   :diminish ivy-mode
@@ -513,7 +484,6 @@ eyebrowse tab before calling the actual function."
  )
 
 (use-package counsel
-  :ensure t
   :init
   (counsel-mode)
   :diminish counsel-mode
@@ -524,7 +494,7 @@ eyebrowse tab before calling the actual function."
 )
 
 (use-package winner
-  :ensure t
+  :straight (:type built-in)
   :init
   (winner-mode)
   :config
@@ -534,7 +504,6 @@ eyebrowse tab before calling the actual function."
   )
 
 (use-package deft
-  :ensure t
   :config
   (setq deft-extentions '("org"))
   (setq deft-default-extension "org")
@@ -549,7 +518,6 @@ eyebrowse tab before calling the actual function."
   )
 
 (use-package company
-  :ensure t
   :diminish company-mode
   :init
   (global-company-mode)
@@ -587,13 +555,11 @@ eyebrowse tab before calling the actual function."
   ;; NOTE: add future backends here on a mode by mode basis
   )
 (use-package origami
-  :ensure t
   :init
   (origami-mode 1)
   )
 
 (use-package markdown-mode
-  :ensure t
   :commands (markdown-mode)
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
@@ -602,7 +568,6 @@ eyebrowse tab before calling the actual function."
   )
 
 (use-package edit-server
-  :ensure t
   :init
   (edit-server-start)
   :config
@@ -616,6 +581,7 @@ eyebrowse tab before calling the actual function."
   )
 
 (use-package comint
+  :straight (:type built-in)
   :init
   (general-nmap
    :keymaps 'comint-mode-map
