@@ -29,6 +29,11 @@
 [core]
   excludesfile = ~/.gitignore_global
   whitespace = trailing-space,space-before-tab
+  pager = delta
+
+[delta]
+  line-numbers = true
+  side-by-side = true
 
 [github]
   user = zmanji
@@ -38,6 +43,7 @@
   ; Detect renames as well as copies
   renames = copies
   algorithm = patience
+  colorMoved = default
 
 [merge]
   stat = true
