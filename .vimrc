@@ -97,6 +97,7 @@ endif
 
 
 nnoremap <leader>f :Files<cr>
+nnoremap <leader>b :Buffers<cr>
 " }}}
 
 " }}}
