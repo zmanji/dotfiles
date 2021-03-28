@@ -74,38 +74,6 @@ inoremap <expr><s-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " }}}
 
-" Unite {{{
-let g:unite_enable_start_insert = 1
-let g:unite_enable_short_source_names = 1
-let g:unite_data_directory='~/.vim/.cache/unite'
-let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable=1
-let g:unite_source_rec_max_cache_files=5000
-let g:unite_prompt='»'
-
-function! s:unite_settings()
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-
-  call unite#custom#source('file_rec,file_rec/async',
-        \ 'matchers', 'matcher_fuzzy')
-
-  call unite#custom#source('file_rec,file_rec/async',
-        \ 'sorters', 'sorter_rank')
-endfunction
-
-augroup ft_unite
-  autocmd!
-  autocmd FileType unite call s:unite_settings()
-augroup END
-
-nnoremap <leader>f :Unite -start-insert file_rec/async:!<cr>
-nnoremap <leader>y :Unite -buffer-name=yanks history/yank<cr>
-
-nnoremap <leader>o :Unite -auto-resize -buffer-name=outline outline<cr>
-" }}}
-
 " Vimfiler {{{
 
 let g:vimfiler_as_default_explorer=1
@@ -126,6 +94,9 @@ autocmd! User GoyoLeave Limelight!
 if filereadable("/usr/local/opt/fzf/README.md")
 	set rtp+=/usr/local/opt/fzf
 endif
+
+
+nnoremap <leader>f :Files<cr>
 " }}}
 
 " }}}
