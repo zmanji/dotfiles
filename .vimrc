@@ -122,6 +122,12 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " }}}
 
+" FZF {{{
+if filereadable("/usr/local/opt/fzf/README.md")
+	set rtp+=/usr/local/opt/fzf
+endif
+" }}}
+
 " }}}
 
 " Colorscheme {{{
