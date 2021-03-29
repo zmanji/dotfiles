@@ -105,6 +105,8 @@ if [[ -d $(brew --prefix)/opt/fzf/shell ]]; then
   # * CTRL-T => find file
   # * ALT-C cd
   # * CTRL-R history search
+  export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git' 
+  export FZF_CTRL_T_OPTS="--select-1 --exit-0"
   source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 fi
 
