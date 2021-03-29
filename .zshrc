@@ -99,6 +99,16 @@ source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring
 
 bindkey -v
 
+if [[ -d $(brew --prefix)/opt/fzf/shell ]]; then
+  [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+  # This binds the following:
+  # * CTRL-T => find file
+  # * ALT-C cd
+  # * CTRL-R history search
+  source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+fi
+
+
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd "v" edit-command-line
