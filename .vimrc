@@ -106,7 +106,7 @@ nnoremap <leader>b :Buffers<cr>
 let g:base16_shell_path='~/.zsh/3rdparty'
 let base16colorspace=256
 set background=dark
-colorscheme base16-tomorrow
+colorscheme base16-tomorrow-night
 syntax on
 " }}}
 

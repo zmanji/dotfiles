@@ -46,9 +46,6 @@
 [submodule ".vim/bundle/unite-outline"]
 	path = .vim/bundle/unite-outline
 	url = https://github.com/Shougo/unite-outline
-[submodule ".vim/bundle/vimfiler.vim"]
-	path = .vim/bundle/vimfiler.vim
-	url = https://github.com/Shougo/vimfiler.vim
 [submodule ".vim/bundle/neocomplete.vim"]
 	path = .vim/bundle/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim
