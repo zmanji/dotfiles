@@ -12,6 +12,7 @@
 " Pathogen {{{
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+execute pathogen#helptags()
 " }}}
 
 " Plugins {{{
@@ -83,6 +84,10 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
 
+" }}}
+
+" Startify {{{
+let g:startify_custom_header = []
 " }}}
 
 " Goyo {{{
