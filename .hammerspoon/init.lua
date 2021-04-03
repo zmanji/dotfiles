@@ -26,11 +26,44 @@ local filter = hs.window.filter.new(function (w)
   return is_important_window(w)
 end)
 
+-- see https://github.com/rxhanson/Rectangle/blob/7832ace7bc89824c6321c0f8923c5841f07f249b/Rectangle/AccessibilityElement.swift#L80
+function is_enhanced_ui(w)
+  local app = w:application()
+  local axapp = hs.axuielement.applicationElement(app)
+  local value = axapp.AXEnhancedUserInterface
+  return value
+end
+
+function set_enhanced_ui(w, v)
+  local app = w:application()
+  local axapp = hs.axuielement.applicationElement(app)
+  axapp.AXEnhancedUserInterface = v
+end
+
+-- Vimac will set this setting for everything but things can break, so just set
+-- it for a few apps that work safely.
+function appAXEnhance(appName, eventType, app)
+    if (eventType == hs.application.watcher.activated) then
+        if (app:bundleID() == "org.epichrome.app.Todoist") then
+            local axapp = hs.axuielement.applicationElement(app)
+            axapp.AXEnhancedUserInterface = true
+        end
+    end
+end
+local appWatcher = hs.application.watcher.new(appAXEnhance)
+appWatcher:start()
+
 -- Window Management Functions
 
 function move_left()
   local win = hs.window.focusedWindow()
   local f = win:frame():toUnitRect(win:screen():frame())
+  local is_enhanced = false
+
+  if is_enhanced_ui(win) then
+    is_enhanced = true
+    set_enhanced_ui(win, false)
+  end
 
   -- if moving to position for the first time then always half width
   -- is the screen not on the left half of the screen?
@@ -43,11 +76,21 @@ function move_left()
   else
     win:move({0, 0, 0.5, 1}, nil, true)
   end
+
+  if is_enhaned then
+    set_enhanced_ui(win, true)
+  end
 end
 
 function move_right()
   local win = hs.window.focusedWindow()
   local f = win:frame():toUnitRect(win:screen():frame())
+  local is_enhanced = false
+
+  if is_enhanced_ui(win) then
+    is_enhanced = true
+    set_enhanced_ui(win, false)
+  end
 
   -- if moving to position for the first time then always half width
   -- is the screen not on the right half of the screen?
@@ -62,16 +105,41 @@ function move_right()
     win:move({0.5, 0, 0.5, 1}, nil, true)
   end
 
+  if is_enhaned then
+    set_enhanced_ui(win, true)
+  end
+
 end
 
 function move_up()
   local win = hs.window.focusedWindow()
+  local is_enhanced = false
+
+  if is_enhanced_ui(win) then
+    is_enhanced = true
+    set_enhanced_ui(win, false)
+  end
+
   win:move({0, 0, 1, 0.5}, nil, true)
+
+  if is_enhaned then
+    set_enhanced_ui(win, true)
+  end
 end
 
 function move_down()
   local win = hs.window.focusedWindow()
+  local is_enhanced = false
+
+  if is_enhanced_ui(win) then
+    is_enhanced = true
+    set_enhanced_ui(win, false)
+  end
+
   win:move({0, 0.5, 1, 0.5}, nil, true)
+  if is_enhaned then
+    set_enhanced_ui(win, true)
+  end
 end
 
 function full()
