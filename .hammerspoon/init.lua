@@ -33,7 +33,11 @@ function set_enhanced_ui(w, v)
 end
 
 
-local axapps = {"org.epichrome.app.Todoist", "com.spotify.client"}
+local axapps = {
+  "org.epichrome.app.Todoist",
+  "com.spotify.client",
+  "org.mozilla.firefox",
+}
 
 -- Vimac will set this setting for everything but things can break, so just set
 -- it for a few apps that work safely.
