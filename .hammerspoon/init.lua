@@ -10,18 +10,10 @@ hs.window.animationDuration = 0
 -- Disable default callback for hs.chooser
 hs.chooser.globalCallback = function(a) end
 
--- Window Management Objects
--- NOTE: This sometimes doesn't see windows in other spaces
-
-hs.expose.ui.fontName = ".AppleSystemUIFont"
-
-local expose = hs.expose.new()
-
 function is_important_window(w)
     return w:isStandard() and w:isVisible()
 end
 
--- hs.window.switcher.ui.fontName = ".AppleSystemUIFont"
 local filter = hs.window.filter.new(function (w)
   return is_important_window(w)
 end)
@@ -40,11 +32,14 @@ function set_enhanced_ui(w, v)
   axapp.AXEnhancedUserInterface = v
 end
 
+
+local axapps = {"org.epichrome.app.Todoist", "com.spotify.client"}
+
 -- Vimac will set this setting for everything but things can break, so just set
 -- it for a few apps that work safely.
 function appAXEnhance(appName, eventType, app)
     if (eventType == hs.application.watcher.activated) then
-        if (app:bundleID() == "org.epichrome.app.Todoist") then
+        if hs.fnutils.contains(axapps, app:bundleID()) == true then
             local axapp = hs.axuielement.applicationElement(app)
             axapp.AXEnhancedUserInterface = true
         end
