@@ -50,31 +50,6 @@ augroup END
 
 " }}}
 
-" AutoComplete {{{
-let g:neocomplete#enable_at_startup=1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
-let g:neocomplete#enable_auto_delimiter=1
-let g:neocomplete#enable_refresh_always=1
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.ruby =
-      \ '[^. *\t]\.\w*\|\h\w*::'
-
-" For smart TAB completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ neocomplete#start_manual_complete()
-
-inoremap <expr><s-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-  function! s:check_back_space() "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-  endfunction "}}}
-
-" }}}
-
 " Vimfiler {{{
 
 let g:vimfiler_as_default_explorer=1
