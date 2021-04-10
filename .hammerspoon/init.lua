@@ -3,6 +3,9 @@ local meh = {"ctrl", "shift", "alt", "cmd"}
 
 local log = hs.logger.new('zmanji')
 
+require("hs.ipc")
+hs.ipc.cliInstall()
+
 hs.window.filter.forceRefreshOnSpaceChange = true
 hs.window.animationDuration = 0
 -- hs.window.setFrameCorrectness = true
