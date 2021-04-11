@@ -58,6 +58,8 @@ fpath=(~/.zsh $(brew --prefix)/share/zsh-completions $fpath)
 autoload -Uz compinit
 compinit
 
+if command -v kitty >/dev/null 2>&1; then eval "$(kitty + complete setup zsh)"; fi
+
 zstyle ':completion:*' menu select
 # Case Insensitive Auto Complete
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
