@@ -73,6 +73,14 @@ iterm2: .config/iterm2
 	@echo Installing $^; \
 	$(shell ln -s $(CURDIR)/$^ ~/$^)
 
+.PHONY: kitty
+kitty: .config/kitty
+	$(shell mkdir -p ~/.config)
+	@echo removing $^; \
+	$(shell rm -rf ~/$^)
+	@echo Installing $^; \
+	$(shell ln -s $(CURDIR)/$^ ~/$^)
+
 .PHONY: tridactyl
 tridactyl: .config/tridactyl
 	$(shell mkdir -p ~/.config)

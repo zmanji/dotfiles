@@ -151,3 +151,9 @@ defaults write com.apple.activatesettings log true
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm2"
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# Disable hiding of kitty windows to free up cmd-h binding
+# https://github.com/kovidgoyal/kitty/issues/948#issuecomment-420812225
+
+defaults write net.kovidgoyal.kitty NSUserKeyEquivalents -dict-add "Hide kitty" '\0'
+defaults write net.kovidgoyal.kitty NSUserKeyEquivalents -dict-add "Hide Others" '\0'
