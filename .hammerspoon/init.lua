@@ -445,6 +445,15 @@ function kitty_close_window()
   local output, status, type, rc = hs.execute('/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock close-window')
 end
 
+function kitty_lighten_background()
+  local output, status, type, rc = hs.execute('/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a "background=#5b6268"')
+end
+
+
+function kitty_reset_background()
+  local output, status, type, rc = hs.execute('/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a --reset')
+end
+
 local kittyNavModal = hs.hotkey.modal.new()
 kittyNavModal:bind({}, 'escape', function() kittyNavModal:exit() end)
 kittyNavModal:bind({}, 'h', kitty_go_left, nil, kitty_go_left)
@@ -460,6 +469,13 @@ kittyNavModal:bind({}, 'q', kitty_close_window, nil, close_window)
 local kittyNavHotKey = hs.hotkey.new({'cmd'}, 'w', function()
   kittyNavModal:enter()
 end)
+
+function kittyNavModal:entered()
+  kitty_lighten_background()
+end
+function kittyNavModal:exited()
+  kitty_reset_background()
+end
 
 
 -- local wf_kitty = hs.window.filter.new{'kitty'}
