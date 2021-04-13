@@ -6,6 +6,8 @@ local log = hs.logger.new('zmanji')
 require("hs.ipc")
 hs.ipc.cliInstall()
 
+require("hs.json")
+
 hs.window.filter.forceRefreshOnSpaceChange = true
 hs.window.animationDuration = 0
 -- hs.window.setFrameCorrectness = true
@@ -162,6 +164,33 @@ function full()
   f.w = max.w
   f.h = max.h
   win:setFrame(f, 0)
+end
+
+function get_all_windows_json()
+    local items = {}
+    local current_focus = hs.window.focusedWindow()
+
+    hs.fnutils.ieach(filter:getWindows(), function(w)
+      -- Don't add the currently focused window here
+      if current_focus:id() == w:id() then
+        return
+      end
+
+      local app = w:application()
+      local title = app:name() .. " " .. w:title()
+      local bundlePath = hs.application.pathForBundleID(app:bundleID())
+
+      -- TODO(zmanji): consider uid
+      table.insert(items, {
+          title = title,
+          arg = w:id(),
+          icon = {type = "fileicon", path = bundlePath},
+          type = "file:skipcheck"
+        }
+      )
+    end)
+
+    return hs.json.encode({items = items}, true)
 end
 
 function window_chooser()
