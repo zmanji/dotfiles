@@ -179,10 +179,12 @@ function get_all_windows_json()
       local app = w:application()
       local title = app:name() .. " " .. w:title()
       local bundlePath = hs.application.pathForBundleID(app:bundleID())
+      local uid = app:bundleID() .. " " .. w:title()
 
-      -- TODO(zmanji): consider uid
       table.insert(items, {
+          uid = uid,
           title = title,
+          subtitle = "Switch to this window...",
           arg = w:id(),
           icon = {type = "fileicon", path = bundlePath},
           type = "file:skipcheck"
@@ -191,121 +193,6 @@ function get_all_windows_json()
     end)
 
     return hs.json.encode({items = items}, true)
-end
-
-function window_chooser()
-
-  local chooser = hs.chooser.new(function(choice)
-    if choice then
-      -- For reasons unknown looking up the window id if the window id
-      -- is not in this space fails
-      -- recall the filter again here
-      local window_id = choice["window_id"]
-      local w = hs.fnutils.find(filter:getWindows(), function(w)
-        return w:id() == window_id
-      end)
-      if w then
-        w:focus()
-      end
-    end
-   end)
-
-
-  chooser:choices(function()
-    local options = {}
-    local current_focus = hs.window.focusedWindow()
-
-    hs.fnutils.ieach(filter:getWindows(), function(w)
-      -- Don't add the currently focused window here
-      if current_focus:id() == w:id() then
-        return
-      end
-
-      local app = w:application()
-      local title = w:title()
-      local fText = app:name() .. " " .. title
-      local styledText = hs.styledtext.new(
-        fText,
-        {font = {name = ".AppleSystemUIFont", size = 16.0},
-        color = hs.drawing.color.definedCollections["hammerspoon"]["white"] }
-        )
-
-      local icon = hs.image.imageFromAppBundle(app:bundleID())
-
-      table.insert(options, {
-          text = styledText,
-          rawText = fText,
-          image = icon,
-          window_id = w:id()}
-      )
-    end)
-
-    -- filter the table using fzf if there is a query
-    local q = chooser:query()
-
-    if q == nil then
-      return options
-    end
-
-    if q == "" then
-      return options
-    end
-
-    -- Write data to temp file for fzf since piping to a process in lua is not
-    -- easy
-    local temp_file = os.tmpname()
-    local f = io.open(temp_file, "w")
-    hs.fnutils.ieach(options, function(w)
-      f:write(w["rawText"])
-      f:write("\t")
-      f:write(w["window_id"])
-      f:write("\t")
-      f:write("\n")
-    end)
-    f:close()
-
-    -- call fzf with file
-    local command = "cat " .. temp_file .. " | /usr/local/bin/fzf --delimiter '\\t' --nth=1 --filter '" .. q .. "' | cut -f 2"
-    -- log:e(command)
-
-    local output, status, type, rc = hs.execute(command)
-
-    -- log:e(hs.inspect(output))
-    -- log:e(hs.inspect(status))
-    -- log:e(type)
-    -- log:e(hs.inspect(rc))
-    -- cleanup file
-    os.remove(temp_file)
-
-    local matching_window_ids = {}
-    for s in output:gmatch("[^\n]+") do
-      matching_window_ids[tonumber(s)] = true
-    end
-
-    local filtered_options = {}
-
-    hs.fnutils.ieach(options, function(w)
-      id = w["window_id"]
-      if matching_window_ids[id] then
-        table.insert(filtered_options, w)
-      end
-    end)
-
-    -- auto select if there is only one entry
-    if #filtered_options == 1 then
-      hs.timer.doAfter(0.1, function()
-        chooser:select()
-      end)
-    end
-
-    return filtered_options
-  end)
-
-  chooser:queryChangedCallback(function(q)
-    chooser:refreshChoicesCallback()
-  end)
-
-  chooser:show()
 end
 
 
@@ -336,11 +223,6 @@ end)
 
 table.insert(laptopHotkeys, hs.hotkey.new(window_mash, "F", function()
   full()
-end)
-)
-
-table.insert(laptopHotkeys, hs.hotkey.new(window_mash, "space", function()
-  window_chooser()
 end)
 )
 
@@ -382,11 +264,6 @@ end)
 
 table.insert(redoxHotkeys, hs.hotkey.new(meh, "F", function()
   full()
-end)
-)
-
-table.insert(redoxHotkeys, hs.hotkey.new(meh, "space", function()
-  window_chooser()
 end)
 )
 
