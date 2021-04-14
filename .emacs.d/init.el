@@ -38,12 +38,14 @@
   (setq undo-tree-auto-save-history t)
 )
 
+
+
 ;; TODO(zmanji): Consider making space the leader key and not ','
 (use-package evil
   :init
-  (evil-mode 1)
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
+  (evil-mode 1)
   :config
   (define-key evil-normal-state-map [escape] 'keyboard-quit)
   (define-key evil-visual-state-map [escape] 'keyboard-quit)
