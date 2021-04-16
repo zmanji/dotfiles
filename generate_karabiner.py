@@ -59,6 +59,8 @@ class Encoder(json.JSONEncoder):
                     name = "type"
                 d[name] = getattr(obj, f.name)
             return self.default(d)
+        elif isinstance(obj, (bool, str, int, float, list, tuple, dict, type(None))):
+            return obj
         else:
             return super().default(obj)
 
@@ -90,7 +92,7 @@ def main():
     cfg["profiles"][0]["complex_modifications"]["rules"] = rules
     # write out the config
     print("// generated from generate_karabiner.py")
-    print(json.dumps(cfg, cls=Encoder))
+    print(json.dumps(cfg, cls=Encoder, indent=4))
 
 
 if __name__ == "__main__":
