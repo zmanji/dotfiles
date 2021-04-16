@@ -21,6 +21,350 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 0
+                                    }
+                                ],
+                                "description": "[kitty] use Cmd-w for nav mode",
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                          "name": "kitty_nav_mode",
+                                          "value": 1
+                                        }
+                                    },
+                                    {
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a 'background=#5b6268'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    },
+                                    {
+                                        "description": "Internal Keyboard",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 628,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 832,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 627,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "description": "[kitty] [Internal Keyboard] use caps lock to escape nav mode",
+                                "from": {
+                                    "key_code": "caps_lock"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                          "name": "kitty_nav_mode",
+                                          "value": 0
+                                        }
+                                    },
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a --reset"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    }
+                                ],
+                                "description": "[kitty] esc to escape nav mode",
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                          "name": "kitty_nav_mode",
+                                          "value": 0
+                                        }
+                                    },
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a --reset"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+
+
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    }
+                                ],
+                                "description": "[kitty] h is left in nav mode",
+                                "from": {
+                                    "key_code": "h"
+                                },
+                                "to": [
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py left"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    }
+                                ],
+                                "description": "[kitty] l is left in nav mode",
+                                "from": {
+                                    "key_code": "l"
+                                },
+                                "to": [
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py right"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    }
+                                ],
+                                "description": "[kitty] j is down in nav mode",
+                                "from": {
+                                    "key_code": "j"
+                                },
+                                "to": [
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py bottom"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    }
+                                ],
+                                "description": "[kitty] k is up in nav mode",
+                                "from": {
+                                    "key_code": "k"
+                                },
+                                "to": [
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py top"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    }
+                                ],
+                                "description": "[kitty] q is close window mode",
+                                "from": {
+                                    "key_code": "q"
+                                },
+                                "to": [
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock close-window"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    }
+                                ],
+                                "description": "[kitty] K is next tab",
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                      "mandatory": ["shift"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten tab.py next"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    }
+                                ],
+                                "description": "[kitty] J is previous tab",
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                      "mandatory": ["shift"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten tab.py previous"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+
+
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
                                             "^com\\.runningwithcrayons\\.Alfred$"
                                         ],
                                         "type": "frontmost_application_if"
