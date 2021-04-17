@@ -4,6 +4,7 @@ import os
 import json
 import collections
 from dataclasses import dataclass, asdict, is_dataclass, fields as datafields
+from typing import Optional
 
 # https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/
 
@@ -27,9 +28,9 @@ class SetVariable:
 
 @dataclass(frozen=True)
 class ToKey:
-    key_code: str = None
-    shell_command: str = None
-    modifiers: list[str] = None
+    key_code: Optional[str] = None
+    shell_command: Optional[str] = None
+    modifiers: Optional[list[str]] = None
 
 
 @dataclass(frozen=True)
@@ -44,7 +45,7 @@ class Rule:
     manipulators: list[Manipulator]
     description: str
 
-cmd_shift_mods = Modifiers(mandatory=["command"], optional="shift")
+cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
 
 
 class Encoder(json.JSONEncoder):
@@ -68,18 +69,29 @@ class Encoder(json.JSONEncoder):
 def generate_cmd_window_switch():
     return [
         Rule(
-            description="Rebind Cmd-` to Cmd-F18 for Hammerspoon",
+            description="Rebind Cmd-` to Cmd-F18 for Alt-Tab",
             manipulators=[
                 Manipulator(
                     _from=FromKey(key_code="gave_accdent_and_tilde",modifiers=cmd_shift_mods),
-                    to=ToKey())
+                    to=ToKey(key_code="f18", modifiers="left_command"))
                 ]
-        )
+        ),
+        Rule(
+            description="Rebind Cmd-Tab to Cmd-F19 for Alt-Tab",
+            manipulators=[
+                Manipulator(
+                    _from=FromKey(key_code="tab",modifiers=cmd_shift_mods),
+                    to=ToKey(key_code="f19", modifiers="left_command"))
+                ]
+        ),
     ]
+
+def generate_internal_mods():
+    return []
 
 
 def generate_rules():
-    return generate_cmd_window_switch()
+    return generate_internal_mods() + generate_cmd_window_switch()
 
 
 def main():
@@ -91,7 +103,7 @@ def main():
     # swap the rules into the config
     cfg["profiles"][0]["complex_modifications"]["rules"] = rules
     # write out the config
-    print("// generated from generate_karabiner.py")
+    #print("/* generated from generate_karabiner.py */")
     print(json.dumps(cfg, cls=Encoder, indent=4))
 
 
