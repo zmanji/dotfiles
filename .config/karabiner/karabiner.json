@@ -358,6 +358,36 @@
                         ]
                     },
 
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                      "type": "variable_if",
+                                      "name": "kitty_nav_mode",
+                                      "value": 1
+                                    }
+                                ],
+                                "description": "[kitty] v is new split",
+                                "from": {
+                                    "key_code": "v"
+                                },
+                                "to": [
+                                    {
+                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock new-window"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+
 
                     {
                         "manipulators": [
