@@ -122,6 +122,17 @@ def generate_internal_mods():
     base_mods = Modifiers(mandatory=["fn"], optional=["caps_lock"])
     return [
         Rule(
+            description="Change caps_lock to control when used as modifier, escape when used alone. (Internal Keyboard)",
+            manipulators=[
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="caps_lock"),
+                    to=[ToKey(key_code="left_control")],
+                    to_if_alone=[ToKey(key_code="escape")],
+                ),
+            ],
+        ),
+        Rule(
             description="Better Shifting: Parentheses on shift keys. (Internal Keyboard)",
             manipulators=[
                 Manipulator(
