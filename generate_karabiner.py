@@ -9,6 +9,17 @@ from typing import Optional
 # https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/
 
 @dataclass(frozen=True)
+class Ident:
+    vendor_id: int
+    product_id: int
+
+@dataclass(frozen=True)
+class Condition:
+    description: str
+    _type: str
+    identifiers: Optional[list[Ident]] = None
+
+@dataclass(frozen=True)
 class Modifiers:
     mandatory: list[str]
     optional: list[str]
@@ -38,6 +49,7 @@ class Manipulator:
     _from: FromKey
     to: ToKey
     _type: str = "basic"
+    conditions: Optional[list[Condition]] = None
 
 
 @dataclass(frozen=True)
@@ -45,15 +57,15 @@ class Rule:
     manipulators: list[Manipulator]
     description: str
 
-cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
-
-
 class Encoder(json.JSONEncoder):
     def default(self, obj):
         if is_dataclass(obj):
             d = dict()
             for f in datafields(obj):
                 name = f.name
+                value = getattr(obj, f.name)
+                if value is None:
+                    continue
                 if name == "_from":
                     name = "from"
                 elif name == "_type":
@@ -65,17 +77,18 @@ class Encoder(json.JSONEncoder):
         else:
             return super().default(obj)
 
+cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
+internal_kb_cond = Condition(description="Internal Keyboard",
+        _type="device_if",
+        identifiers=[
+            Ident(product_id=628, vendor_id=1452),
+            Ident(product_id=832, vendor_id=1452),
+            Ident(product_id=627, vendor_id=1452),
+            ]
+        )
 
 def generate_cmd_window_switch():
     return [
-        Rule(
-            description="Rebind Cmd-` to Cmd-F18 for Alt-Tab",
-            manipulators=[
-                Manipulator(
-                    _from=FromKey(key_code="gave_accdent_and_tilde",modifiers=cmd_shift_mods),
-                    to=ToKey(key_code="f18", modifiers="left_command"))
-                ]
-        ),
         Rule(
             description="Rebind Cmd-Tab to Cmd-F19 for Alt-Tab",
             manipulators=[
@@ -84,10 +97,24 @@ def generate_cmd_window_switch():
                     to=ToKey(key_code="f19", modifiers="left_command"))
                 ]
         ),
+        Rule(
+            description="Rebind Cmd-` to Cmd-F18 for Alt-Tab",
+            manipulators=[
+                Manipulator(
+                    _from=FromKey(key_code="grave_accent_and_tilde",modifiers=cmd_shift_mods),
+                    to=ToKey(key_code="f18", modifiers="left_command"))
+                ]
+        ),
     ]
 
 def generate_internal_mods():
-    return []
+    return [
+            # Rule(description="Change Fn + h/j/k/l to Arrows (Internal Keyboard)",
+            #     manipulators=[
+            #         Manipulator()
+            #         ]
+            #     ),
+        ]
 
 
 def generate_rules():
