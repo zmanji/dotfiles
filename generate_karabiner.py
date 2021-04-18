@@ -17,21 +17,22 @@ class Ident:
 
 @dataclass(frozen=True)
 class Condition:
-    description: str
     _type: str
+    description: Optional[str] = None
     identifiers: Optional[list[Ident]] = None
+    bundle_identifiers: Optional[list[str]] = None
 
 
 @dataclass(frozen=True)
 class Modifiers:
     mandatory: list[str]
-    optional: list[str]
+    optional: Optional[list[str]] = None
 
 
 @dataclass(frozen=True)
 class FromKey:
     key_code: str
-    modifiers: Optional[list[Modifiers]] = None
+    modifiers: Optional[Modifiers] = None
 
 
 @dataclass(frozen=True)
@@ -83,7 +84,7 @@ class Encoder(json.JSONEncoder):
             return super().default(obj)
 
 
-def generate_cmd_window_switch():
+def generate_cmd_window_switch() -> list[Rule]:
     cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
     return [
         Rule(
@@ -91,7 +92,7 @@ def generate_cmd_window_switch():
             manipulators=[
                 Manipulator(
                     _from=FromKey(key_code="tab", modifiers=cmd_shift_mods),
-                    to=[ToKey(key_code="f19", modifiers="left_command")],
+                    to=[ToKey(key_code="f19", modifiers=["left_command"])],
                 )
             ],
         ),
@@ -102,14 +103,14 @@ def generate_cmd_window_switch():
                     _from=FromKey(
                         key_code="grave_accent_and_tilde", modifiers=cmd_shift_mods
                     ),
-                    to=[ToKey(key_code="f18", modifiers="left_command")],
+                    to=[ToKey(key_code="f18", modifiers=["left_command"])],
                 )
             ],
         ),
     ]
 
 
-def generate_internal_mods():
+def generate_internal_mods() -> list[Rule]:
     internal_kb_cond = Condition(
         description="Internal Keyboard",
         _type="device_if",
@@ -177,8 +178,51 @@ def generate_internal_mods():
     ]
 
 
-def generate_rules():
-    return generate_internal_mods() + generate_cmd_window_switch()
+ctrl_k = FromKey(key_code="k", modifiers=Modifiers(mandatory=["control"]))
+ctrl_j = FromKey(key_code="j", modifiers=Modifiers(mandatory=["control"]))
+
+
+def generate_imessage() -> list[Rule]:
+    imessage_cond = Condition(
+        _type="frontmost_application_if",
+        bundle_identifiers=["^com\.apple\.MobileSMS$"],
+    )
+
+    internal_kb_cond = Condition(
+        description="Internal Keyboard",
+        _type="device_if",
+        identifiers=[
+            Ident(product_id=628, vendor_id=1452),
+            Ident(product_id=832, vendor_id=1452),
+            Ident(product_id=627, vendor_id=1452),
+        ],
+    )
+
+    return [
+        Rule(
+            description="[iMessage] use C-j to navigate down conversation list",
+            manipulators=[
+                Manipulator(
+                    conditions=[imessage_cond],
+                    _from=ctrl_j, to=[ToKey(key_code="tab", modifiers=["left_control"])]
+                )
+            ],
+        ),
+        Rule(
+            description="[iMessage] use C-k to navigate up conversation list",
+            manipulators=[
+                Manipulator(
+                    conditions=[imessage_cond],
+                    _from=ctrl_k,
+                    to=[ToKey(key_code="tab", modifiers=["left_control", "shift"])],
+                )
+            ],
+        ),
+    ]
+
+
+def generate_rules() -> list[Rule]:
+    return generate_imessage() + generate_internal_mods() + generate_cmd_window_switch()
 
 
 def main():
