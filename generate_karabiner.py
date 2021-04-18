@@ -31,7 +31,7 @@ class Modifiers:
 @dataclass(frozen=True)
 class FromKey:
     key_code: str
-    modifiers: list[Modifiers]
+    modifiers: Optional[list[Modifiers]] = None
 
 
 @dataclass(frozen=True)
@@ -50,7 +50,8 @@ class ToKey:
 @dataclass(frozen=True)
 class Manipulator:
     _from: FromKey
-    to: ToKey
+    to: Optional[list[ToKey]] = None
+    to_if_alone: Optional[list[ToKey]] = None
     _type: str = "basic"
     conditions: Optional[list[Condition]] = None
 
@@ -90,7 +91,7 @@ def generate_cmd_window_switch():
             manipulators=[
                 Manipulator(
                     _from=FromKey(key_code="tab", modifiers=cmd_shift_mods),
-                    to=ToKey(key_code="f19", modifiers="left_command"),
+                    to=[ToKey(key_code="f19", modifiers="left_command")],
                 )
             ],
         ),
@@ -101,7 +102,7 @@ def generate_cmd_window_switch():
                     _from=FromKey(
                         key_code="grave_accent_and_tilde", modifiers=cmd_shift_mods
                     ),
-                    to=ToKey(key_code="f18", modifiers="left_command"),
+                    to=[ToKey(key_code="f18", modifiers="left_command")],
                 )
             ],
         ),
@@ -121,13 +122,45 @@ def generate_internal_mods():
     base_mods = Modifiers(mandatory=["fn"], optional=["caps_lock"])
     return [
         Rule(
+            description="Better Shifting: Parentheses on shift keys. (Internal Keyboard)",
+            manipulators=[
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="left_shift"),
+                    to=[ToKey(key_code="left_shift")],
+                    to_if_alone=[ToKey(key_code="9", modifiers=["left_shift"])],
+                ),
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="right_shift"),
+                    to=[ToKey(key_code="right_shift")],
+                    to_if_alone=[ToKey(key_code="0", modifiers=["right_shift"])],
+                ),
+            ],
+        ),
+        Rule(
             description="Change Fn + h/j/k/l to Arrows (Internal Keyboard)",
             manipulators=[
                 Manipulator(
                     conditions=[internal_kb_cond],
                     _from=FromKey(key_code="h", modifiers=base_mods),
-                    to=ToKey(key_code="left_arrow"),
-                )
+                    to=[ToKey(key_code="left_arrow")],
+                ),
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="j", modifiers=base_mods),
+                    to=[ToKey(key_code="down_arrow")],
+                ),
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="k", modifiers=base_mods),
+                    to=[ToKey(key_code="up_arrow")],
+                ),
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="l", modifiers=base_mods),
+                    to=[ToKey(key_code="right_arrow")],
+                ),
             ],
         ),
     ]
