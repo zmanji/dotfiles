@@ -10,8 +10,8 @@ from typing import Optional
 
 @dataclass(frozen=True)
 class Ident:
-    vendor_id: int
     product_id: int
+    vendor_id: int
 
 
 @dataclass(frozen=True)
@@ -20,6 +20,8 @@ class Condition:
     description: Optional[str] = None
     identifiers: Optional[list[Ident]] = None
     bundle_identifiers: Optional[list[str]] = None
+    name: Optional[str] = None
+    value: Optional[int] = None
 
 
 @dataclass(frozen=True)
@@ -37,7 +39,7 @@ class FromKey:
 @dataclass(frozen=True)
 class SetVariable:
     name: str
-    value: str
+    value: int
 
 
 @dataclass(frozen=True)
@@ -45,15 +47,16 @@ class ToKey:
     key_code: Optional[str] = None
     shell_command: Optional[str] = None
     modifiers: Optional[list[str]] = None
+    set_variable: Optional[SetVariable] = None
 
 
 @dataclass(frozen=True)
 class Manipulator:
-    _from: FromKey
+    conditions: Optional[list[Condition]] = None
+    _from: Optional[FromKey] = None
     to: Optional[list[ToKey]] = None
     to_if_alone: Optional[list[ToKey]] = None
     _type: str = "basic"
-    conditions: Optional[list[Condition]] = None
 
 
 @dataclass(frozen=True)
@@ -83,6 +86,17 @@ class Encoder(json.JSONEncoder):
             return super().default(obj)
 
 
+internal_kb_cond = Condition(
+    description="Internal Keyboard",
+    _type="device_if",
+    identifiers=[
+        Ident(product_id=628, vendor_id=1452),
+        Ident(product_id=832, vendor_id=1452),
+        Ident(product_id=627, vendor_id=1452),
+    ],
+)
+
+
 def generate_cmd_window_switch() -> list[Rule]:
     cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
     return [
@@ -110,15 +124,6 @@ def generate_cmd_window_switch() -> list[Rule]:
 
 
 def generate_internal_mods() -> list[Rule]:
-    internal_kb_cond = Condition(
-        description="Internal Keyboard",
-        _type="device_if",
-        identifiers=[
-            Ident(product_id=628, vendor_id=1452),
-            Ident(product_id=832, vendor_id=1452),
-            Ident(product_id=627, vendor_id=1452),
-        ],
-    )
     base_mods = Modifiers(mandatory=["fn"], optional=["caps_lock"])
     return [
         Rule(
@@ -333,9 +338,161 @@ def generate_alfred() -> list[Rule]:
     ]
 
 
+def generate_kitty() -> list[Rule]:
+    cond = Condition(
+        _type="frontmost_application_if",
+        bundle_identifiers=["^net\.kovidgoyal\.kitty$"],
+    )
+
+    nav_mode = Condition(
+        _type="variable_if",
+        name="kitty_nav_mode",
+        value=1,
+    )
+
+    not_nav_mode = Condition(
+        _type="variable_if",
+        name="kitty_nav_mode",
+        value=0,
+    )
+
+    def kitty_command(cmd):
+        kitty_command_prefix = "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock "
+        return ToKey(shell_command=kitty_command_prefix + cmd)
+
+    return [
+        Rule(
+            description="[kitty] use Cmd-w for nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, not_nav_mode],
+                    _from=FromKey(
+                        key_code="w", modifiers=Modifiers(mandatory=["command"])
+                    ),
+                    to=[
+                        ToKey(set_variable=SetVariable(name="kitty_nav_mode", value=1)),
+                        kitty_command("set-colors -a 'background=#5b6268'"),
+                    ],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] [Internal Keybord] use caps lock to escape nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode, internal_kb_cond],
+                    _from=FromKey(key_code="caps_lock"),
+                    to=[
+                        ToKey(set_variable=SetVariable(name="kitty_nav_mode", value=0)),
+                        kitty_command("set-colors -a --reset"),
+                    ],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] esc to escape nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode],
+                    _from=FromKey(key_code="escape"),
+                    to=[
+                        ToKey(set_variable=SetVariable(name="kitty_nav_mode", value=0)),
+                        kitty_command("set-colors -a --reset"),
+                    ],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] h is left in nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode],
+                    _from=FromKey(key_code="h"),
+                    to=[kitty_command("kitten neighbor.py left")],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] l is right in nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode],
+                    _from=FromKey(key_code="l"),
+                    to=[kitty_command("kitten neighbor.py right")],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] j is down in nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode],
+                    _from=FromKey(key_code="j"),
+                    to=[kitty_command("kitten neighbor.py bottom")],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] k is up in nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode],
+                    _from=FromKey(key_code="k"),
+                    to=[kitty_command("kitten neighbor.py top")],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] q is close window in nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode],
+                    _from=FromKey(key_code="q"),
+                    to=[kitty_command("close-window")],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] K is next tab in nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode],
+                    _from=FromKey(
+                        key_code="k", modifiers=Modifiers(mandatory=["shift"])
+                    ),
+                    to=[kitty_command("kitten tab.py next")],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] J is previous tab in nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode],
+                    _from=FromKey(
+                        key_code="j", modifiers=Modifiers(mandatory=["shift"])
+                    ),
+                    to=[kitty_command("kitten tab.py previous")],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] v is new split in nav mode",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, nav_mode],
+                    _from=FromKey(key_code="v"),
+                    to=[kitty_command("new-window")],
+                )
+            ],
+        ),
+    ]
+
+
 def generate_rules() -> list[Rule]:
     return (
-        generate_alfred()
+        generate_kitty()
+        + generate_alfred()
         + generate_discord()
         + generate_slack()
         + generate_spotify()
@@ -346,16 +503,21 @@ def generate_rules() -> list[Rule]:
 
 
 def main():
-    # read the existing config
-    with open(os.path.expanduser("~/.config/karabiner/karabiner.json"), "r") as cfgfile:
-        cfg = json.load(cfgfile)
+    path = os.path.expanduser("~/.config/karabiner/karabiner.json")
+
     # generate the rules
     rules = generate_rules()
-    # swap the rules into the config
-    cfg["profiles"][0]["complex_modifications"]["rules"] = rules
-    # write out the config
-    # print("/* generated from generate_karabiner.py */")
-    print(json.dumps(cfg, cls=Encoder, indent=4))
+
+    # read the existing config
+    with open(path, "r") as cfgfile:
+        cfg = json.load(cfgfile)
+        # swap the rules into the config
+        cfg["profiles"][0]["complex_modifications"]["rules"] = rules
+
+    # read the existing config
+    with open(path, "w") as cfgfile:
+        # write out the config
+        json.dump(cfg, cfgfile, cls=Encoder, indent=4)
 
 
 if __name__ == "__main__":

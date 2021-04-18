@@ -20,18 +20,17 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 0
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 0
                                     }
                                 ],
-                                "description": "[kitty] use Cmd-w for nav mode",
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -43,8 +42,8 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                          "name": "kitty_nav_mode",
-                                          "value": 1
+                                            "name": "kitty_nav_mode",
+                                            "value": 1
                                         }
                                     },
                                     {
@@ -53,24 +52,26 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] use Cmd-w for nav mode"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     },
                                     {
+                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -85,322 +86,316 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ],
-                                        "type": "device_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[kitty] [Internal Keyboard] use caps lock to escape nav mode",
                                 "from": {
                                     "key_code": "caps_lock"
                                 },
                                 "to": [
                                     {
                                         "set_variable": {
-                                          "name": "kitty_nav_mode",
-                                          "value": 0
+                                            "name": "kitty_nav_mode",
+                                            "value": 0
                                         }
                                     },
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a --reset"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a --reset"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] [Internal Keybord] use caps lock to escape nav mode"
                     },
-
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     }
                                 ],
-                                "description": "[kitty] esc to escape nav mode",
                                 "from": {
                                     "key_code": "escape"
                                 },
                                 "to": [
                                     {
                                         "set_variable": {
-                                          "name": "kitty_nav_mode",
-                                          "value": 0
+                                            "name": "kitty_nav_mode",
+                                            "value": 0
                                         }
                                     },
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a --reset"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a --reset"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] esc to escape nav mode"
                     },
-
-
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     }
                                 ],
-                                "description": "[kitty] h is left in nav mode",
                                 "from": {
                                     "key_code": "h"
                                 },
                                 "to": [
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py left"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py left"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] h is left in nav mode"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     }
                                 ],
-                                "description": "[kitty] l is left in nav mode",
                                 "from": {
                                     "key_code": "l"
                                 },
                                 "to": [
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py right"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py right"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] l is right in nav mode"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     }
                                 ],
-                                "description": "[kitty] j is down in nav mode",
                                 "from": {
                                     "key_code": "j"
                                 },
                                 "to": [
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py bottom"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py bottom"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] j is down in nav mode"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     }
                                 ],
-                                "description": "[kitty] k is up in nav mode",
                                 "from": {
                                     "key_code": "k"
                                 },
                                 "to": [
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py top"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py top"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] k is up in nav mode"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     }
                                 ],
-                                "description": "[kitty] q is close window mode",
                                 "from": {
                                     "key_code": "q"
                                 },
                                 "to": [
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock close-window"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock close-window"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] q is close window in nav mode"
                     },
-
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     }
                                 ],
-                                "description": "[kitty] K is next tab",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                      "mandatory": ["shift"]
+                                        "mandatory": [
+                                            "shift"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten tab.py next"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten tab.py next"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] K is next tab in nav mode"
                     },
-
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     }
                                 ],
-                                "description": "[kitty] J is previous tab",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                      "mandatory": ["shift"]
+                                        "mandatory": [
+                                            "shift"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten tab.py previous"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten tab.py previous"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] J is previous tab in nav mode"
                     },
-
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     },
                                     {
-                                      "type": "variable_if",
-                                      "name": "kitty_nav_mode",
-                                      "value": 1
+                                        "type": "variable_if",
+                                        "name": "kitty_nav_mode",
+                                        "value": 1
                                     }
                                 ],
-                                "description": "[kitty] v is new split",
                                 "from": {
                                     "key_code": "v"
                                 },
                                 "to": [
                                     {
-                                      "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock new-window"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock new-window"
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[kitty] v is new split in nav mode"
                     },
-
-
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.runningwithcrayons\\.Alfred$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[Alfed] use C-j for down",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -416,20 +411,20 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[Alfred] use C-j for down"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.runningwithcrayons\\.Alfred$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[Alfred] use C-k for up",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -445,20 +440,20 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[Alfred] use C-k for up"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.hnc\\.Discord$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[Discord] use C-j for prev convo",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -471,26 +466,26 @@
                                     {
                                         "key_code": "down_arrow",
                                         "modifiers": [
-                                          "option"
+                                            "option"
                                         ]
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[Discord] use C-j for prev convo"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.hnc\\.Discord$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[Discord] use C-k for next convo",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -503,26 +498,26 @@
                                     {
                                         "key_code": "up_arrow",
                                         "modifiers": [
-                                          "option"
+                                            "option"
                                         ]
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[Discord] use C-k for next convo"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.tinyspeck\\.slackmacgap$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[Slack] use C-j for prev convo",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -538,26 +533,26 @@
                                     {
                                         "key_code": "down_arrow",
                                         "modifiers": [
-                                          "option"
+                                            "option"
                                         ]
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[Slack] use C-j for prev convo"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.tinyspeck\\.slackmacgap$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[Slack] use C-k for next convo",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -573,26 +568,26 @@
                                     {
                                         "key_code": "up_arrow",
                                         "modifiers": [
-                                          "option"
+                                            "option"
                                         ]
                                     }
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[Slack] use C-k for next convo"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.spotify\\.client$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[Spotify] use C-j for down",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -608,20 +603,20 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[Spotify] use C-j for down"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.spotify\\.client$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[Spotify] use C-k for up",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -637,20 +632,20 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[Spotify] use C-k for up"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.MobileSMS$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[iMessage] use C-j to navigate down conversation list",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -669,20 +664,20 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[iMessage] use C-j to navigate down conversation list"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.MobileSMS$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
-                                "description": "[iMessage] use C-k to navigate up conversation list",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -702,13 +697,15 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "[iMessage] use C-k to navigate up conversation list"
                     },
                     {
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -723,11 +720,9 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ],
-                                        "type": "device_if"
+                                        ]
                                     }
                                 ],
-                                "description": "Change caps_lock to control when used as modifier, escape when used alone. (Internal Keyboard)",
                                 "from": {
                                     "key_code": "caps_lock"
                                 },
@@ -743,14 +738,15 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "Change caps_lock to control when used as modifier, escape when used alone. (Internal Keyboard)"
                     },
                     {
-                        "description": "Better Shifting: Parentheses on shift keys. (Internal Keyboard)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -765,8 +761,7 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ],
-                                        "type": "device_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -790,6 +785,7 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -804,8 +800,7 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ],
-                                        "type": "device_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -826,14 +821,15 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "Better Shifting: Parentheses on shift keys. (Internal Keyboard)"
                     },
                     {
-                        "description": "Change Fn + h/j/k/l to Arrows (Internal Keyboard)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -848,8 +844,7 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ],
-                                        "type": "device_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -873,6 +868,7 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -887,8 +883,7 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ],
-                                        "type": "device_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -912,6 +907,7 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -926,8 +922,7 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ],
-                                        "type": "device_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -951,6 +946,7 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -965,8 +961,7 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ],
-                                        "type": "device_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -987,10 +982,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "Change Fn + h/j/k/l to Arrows (Internal Keyboard)"
                     },
                     {
-                        "description": "Rebind Cmd-Tab to Cmd-F19 for Hammerspoon",
                         "manipulators": [
                             {
                                 "from": {
@@ -1004,16 +999,20 @@
                                         ]
                                     }
                                 },
-                                "to": {
-                                    "key_code": "f19",
-                                    "modifiers": "left_command"
-                                },
+                                "to": [
+                                    {
+                                        "key_code": "f19",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "Rebind Cmd-Tab to Cmd-F19 for Alt-Tab"
                     },
                     {
-                        "description": "Rebind Cmd-` to Cmd-F18 for Hammerspoon",
                         "manipulators": [
                             {
                                 "from": {
@@ -1027,13 +1026,18 @@
                                         ]
                                     }
                                 },
-                                "to": {
-                                    "key_code": "f18",
-                                    "modifiers": "left_command"
-                                },
+                                "to": [
+                                    {
+                                        "key_code": "f18",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
                                 "type": "basic"
                             }
-                        ]
+                        ],
+                        "description": "Rebind Cmd-` to Cmd-F18 for Alt-Tab"
                     }
                 ]
             },
