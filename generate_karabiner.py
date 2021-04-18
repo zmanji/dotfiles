@@ -8,16 +8,19 @@ from typing import Optional
 
 # https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/
 
+
 @dataclass(frozen=True)
 class Ident:
     vendor_id: int
     product_id: int
+
 
 @dataclass(frozen=True)
 class Condition:
     description: str
     _type: str
     identifiers: Optional[list[Ident]] = None
+
 
 @dataclass(frozen=True)
 class Modifiers:
@@ -57,6 +60,7 @@ class Rule:
     manipulators: list[Manipulator]
     description: str
 
+
 class Encoder(json.JSONEncoder):
     def default(self, obj):
         if is_dataclass(obj):
@@ -77,44 +81,56 @@ class Encoder(json.JSONEncoder):
         else:
             return super().default(obj)
 
-cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
-internal_kb_cond = Condition(description="Internal Keyboard",
-        _type="device_if",
-        identifiers=[
-            Ident(product_id=628, vendor_id=1452),
-            Ident(product_id=832, vendor_id=1452),
-            Ident(product_id=627, vendor_id=1452),
-            ]
-        )
 
 def generate_cmd_window_switch():
+    cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
     return [
         Rule(
             description="Rebind Cmd-Tab to Cmd-F19 for Alt-Tab",
             manipulators=[
                 Manipulator(
-                    _from=FromKey(key_code="tab",modifiers=cmd_shift_mods),
-                    to=ToKey(key_code="f19", modifiers="left_command"))
-                ]
+                    _from=FromKey(key_code="tab", modifiers=cmd_shift_mods),
+                    to=ToKey(key_code="f19", modifiers="left_command"),
+                )
+            ],
         ),
         Rule(
             description="Rebind Cmd-` to Cmd-F18 for Alt-Tab",
             manipulators=[
                 Manipulator(
-                    _from=FromKey(key_code="grave_accent_and_tilde",modifiers=cmd_shift_mods),
-                    to=ToKey(key_code="f18", modifiers="left_command"))
-                ]
+                    _from=FromKey(
+                        key_code="grave_accent_and_tilde", modifiers=cmd_shift_mods
+                    ),
+                    to=ToKey(key_code="f18", modifiers="left_command"),
+                )
+            ],
         ),
     ]
 
+
 def generate_internal_mods():
+    internal_kb_cond = Condition(
+        description="Internal Keyboard",
+        _type="device_if",
+        identifiers=[
+            Ident(product_id=628, vendor_id=1452),
+            Ident(product_id=832, vendor_id=1452),
+            Ident(product_id=627, vendor_id=1452),
+        ],
+    )
+    base_mods = Modifiers(mandatory=["fn"], optional=["caps_lock"])
     return [
-            # Rule(description="Change Fn + h/j/k/l to Arrows (Internal Keyboard)",
-            #     manipulators=[
-            #         Manipulator()
-            #         ]
-            #     ),
-        ]
+        Rule(
+            description="Change Fn + h/j/k/l to Arrows (Internal Keyboard)",
+            manipulators=[
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="h", modifiers=base_mods),
+                    to=ToKey(key_code="left_arrow"),
+                )
+            ],
+        ),
+    ]
 
 
 def generate_rules():
@@ -130,7 +146,7 @@ def main():
     # swap the rules into the config
     cfg["profiles"][0]["complex_modifications"]["rules"] = rules
     # write out the config
-    #print("/* generated from generate_karabiner.py */")
+    # print("/* generated from generate_karabiner.py */")
     print(json.dumps(cfg, cls=Encoder, indent=4))
 
 
