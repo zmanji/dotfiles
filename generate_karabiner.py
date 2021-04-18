@@ -180,6 +180,13 @@ def generate_internal_mods() -> list[Rule]:
 ctrl_k = FromKey(key_code="k", modifiers=Modifiers(mandatory=["control"]))
 ctrl_j = FromKey(key_code="j", modifiers=Modifiers(mandatory=["control"]))
 
+ctrl_k_opt = FromKey(
+    key_code="k", modifiers=Modifiers(mandatory=["control"], optional=["shift"])
+)
+ctrl_j_opt = FromKey(
+    key_code="j", modifiers=Modifiers(mandatory=["control"], optional=["shift"])
+)
+
 
 def generate_imessage() -> list[Rule]:
     imessage_cond = Condition(
@@ -239,10 +246,6 @@ def generate_spotify() -> list[Rule]:
 
 
 def generate_slack() -> list[Rule]:
-
-    ctrl_k = FromKey(key_code="k", modifiers=Modifiers(mandatory=["control"], optional=["shift"]))
-    ctrl_j = FromKey(key_code="j", modifiers=Modifiers(mandatory=["control"], optional=["shift"]))
-
     cond = Condition(
         _type="frontmost_application_if",
         bundle_identifiers=["^com\.tinyspeck\.slackmacgap$"],
@@ -254,13 +257,43 @@ def generate_slack() -> list[Rule]:
             manipulators=[
                 Manipulator(
                     conditions=[cond],
-                    _from=ctrl_j,
-                    to=[ToKey(key_code="down_arrow", modifiers=["option"])]
+                    _from=ctrl_j_opt,
+                    to=[ToKey(key_code="down_arrow", modifiers=["option"])],
                 )
             ],
         ),
         Rule(
             description="[Slack] use C-k for next convo",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond],
+                    _from=ctrl_k_opt,
+                    to=[ToKey(key_code="up_arrow", modifiers=["option"])],
+                )
+            ],
+        ),
+    ]
+
+
+def generate_discord() -> list[Rule]:
+    cond = Condition(
+        _type="frontmost_application_if",
+        bundle_identifiers=["^com\.hnc\.Discord$"],
+    )
+
+    return [
+        Rule(
+            description="[Discord] use C-j for prev convo",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond],
+                    _from=ctrl_j,
+                    to=[ToKey(key_code="down_arrow", modifiers=["option"])],
+                )
+            ],
+        ),
+        Rule(
+            description="[Discord] use C-k for next convo",
             manipulators=[
                 Manipulator(
                     conditions=[cond],
@@ -272,9 +305,39 @@ def generate_slack() -> list[Rule]:
     ]
 
 
+def generate_alfred() -> list[Rule]:
+    cond = Condition(
+        _type="frontmost_application_if",
+        bundle_identifiers=["^com\.runningwithcrayons\.Alfred$"],
+    )
+
+    return [
+        Rule(
+            description="[Alfred] use C-j for down",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond], _from=ctrl_j, to=[ToKey(key_code="down_arrow")]
+                )
+            ],
+        ),
+        Rule(
+            description="[Alfred] use C-k for up",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond],
+                    _from=ctrl_k,
+                    to=[ToKey(key_code="up_arrow")],
+                )
+            ],
+        ),
+    ]
+
+
 def generate_rules() -> list[Rule]:
     return (
-        generate_slack()
+        generate_alfred()
+        + generate_discord()
+        + generate_slack()
         + generate_spotify()
         + generate_imessage()
         + generate_internal_mods()
