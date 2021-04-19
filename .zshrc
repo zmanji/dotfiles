@@ -128,4 +128,13 @@ bindkey -M vicmd 'j' history-substring-search-down
 # Get bacspace to work
 bindkey -M viins "^?" backward-delete-char
 
+# add path to tab title
+if [[ "$TERM" != 'dumb' ]]; then
+  function zmanji_set_title() {
+    print -Pn "\033]zsh ◆ %1~\007"
+  }
+  add-zsh-hook precmd zmanji_set_title
+  add-zsh-hook preexec zmanji_set_title
+fi
+
 source ~/.zsh/3rdparty/base16-tomorrow-night.sh
