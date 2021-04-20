@@ -58,6 +58,7 @@ local appWatcher = hs.application.watcher.new(appAXEnhance)
 appWatcher:start()
 
 -- Window Management Functions
+-- these are called by karabbiner
 
 function move_left()
   local win = hs.window.focusedWindow()
@@ -160,6 +161,7 @@ function full()
   win:setFrame(f, 0)
 end
 
+-- this is called by alfred workflow
 function get_all_windows_json()
     local items = {}
     local current_focus = hs.window.focusedWindow()
