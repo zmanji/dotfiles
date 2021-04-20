@@ -97,6 +97,21 @@ internal_kb_cond = Condition(
 )
 
 
+# Redox uses QMK so the vendor id and product id comes from the firmware
+# 0xFEED = 65261 is the default vendor id
+# 0 is the default product id for any keyboard
+# Falbatech is the vendor which should be good enough to uniqely identify but
+# karabiner doesn't filter on vendor name. May need to revisit this if there
+# is another QMK kb.
+redox_kb_cond = Condition(
+    description="Redox",
+    _type="device_if",
+    identifiers=[
+        Ident(product_id=0, vendor_id=65261),
+    ],
+)
+
+
 def generate_cmd_window_switch() -> list[Rule]:
     cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
     return [
@@ -489,9 +504,123 @@ def generate_kitty() -> list[Rule]:
     ]
 
 
+# This used to live in hammerspoon, but there was too much flakyness when
+# trying to swtich between the internal vs external bindings
+def generate_window() -> list[Rule]:
+    def hs_command(f):
+        cmd = f"/usr/local/bin/hs -c '{f}'"
+        return ToKey(shell_command=cmd)
+
+    internal_kb = Modifiers(mandatory=["command", "option"])
+    redox_kb = Modifiers(mandatory=["command", "shift", "option", "control"])
+    return [
+        Rule(
+            description="[window management] [Internal Keyboard] cmd+alt h is move window left",
+            manipulators=[
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="h", modifiers=internal_kb),
+                    to=[hs_command("move_left()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Internal Keyboard] cmd+alt l is move window right",
+            manipulators=[
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="l", modifiers=internal_kb),
+                    to=[hs_command("move_right()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Internal Keyboard] cmd+alt k is move window up",
+            manipulators=[
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="k", modifiers=internal_kb),
+                    to=[hs_command("move_up()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Internal Keyboard] cmd+alt j is move window down",
+            manipulators=[
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="j", modifiers=internal_kb),
+                    to=[hs_command("move_down()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Internal Keyboard] cmd+alt f is maximize window",
+            manipulators=[
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="f", modifiers=internal_kb),
+                    to=[hs_command("full()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Redox] hyper h is move window left",
+            manipulators=[
+                Manipulator(
+                    conditions=[redox_kb_cond],
+                    _from=FromKey(key_code="h", modifiers=redox_kb),
+                    to=[hs_command("move_left()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Redox] hyper l is move window right",
+            manipulators=[
+                Manipulator(
+                    conditions=[redox_kb_cond],
+                    _from=FromKey(key_code="l", modifiers=redox_kb),
+                    to=[hs_command("move_right()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Redox] hyper k is move window up",
+            manipulators=[
+                Manipulator(
+                    conditions=[redox_kb_cond],
+                    _from=FromKey(key_code="k", modifiers=redox_kb),
+                    to=[hs_command("move_up()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Redox] hyper j is move window down",
+            manipulators=[
+                Manipulator(
+                    conditions=[redox_kb_cond],
+                    _from=FromKey(key_code="j", modifiers=redox_kb),
+                    to=[hs_command("move_down()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Redox] hyper f is maximize window",
+            manipulators=[
+                Manipulator(
+                    conditions=[redox_kb_cond],
+                    _from=FromKey(key_code="f", modifiers=redox_kb),
+                    to=[hs_command("full()")],
+                )
+            ],
+        ),
+    ]
+
+
 def generate_rules() -> list[Rule]:
     return (
-        generate_kitty()
+        generate_window()
+        + generate_kitty()
         + generate_alfred()
         + generate_discord()
         + generate_slack()
