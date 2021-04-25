@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea
+all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -22,6 +22,13 @@ git: .gitconfig .gitignore_global
 
 .PHONY: vim
 vim: .vim .vimrc .gvimrc .surfingkeys.js
+	@echo removing $^; \
+	$(foreach df, $^, rm -f ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+
+.PHONY: tweak
+tweak: .tweak
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \

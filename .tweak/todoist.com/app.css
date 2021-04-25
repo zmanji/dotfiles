@@ -1,0 +1,53 @@
+/* mostly taken from https://github.com/jvgaultney/todoist-userstyles-compact/blob/master/Todoist-userstyles-compact.css */
+
+.task_list_item .task_checkbox {
+    margin-top: 0px !important;
+}
+
+.task_list_item__content {
+    padding: 4px 0px !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    margin-right: 0px !important;
+}
+
+.task_content {
+    line-height: 18px !important;
+    padding-top: 2px !important;
+}
+
+.task_list_item__info_tags {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    margin-right: 0px !important;
+}
+
+.date {
+    margin-right: 0px !important;
+}
+
+.task_list_item__actions {
+    margin-top: 0px !important;
+    margin-right: 150px !important;
+    padding: 0px 0px !important;
+}
+
+/* left side */
+.sidebar_expansion_panel li { 
+    padding: 0px 0px 0px 0px !important;
+    font-size: 10pt !important;
+}
+
+.sidebar_expansion_panel li div {
+    padding: 0px 0px 0px 0px !important;   
+        font-size: 10pt !important;
+
+}
+
+.generic_left_list li table td { 
+    padding: 3px 20px 3px 0px !important;
+	font-size: 10pt !important;
+}
+
+
