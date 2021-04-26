@@ -7,6 +7,8 @@ set newtab moz-extension://43c759b0-6a71-2648-9428-5fcca5f301e9/index.html
 
 set editorcmd /usr/local/bin/emacsclient -c -a ""
 
+colorscheme dark
+
 unbindurl twitter.com --mode=normal j
 unbindurl twitter.com --mode=normal k
 unbindurl twitter.com --mode=normal l
