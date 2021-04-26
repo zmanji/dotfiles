@@ -33,6 +33,8 @@ tweak: .tweak
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+	@echo Installing Native Messenger
+	.tweak/install_native.py
 
 .PHONY: emacs
 emacs: .emacs.d
