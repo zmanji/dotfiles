@@ -55,6 +55,12 @@ jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=
 
 set searchurls.w https://en.wikipedia.org/wiki/Special:Search/
 
+# Prefs
+
+setpref general.warnOnAboutConfig false
+setpref extensions.pocket.enabled false
+setpref signon.rememberSignons false
+
 # Cargo Culted
 
 " Add helper commands that Mozillians think make Firefox irredeemably
