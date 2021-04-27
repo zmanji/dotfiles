@@ -146,7 +146,10 @@ def generate_internal_mods() -> list[Rule]:
             manipulators=[
                 Manipulator(
                     conditions=[internal_kb_cond],
-                    _from=FromKey(key_code="caps_lock"),
+                    _from=FromKey(
+                        key_code="caps_lock",
+                        modifiers=Modifiers(mandatory=[], optional=["shift"]),
+                    ),
                     to=[ToKey(key_code="left_control")],
                     to_if_alone=[ToKey(key_code="escape")],
                 ),
