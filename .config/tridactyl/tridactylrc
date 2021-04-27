@@ -48,6 +48,8 @@ bind x tabclose
 unbind --mode=normal ;
 bind --mode=normal ; fillcmdline_notrail
 
+bind --mode=normal gf hint -; *
+
 " Disable all Search Engines
 jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=>{}).then(_ => tri.excmds.setnull("searchurls." + u)), Promise.resolve())
 
