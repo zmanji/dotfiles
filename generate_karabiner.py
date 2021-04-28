@@ -148,7 +148,9 @@ def generate_internal_mods() -> list[Rule]:
                     conditions=[internal_kb_cond],
                     _from=FromKey(
                         key_code="caps_lock",
-                        modifiers=Modifiers(mandatory=[], optional=["shift"]),
+                        modifiers=Modifiers(
+                            mandatory=[], optional=["shift", "command", "option"]
+                        ),
                     ),
                     to=[ToKey(key_code="left_control")],
                     to_if_alone=[ToKey(key_code="escape")],

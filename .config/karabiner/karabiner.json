@@ -1118,7 +1118,9 @@
                                     "modifiers": {
                                         "mandatory": [],
                                         "optional": [
-                                            "shift"
+                                            "shift",
+                                            "command",
+                                            "option"
                                         ]
                                     }
                                 },
