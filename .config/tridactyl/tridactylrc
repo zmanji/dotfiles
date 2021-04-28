@@ -3,7 +3,8 @@
 " as an enforced single point of truth for Tridactyl's configuration.
 sanitize tridactyllocal tridactylsync
 
-set newtab moz-extension://43c759b0-6a71-2648-9428-5fcca5f301e9/index.html
+" served from startpage plist
+set newtab http://localhost:18080/startpage.html
 
 set editorcmd /usr/local/bin/emacsclient -c -a ""
 
