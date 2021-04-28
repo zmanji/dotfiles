@@ -46,6 +46,8 @@ bind k scrollline -5
 
 bind x tabclose
 
+set tabopenpos last
+
 unbind --mode=normal ;
 bind --mode=normal ; fillcmdline_notrail
 
