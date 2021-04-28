@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
+    <style>
+      body {
+        text-color: #c5c8c6;
+        background-color: #1d1f21;
+        font-family: -apple-system, BlinkMacSystemFont;
+      }
+      a:link, a:visited, a:hover, a:active {
+         color: #c5c8c6;
+         display: block;
+         text-align: center;
+         align-items: center;
+
+      }
+      #main {
+        display: grid;
+        margin: 50px auto;
+        grid-gap: 30px;
+        grid-auto-rows: 150px;
+        grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+        max-width: 1000px;
+
+      }
+
+      .item {
+        border: 5px solid #81a2be;
+        border-radius: 10px;
+        height: 150px;
+        width: 150px;
+        display: grid;
+        align-items: center;
+      }
+
+    </style>
+  </head>
+  <body>
+   <div id="main">
+      <div class="item">
+        <a href="https://twitter.com/home">Twitter</a>
+      </div>
+
+      <div class="item">
+        <a href="https://news.ycombinator.com">Hacker News</a>
+      </div>
+
+      <div class="item">
+        <a href="https://www.reddit.com">Reddit</a>
+      </div>
+
+      <div class="item">
+        <a href="https://feedly.com">Feedly</a>
+      </div>
+
+      <div class="item">
+        <a href="https://lobste.rs">Lobsters</a>
+      </div>
+
+      <div class="item">
+        <a href="https://www.instagram.com">Instagram</a>
+      </div>
+
+      <div class="item">
+        <a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a>
+      </div>
+      <div class="item">
+        <a href="https://www.messenger.com/">Messenger</a>
+      </div>
+
+      <div class="item">
+        <a href="https://app.getpocket.com/">Pocket</a>
+      </div>
+    </div>
+  </body>
+</html>

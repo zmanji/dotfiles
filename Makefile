@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak
+all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -35,6 +35,13 @@ tweak: .tweak
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 	@echo Installing Native Messenger
 	.tweak/install_native.py
+
+.PHONY: startpage
+startpage: .config/startpage
+	@echo removing $^; \
+	$(foreach df, $^, rm -rf ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
 .PHONY: emacs
 emacs: .emacs.d
