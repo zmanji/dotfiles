@@ -38,10 +38,11 @@ tweak: .tweak
 
 .PHONY: startpage
 startpage: .config/startpage
+	$(shell mkdir -p ~/.config)
 	@echo removing $^; \
-	$(foreach df, $^, rm -rf ~/$(df))
+	$(shell rm -rf ~/$^)
 	@echo Installing $^; \
-	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+	$(shell ln -s $(CURDIR)/$^ ~/$^)
 
 .PHONY: emacs
 emacs: .emacs.d
@@ -149,10 +150,10 @@ emacs-bin: bin/README.emacs bin/ec bin/emacs bin/et
 	chmod +x ~/bin/git-squash
 
 .PHONY: launchd
-launchd: launchd/zmanji.emacs.plist
+launchd: launchd/zmanji.emacs.plist launchd/zmanji.startpage.plist
 	mkdir -p ~/Library/LaunchAgents/
 	@echo removing $^; \
-	$(foreach df, $^, rm -rf ~/Library/LaunchAgents/$(df))
+	$(foreach df, $^, rm -rf ~/Library/LaunchAgents/$$(basename $(df)));
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~/Library/LaunchAgents/$(notdir $(df)); )
 
