@@ -412,6 +412,39 @@
                                     {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
+                                            "^org\\.mozilla\\.firefox$"
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": [
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[firefox] Cmt-t to Alt-Control-T for custom binding"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ]
                                     },

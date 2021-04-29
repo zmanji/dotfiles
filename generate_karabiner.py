@@ -358,6 +358,28 @@ def generate_alfred() -> list[Rule]:
     ]
 
 
+def generate_firefox() -> list[Rule]:
+    cond = Condition(
+        _type="frontmost_application_if",
+        bundle_identifiers=["^org\.mozilla\.firefox$"],
+    )
+    return [
+        Rule(
+            # Can't rebind Cmd-t in firefox
+            description="[firefox] Cmt-t to Alt-Control-T for custom binding",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond],
+                    _from=FromKey(
+                        key_code="t", modifiers=Modifiers(mandatory=["command"])
+                    ),
+                    to=[ToKey(key_code="t", modifiers=["option", "control"])],
+                )
+            ],
+        ),
+    ]
+
+
 def generate_kitty() -> list[Rule]:
     cond = Condition(
         _type="frontmost_application_if",
@@ -625,6 +647,7 @@ def generate_window() -> list[Rule]:
 def generate_rules() -> list[Rule]:
     return (
         generate_window()
+        + generate_firefox()
         + generate_kitty()
         + generate_alfred()
         + generate_discord()
