@@ -275,7 +275,7 @@ set wildignore+=*.zip,*.tar,*.obj,*.class,*.pyc
 set wildignore+=.sass-cache/*
 " }}}
 
-" Netrw {{
+" Netrw {{{
 " Porting https://github.com/vim/vim/issues/4738#issuecomment-798790444
 if has('macunix')
   function! OpenURLUnderCursor()
@@ -289,7 +289,7 @@ if has('macunix')
   endfunction
   nnoremap gx :call OpenURLUnderCursor()<CR>
 endif
-" }}
+" }}}
 
 " File Type Configurations {{{
 
@@ -342,7 +342,7 @@ augroup END
 augroup ft_markdown
   autocmd!
   autocmd FileType markdown setlocal spell
-  autocmd FileType markdown setlocal foldlevel=1
+  autocmd FileType markdown setlocal foldlevel=99
   autocmd FileType markdown setlocal autoindent
   autocmd BufWritePre * if &ft == "markdown" |
         \ :call <SID>strip_trailing_whitespace() |
