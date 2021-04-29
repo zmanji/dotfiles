@@ -275,6 +275,22 @@ set wildignore+=*.zip,*.tar,*.obj,*.class,*.pyc
 set wildignore+=.sass-cache/*
 " }}}
 
+" Netrw {{
+" Porting https://github.com/vim/vim/issues/4738#issuecomment-798790444
+if has('macunix')
+  function! OpenURLUnderCursor()
+    let s:uri = expand('<cWORD>')
+    let s:uri = matchstr(s:uri, "[a-z]*:\/\/[^ >,;)'\"]*")
+    let s:uri = substitute(s:uri, '#', '\\#', '')
+    if s:uri != ''
+      silent exec "!open '".s:uri."'"
+      :redraw!
+    endif
+  endfunction
+  nnoremap gx :call OpenURLUnderCursor()<CR>
+endif
+" }}
+
 " File Type Configurations {{{
 
 " C {{{
