@@ -70,6 +70,12 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " }}}
 
+
+" Gundo {{{
+let g:gundo_prefer_python3 = 1
+" }}}
+
+
 " FZF {{{
 if filereadable("/usr/local/opt/fzf/README.md")
 	set rtp+=/usr/local/opt/fzf
