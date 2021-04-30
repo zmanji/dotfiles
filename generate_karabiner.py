@@ -366,7 +366,7 @@ def generate_firefox() -> list[Rule]:
     return [
         Rule(
             # Can't rebind Cmd-t in firefox
-            description="[firefox] Cmt-t to Alt-Control-T for custom binding",
+            description="[firefox] Cmd-t to Cmd-Control-t for custom binding",
             manipulators=[
                 Manipulator(
                     conditions=[cond],
@@ -374,6 +374,19 @@ def generate_firefox() -> list[Rule]:
                         key_code="t", modifiers=Modifiers(mandatory=["command"])
                     ),
                     to=[ToKey(key_code="t", modifiers=["control", "command"])],
+                )
+            ],
+        ),
+        Rule(
+            # Can't rebind Cmd-l in firefox
+            description="[firefox] Cmd-l to Cmd-Control-l for custom binding",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond],
+                    _from=FromKey(
+                        key_code="l", modifiers=Modifiers(mandatory=["command"])
+                    ),
+                    to=[ToKey(key_code="l", modifiers=["control", "command"])],
                 )
             ],
         ),

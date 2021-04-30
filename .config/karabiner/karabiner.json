@@ -436,7 +436,40 @@
                                 "type": "basic"
                             }
                         ],
-                        "description": "[firefox] Cmt-t to Alt-Control-T for custom binding"
+                        "description": "[firefox] Cmd-t to Cmd-Control-t for custom binding"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^org\\.mozilla\\.firefox$"
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": [
+                                            "control",
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[firefox] Cmd-l to Cmd-Control-l for custom binding"
                     },
                     {
                         "manipulators": [
