@@ -48,7 +48,7 @@ bind x tabclose
 
 set tabopenpos last
 " Sigh, works because karabiner sends this because we can't override cmd-t
-bind --mode=browser <AC-t> fillcmdline tabopen
+bind --mode=browser <MC-t> fillcmdline tabopen
 
 unbind --mode=normal ;
 bind --mode=normal ; fillcmdline_notrail

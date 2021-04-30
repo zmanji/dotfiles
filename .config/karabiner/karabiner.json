@@ -428,8 +428,8 @@
                                     {
                                         "key_code": "t",
                                         "modifiers": [
-                                            "option",
-                                            "control"
+                                            "control",
+                                            "command"
                                         ]
                                     }
                                 ],

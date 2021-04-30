@@ -373,7 +373,7 @@ def generate_firefox() -> list[Rule]:
                     _from=FromKey(
                         key_code="t", modifiers=Modifiers(mandatory=["command"])
                     ),
-                    to=[ToKey(key_code="t", modifiers=["option", "control"])],
+                    to=[ToKey(key_code="t", modifiers=["control", "command"])],
                 )
             ],
         ),
