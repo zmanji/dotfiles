@@ -60,7 +60,14 @@ def sendMessage(encodedMessage):
 # www.example.com/hello/world
 def explodeUrl(url):
     ret = []
+
+
     url_parsed = urllib.parse.urlparse(url)
+
+    # This seems to infinite loop in certain cases so abort early with not nor
+    if url_parsed.scheme not in ("http", "https"):
+        return ret
+
     base = url_parsed.netloc
 
     ret.append(base)

@@ -29,6 +29,7 @@ a[href="http://www.ycombinator.com/apply/"], a[href="https://www.ycombinator.com
 /* search box and comment box */
 input, textarea {
     border: 1px solid #828282 !important;
+    appearance: none !important;
 }
 
 body, td, .default, .admin, .admin td, .title, .subtext, .subtext td, .yclinks, .pagetop, .comhead, .comment
