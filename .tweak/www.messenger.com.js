@@ -9,7 +9,6 @@ function removeAppAd(elem) {
   ad.parentElement.parentElement.remove();
 }
 
-
 // Find the side bar when it loads and then remove the messenger app for mac ad
 function initWhenContentReady() {
   const sidebar = document.querySelector("div[role=navigation]");
