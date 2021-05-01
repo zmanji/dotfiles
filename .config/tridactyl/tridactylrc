@@ -29,6 +29,7 @@ bindurl messenger.com --mode=insert <C-j> js -r messenger-next-convo.js
 
 bindurl messenger.com --mode=normal <C-k> js -r messenger-prev-convo.js
 bindurl messenger.com --mode=insert <C-k> js -r messenger-prev-convo.js
+bindurl messenger.com --mode=insert <MC-t> fillcmdline tabopen
 
 bindurl messenger.com --mode=normal i js -r messenger-focus-input.js
 
