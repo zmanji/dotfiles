@@ -40,6 +40,8 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
+let g:airline#extensions#tabline#enabled = 1
+
 " }}}
 
 " Misc {{{
