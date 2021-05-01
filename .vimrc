@@ -39,6 +39,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+
 " }}}
 
 " Misc {{{
@@ -47,17 +48,6 @@ augroup init_aliases
   " Alias internal :bd to use bufkill's :BD
   autocmd VimEnter * :call CmdAlias('bd', 'Bdelete')
 augroup END
-
-" }}}
-
-" Vimfiler {{{
-
-let g:vimfiler_as_default_explorer=1
-let g:vimfiler_data_directory='~/.vim/.cache/vimfiler'
-let g:vimfiler_tree_leaf_icon = ' '
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
-let g:vimfiler_marked_file_icon = '✓'
 
 " }}}
 
