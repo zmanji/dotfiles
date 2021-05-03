@@ -35,6 +35,9 @@ bindurl messenger.com --mode=normal i js -r messenger-focus-input.js
 
 bind --mode=ex <C-j> ex.next_completion
 bind --mode=ex <C-k> ex.prev_completion
+unbind --mode=ex <Tab>
+unbind --mode=ex <S-Tab>
+bind --mode=ex <Tab> ex.insert_completion
 
 unbind --mode=normal <Escape>
 unbind --mode=normal <AS-ArrowUp><AS-ArrowUp><AS-ArrowDown><AS-ArrowDown><AS-ArrowLeft><AS-ArrowRight><AS-ArrowLeft><AS-ArrowRight>ba
