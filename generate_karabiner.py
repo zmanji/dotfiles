@@ -390,6 +390,19 @@ def generate_firefox() -> list[Rule]:
                 )
             ],
         ),
+        Rule(
+            # Can't rebind Cmd-n in firefox
+            description="[firefox] Cmd-n to Cmd-Control-n for custom binding",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond],
+                    _from=FromKey(
+                        key_code="n", modifiers=Modifiers(mandatory=["command"])
+                    ),
+                    to=[ToKey(key_code="n", modifiers=["control", "command"])],
+                )
+            ],
+        ),
     ]
 
 
