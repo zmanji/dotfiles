@@ -141,6 +141,38 @@ defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 64
   </dict>
 "
 
+# Disable Ctrl-Space: select the previous input source
+defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 60 "
+  <dict>
+    <key>enabled</key><false/>
+    <key>value</key><dict>
+      <key>type</key><string>standard</string>
+      <key>parameters</key>
+      <array>
+        <integer>32</integer>
+        <integer>49</integer>
+        <integer>262144</integer>
+      </array>
+    </dict>
+  </dict>
+"
+
+# Disable Ctrl-Alt-Space: select next source in input menu
+defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 61 "
+  <dict>
+    <key>enabled</key><false/>
+    <key>value</key><dict>
+      <key>type</key><string>standard</string>
+      <key>parameters</key>
+      <array>
+        <integer>32</integer>
+        <integer>49</integer>
+        <integer>786432</integer>
+      </array>
+    </dict>
+  </dict>
+"
+
 # Need to restart UI for some changes to take effect.
 killall SystemUIServer Dock "System Preferences"
 
