@@ -14,5 +14,9 @@
   </array>
   <key>RunAtLoad</key>
   <true/>
+  <key>StandardOutPath</key>
+  <string>/tmp/zmanji.emacs.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/zmanji.emacs.stderr.log</string>
 </dict>
 </plist>
