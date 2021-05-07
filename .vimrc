@@ -334,13 +334,16 @@ augroup END
 augroup ft_markdown
   autocmd!
   autocmd FileType markdown setlocal spell
-  autocmd FileType markdown setlocal foldlevel=99
+  autocmd FileType markdown setlocal foldlevel=2
   autocmd FileType markdown setlocal autoindent
   autocmd BufWritePre * if &ft == "markdown" |
         \ :call <SID>strip_trailing_whitespace() |
         \ endif
 
-  let g:pandoc_use_hard_wraps = 1
+  let g:pandoc#formatting#mode = 'hA'
+  let g:pandoc#toc#position = 'bottom'
+  let g:pandoc#folding#fold_fenced_codeblocks = 1
+  let g:pandoc#folding#fastfolds = 1
 augroup END
 " }}}
 
