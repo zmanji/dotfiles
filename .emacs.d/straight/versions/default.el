@@ -16,7 +16,6 @@
  ("evil-commentary" . "2dab6ac34d1617971768ad219d73af48f7473fec")
  ("evil-matchit" . "cdb9b90381ac0a225b01fb99472f5b23b612eb6e")
  ("exec-path-from-shell" . "d14d6d2966efe5a1409f84a6b9d998268f74761d")
- ("eyebrowse" . "88c7b59aa7c5c93bc23812217213adfa238f977b")
  ("general.el" . "a0b17d207badf462311b2eef7c065b884462cb7c")
  ("gnu-elpa-mirror" . "c9bc5582228c82db01617802b8729ca86a76bf79")
  ("goto-chg" . "2af612153bc9f5bed135d25abe62f46ddaa9027f")

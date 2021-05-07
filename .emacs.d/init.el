@@ -388,48 +388,14 @@
   :straight (:type built-in)
   :init
   (global-hl-line-mode)
-)
+  )
 
-(use-package eyebrowse
+(use-package tab-bar
+  :straight (:type built-in)
   :init
-  (eyebrowse-mode)
+  (tab-bar-mode)
   :config
-  (general-mmap
-   "gt" 'eyebrowse-next-window-config
-   "gT" 'eyebrowse-prev-window-config)
-  (setq eyebrowse-wrap-around t)
-  ;; A new workspace should just be the scratch buffer
-  (setq eyebrowse-new-workspace t)
-
-  (evil-ex-define-cmd "tab" 'eyebrowse-create-window-config)
-  (evil-ex-define-cmd "tabc[lose]" 'eyebrowse-close-window-config)
-  (evil-ex-define-cmd "tabr[ename]" 'eyebrowse-rename-window-config)
-
-  (evil-define-command zmanji/evil-quit (&optional force)
-    "Wrapper around evil-quit that attempts to close the current
-eyebrowse tab before calling the actual function."
-    :repeat nil
-    (interactive "<!>")
-    (let* ((window-configs (eyebrowse--get 'window-configs nil))
-           (num-tabs (length window-configs))
-           (num-windows (count-windows))
-           )
-
-      ;; If there are multiple windows delegate to the original
-      ;; function. Otherwise close the current window config if there
-      ;; is more than one.
-      (if (eq num-windows 1)
-          (if (> num-tabs 1)
-              (call-interactively 'eyebrowse-close-window-config)
-            (evil-quit force)
-            )
-        (evil-quit force)
-        )
-      )
-    )
-
-  (define-key eyebrowse-mode-map [remap evil-quit] 'zmanji/evil-quit)
-
+  (setq tab-bar-show 1)
   )
 
 (use-package eshell
@@ -584,6 +550,26 @@ eyebrowse tab before calling the actual function."
          ("\\.markdown\\'" . markdown-mode))
   :config
   (setq markdown-command "pandoc -r commonmark -w html5 -s")
+
+  (evil-declare-motion 'markdown-forward-paragraph)
+  (evil-declare-motion 'markdown-backward-paragraph)
+
+
+  (general-mmap
+  :keymaps 'markdown-mode-map
+    "gj" 'markdown-forward-same-level
+    "gk" 'markdown-backward-same-level
+    "gh" 'markdown-outline-up
+    "gl" 'markdown-outline-next
+    "M-j" 'markdown-move-down
+    "M-k" 'markdown-move-up
+    "M-h" 'markdown-promote
+    "M-l" 'markdown-demote
+    "}" 'markdown-forward-paragraph
+    "{" 'markdown-backward-paragraph
+    )
+
+
   )
 
 (use-package edit-server
