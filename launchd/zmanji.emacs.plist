@@ -8,9 +8,8 @@
   <string>zmanji.emacs</string>
   <key>ProgramArguments</key>
   <array>
-    <!-- should be homebrew cask emacs -->
+    <!-- should be homebrew cask emacs-mac port -->
     <string>/usr/local/bin/emacs</string>
-    <string>--fg-daemon</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
