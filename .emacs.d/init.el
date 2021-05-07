@@ -393,9 +393,13 @@
 (use-package tab-bar
   :straight (:type built-in)
   :init
-  (tab-bar-mode)
+  (tab-bar-mode t)
   :config
   (setq tab-bar-show 1)
+  (setq tab-bar-new-tab-choice "*scratch*")
+  (evil-ex-define-cmd "tab" 'tab-bar-new-tab)
+  (evil-ex-define-cmd "tabc[lose]" 'tab-bar-close-tab)
+
   )
 
 (use-package eshell
