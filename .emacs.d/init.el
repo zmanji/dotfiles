@@ -400,6 +400,27 @@
   (evil-ex-define-cmd "tab" 'tab-bar-new-tab)
   (evil-ex-define-cmd "tabc[lose]" 'tab-bar-close-tab)
 
+  (evil-define-command zmanji/evil-quit (&optional force)
+  "Wrapper around evil-quit that attempts to close the current
+  tab before calling the actual function."
+  :repeat nil
+  (interactive "<!>")
+  (let* ((num-tabs (length (tab-bar-tabs)))
+         (num-windows (count-windows))
+         )
+    (if (eq num-windows 1)
+        (if (> num-tabs 1)
+            (call-interactively 'tab-bar-close-tab)
+          (evil-quit force)
+          )
+      (evil-quit force)
+
+      )
+    )
+  )
+
+  (evil-ex-define-cmd "q[uit]" 'zmanji/evil-quit)
+
   )
 
 (use-package eshell
