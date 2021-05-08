@@ -574,7 +574,8 @@
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :config
-  (setq markdown-command "pandoc -r commonmark -w html5 -s")
+  (setq markdown-command "pandoc -f commonmark_x -t html5 -s --shift-heading-level-by=-1")
+  (setq markdown-header-scaling t)
 
   (evil-declare-motion 'markdown-forward-paragraph)
   (evil-declare-motion 'markdown-backward-paragraph)
@@ -594,6 +595,17 @@
     "{" 'markdown-backward-paragraph
     )
 
+  (defun zmanji/format-markdown ()
+    "pipes a document though pandoc for formatting"
+    (interactive)
+    (shell-command-on-region
+     (point-min)
+     (point-max)
+     "pandoc -f commonmark_x -t  commonmark_x --reference-links --reference-location=section --columns=79 -s"
+     (current-buffer)
+     t
+     )
+    )
 
   )
 
