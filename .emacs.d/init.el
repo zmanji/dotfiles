@@ -36,6 +36,8 @@
   :config
   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
   (setq undo-tree-auto-save-history t)
+  (setq evil-undo-system 'undo-tree)
+  (setq undo-tree-enable-undo-in-region nil)
 )
 
 

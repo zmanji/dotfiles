@@ -30,34 +30,13 @@
 
   (setq x-stretch-cursor t)
 
-  ;; Ensure when a new GUI frame is launched on OSX, focus is shifted to it
-  ;; https://korewanetadesu.com/emacs-on-os-x.html
-  (when (featurep 'ns)
-    (defun ns-raise-emacs ()
-      "Raise Emacs."
-      (ns-do-applescript "tell application \"Emacs\" to activate"))
+  ; When creating a new emacsclient frame, focus it
+  (add-hook 'server-after-make-frame-hook 'raise-frame)
 
-    (defun ns-raise-emacs-with-frame (frame)
-      "Raise Emacs and select the provided frame."
-      (with-selected-frame frame
-        (when (display-graphic-p)
-          (ns-raise-emacs))))
-
-  (add-hook 'after-make-frame-functions 'ns-raise-emacs-with-frame)
-
-  (when (display-graphic-p)
-    (ns-raise-emacs))
-
-  ;; Have the titlebar color of the gui match the theme (Emacs 26.1)
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-  (add-to-list 'default-frame-alist '(ns-appearance . dark))
-  (setq ns-use-proxy-icon nil)
   (setq frame-title-format "%b %F")
 
   ;; use existing emacs frames
-  (setq ns-pop-up-frames nil)
-
-  )
+  (setq pop-up-frames nil)
 
 )
 
