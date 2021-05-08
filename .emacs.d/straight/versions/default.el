@@ -10,7 +10,7 @@
  ("emacs_chrome" . "1632acab5624637031326bd902e2ad7ccb6b4c90")
  ("emacsmirror-mirror" . "ac57d5a4aae5a3a284bc90dc02fc8da6b36adc2a")
  ("epl" . "78ab7a85c08222cd15582a298a364774e3282ce6")
- ("evil" . "325a822bee6b9f8590e6e77fe73b4d916fcec357")
+ ("evil" . "8dc0ccdc4c0246af87588a93812a23268f83ab94")
  ("evil-anzu" . "d3f6ed4773b48767bd5f4708c7f083336a8a8a86")
  ("evil-collection" . "b45ec5b3156d27a18a949e4bf55643107a21abc2")
  ("evil-commentary" . "2dab6ac34d1617971768ad219d73af48f7473fec")
