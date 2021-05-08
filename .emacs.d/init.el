@@ -399,6 +399,7 @@
   (setq tab-bar-new-tab-choice "*scratch*")
   (evil-ex-define-cmd "tab" 'tab-bar-new-tab)
   (evil-ex-define-cmd "tabc[lose]" 'tab-bar-close-tab)
+  (evil-ex-define-cmd "tabs" 'tab-switcher)
 
   (evil-define-command zmanji/evil-quit (&optional force)
   "Wrapper around evil-quit that attempts to close the current
