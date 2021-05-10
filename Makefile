@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage
+all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage ripgrep
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -15,6 +15,13 @@ tmux: .tmux.conf
 
 .PHONY: git
 git: .gitconfig .gitignore_global
+	@echo removing $^; \
+	$(foreach df, $^, rm -f ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+
+.PHONY: ripgrep
+ripgrep: .ripgreprc
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
