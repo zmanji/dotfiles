@@ -297,6 +297,7 @@
   (global-hl-todo-mode))
 
 (use-package whitespace
+  :straight (:type built-in)
   :diminish global-whitespace-mode
   :init
   (global-whitespace-mode)
