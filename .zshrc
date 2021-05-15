@@ -138,3 +138,4 @@ if [[ "$TERM" != 'dumb' ]]; then
 fi
 
 source ~/.zsh/3rdparty/base16-tomorrow-night.sh
+source ~/.zsh/3rdparty/zsh-system-clipboard/zsh-system-clipboard.zsh

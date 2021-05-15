@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/fzf.vim"]
 	url = https://github.com/junegunn/fzf.vim
 	path = .vim/bundle/fzf.vim
+[submodule ".zsh/3rdparty/zsh-system-clipboard"]
+	path = .zsh/3rdparty/zsh-system-clipboard
+	url = https://github.com/kutsan/zsh-system-clipboard
