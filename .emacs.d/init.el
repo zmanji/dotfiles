@@ -170,7 +170,35 @@
 (use-package base16-theme
   :init
   (setq base16-theme-256-color-source "base16-shell")
-  (load-theme 'base16-tomorrow-night t))
+
+  ;; Need to load theme to get colors defined
+  (load-theme 'base16-tomorrow-night t)
+
+  ;; Set the cursor color based on the evil state
+  (setq evil-emacs-state-cursor   `(,(plist-get base16-tomorrow-night-colors :base0D) box)
+        evil-insert-state-cursor  `(,(plist-get base16-tomorrow-night-colors :base0D) bar)
+        evil-motion-state-cursor  `(,(plist-get base16-tomorrow-night-colors :base0E) box)
+        evil-normal-state-cursor  `(,(plist-get base16-tomorrow-night-colors :base0B) box)
+        evil-replace-state-cursor `(,(plist-get base16-tomorrow-night-colors :base08) bar)
+        evil-visual-state-cursor  `(,(plist-get base16-tomorrow-night-colors :base09) box))
+
+
+  ;; the package doesn't style these faces so we do it our selves
+  (base16-set-faces
+   'base16-tomorrow-night
+   base16-tomorrow-night-colors
+   `(
+     (tab-bar :background base01 :foreground base01)
+     (tab-bar-tab  :background base00 :foreground base06)
+     (tab-bar-tab-inactive :background base01 :foreground base05)
+     (tab-line  :background base0D)
+     )
+   )
+
+  ;; Need to re-enable theme to get this to stick.
+  (enable-theme 'base16-tomorrow-night)
+
+  )
 
 (use-package smooth-scrolling
   :init
@@ -424,6 +452,9 @@
   )
 
   (evil-ex-define-cmd "q[uit]" 'zmanji/evil-quit)
+
+  (setq tab-bar-new-button-show nil)
+  (setq tab-bar-close-button-show nil)
 
   )
 
