@@ -52,6 +52,8 @@ bind x tabclose
 
 bind ` tab #
 
+bind yl hint -y
+
 set tabopenpos last
 " Sigh, works because karabiner sends this because we can't override cmd-t
 bind --mode=browser <MC-t> composite escapehatch | fillcmdline tabopen
