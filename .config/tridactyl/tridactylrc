@@ -65,6 +65,8 @@ bind --mode=normal ; fillcmdline_notrail
 
 bind --mode=normal gf hint -; *
 
+set historyresults 100
+
 " Disable all Search Engines
 jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=>{}).then(_ => tri.excmds.setnull("searchurls." + u)), Promise.resolve())
 
