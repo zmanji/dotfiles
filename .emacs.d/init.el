@@ -644,6 +644,11 @@
 
   )
 
+
+(use-package rust-mode
+  :config
+  (setq rust-format-on-save t))
+
 (use-package edit-server
   :init
   (edit-server-start)

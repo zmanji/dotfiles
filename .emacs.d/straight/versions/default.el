@@ -30,6 +30,7 @@
  ("pbcopy.el" . "338f7245746b5de1bb96c5cc2b32bfd9b5d83272")
  ("pkg-info" . "76ba7415480687d05a4353b27fea2ae02b8d9d61")
  ("projectile" . "1528ed4f082e7aaca19f22394eb4bed879645b7c")
+ ("rust-mode" . "494d59f92cbe12533eb89b202fc4f5342afcd543")
  ("s.el" . "43ba8b563bee3426cead0e6d4ddc09398e1a349d")
  ("smooth-scrolling" . "2462c13640aa4c75ab3ddad443fedc29acf68f84")
  ("straight.el" . "e1390a933b6f5a15079d6dec91eac97a17aad10c")
