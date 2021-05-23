@@ -74,6 +74,7 @@ osx: .osx
 	@echo Running .osx; \
 	sh ~/.osx
 
+
 .PHONY: hammerspoon
 hammerspoon: .hammerspoon
 	@echo removing $^; \
@@ -113,8 +114,16 @@ tridactyl: .config/tridactyl
 	@echo Installing $^; \
 	$(shell ln -s $(CURDIR)/$^ ~/$^)
 
+.PHONY: dicts
+dicts: dicts/en_CA.aff dicts/en_CA.dic dicts/en_US.aff dicts/en_US.dic
+	mkdir -p ~/Library/Spelling/
+	@echo removing $^; \
+	$(foreach df, $^, rm -rf ~/Library/Spelling/$$(basename $(df)));
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~/Library/Spelling/$(notdir $(df)); )
+
 .PHONY: hunspell
-hunspell: .hunspell_en_CA
+hunspell: .hunspell_en_CA dicts
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
