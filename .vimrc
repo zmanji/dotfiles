@@ -400,9 +400,3 @@ augroup END
 " }}}
 
 " }}}
-
-" Local .vimrc {{{
-if filereadable(glob("~/.vimrc.local"))
-    source ~/.vimrc.local
-endif
-"}}}

@@ -128,6 +128,8 @@ hunspell: .hunspell_en_CA dicts
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+	# Update vim spelling file from hunspell dicts
+	/usr/local/bin/vim -u NONE -e -c "mkspell! ~/.vim/spell/en ~/Library/Spelling/en_CA ~/Library/Spelling/en_US" -c q
 
 .PHONY: idea
 idea: .ideavimrc
