@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage ripgrep
+all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage ripgrep dicts
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -123,7 +123,7 @@ dicts: dicts/en_CA.aff dicts/en_CA.dic dicts/en_US.aff dicts/en_US.dic
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~/Library/Spelling/$(notdir $(df)); )
 
 .PHONY: hunspell
-hunspell: .hunspell_en_CA dicts
+hunspell: .hunspell_en_CA .hunspell_en_US
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \
