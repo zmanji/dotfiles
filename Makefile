@@ -130,6 +130,8 @@ hunspell: .hunspell_en_CA .hunspell_en_US
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 	# Update vim spelling file from hunspell dicts
 	/usr/local/bin/vim -u NONE -e -c "mkspell! ~/.vim/spell/en ~/Library/Spelling/en_CA ~/Library/Spelling/en_US" -c q
+	# Update vim personal dict from hunspell dict
+	/usr/local/bin/vim -U NONE -e -c "mkspell! ~/.vim/custom-dictionary.en.utf8.add" -c q
 
 .PHONY: idea
 idea: .ideavimrc

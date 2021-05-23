@@ -122,7 +122,6 @@ augroup basic_options
 augroup END
 " Custom dictionary
 set spellfile=~/.vim/custom-dictionary.en.utf8.add
-silent mkspell! ~/.vim/custom-dictionary.en.utf8.add
 " Less delay between escape and normal mode.
 set ttimeoutlen=50
 
