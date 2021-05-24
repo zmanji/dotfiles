@@ -7,6 +7,11 @@ if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 if command -v pyenv >/dev/null 2>&1; then eval "$(pyenv init -)"; fi
 if [[ -f ~/.cargo/env ]]; then source ~/.cargo/env; fi
 if command -v direnv >/dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
+if command -v volta >/dev/null 2>&1; then 
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
