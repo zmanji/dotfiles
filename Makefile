@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage ripgrep dicts
+all: submodules shells osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage ripgrep dicts pandoc
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -29,6 +29,13 @@ ripgrep: .ripgreprc
 
 .PHONY: vim
 vim: .vim .vimrc .gvimrc .surfingkeys.js
+	@echo removing $^; \
+	$(foreach df, $^, rm -f ~/$(df))
+	@echo Installing $^; \
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
+
+.PHONY: pandoc
+pandoc: .pandoc
 	@echo removing $^; \
 	$(foreach df, $^, rm -f ~/$(df))
 	@echo Installing $^; \

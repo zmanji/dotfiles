@@ -609,7 +609,7 @@
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :config
-  (setq markdown-command "pandoc -f commonmark_x -t html5 -s --shift-heading-level-by=-1")
+  (setq markdown-command "pandoc -f commonmark_x+autolink_bare_uris -t html5 --toc -s --template=zmanji --shift-heading-level-by=-1")
   (setq markdown-header-scaling t)
 
   (evil-declare-motion 'markdown-forward-paragraph)
@@ -636,7 +636,7 @@
     (shell-command-on-region
      (point-min)
      (point-max)
-     "pandoc -f commonmark_x -t  commonmark_x --reference-links --reference-location=section --columns=79 -s"
+     "pandoc -f commonmark_x+autolink_bare_uris -t  commonmark_x+autolink_bare_uris --reference-links --reference-location=section --columns=79 -s"
      (current-buffer)
      t
      )
