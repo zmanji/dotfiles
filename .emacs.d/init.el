@@ -611,6 +611,7 @@
   :config
   (setq markdown-command "pandoc -f commonmark_x+autolink_bare_uris -t html5 --toc -s --template=zmanji --shift-heading-level-by=-1")
   (setq markdown-header-scaling t)
+  (setq markdown-hide-markup t)
 
   (evil-declare-motion 'markdown-forward-paragraph)
   (evil-declare-motion 'markdown-backward-paragraph)
