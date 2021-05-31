@@ -4,8 +4,8 @@
 
 html {
   line-height: 1.5;
-  font-family: Georgia, serif;
-  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 18px;
   color: var(--font-color);
   background-color: #fdfdfd;
 }
@@ -25,20 +25,6 @@ body {
   body {
     font-size: 0.9em;
     padding: 1em;
-  }
-}
-@media print {
-  body {
-    background-color: transparent;
-    color: black;
-    font-size: 12pt;
-  }
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2, h3, h4 {
-    page-break-after: avoid;
   }
 }
 p {
