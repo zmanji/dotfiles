@@ -389,6 +389,7 @@
   ;; TODO(zmanji): Check that hunspell exists
   (setq ispell-program-name "/usr/local/bin/hunspell")
   (setq ispell-silently-savep t)
+  (setq ispell-really-hunspell t)
 
   (general-define-key
     :keymaps 'flyspell-mode-map
@@ -615,6 +616,8 @@
 
   (evil-declare-motion 'markdown-forward-paragraph)
   (evil-declare-motion 'markdown-backward-paragraph)
+
+  (flyspell-mode-on)
 
 
   (general-mmap
