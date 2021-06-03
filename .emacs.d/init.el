@@ -617,8 +617,8 @@
   (evil-declare-motion 'markdown-forward-paragraph)
   (evil-declare-motion 'markdown-backward-paragraph)
 
-  (flyspell-mode-on)
-
+  (add-hook 'markdown-mode-hook 'outline-minor-mode)
+  (add-hook 'markdown-mode-hook 'flyspell-mode)
 
   (general-mmap
   :keymaps 'markdown-mode-map
