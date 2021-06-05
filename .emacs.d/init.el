@@ -608,7 +608,8 @@
 (use-package markdown-mode
   :commands (markdown-mode)
   :mode (("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
+         ("\\.markdown\\'" . markdown-mode)
+         ("\\.pandoc\\'" . markdown-mode))
   :config
   (setq markdown-command "pandoc -f commonmark_x+autolink_bare_uris -t html5 --toc -s --template=zmanji --shift-heading-level-by=-1")
   (setq markdown-header-scaling t)
@@ -619,6 +620,17 @@
 
   (add-hook 'markdown-mode-hook 'outline-minor-mode)
   (add-hook 'markdown-mode-hook 'flyspell-mode)
+
+  (defun zmanji/markdown-global-cycle ()
+    "cycle through folding states in a markdown document"
+    (interactive)
+    (markdown-cycle t)
+    )
+
+  (general-nmap
+    :keymaps 'markdown-mode-map
+    "TAB" 'zmanji/markdown-global-cycle
+    )
 
   (general-mmap
   :keymaps 'markdown-mode-map
