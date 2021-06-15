@@ -4,7 +4,13 @@
 
 export PATH="${HOME}/bin:${PATH}"
 if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
-if command -v pyenv >/dev/null 2>&1; then eval "$(pyenv init -)"; fi
+if command -v pyenv >/dev/null 2>&1; then 
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"; 
+
+fi
 if [[ -f ~/.cargo/env ]]; then source ~/.cargo/env; fi
 if command -v direnv >/dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
 if command -v nodenv >/dev/null 2>&1; then eval "$(nodenv init -)"; fi
