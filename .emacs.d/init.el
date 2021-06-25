@@ -652,7 +652,7 @@
     (shell-command-on-region
      (point-min)
      (point-max)
-     "pandoc -f commonmark_x+autolink_bare_uris -t  commonmark_x+autolink_bare_uris --reference-links --reference-location=section --columns=79 -s"
+     "pandoc -f commonmark_x+autolink_bare_uris-gfm_auto_identifiers -t  commonmark_x+autolink_bare_uris-gfm_auto_identifiers --reference-links --reference-location=section --columns=79 -s"
      (current-buffer)
      t
      )

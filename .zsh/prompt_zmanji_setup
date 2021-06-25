@@ -10,7 +10,7 @@ prompt_zmanji_setup() {
   }
 
   # This theme is venv aware
-  VIRTUAL_ENV_DISABLE_PROMPT=1
+  export VIRTUAL_ENV_DISABLE_PROMPT=1
 
   __zmanji_venv() {
     local _venv=$(basename "$VIRTUAL_ENV")
