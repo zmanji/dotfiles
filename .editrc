@@ -1,4 +1,6 @@
 # Enable vim mode for libedit apps
 bind -v
+# ctrl-r to reverse search
+bind "^R" em-inc-search-prev
 # Tab for completion
 lldb:bind \\t lldb_complete
