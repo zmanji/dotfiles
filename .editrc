@@ -1,4 +1,4 @@
 # Enable vim mode for libedit apps
 bind -v
 # Tab for completion
-bind \\t rl_complete
+lldb:bind \\t lldb_complete
