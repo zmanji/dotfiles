@@ -21,6 +21,11 @@ if command -v broot >/dev/null 2>&1; then
   broot --set-install-state installed;
 fi
 
+# Use homebrew curl if available
+if [[ -d "/usr/local/opt/curl/bin/" ]]; then
+  export PATH="/usr/local/opt/curl/bin:$PATH"
+fi
+
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
