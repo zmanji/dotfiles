@@ -363,7 +363,8 @@
   :init
   (projectile-mode)
   :config
-  (setq projectile-enable-caching t)
+  (setq projectile-enable-caching nil)
+  (setq projectile-indexing-method 'alien)
   (setq projectile-completion-system 'ivy)
   (setq projectile-require-project-root nil)
   (use-package counsel-projectile)
