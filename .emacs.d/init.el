@@ -647,18 +647,23 @@
     "{" 'markdown-backward-paragraph
     )
 
+  ;; https://stackoverflow.com/questions/8115460/emacs-save-excursion-not-restoring-point
   (defun zmanji/format-markdown ()
     "pipes a document though pandoc for formatting"
     (interactive)
-    (shell-command-on-region
-     (point-min)
-     (point-max)
-     "pandoc -f commonmark_x+autolink_bare_uris-gfm_auto_identifiers -t  commonmark_x+autolink_bare_uris-gfm_auto_identifiers --reference-links --reference-location=section --columns=79 -s"
-     (current-buffer)
-     t
-     )
-    )
+    (let ((temp-point (point)))
 
+      (shell-command-on-region
+      (point-min)
+      (point-max)
+      "pandoc -f commonmark_x+autolink_bare_uris-gfm_auto_identifiers -t  commonmark_x+autolink_bare_uris-gfm_auto_identifiers --reference-links --reference-location=section --columns=79 -s"
+      (current-buffer)
+      t
+      )
+      (goto-char temp-point)
+
+      )
+    )
   )
 
 
