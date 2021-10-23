@@ -1,11 +1,16 @@
 /* mostly taken from https://github.com/jvgaultney/todoist-userstyles-compact/blob/master/Todoist-userstyles-compact.css */
 
+body
+{
+  font-family: -apple-system, BlinkMacSystemFont !important;
+}
+
 .task_list_item .task_checkbox {
     margin-top: 0px !important;
 }
 
 .task_list_item__content {
-    padding: 4px 0px !important;
+    padding: 0px 0px !important;
     display: flex !important;
     flex-wrap: nowrap !important;
     justify-content: space-between !important;
@@ -14,7 +19,9 @@
 
 .task_content {
     line-height: 18px !important;
-    padding-top: 2px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    font-size: 16px !important;
 }
 
 .task_list_item__info_tags {
@@ -33,22 +40,85 @@
     padding: 0px 0px !important;
 }
 
-/* left side */
-.sidebar_expansion_panel li { 
-    padding: 0px 0px 0px 0px !important;
-    font-size: 10pt !important;
+.project_item__name {
+    padding: 3px 2px 0px 0px;
 }
 
-.sidebar_expansion_panel li div {
-    padding: 0px 0px 0px 0px !important;   
-        font-size: 10pt !important;
+#agenda_view .section_day, #agenda_view .section_overdue {
+    margin-bottom: 0px !important;
+}
 
+ul.items.day_list.ul_today.is_filtered {
+    margin-bottom: 4px !important;
+}
+
+ul.section_list>li {
+	padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.view_header {
+    margin-bottom: 0px !important;
+    border-top: 10px #555555 !important;
+}
+
+.section {
+    margin-bottom: 4px !important;
+}    
+
+.section h2, .section h2 a {
+    padding-top: 10px !important;
+    padding-bottom: 2px !important;
+    font-size: 15px !important;
+    font-weight: 100;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.subsection_header__date {
+    font-size: 15px !important; 
+}
+
+div.project_editor_instance {
+    margin-bottom: 0px !important;
+}
+
+/* less padding between projects in left menu */
+
+.generic_left_list.items li { 
+    padding-top: 0px !important;
 }
 
 .generic_left_list li table td { 
-    padding: 3px 20px 3px 0px !important;
-	font-size: 10pt !important;
+  padding: 3px 20px 3px 0px !important;
+	font-size: 12pt !important;
 }
 
+.generic_left_list td.td_color .counter_color {
+    height: 22px !important;
+    line-height: 20px !important;
+}
 
+.generic_left_list td.name {
+    height: 22px !important;
+    line-height: 20px !important;
+}
+    
+.generic_left_list td.counter {
+    height: 22px !important;
+    line-height: 20px !important;
+}
 
+.generic_left_list td.menu {
+    height: 22px !important;
+    line-height: 20px !important;
+}
+    
+.generic_left_list td.menu div.icon {
+    height: 22px !important;
+    line-height: 20px !important;
+}
+    
+.invisible_space {
+    margin-top: 3px !important;
+}
