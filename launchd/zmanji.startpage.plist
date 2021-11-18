@@ -8,11 +8,13 @@
   <string>zmanji.startpage</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/bin/zsh</string>
-    <string>-c</string>
-    <string>/usr/local/bin/python3 -m http.server --directory ~/.config/startpage --bind 127.0.0.1 18080</string>
+    <string>/Users/zmanji/bin/startpage.sh</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
+  <key>StandardOutPath</key>
+  <string>/tmp/zmanji.startpage.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/zmanji.startpage.stderr.log</string>
 </dict>
 </plist>

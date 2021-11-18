@@ -157,14 +157,14 @@ idea: .ideavimrc
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
 .PHONY: bin
-bin: git-squash emacs-bin git-bin
+bin: git-squash emacs-bin personal-bin
 
 # Sub targets for bin
 .PHONY: git-squash
 git-squash: ~/bin/git-squash
 
-.PHONY: git-bin
-git-bin: bin/git-fb
+.PHONY: personal-bin
+personal-bin: bin/git-fb bin/startpage.sh
 	$(shell mkdir -p ~/bin)
 	@echo removing $^; \
 	$(foreach df, $^, rm -rf ~/$(df))
@@ -172,7 +172,7 @@ git-bin: bin/git-fb
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~/$(df); )
 
 .PHONY: emacs-bin
-emacs-bin: bin/README.emacs bin/ec bin/emacs bin/et
+emacs-bin: bin/README.emacs bin/ec bin/et
 	$(shell mkdir -p ~/bin)
 	@echo removing $^; \
 	$(foreach df, $^, rm -rf ~/$(df))
