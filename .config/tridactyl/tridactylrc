@@ -4,7 +4,7 @@
 sanitize tridactyllocal tridactylsync
 
 " served from startpage plist
-set newtab http://newtab.localhost
+set newtab http://newtab.test
 
 set editorcmd /usr/local/bin/emacsclient -c -a ""
 
