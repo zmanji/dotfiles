@@ -1,7 +1,3 @@
-# Jumping Time
-# TODO: consider replacing this with fasd
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
 export PATH="${HOME}/bin:${PATH}"
 if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 if command -v pyenv >/dev/null 2>&1; then
@@ -15,6 +11,13 @@ if [[ -f ~/.cargo/env ]]; then source ~/.cargo/env; fi
 if command -v direnv >/dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
 if command -v nodenv >/dev/null 2>&1; then eval "$(nodenv init -)"; fi
 
+
+# Jumping Time
+
+if command -v brew >/dev/null 2>&1; then
+  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+fi
+if [[ -f /usr/share/autojump/autojump.sh ]]; then source /usr/share/autojump/autojump.sh; fi
 
 if command -v broot >/dev/null 2>&1; then 
   eval "$(broot --print-shell-function zsh)";
@@ -72,7 +75,11 @@ setopt PROMPT_SUBST
 # Report CPU Usuage for commands running longer than 10 seconds
 REPORTTIME=10
 
-fpath=(~/.zsh $(brew --prefix)/share/zsh-completions $fpath)
+fpath=(~/.zsh $fpath)
+
+if command -v brew >/dev/null 2>&1; then
+  fpath=($(brew --prefix)/share/zsh-completions $fpath)
+fi
 
 autoload -Uz compinit
 compinit
@@ -115,19 +122,27 @@ fi
 typeset -U path cdpath fpath manpath
 
 # Order of these two matters
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+source ~/.zsh/3rdparty/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/3rdparty/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 bindkey -v
 
-if [[ -d $(brew --prefix)/opt/fzf/shell ]]; then
-  # This binds the following:
-  # * CTRL-T => find file
-  # * ALT-C cd
-  # * CTRL-R history search
-  export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
-  export FZF_CTRL_T_OPTS="--select-1 --exit-0"
-  source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_OPTS="--select-1 --exit-0"
+if command -v brew >/dev/null 2>&1; then
+  if [[ -d $(brew --prefix)/opt/fzf/shell ]]; then
+    # This binds the following:
+    # * CTRL-T => find file
+    # * ALT-C cd
+    # * CTRL-R history search
+    source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+  fi
+fi
+
+if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then 
+  source /usr/share/doc/fzf/examples/key-bindings.zsh; 
 fi
 
 
@@ -156,4 +171,7 @@ if [[ "$TERM" != 'dumb' ]]; then
 fi
 
 source ~/.zsh/3rdparty/base16-tomorrow-night.sh
-source ~/.zsh/3rdparty/zsh-system-clipboard/zsh-system-clipboard.zsh
+
+if command -v xclip >/dev/null 2>&1 || command -v pbcopy >/dev/null 2>&1; then
+  source ~/.zsh/3rdparty/zsh-system-clipboard/zsh-system-clipboard.zsh
+fi

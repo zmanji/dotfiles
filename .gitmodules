@@ -82,3 +82,9 @@
 [submodule ".zsh/3rdparty/zsh-system-clipboard"]
 	path = .zsh/3rdparty/zsh-system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
+[submodule ".zsh/3rdparty/zsh-history-substring-search"]
+	path = .zsh/3rdparty/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule ".zsh/3rdparty/zsh-syntax-highlighting"]
+	path = .zsh/3rdparty/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting

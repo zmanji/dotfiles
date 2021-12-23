@@ -73,6 +73,10 @@ if filereadable("/usr/local/opt/fzf/README.md")
 	set rtp+=/usr/local/opt/fzf
 endif
 
+if filereadable("/usr/share/doc/fzf/README.Debian")
+  set rtp+=/usr/share/doc/fzf/examples/
+endif
+
 
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>

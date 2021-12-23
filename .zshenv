@@ -1,5 +1,7 @@
-export PATH="$(/usr/local/bin/brew --prefix)/bin:${PATH}"
-export PATH="$(/usr/local/bin/brew --prefix)/sbin:${PATH}"
+if command -v brew >/dev/null 2>&1; then
+  export PATH="$(/usr/local/bin/brew --prefix)/bin:${PATH}"
+  export PATH="$(/usr/local/bin/brew --prefix)/sbin:${PATH}"
+fi
 
 export VISUAL='emacsclient -a ""'
 export EDITOR=$VISUAL
