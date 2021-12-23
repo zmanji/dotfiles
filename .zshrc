@@ -170,6 +170,16 @@ if [[ "$TERM" != 'dumb' ]]; then
   add-zsh-hook preexec zmanji_set_title
 fi
 
+# Tmux environment variable refreshing on attachment 
+# https://github.com/MikeDacre/tmux-zsh-environment/blob/ada4d90555db117a650538808b496a988686a3e0/tmux-zsh-environment.plugin.zsh#L23
+if [ -n "$TMUX" ] && tmux ls >/dev/null 2>/dev/null; then
+  function zmanji_refresh_tmux_env() {
+    eval $(tmux showenv -s | grep -v "^unset")
+  }
+  add-zsh-hook preexec zmanji_refresh_tmux_env
+fi
+
+
 source ~/.zsh/3rdparty/base16-tomorrow-night.sh
 
 if command -v xclip >/dev/null 2>&1 || command -v pbcopy >/dev/null 2>&1; then
