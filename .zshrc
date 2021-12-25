@@ -129,10 +129,10 @@ source ~/.zsh/3rdparty/zsh-history-substring-search/zsh-history-substring-search
 bindkey -v
 
 if command -v fd >/dev/null 2>&1; then
-  export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
+  export FZF_CTRL_T_COMMAND='fd --type f --hidden --no-ignore --follow --exclude .git'
 fi
 if command -v fdfind >/dev/null 2>&1; then
-  export FZF_CTRL_T_COMMAND='fdfind --type f --hidden --follow --exclude .git'
+  export FZF_CTRL_T_COMMAND='fdfind --type f --hidden --no-ignore --follow --exclude .git'
 fi
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 if command -v brew >/dev/null 2>&1; then
