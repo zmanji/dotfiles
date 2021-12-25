@@ -186,6 +186,6 @@ fi
 
 source ~/.zsh/3rdparty/base16-tomorrow-night.sh
 
-if [ -n "$TMUX" ] || command -v pbcopy >/dev/null 2>&1; then
+if command -v pbcopy >/dev/null 2>&1; then
   source ~/.zsh/3rdparty/zsh-system-clipboard/zsh-system-clipboard.zsh
 fi
