@@ -131,13 +131,11 @@ set ttimeoutlen=50
 
 " Use DECSCUSR escape codes on iTerm2/xterm to change cursor shape in terminal
 " vim. See http://git.io/zvDeWQ for example code.
-if !has("gui_running") && !exists("$TMUX")
-  if &term =~ "xterm"
-    " Enter Insert Mode (Cursor Shape: vertical bar)
-    let &t_SI = "\<Esc>[6 q"
-    " Leave Insert Mode (Cursor Shape: block)
-    let &t_EI = "\<Esc>[2 q"
-  endif
+if !has("gui_running")
+  " Enter Insert Mode (Cursor Shape: vertical bar)
+  let &t_SI = "\<Esc>[6 q"
+  " Leave Insert Mode (Cursor Shape: block)
+  let &t_EI = "\<Esc>[2 q"
 endif
 " Enable better matching with '%'
 runtime macros/matchit.vim
