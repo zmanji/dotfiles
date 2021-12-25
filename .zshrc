@@ -186,6 +186,7 @@ fi
 
 source ~/.zsh/3rdparty/base16-tomorrow-night.sh
 
-if command -v pbcopy >/dev/null 2>&1; then
+if [ -n "$TMUX" ] || command -v pbcopy >/dev/null 2>&1; then
+  typeset -g ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
   source ~/.zsh/3rdparty/zsh-system-clipboard/zsh-system-clipboard.zsh
 fi
