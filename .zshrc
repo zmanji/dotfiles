@@ -1,5 +1,14 @@
 export PATH="${HOME}/bin:${PATH}"
-if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
+if command -v rbenv >/dev/null 2>&1;
+then
+  eval "$(rbenv init -)";
+else
+  if [[ -d "$HOME/.rbenv/bin" ]]
+  then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)";
+  fi
+fi
 if command -v pyenv >/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
