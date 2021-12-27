@@ -28,11 +28,15 @@ prompt_zmanji_setup() {
 
   # Customized atach script sets DTACH env variable to socket
   __zmanji_dtach() {
-    if [[ -z "$DTACH" ]]; then
+    if [[ -z "$DTACH" ]] && [[ -z "$ABDUCO_SESSION" ]]; then
       echo ""
-    else
+    elif [[ ! -z "$DTACH" ]]; then
       local _dtach=$(basename -s .dtach "$DTACH")
       echo "($_dtach) "
+    elif [[ ! -z "$ABDUCO_SESSION" ]]; then
+      echo "($ABDUCO_SESSION) "
+    else
+      echo ""
     fi
   }
 
