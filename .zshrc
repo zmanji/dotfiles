@@ -21,10 +21,16 @@ if command -v direnv >/dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
 if command -v nodenv >/dev/null 2>&1; then eval "$(nodenv init -)"; fi
 
 
+export KITTY_SHELL_INTEGRATION="no-cursor no-title"
 # https://sw.kovidgoyal.net/kitty/shell-integration/#manual-shell-integration
 if test -n "$KITTY_INSTALLATION_DIR"; then
-    export KITTY_SHELL_INTEGRATION="no-cursor no-title"
     autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+    kitty-integration
+    unfunction kitty-integration
+fi
+
+if [[ -d "$HOME"/bin/kitty/lib/kitty/shell-integration/zsh ]]; then
+    autoload -Uz -- "$HOME"/bin/kitty/lib/kitty/shell-integration/zsh/kitty-integration
     kitty-integration
     unfunction kitty-integration
 fi
