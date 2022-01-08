@@ -1,8 +1,38 @@
-#!/bin/bash
+#!/usr/bin/env python3
 
-set -euo pipefail
+import base64
+import os
+import termios
+import tty
 
-# Uses OSC 52 to paste
-# Requires kitty to have 'read-clipboard' for clipboard_control
+# Uses OSC 52 to paste to stdout
+# Requires kitty to have 'write-read' for clipboard_control
 
-printf "\033]52;p;?\a"
+def main():
+    # If in a dtach session, need to traverse ppids and envs to find a fresh `SSH_TTY`
+    if os.environ.get('DTACH'):
+        raise "DTACH not supported yet"
+    if (tty_path := os.environ.get('SSH_TTY')):
+        out = os.open(tty_path, os.O_RDWR, os.O_SYNC)
+        old = termios.tcgetattr(out)
+    else:
+        raise "no ssh tty"
+
+
+    try:
+        tty.setraw(out)
+        readclip = b'\033]52;c;?\a'
+        os.write(out, readclip)
+
+        payload = os.read(out, 65536)
+        payload = payload[7:]
+        payload = payload[:-2]
+
+    finally:
+        termios.tcsetattr(out, termios.TCSADRAIN, old)
+
+    decoded = base64.b64decode(payload)
+    print(decoded.decode('utf-8'))
+
+if __name__ == "__main__":
+    main()
