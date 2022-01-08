@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# Uses OSC 52 to paste
+# Requires kitty to have 'read-clipboard' for clipboard_control
+
+printf "\033]52;p;?\a"

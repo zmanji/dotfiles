@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# Uses OSC 52 to yank the passed argument
+# Requires kitty to have 'write-clipboard' for clipboard_control
+
+printf "\033]52;c;$(base64 <<< $1)\a"

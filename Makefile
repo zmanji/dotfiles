@@ -164,7 +164,7 @@ bin: git-squash emacs-bin personal-bin
 git-squash: ~/bin/git-squash
 
 .PHONY: personal-bin
-personal-bin: bin/git-fb bin/startpage.sh
+personal-bin: bin/git-fb bin/startpage.sh bin/term-yank bin/term-paste
 	$(shell mkdir -p ~/bin)
 	@echo removing $^; \
 	$(foreach df, $^, rm -rf ~/$(df))
