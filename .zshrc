@@ -152,7 +152,7 @@ prompt zmanji
 
 # Dumb terminals (aka emacs shell-mode) can't handle the control codes.
 if [[ "$TERM" != 'dumb' ]]; then
-  function zle-line-init zle-keymap-select () {
+  function zle-line-init zle-keymap-select zle-line-pre-redraw () {
     case $KEYMAP in
       vicmd) echo -n "\e[2 q" ;; # block cursor
       viins|main) echo -n "\e[6 q";; # line cursor
@@ -160,6 +160,7 @@ if [[ "$TERM" != 'dumb' ]]; then
   }
   zle -N zle-line-init
   zle -N zle-keymap-select
+  zle -N zle-line-pre-redraw
 fi
 
 # automatically remove duplicates from these arrays
