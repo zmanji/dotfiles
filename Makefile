@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells dns osx git vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage ripgrep dicts pandoc
+all: submodules shells dns osx git neovim vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage ripgrep dicts pandoc
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -61,6 +61,14 @@ tweak: .tweak
 
 .PHONY: startpage
 startpage: .config/startpage
+	$(shell mkdir -p ~/.config)
+	@echo removing $^; \
+	$(shell rm -rf ~/$^)
+	@echo Installing $^; \
+	$(shell ln -s $(CURDIR)/$^ ~/$^)
+
+.PHONY: neovim
+neovim: .config/nvim
 	$(shell mkdir -p ~/.config)
 	@echo removing $^; \
 	$(shell rm -rf ~/$^)
