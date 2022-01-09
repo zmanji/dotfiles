@@ -8,10 +8,17 @@ import sys
 # Requires kitty to have 'write-clipboard' for clipboard_control
 
 def main():
+    if (tty_path := os.environ.get('YANK_TTY')):
+        out = os.open(tty_path, os.O_WRONLY, os.O_SYNC)
+        if not os.isatty(out):
+            raise 'YANK_TTY is not a real tty:'
+    elif sys.stdout.isatty():
+        tty_path = os.ttyname(sys.stdout.fileno())
+        out = os.open(tty_path, os.O_WRONLY, os.O_SYNC)
     # If in a dtach session, need to traverse ppids and envs to find a fresh `SSH_TTY`
-    if os.environ.get('DTACH'):
+    elif os.environ.get('DTACH'):
         raise "DTACH not supported yet"
-    if (tty_path := os.environ.get('SSH_TTY')):
+    elif (tty_path := os.environ.get('SSH_TTY')):
         out = os.open(tty_path, os.O_WRONLY, os.O_SYNC)
     else:
         raise "no ssh tty"

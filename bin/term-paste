@@ -2,6 +2,7 @@
 
 import base64
 import os
+import sys
 import termios
 import tty
 
@@ -9,16 +10,22 @@ import tty
 # Requires kitty to have 'write-read' for clipboard_control
 
 def main():
-    # If in a dtach session, need to traverse ppids and envs to find a fresh `SSH_TTY`
-    if os.environ.get('DTACH'):
-        raise "DTACH not supported yet"
-    if (tty_path := os.environ.get('SSH_TTY')):
+    if (tty_path := os.environ.get('PASTE_TTY')):
         out = os.open(tty_path, os.O_RDWR, os.O_SYNC)
-        old = termios.tcgetattr(out)
+        if not os.isatty(out):
+            raise 'PASTE_TTY is not a real tty:'
+    elif sys.stdout.isatty():
+        tty_path = os.ttyname(sys.stdout.fileno())
+        out = os.open(tty_path, os.O_RDWR, os.O_SYNC)
+    # If in a dtach session, need to traverse ppids and envs to find a fresh `SSH_TTY`
+    elif os.environ.get('DTACH'):
+        raise "DTACH not supported yet"
+    elif (tty_path := os.environ.get('SSH_TTY')):
+        out = os.open(tty_path, os.O_RDWR, os.O_SYNC)
     else:
         raise "no ssh tty"
 
-
+    old = termios.tcgetattr(out)
     try:
         tty.setraw(out)
         readclip = b'\033]52;c;?\a'
@@ -32,7 +39,7 @@ def main():
         termios.tcsetattr(out, termios.TCSADRAIN, old)
 
     decoded = base64.b64decode(payload)
-    print(decoded.decode('utf-8'))
+    print(decoded.decode('utf-8'), end='')
 
 if __name__ == "__main__":
     main()
