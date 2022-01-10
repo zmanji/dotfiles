@@ -1,6 +1,21 @@
--- this is a work in progress 
+-- vim:fdm=marker
+-- This is a work in progress
 
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.number = true
+vim.opt.ruler = true
+vim.opt.listchars = "tab:▸ ,eol:¬,trail:·"
+
+vim.opt.showbreak = '↪'
+vim.opt.autoread = true
+vim.opt.autowrite = true
+vim.opt.title = false
+vim.opt.mouse = 'a'
+vim.opt.wrap = false
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+vim.opt.clipboard = 'unnamed'
 
 local function zmanji_yank(lines, register)
 	-- Try very very hard to get the TTY of neovim and pass it as
@@ -48,3 +63,36 @@ if (ssh_tty ~= nil and ssh_tty ~= '' and vim.fn.has('ttyin') == 1) then
 		},
 	}
 end
+
+
+vim.cmd([[
+augroup basic_options 
+  autocmd!
+  autocmd VimResized * :wincmd =
+augroup END
+]])
+
+--Custom dictionary
+vim.opt.spellfile = "~/.vim/custom-dictionary.en.utf8.add"
+
+
+-- Backups and Undo {{{
+vim.opt.undofile = true
+-- }}}
+
+-- Highlights {{{
+vim.opt.cursorline = true
+vim.opt.colorcolumn = '+1'
+
+vim.cmd([[
+augroup highlights
+  autocmd!
+  " Hide the cursor line when the split is not in focus
+  autocmd WinLeave * setlocal nocursorline
+  autocmd WinEnter * setlocal cursorline
+  " Hide the column line when the split is not in focus
+  autocmd WinLeave * setlocal colorcolumn=""
+  autocmd WinEnter * setlocal colorcolumn=+1
+augroup END
+]])
+-- }}}g
