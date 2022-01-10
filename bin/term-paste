@@ -39,7 +39,7 @@ def main():
         termios.tcsetattr(out, termios.TCSADRAIN, old)
 
     decoded = base64.b64decode(payload)
-    print(decoded.decode('utf-8'), end='')
+    os.write(sys.stdout.buffer.fileno(), decoded)
 
 if __name__ == "__main__":
     main()
