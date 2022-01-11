@@ -11,6 +11,7 @@ vim.g.base16_shell_path = '~/.zsh/3rdparty'
 vim.g.base16colorspace = '256'
 vim.opt.background='dark'
 vim.cmd('colorscheme base16-tomorrow-night')
+vim.opt.termguicolors = true
 -- }}}
 
 -- Basic Options {{{
