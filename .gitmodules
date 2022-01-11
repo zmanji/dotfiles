@@ -88,3 +88,6 @@
 [submodule ".zsh/3rdparty/zsh-syntax-highlighting"]
 	path = .zsh/3rdparty/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".config/nvim/pack/base16/start/base16-vim"]
+	path = .config/nvim/pack/base16/start/base16-vim
+	url = https://github.com/fnune/base16-vim

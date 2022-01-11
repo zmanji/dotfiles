@@ -1,6 +1,19 @@
 -- vim:fdm=marker
 -- This is a work in progress
 
+-- Map Leaders {{{
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
+-- }}}
+
+-- Colorscheme {{{
+vim.g.base16_shell_path = '~/.zsh/3rdparty'
+vim.g.base16colorspace = '256'
+vim.opt.background='dark'
+vim.cmd('colorscheme base16-tomorrow-night')
+-- }}}
+
+-- Basic Options {{{
 vim.opt.number = true
 vim.opt.ruler = true
 vim.opt.listchars = "tab:▸ ,eol:¬,trail:·"
@@ -74,7 +87,7 @@ augroup END
 
 --Custom dictionary
 vim.opt.spellfile = "~/.vim/custom-dictionary.en.utf8.add"
-
+-- }}}
 
 -- Backups and Undo {{{
 vim.opt.undofile = true
