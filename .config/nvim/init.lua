@@ -9,6 +9,7 @@ vim.g.maplocalleader = ","
 -- Plugins {{{
 vim.api.nvim_set_keymap('n', '<Leader>u', ':UndotreeToggle<CR>', {noremap = true})
 
+vim.api.nvim_set_keymap('n', '<Leader>bd', ':Bdelete<CR>', {noremap = true})
 -- }}}
 
 -- Colorscheme {{{
@@ -134,3 +135,13 @@ vim.opt.smartcase = true
 vim.api.nvim_set_keymap('n', '<Leader>/', ':set hlsearch!<CR>', { noremap = true, silent = true })
 -- }}}
 
+-- Mappings {{{
+vim.api.nvim_set_keymap('n', ';', ':', {noremap = true})
+vim.api.nvim_set_keymap('n', ':', ';', {noremap = true})
+
+vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true})
+vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true})
+
+vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true})
+vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true})
+-- }}}

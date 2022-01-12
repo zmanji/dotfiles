@@ -109,3 +109,6 @@
 [submodule ".config/nvim/pack/tpope/start/vim-characterize"]
 	path = .config/nvim/pack/tpope/start/vim-characterize
 	url = https://github.com/tpope/vim-characterize
+[submodule ".config/nvim/pack/bbye/start/bbye"]
+	path = .config/nvim/pack/bbye/start/bbye
+	url = https://github.com/moll/vim-bbye
