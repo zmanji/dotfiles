@@ -16,6 +16,26 @@ vim.api.nvim_set_keymap('n', '<Leader>bd', ':Bdelete<CR>', {noremap = true})
 vim.g.startify_custom_header = {}
 -- }}}
 
+
+-- Tree Sitter {{{
+require('nvim-treesitter.configs').setup {
+        ensure_installed = "maintained",
+        highlight = {
+                enable = true,
+        },
+        indent = {
+                enable = true,
+        },
+}
+
+vim.cmd([[
+set foldmethod=expr
+set nofoldenable
+set foldexpr=nvim_treesitter#foldexpr()
+]])
+-- }}}
+
+
 -- }}}
 
 -- Colorscheme {{{

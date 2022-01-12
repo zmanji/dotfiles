@@ -118,3 +118,6 @@
 [submodule ".config/nvim/pack/mhinz/start/startify"]
 	path = .config/nvim/pack/mhinz/start/startify
 	url = https://github.com/mhinz/vim-startify/
+[submodule ".config/nvim/pack/treesitter/start/treesitter"]
+	path = .config/nvim/pack/treesitter/start/treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter/
