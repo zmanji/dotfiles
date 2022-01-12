@@ -7,7 +7,6 @@ vim.g.maplocalleader = ","
 -- }}}
 
 -- Plugins {{{
-
 vim.api.nvim_set_keymap('n', '<Leader>u', ':UndotreeToggle<CR>', {noremap = true})
 
 -- }}}
@@ -62,11 +61,12 @@ local function zmanji_paste()
 	local pty = vim.loop.fs_realpath('/proc/self/fd/0')
 
 	local po = io.popen('PASTE_TTY=' .. pty .. ' term-paste', 'r')
-        po:flush()
+  po:flush()
+
 	local output = po:read('*all')
 	po:close()
 
-	return {output}
+  return vim.split(output, "\n")
 end
 
 local ssh_tty = os.getenv("SSH_TTY")
@@ -134,13 +134,3 @@ vim.opt.smartcase = true
 vim.api.nvim_set_keymap('n', '<Leader>/', ':set hlsearch!<CR>', { noremap = true, silent = true })
 -- }}}
 
--- Mappings {{{
-vim.api.nvim_set_keymap('n', ';', ':', {noremap = true})
-vim.api.nvim_set_keymap('n', ':', ';', {noremap = true})
-
-vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true})
-vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true})
-
-vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true})
-vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true})
---

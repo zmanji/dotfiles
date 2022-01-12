@@ -27,18 +27,21 @@ def main():
 
     old = termios.tcgetattr(out)
     try:
+        termios.tcdrain(out)
         tty.setraw(out)
         readclip = b'\033]52;c;?\a'
         os.write(out, readclip)
+        termios.tcdrain(out)
 
         payload = os.read(out, 65536)
         payload = payload[7:]
         payload = payload[:-2]
 
-        decoded = base64.b64decode(payload)
+        decoded = base64.b64decode(payload + b'==')
         os.write(sys.stdout.buffer.fileno(), decoded)
 
     finally:
+        termios.tcdrain(out)
         termios.tcsetattr(out, termios.TCSADRAIN, old)
 
 
