@@ -118,3 +118,18 @@
 [submodule ".config/nvim/pack/treesitter/start/treesitter"]
 	path = .config/nvim/pack/treesitter/start/treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter/
+[submodule ".config/nvim/pack/nvim-lua/start/plenary"]
+	path = .config/nvim/pack/nvim-lua/start/plenary
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule ".config/nvim/pack/folke/start/todo"]
+	path = .config/nvim/pack/folke/start/todo
+	url = https://github.com/folke/todo-comments.nvim
+[submodule ".config/nvim/pack/folke/start/which-key"]
+	path = .config/nvim/pack/folke/start/which-key
+	url = https://github.com/folke/which-key.nvim
+[submodule ".config/nvim/pack/folke/start/trouble"]
+	path = .config/nvim/pack/folke/start/trouble
+	url = https://github.com/folke/trouble.nvim
+[submodule ".config/nvim/pack/telecope/start/telescope"]
+	path = .config/nvim/pack/telecope/start/telescope
+	url = https://github.com/nvim-telescope/telescope.nvim

@@ -6,6 +6,15 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 -- }}}
 
+-- Colorscheme {{{
+vim.opt.termguicolors = true
+vim.g.base16_shell_path = '~/.zsh/3rdparty'
+vim.g.base16colorspace = '256'
+vim.opt.background='dark'
+vim.cmd('colorscheme base16-tomorrow-night')
+-- }}}
+
+
 -- Plugins {{{
 vim.api.nvim_set_keymap('n', '<Leader>u', ':UndotreeToggle<CR>', {noremap = true})
 
@@ -35,15 +44,30 @@ set foldexpr=nvim_treesitter#foldexpr()
 ]])
 -- }}}
 
+require("todo-comments").setup {}
 
--- }}}
+require("which-key").setup {}
 
--- Colorscheme {{{
-vim.opt.termguicolors = true
-vim.g.base16_shell_path = '~/.zsh/3rdparty'
-vim.g.base16colorspace = '256'
-vim.opt.background='dark'
-vim.cmd('colorscheme base16-tomorrow-night')
+local trouble = require('trouble')
+
+local telescope = require('telescope')
+local actions = require("telescope.actions")
+
+telescope.setup {
+  defaults = {
+    mappings = {
+      i = { ["<c-j>"] = actions.move_selection_next,
+            ["<c-k>"] = actions.move_selection_previous,
+            ["<C-h>"] = "which_key",
+                        },
+    },
+  },
+}
+
+vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files find_command=fd,--type,f,--hidden,--no-ignore,--follow,--exclude,.git<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>b', ':Telescope buffers<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>s', ':Telescope live_grep<cr>', {noremap = true})
+
 -- }}}
 
 -- Basic Options {{{
@@ -127,7 +151,7 @@ vim.cmd [[
   augroup end
 ]]
 
---Custom dictionary
+-- Custom dictionary
 vim.opt.spellfile = "~/.vim/custom-dictionary.en.utf8.add"
 -- }}}
 
