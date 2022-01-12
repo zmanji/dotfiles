@@ -35,11 +35,12 @@ def main():
         payload = payload[7:]
         payload = payload[:-2]
 
+        decoded = base64.b64decode(payload)
+        os.write(sys.stdout.buffer.fileno(), decoded)
+
     finally:
         termios.tcsetattr(out, termios.TCSADRAIN, old)
 
-    decoded = base64.b64decode(payload)
-    os.write(sys.stdout.buffer.fileno(), decoded)
 
 if __name__ == "__main__":
     main()

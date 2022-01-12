@@ -94,6 +94,15 @@ vim.opt.spellfile = "~/.vim/custom-dictionary.en.utf8.add"
 vim.opt.undofile = true
 -- }}}
 
+-- {{{ Whitespace
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.shiftround = true
+vim.opt.textwidth = 80
+-- }}}
+
+
 -- Highlights {{{
 vim.opt.cursorline = true
 vim.opt.colorcolumn = '+1'
@@ -110,3 +119,22 @@ augroup highlights
 augroup END
 ]])
 -- }}}g
+
+-- Searching {{{
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.api.nvim_set_keymap('n', '<Leader>/', ':set hlsearch!<CR>', { noremap = true, silent = true })
+-- }}}
+
+-- Mappings {{{
+vim.api.nvim_set_keymap('n', ';', ':', {noremap = true})
+vim.api.nvim_set_keymap('n', ':', ';', {noremap = true})
+
+vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true})
+vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true})
+
+vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true})
+vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true})
+--
