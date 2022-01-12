@@ -10,6 +10,12 @@ vim.g.maplocalleader = ","
 vim.api.nvim_set_keymap('n', '<Leader>u', ':UndotreeToggle<CR>', {noremap = true})
 
 vim.api.nvim_set_keymap('n', '<Leader>bd', ':Bdelete<CR>', {noremap = true})
+
+
+-- Startify {{{
+vim.g.startify_custom_header = {}
+-- }}}
+
 -- }}}
 
 -- Colorscheme {{{
