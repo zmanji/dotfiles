@@ -6,12 +6,18 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 -- }}}
 
+-- Plugins {{{
+
+vim.api.nvim_set_keymap('n', '<Leader>u', ':UndotreeToggle<CR>', {noremap = true})
+
+-- }}}
+
 -- Colorscheme {{{
+vim.opt.termguicolors = true
 vim.g.base16_shell_path = '~/.zsh/3rdparty'
 vim.g.base16colorspace = '256'
 vim.opt.background='dark'
 vim.cmd('colorscheme base16-tomorrow-night')
-vim.opt.termguicolors = true
 -- }}}
 
 -- Basic Options {{{
@@ -100,8 +106,8 @@ vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.textwidth = 80
+vim.opt.breakindent = true
 -- }}}
-
 
 -- Highlights {{{
 vim.opt.cursorline = true

@@ -3,6 +3,8 @@
 import base64
 import os
 import sys
+import termios
+import tty
 
 # Uses OSC 52 to yank the passed argument
 # Requires kitty to have 'write-clipboard' for clipboard_control
@@ -27,7 +29,13 @@ def main():
     wordenc = base64.b64encode(data)
 
     pastepayload = b'\033]52;c;' + wordenc + b'\a'
-    os.write(out, pastepayload)
+
+    old = termios.tcgetattr(out)
+    try:
+        tty.setraw(out)
+        os.write(out, pastepayload)
+    finally:
+        termios.tcsetattr(out, termios.TCSADRAIN, old)
 
 if __name__ == '__main__':
     main()

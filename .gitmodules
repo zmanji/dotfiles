@@ -91,3 +91,21 @@
 [submodule ".config/nvim/pack/base16/start/base16-vim"]
 	path = .config/nvim/pack/base16/start/base16-vim
 	url = https://github.com/fnune/base16-vim
+[submodule ".config/nvim/pack/undotree/start/undotree"]
+	path = .config/nvim/pack/undotree/start/undotree
+	url = https://github.com/mbbill/undotree
+[submodule ".config/nvim/pack/tpope/start/vim-surround"]
+	path = .config/nvim/pack/tpope/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule ".config/nvim/pack/tpope/start/vim-commentary"]
+	path = .config/nvim/pack/tpope/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule ".config/nvim/pack/tpope/start/vim-repeat"]
+	path = .config/nvim/pack/tpope/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule ".config/nvim/pack/tpope/start/vim-eunuch"]
+	path = .config/nvim/pack/tpope/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule ".config/nvim/pack/tpope/start/vim-characterize"]
+	path = .config/nvim/pack/tpope/start/vim-characterize
+	url = https://github.com/tpope/vim-characterize
