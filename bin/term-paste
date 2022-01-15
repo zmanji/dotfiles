@@ -10,11 +10,7 @@ import tty
 # Requires kitty to have 'write-read' for clipboard_control
 
 def main():
-    if (tty_path := os.environ.get('PASTE_TTY')):
-        out = os.open(tty_path, os.O_RDWR, os.O_SYNC)
-        if not os.isatty(out):
-            raise 'PASTE_TTY is not a real tty:'
-    elif sys.stdout.isatty():
+    if sys.stdout.isatty():
         tty_path = os.ttyname(sys.stdout.fileno())
         out = os.open(tty_path, os.O_RDWR, os.O_SYNC)
     # If in a dtach session, need to traverse ppids and envs to find a fresh `SSH_TTY`
@@ -26,24 +22,35 @@ def main():
         raise "no ssh tty"
 
     old = termios.tcgetattr(out)
+
     try:
-        termios.tcdrain(out)
         tty.setraw(out)
         readclip = b'\033]52;c;?\a'
         os.write(out, readclip)
-        termios.tcdrain(out)
 
-        payload = os.read(out, 65536)
-        payload = payload[7:]
-        payload = payload[:-2]
+        payload = bytearray(65536)
 
-        decoded = base64.b64decode(payload + b'==')
-        os.write(sys.stdout.buffer.fileno(), decoded)
+        bytes_read = os.readv(out, [payload])
+        payload = payload[0:bytes_read]
+
+        idx = payload.index(b'\033]52;c;')
+        payload = payload[idx:]
+
+        while (idx := payload.find(b'\x1b\\')) == -1:
+            payload2 = bytearray(65536)
+            bytes_read = os.readv(out, [payload2])
+            payload2 = payload2[0:bytes_read]
+            payload += payload2
+
+        decoded = base64.b64decode(payload[7:idx])
 
     finally:
-        termios.tcdrain(out)
         termios.tcsetattr(out, termios.TCSADRAIN, old)
 
+    print(decoded.decode("utf-8"), end='')
+    sys.stdout.buffer.flush()
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     main()
+

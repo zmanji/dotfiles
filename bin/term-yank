@@ -10,11 +10,7 @@ import tty
 # Requires kitty to have 'write-clipboard' for clipboard_control
 
 def main():
-    if (tty_path := os.environ.get('YANK_TTY')):
-        out = os.open(tty_path, os.O_WRONLY, os.O_SYNC)
-        if not os.isatty(out):
-            raise 'YANK_TTY is not a real tty:'
-    elif sys.stdout.isatty():
+    if sys.stdout.isatty():
         tty_path = os.ttyname(sys.stdout.fileno())
         out = os.open(tty_path, os.O_WRONLY, os.O_SYNC)
     # If in a dtach session, need to traverse ppids and envs to find a fresh `SSH_TTY`
@@ -25,17 +21,23 @@ def main():
     else:
         raise "no ssh tty"
 
-    data = sys.stdin.buffer.read()
-    wordenc = base64.b64encode(data)
+    data = sys.stdin.read()
+    wordenc = base64.b64encode(data.encode())
 
     pastepayload = b'\033]52;c;' + wordenc + b'\a'
 
     old = termios.tcgetattr(out)
     try:
+        termios.tcdrain(out)
         tty.setraw(out)
-        os.write(out, pastepayload)
+        written = os.writev(out, [pastepayload])
+        if written != len(pastepayload):
+            raise "write was not atomic"
     finally:
+        termios.tcdrain(out)
         termios.tcsetattr(out, termios.TCSADRAIN, old)
 
 if __name__ == '__main__':
     main()
+
+
