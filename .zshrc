@@ -225,6 +225,18 @@ if [ -n "$TMUX" ] && tmux ls >/dev/null 2>/dev/null; then
   add-zsh-hook preexec zmanji_refresh_tmux_env
 fi
 
+if [ -n "$DTACH" ]; then
+  # custom atach script sets above and also sets a .env file
+  function zmanji_refresh_dtach_env() {
+    local socket="$DTACH"
+    local envfile="${socket%.dtach}.env"
+    if [[ -f "$envfile" ]]; then
+      source "$envfile"
+    fi
+  }
+  add-zsh-hook preexec zmanji_refresh_dtach_env
+fi
+
 
 source ~/.zsh/3rdparty/base16-tomorrow-night.sh
 
