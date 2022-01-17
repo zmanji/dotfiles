@@ -116,8 +116,6 @@ local cmp = require'cmp'
         ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
       else
         fallback()
       end
@@ -185,6 +183,21 @@ vim.opt.splitright = true
 
 vim.opt.clipboard = 'unnamedplus'
 
+if vim.fn.executable('rpbcopy') and vim.fn.executable('rpbpaste') then 
+	vim.g.clipboard = {
+		name = "zmanji-rpb",
+		copy={
+        ["+"] = {"rpbcopy"},
+        ["*"] = {"rpbcopy"},
+		},
+		paste={
+        ["+"] = {"rpbpaste"},
+        ["*"] = {"rpbpaste"},
+		},
+    cache_enabled=0,
+	}
+end
+
 vim.cmd([[
 augroup basic_options 
   autocmd!
@@ -198,6 +211,12 @@ vim.cmd [[
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
+]]
+
+-- Restore cursor position 
+vim.cmd [[
+    autocmd BufRead * autocmd FileType <buffer> ++once
+      \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
 ]]
 
 -- Custom dictionary
