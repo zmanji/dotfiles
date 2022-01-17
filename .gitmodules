@@ -145,3 +145,42 @@
 [submodule ".config/nvim/pack/tpope/start/vim-fugitive"]
 	path = .config/nvim/pack/tpope/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule ".config/nvim/pack/sneak/start/sneak"]
+	path = .config/nvim/pack/sneak/start/sneak
+	url = https://github.com/justinmk/vim-sneak
+[submodule ".config/nvim/pack/jiangmiao/start/auto-pairs"]
+	path = .config/nvim/pack/jiangmiao/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule ".config/nvim/pack/lsp/start/lspconfig"]
+	path = .config/nvim/pack/lsp/start/lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule ".config/nvim/pack/lsp/start/cmp"]
+	path = .config/nvim/pack/lsp/start/cmp
+	url = https://github.com/hrsh7th/nvim-cmp/
+[submodule ".config/nvim/pack/lsp/start/buffer"]
+	path = .config/nvim/pack/lsp/start/buffer
+	url = https://github.com/hrsh7th/cmp-buffer/
+[submodule ".config/nvim/pack/lsp/start/cmp-lsp"]
+	path = .config/nvim/pack/lsp/start/cmp-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp/
+[submodule ".config/nvim/pack/lsp/start/path"]
+	path = .config/nvim/pack/lsp/start/path
+	url = https://github.com/hrsh7th/cmp-path/
+[submodule ".config/nvim/pack/lsp/start/cmdline"]
+	path = .config/nvim/pack/lsp/start/cmdline
+	url = https://github.com/hrsh7th/cmp-cmdline/
+[submodule ".config/nvim/pack/lsp/start/cmp-vsnip"]
+	path = .config/nvim/pack/lsp/start/cmp-vsnip
+	url = https://github.com/hrsh7th/cmp-vsnip/
+[submodule ".config/nvim/pack/lsp/start/vim-vsnip"]
+	path = .config/nvim/pack/lsp/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip/
+[submodule ".config/nvim/pack/lsp/start/look"]
+	path = .config/nvim/pack/lsp/start/look
+	url = https://github.com/octaltree/cmp-look
+[submodule ".config/nvim/pack/lsp/start/spell"]
+	path = .config/nvim/pack/lsp/start/spell
+	url = https://github.com/f3fora/cmp-spell
+[submodule ".config/nvim/pack/lsp/start/spellsitter"]
+	path = .config/nvim/pack/lsp/start/spellsitter
+	url = https://github.com/lewis6991/spellsitter.nvim
