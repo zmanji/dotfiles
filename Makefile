@@ -194,7 +194,7 @@ emacs-bin: bin/README.emacs bin/ec bin/et
 	chmod +x ~/bin/git-squash
 
 .PHONY: launchd
-launchd: launchd/zmanji.emacs.plist launchd/zmanji.startpage.plist
+launchd: launchd/zmanji.emacs.plist launchd/zmanji.startpage.plist launchd/zmanji.pbcopy.plist launchd/zmanji.pbpaste.plist
 	mkdir -p ~/Library/LaunchAgents/
 	@echo removing $^; \
 	$(foreach df, $^, rm -rf ~/Library/LaunchAgents/$$(basename $(df)));

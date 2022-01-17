@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+	<key>Label</key>
+	<string>zmanji.pbcopy</string>
+	<key>ProgramArguments</key>
+	<array>
+	    <string>/bin/sh</string>
+	    <string>-c</string>
+      <string>LC_CTYPE=en_US.UTF-8 mkdir -p /Users/zmanji/.run/; pbcopy</string>
+    </array>
+  <key>RunAtLoad</key>
+  <true/>
+	<key>Sockets</key>
+	<dict>
+	    <key>Listeners</key>
+	    <dict>
+        <key>SockPathName</key>
+        <string>/Users/zmanji/.run/pbcopy.socket</string>
+	    </dict>
+	</dict>
+	<key>inetdCompatibility</key>
+	<dict>
+	    <key>Wait</key>
+	    <false/>
+	</dict>
+    </dict>
+</plist>
