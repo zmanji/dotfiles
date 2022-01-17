@@ -133,3 +133,6 @@
 [submodule ".config/nvim/pack/telecope/start/telescope"]
 	path = .config/nvim/pack/telecope/start/telescope
 	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule ".config/nvim/pack/tpope/start/vim-obsession"]
+	path = .config/nvim/pack/tpope/start/vim-obsession
+	url = https://github.com/tpope/vim-obsession

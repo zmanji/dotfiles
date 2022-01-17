@@ -85,7 +85,7 @@ vim.opt.wrap = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.clipboard = 'unnamed'
+vim.opt.clipboard = 'unnamedplus'
 
 vim.cmd([[
 augroup basic_options 
