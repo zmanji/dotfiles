@@ -165,6 +165,7 @@ local cmp = require'cmp'
   --   capabilities = capabilities
   -- }
 
+  -- TODO(zmanji) https://github.com/neovim/nvim-lspconfig
 -- }}}
 
 -- Basic Options {{{
