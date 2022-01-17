@@ -60,13 +60,30 @@ telescope.setup {
             ["<c-k>"] = actions.move_selection_previous,
             ["<C-h>"] = "which_key",
                         },
+
+      n = { ["<c-j>"] = actions.move_selection_next,
+            ["<c-k>"] = actions.move_selection_previous,
+            ["<C-h>"] = "which_key",
+                        },
+
     },
   },
 }
 
+
+require("project_nvim").setup()
+require('telescope').load_extension('projects')
+
+
 vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files find_command=fd,--type,f,--hidden,--no-ignore,--follow,--exclude,.git<cr>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>b', ':Telescope buffers<cr>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>s', ':Telescope live_grep<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>p', ':Telescope projects<cr>', {noremap = true})
+
+
+require('neogit').setup {}
+
+vim.api.nvim_set_keymap('n', '<leader>g', ':Neogit<cr>', {noremap = true})
 
 -- }}}
 

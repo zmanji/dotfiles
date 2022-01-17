@@ -136,3 +136,12 @@
 [submodule ".config/nvim/pack/tpope/start/vim-obsession"]
 	path = .config/nvim/pack/tpope/start/vim-obsession
 	url = https://github.com/tpope/vim-obsession
+[submodule ".config/nvim/pack/ahmedkhalf/start/project.nvim"]
+	path = .config/nvim/pack/ahmedkhalf/start/project.nvim
+	url = https://github.com/ahmedkhalf/project.nvim
+[submodule ".config/nvim/pack/neogit/start/neogit"]
+	path = .config/nvim/pack/neogit/start/neogit
+	url = https://github.com/TimUntersberger/neogit
+[submodule ".config/nvim/pack/tpope/start/vim-fugitive"]
+	path = .config/nvim/pack/tpope/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
