@@ -536,7 +536,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a 'background=#5b6268'"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket set-colors -a 'background=#5b6268'"
                                     }
                                 ],
                                 "type": "basic"
@@ -589,7 +589,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a --reset"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket set-colors -a --reset"
                                     }
                                 ],
                                 "type": "basic"
@@ -624,7 +624,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock set-colors -a --reset"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket set-colors -a --reset"
                                     }
                                 ],
                                 "type": "basic"
@@ -653,7 +653,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py left"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py left"
                                     }
                                 ],
                                 "type": "basic"
@@ -682,7 +682,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py right"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py right"
                                     }
                                 ],
                                 "type": "basic"
@@ -711,7 +711,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py bottom"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py bottom"
                                     }
                                 ],
                                 "type": "basic"
@@ -740,7 +740,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten neighbor.py top"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py top"
                                     }
                                 ],
                                 "type": "basic"
@@ -769,7 +769,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock close-window"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket close-window"
                                     }
                                 ],
                                 "type": "basic"
@@ -803,7 +803,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten tab.py next"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten tab.py next"
                                     }
                                 ],
                                 "type": "basic"
@@ -837,7 +837,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock kitten tab.py previous"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten tab.py previous"
                                     }
                                 ],
                                 "type": "basic"
@@ -866,7 +866,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/tmp/kitty.sock new-window"
+                                        "shell_command": "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket new-window"
                                     }
                                 ],
                                 "type": "basic"
