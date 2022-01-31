@@ -198,6 +198,10 @@ if vim.fn.executable('rpbcopy') and vim.fn.executable('rpbpaste') then
 	}
 end
 
+if vim.fn.executable('ropen') then
+  vim.g.netrw_browsex_viewer = 'ropen'
+end
+
 vim.cmd([[
 augroup basic_options 
   autocmd!
