@@ -189,3 +189,7 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 defaults write net.kovidgoyal.kitty NSUserKeyEquivalents -dict-add "Hide kitty" '\0'
 defaults write net.kovidgoyal.kitty NSUserKeyEquivalents -dict-add "Hide Others" '\0'
+
+# Alt-Tab app mapping aligned with karabiner
+defaults write com.lwouis.alt-tab-macos nextWindowShortcut F19
+defaults write com.lwouis.alt-tab-macos nextWindowShortcut2 F18 
