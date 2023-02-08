@@ -2,6 +2,7 @@ elpa/
 eshell/
 auto-save-list/
 undo/
+eln-cache/
 places
 projectile-bookmarks.eld
 projectile.cache
