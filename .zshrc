@@ -69,8 +69,8 @@ if command -v broot >/dev/null 2>&1; then
 fi
 
 # Use homebrew curl if available
-if [[ -d "/usr/local/opt/curl/bin/" ]]; then
-  export PATH="/usr/local/opt/curl/bin:$PATH"
+if [[ -d "$(brew --prefix)/opt/curl/bin/" ]]; then
+  export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
 fi
 
 HISTFILE=~/.zsh_history
@@ -183,7 +183,7 @@ if command -v brew >/dev/null 2>&1; then
     # * CTRL-T => find file
     # * ALT-C cd
     # * CTRL-R history search
-    source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+    source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
   fi
 fi
 

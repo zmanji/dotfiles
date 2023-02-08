@@ -30,11 +30,11 @@ ripgrep: .ripgreprc
 # Assuming dnsmasq is running
 .PHONY: dns
 dns: local-services.conf
-	$(shell mkdir -p /usr/local/etc/dnsmasq.d/)
+	$(shell mkdir -p /opt/homebrew/etc/dnsmasq.d/)
 	@echo removing $^; \
-	$(foreach df, $^, rm -f /usr/local/etc/dnsmasq.d/$(df))
+	$(foreach df, $^, rm -f /opt/homebrew/etc/dnsmasq.d/$(df))
 	@echo Installing $^; \
-	$(foreach df, $^, ln -s $(CURDIR)/$(df) /usr/local/etc/dnsmasq.d/; )
+	$(foreach df, $^, ln -s $(CURDIR)/$(df) /opt/homebrew/etc/dnsmasq.d/; )
 
 .PHONY: vim
 vim: .vim .vimrc .gvimrc .surfingkeys.js
@@ -153,9 +153,9 @@ hunspell: .hunspell_en_CA .hunspell_en_US
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 	# Update vim spelling file from hunspell dicts
-	/usr/local/bin/vim -u NONE -e -c "mkspell! ~/.vim/spell/en ~/Library/Spelling/en_CA ~/Library/Spelling/en_US" -c q
+	/opt/homebrew/bin/vim -u NONE -e -c "mkspell! ~/.vim/spell/en ~/Library/Spelling/en_CA ~/Library/Spelling/en_US" -c q
 	# Update vim personal dict from hunspell dict
-	/usr/local/bin/vim -U NONE -e -c "mkspell! ~/.vim/custom-dictionary.en.utf8.add" -c q
+	/opt/homebrew/bin/vim -U NONE -e -c "mkspell! ~/.vim/custom-dictionary.en.utf8.add" -c q
 
 .PHONY: idea
 idea: .ideavimrc
