@@ -73,11 +73,6 @@ if command -v brew >/dev/null 2>&1; then
 fi
 if [[ -f /usr/share/autojump/autojump.sh ]]; then source /usr/share/autojump/autojump.sh; fi
 
-if command -v broot >/dev/null 2>&1; then 
-  eval "$(broot --print-shell-function zsh)";
-  broot --set-install-state installed;
-fi
-
 # Use homebrew curl if available
 if [[ -d "$(brew --prefix)/opt/curl/bin/" ]]; then
   export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
