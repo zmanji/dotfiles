@@ -388,7 +388,7 @@
   (add-hook 'text-mode-hook 'flyspell-mode)
   :config
   ;; TODO(zmanji): Check that hunspell exists
-  (setq ispell-program-name "/usr/local/bin/hunspell")
+  (setq ispell-program-name "/opt/homebrew/bin/hunspell")
   (setq ispell-silently-savep t)
   (setq ispell-really-hunspell t)
 

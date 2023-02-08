@@ -425,7 +425,7 @@ def generate_kitty() -> list[Rule]:
     )
 
     def kitty_command(cmd):
-        kitty_command_prefix = "/usr/local/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket "
+        kitty_command_prefix = "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket "
         return ToKey(shell_command=kitty_command_prefix + cmd)
 
     return [
