@@ -1,3 +1,13 @@
+
+# copied from zshenv because on macos a path_helper utility
+# adds many values to the path https://0xmachos.com/2021-05-13-zsh-path-macos/
+# for brew on m1 macs
+if command -v /opt/homebrew/bin/brew >/dev/null 2>&1; then
+  export PATH="$(/opt/homebrew/bin/brew --prefix)/bin:${PATH}"
+  export PATH="$(/opt/homebrew/bin/brew --prefix)/sbin:${PATH}"
+fi
+
+
 export PATH="${HOME}/bin:${PATH}"
 if command -v rbenv >/dev/null 2>&1;
 then
