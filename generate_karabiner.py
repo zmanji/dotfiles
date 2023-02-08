@@ -563,7 +563,7 @@ def generate_kitty() -> list[Rule]:
 # trying to swtich between the internal vs external bindings
 def generate_window() -> list[Rule]:
     def hs_command(f):
-        cmd = f"/usr/local/bin/hs -c '{f}'"
+        cmd = f"/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c '{f}'"
         return ToKey(shell_command=cmd)
 
     internal_kb = Modifiers(mandatory=["command", "option"])

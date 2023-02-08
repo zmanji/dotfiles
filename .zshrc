@@ -31,6 +31,10 @@ if command -v direnv >/dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
 if command -v nodenv >/dev/null 2>&1; then eval "$(nodenv init -)"; fi
 
 
+if [[ -d "/Applications/Hammerspoon.app/Contents/Frameworks/hs/" ]]; then
+  export PATH="/Applications/Hammerspoon.app/Contents/Frameworks/hs/:$PATH"
+fi
+
 export KITTY_SHELL_INTEGRATION="no-cursor no-title"
 # https://sw.kovidgoyal.net/kitty/shell-integration/#manual-shell-integration
 if test -n "$KITTY_INSTALLATION_DIR"; then

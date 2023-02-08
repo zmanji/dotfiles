@@ -54,7 +54,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'move_left()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
                                     }
                                 ],
                                 "type": "basic"
@@ -99,7 +99,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'move_right()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
                                     }
                                 ],
                                 "type": "basic"
@@ -144,7 +144,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'move_up()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
                                     }
                                 ],
                                 "type": "basic"
@@ -189,7 +189,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'move_down()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
                                     }
                                 ],
                                 "type": "basic"
@@ -234,7 +234,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'full()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
                                     }
                                 ],
                                 "type": "basic"
@@ -270,7 +270,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'move_left()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
                                     }
                                 ],
                                 "type": "basic"
@@ -306,7 +306,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'move_right()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
                                     }
                                 ],
                                 "type": "basic"
@@ -342,7 +342,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'move_up()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
                                     }
                                 ],
                                 "type": "basic"
@@ -378,7 +378,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'move_down()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
                                     }
                                 ],
                                 "type": "basic"
@@ -414,7 +414,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/hs -c 'full()'"
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
                                     }
                                 ],
                                 "type": "basic"

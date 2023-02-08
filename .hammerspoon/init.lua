@@ -4,7 +4,8 @@ local meh = {"ctrl", "shift", "alt", "cmd"}
 local log = hs.logger.new('zmanji')
 
 require("hs.ipc")
-hs.ipc.cliInstall()
+-- used to use hs.ipc.cliInstall here but instead just add hs binary
+-- straight to path
 
 require("hs.json")
 
@@ -39,7 +40,6 @@ end
 
 
 local axapps = {
-  "org.epichrome.app.Todoist",
   "com.spotify.client",
   "org.mozilla.firefox",
 }
