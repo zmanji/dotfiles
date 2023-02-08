@@ -10,8 +10,9 @@ from typing import Optional
 
 @dataclass(frozen=True)
 class Ident:
-    product_id: int
-    vendor_id: int
+    product_id: Optional[int] = None
+    vendor_id: Optional[int] = None
+    is_built_in_keyboard: Optional[bool] = None
 
 
 @dataclass(frozen=True)
@@ -90,6 +91,7 @@ internal_kb_cond = Condition(
     description="Internal Keyboard",
     _type="device_if",
     identifiers=[
+        Ident(is_built_in_keyboard=True),
         Ident(product_id=628, vendor_id=1452),
         Ident(product_id=832, vendor_id=1452),
         Ident(product_id=627, vendor_id=1452),
