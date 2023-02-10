@@ -161,6 +161,26 @@ function full()
   win:setFrame(f, 0)
 end
 
+function move_screen_north()
+  local win = hs.window.focusedWindow()
+  win:moveOneScreenNorth(false, true)
+end
+
+function move_screen_south()
+  local win = hs.window.focusedWindow()
+  win:moveOneScreenSouth(false, true)
+end
+
+function move_screen_east()
+  local win = hs.window.focusedWindow()
+  win:moveOneScreenEast(false, true)
+end
+
+function move_screen_west()
+  local win = hs.window.focusedWindow()
+  win:moveOneScreenWest(false, true)
+end
+
 -- this is called by alfred workflow
 function get_all_windows_json()
     local items = {}

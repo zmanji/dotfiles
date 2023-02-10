@@ -669,6 +669,46 @@ def generate_window() -> list[Rule]:
                 )
             ],
         ),
+        Rule(
+            description="[window management] [Redox] hyper w is move window to north display",
+            manipulators=[
+                Manipulator(
+                    conditions=[redox_kb_cond],
+                    _from=FromKey(key_code="w", modifiers=redox_kb),
+                    to=[hs_command("move_screen_north()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Redox] hyper a is move window to west display",
+            manipulators=[
+                Manipulator(
+                    conditions=[redox_kb_cond],
+                    _from=FromKey(key_code="a", modifiers=redox_kb),
+                    to=[hs_command("move_screen_west()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Redox] hyper d is move window to east display",
+            manipulators=[
+                Manipulator(
+                    conditions=[redox_kb_cond],
+                    _from=FromKey(key_code="d", modifiers=redox_kb),
+                    to=[hs_command("move_screen_east()")],
+                )
+            ],
+        ),
+        Rule(
+            description="[window management] [Redox] hyper s is move window to south display",
+            manipulators=[
+                Manipulator(
+                    conditions=[redox_kb_cond],
+                    _from=FromKey(key_code="s", modifiers=redox_kb),
+                    to=[hs_command("move_screen_south()")],
+                )
+            ],
+        ),
     ]
 
 

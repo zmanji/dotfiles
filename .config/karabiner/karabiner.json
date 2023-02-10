@@ -427,6 +427,150 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_if",
+                                        "description": "Redox",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 65261
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_north()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Redox] hyper w is move window to north display"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Redox",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 65261
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_west()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Redox] hyper a is move window to west display"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Redox",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 65261
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_east()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Redox] hyper d is move window to east display"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Redox",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 65261
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_south()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Redox] hyper s is move window to south display"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^org\\.mozilla\\.firefox$"
