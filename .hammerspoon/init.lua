@@ -163,22 +163,22 @@ end
 
 function move_screen_north()
   local win = hs.window.focusedWindow()
-  win:moveOneScreenNorth(false, true)
+  win:moveOneScreenNorth(true, true, 0)
 end
 
 function move_screen_south()
   local win = hs.window.focusedWindow()
-  win:moveOneScreenSouth(false, true)
+  win:moveOneScreenSouth(true, true, 0)
 end
 
 function move_screen_east()
   local win = hs.window.focusedWindow()
-  win:moveOneScreenEast(false, true)
+  win:moveOneScreenEast(true, true, 0)
 end
 
 function move_screen_west()
   local win = hs.window.focusedWindow()
-  win:moveOneScreenWest(false, true)
+  win:moveOneScreenWest(true, true, 0)
 end
 
 -- this is called by alfred workflow
