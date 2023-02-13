@@ -1,5 +1,5 @@
 function removeAppAd(elem) {
-  const ad = elem.querySelector("a[aria-label*='Messenger App for Mac']");
+  const ad = elem.querySelector("a[aria-label*='for Mac']");
   if (ad == null) {
     console.log("ad not found");
     return;

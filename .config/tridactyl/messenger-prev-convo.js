@@ -2,6 +2,11 @@ var goup = function () {
     var links = Array.from(document.querySelectorAll('[role=navigation] a[role=link][href^="/t"]'));
 
     var current = links.filter(l => {
+      var attrs = l.attributes || new NamedNodeMap();
+      var label = attrs.getNamedItem("aria-label") || {};
+      if (label.value === 'Chats') {
+        return false;
+      }
       var u = new URL(l.href)
       return u.href === window.location.href || u.href.startsWith(window.location.href) || window.location.href.startsWith(u.href);
     })
