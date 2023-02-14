@@ -76,6 +76,12 @@ defaults write com.apple.dock showAppExposeGestureEnabled -bool false
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 defaults write com.apple.dock showMissionControlGestureEnabled -bool false
 
+# Disable the globe/fn emoji selector
+defaults write com.apple.HIToolbox AppleFnUsageType -int 0
+
+# Disable dictation
+defaults write com.apple.HIToolbox AppleDictationAutoEnable -int 0
+
 # Do not re arrange spaces based on use this breaks a lot of window tooling
 defaults write com.apple.dock mru-spaces -bool false
 
