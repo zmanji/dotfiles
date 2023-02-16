@@ -78,8 +78,10 @@ fi
 if [[ -f /usr/share/autojump/autojump.sh ]]; then source /usr/share/autojump/autojump.sh; fi
 
 # Use homebrew curl if available
-if [[ -d "$(brew --prefix)/opt/curl/bin/" ]]; then
-  export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
+if command -v brew >/dev/null 2>&1; then
+  if [[ -d "$(brew --prefix)/opt/curl/bin/" ]]; then
+    export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
+  fi
 fi
 
 HISTFILE=~/.zsh_history
