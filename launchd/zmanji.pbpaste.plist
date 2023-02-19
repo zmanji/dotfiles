@@ -4,26 +4,29 @@
     <dict>
 	<key>Label</key>
 	<string>zmanji.pbpaste</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+          <key>LANG</key>
+          <string>en_US.UTF-8</string>
+  </dict>
 	<key>ProgramArguments</key>
 	<array>
-	    <string>/bin/sh</string>
-	    <string>-c</string>
-      <string>LC_CTYPE=en_US.UTF-8 mkdir -p /Users/zmanji/.run/; pbpaste</string>
+      <string>/usr/bin/pbpaste</string>
     </array>
   <key>RunAtLoad</key>
   <true/>
 	<key>Sockets</key>
 	<dict>
-	    <key>Listeners</key>
-	    <dict>
+      <key>Listeners</key>
+      <dict>
         <key>SockPathName</key>
         <string>/Users/zmanji/.run/pbpaste.socket</string>
-	    </dict>
+      </dict>
 	</dict>
 	<key>inetdCompatibility</key>
 	<dict>
-	    <key>Wait</key>
-	    <false/>
+      <key>Wait</key>
+      <false/>
 	</dict>
     </dict>
 </plist>
