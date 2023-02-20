@@ -4,7 +4,7 @@ var goup = function () {
     var current = links.filter(l => {
       var attrs = l.attributes || new NamedNodeMap();
       var label = attrs.getNamedItem("aria-label") || {};
-      if (label.value === 'Chats') {
+      if (label.value && label.value.startsWith('Chats')) {
         return false;
       }
       var u = new URL(l.href)
