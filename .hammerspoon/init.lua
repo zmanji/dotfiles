@@ -42,6 +42,7 @@ end
 local axapps = {
   "com.spotify.client",
   "org.mozilla.firefox",
+  "com.electron.nativefier.todoist-nativefier-6c11dd",
 }
 
 -- Vimac will set this setting for everything but things can break, so just set
