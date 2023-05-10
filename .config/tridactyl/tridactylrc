@@ -33,6 +33,9 @@ bindurl messenger.com --mode=insert <MC-t> fillcmdline tabopen
 
 bindurl messenger.com --mode=normal i js -r messenger-focus-input.js
 
+unbindurl phanpy.social --mode=normal j
+unbindurl phanpy.social --mode=normal k
+
 bind --mode=ex <C-j> ex.next_completion
 bind --mode=ex <C-k> ex.prev_completion
 unbind --mode=ex <Tab>
