@@ -193,8 +193,14 @@ function get_all_windows_json()
         return
       end
 
+
       local app = w:application()
       local title = app:name() .. " " .. w:title()
+
+      if app:bundleID() == nil then
+        return
+      end
+
       local bundlePath = hs.application.pathForBundleID(app:bundleID())
       local uid = app:bundleID() .. " " .. w:title()
 
