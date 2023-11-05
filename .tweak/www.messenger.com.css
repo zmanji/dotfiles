@@ -3,9 +3,17 @@
  * with slight adjustments
  */
 
+
+@-moz-document domain("messenger.com")/*[[inbox]]*/ {
 	:root, .__fb-light-mode {
+		--always-black: #cecece !important;
 		--card-background: #1e1e1e !important;
+		--chat-text-blockquote-color-background-line: rgba(255, 255, 255, 0.19) !important;
+		--chat-text-blockquote-color-text-primary-media: rgba(255, 255, 255, 0.7) !important;
+		--chat-incoming-message-bubble-background-color: #303030 !important;
+		--chat-replied-message-background-color: rgba(255, 255, 255, 0.12) !important;
 		--comment-background: #292929 !important;
+		--comment-footer-background: #232323 !important;
 		--card-background-flat: #292929 !important;
 		--disabled-button-background: #373737 !important;
 		--divider: #4d4d4d !important;
@@ -31,6 +39,8 @@
 		--surface-background: #1e1e1e !important;
 		--wash: #373737 !important;
 		--web-wash: #1e1e1e !important;
+		/* fix chrome light theme scrollbar */
+		color-scheme: dark !important; 
 	}
 
 	div[style="--secondary-button-background:#e4e6eb;"] {
@@ -92,5 +102,6 @@
 		box-shadow: 0 2px 4px var(--shadow-2) !important;
 	}
 
-  .ljqsnud1.odn2s2vf{background-color:var(--wash)!important}
+	/*[[ccb]]*/
+	}
 
