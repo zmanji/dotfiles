@@ -6,15 +6,32 @@
   <true/>
   <key>Label</key>
   <string>zmanji.startpage</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+      <key>PYTHONUNBUFFERED</key>
+      <string>1</string>
+  </dict>
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/zmanji/bin/startpage.sh</string>
+    <string>/Users/zmanji/bin/startpage.py</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
+  <key>Sockets</key>
+  <dict>
+    <key>Listeners</key>
+    <dict>
+      <key>SockNodeName</key>
+      <string>127.1.0.1</string>
+      <key>SockServiceName</key>
+      <string>80</string>
+    </dict>
+  </dict>
   <key>StandardOutPath</key>
   <string>/tmp/zmanji.startpage.stdout.log</string>
   <key>StandardErrorPath</key>
   <string>/tmp/zmanji.startpage.stderr.log</string>
+  <key>Debug</key>
+  <true/>
 </dict>
 </plist>
