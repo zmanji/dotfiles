@@ -58,8 +58,8 @@ def main():
             f"(http://{url_host}:{port}/) ..."
         )
         print("About to server forever")
-        #httpd.serve_forever()
-        httpd.handle_request()
+        httpd.serve_forever()
+        #httpd.handle_request()
         print("Stopped serving forever")
 
 
