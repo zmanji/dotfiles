@@ -2,20 +2,16 @@
 
 from pathlib import Path
 import os
-import ctypes
 from pprint import pprint
 
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
-from ctypes.util import find_library
-from errno import ENOENT, ESRCH, EALREADY
 from socket import socket
-
-libc = ctypes.CDLL(find_library('c'))
 
 
 def launch_activate_socket(name: str):
     from ctypes import byref, CDLL, c_int, c_size_t, POINTER
+    libc = CDLL('/usr/lib/libc.dylib')
     fds = POINTER(c_int)()
     count = c_size_t()
 
