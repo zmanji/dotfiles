@@ -31,7 +31,5 @@
   <string>/tmp/zmanji.startpage.stdout.log</string>
   <key>StandardErrorPath</key>
   <string>/tmp/zmanji.startpage.stderr.log</string>
-  <key>Debug</key>
-  <true/>
 </dict>
 </plist>
