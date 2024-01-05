@@ -35,9 +35,6 @@ def main():
         raise Exception(f"Too many sockets: {len(sockets)}")
     socket = sockets[0]
 
-    # TODO set this in the plist
-    os.chdir(Path.home() / ".config" / "startpage")
-
 
     HTTPServer.address_family = socket.family
     SimpleHTTPRequestHandler.protocol_version = "HTTP/1.1"
