@@ -360,6 +360,34 @@ def generate_alfred() -> list[Rule]:
     ]
 
 
+def generate_messenger() -> list[Rule]:
+    cond = Condition(
+        _type="frontmost_application_if",
+        bundle_identifiers=["^com\.facebook\.archon\.developerID$"],
+    )
+
+    return [
+        Rule(
+            description="[Messenger] use C-j for prev convo",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond], _from=ctrl_j, to=[ToKey(key_code="close_bracket", modifiers=["command"])]
+                )
+            ],
+        ),
+        Rule(
+            description="[Messenger] use C-k for next convo",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond],
+                    _from=ctrl_k,
+                    to=[ToKey(key_code="open_bracket", modifiers=["command"])],
+                )
+            ],
+        ),
+    ]
+
+
 def generate_firefox() -> list[Rule]:
     cond = Condition(
         _type="frontmost_application_if",
@@ -720,6 +748,7 @@ def generate_rules() -> list[Rule]:
         + generate_alfred()
         + generate_discord()
         + generate_slack()
+        + generate_messenger()
         + generate_spotify()
         + generate_imessage()
         + generate_internal_mods()
