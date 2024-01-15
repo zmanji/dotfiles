@@ -198,4 +198,17 @@ defaults write net.kovidgoyal.kitty NSUserKeyEquivalents -dict-add "Hide Others"
 
 # Alt-Tab app mapping aligned with karabiner
 defaults write com.lwouis.alt-tab-macos nextWindowShortcut F19
-defaults write com.lwouis.alt-tab-macos nextWindowShortcut2 F18 
+defaults write com.lwouis.alt-tab-macos nextWindowShortcut2 F18
+
+# This needs brew install duti to be run
+#
+#
+if [ -x /opt/homebrew/bin/duti ]; then
+    # open svg files in Firefox
+    duti -s org.mozilla.firefox svg all
+    # Open webm and mkv in vlc
+    duti -s org.videolan.vlc org.matroska.mkv all
+    duti -s org.videolan.vlc webm all
+else
+    echo 'Run btew install duti and rerun to fix file associations'
+fi
