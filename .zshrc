@@ -85,10 +85,11 @@ if command -v brew >/dev/null 2>&1; then
 fi
 
 HISTFILE=~/.zsh_history
-HISTSIZE=100000
+HISTSIZE=500000
 SAVEHIST=$HISTSIZE
 
 setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_DUPS
