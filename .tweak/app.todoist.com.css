@@ -3,6 +3,7 @@
 body
 {
   font-family: -apple-system, BlinkMacSystemFont !important;
+  color: pink !important;
 }
 
 .task_list_item .task_checkbox {
