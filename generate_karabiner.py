@@ -113,6 +113,14 @@ redox_kb_cond = Condition(
     ],
 )
 
+equals60_kb_cond = Condition(
+    description="Equals 60",
+    _type="device_if",
+    identifiers=[
+        Ident(product_id=30344, vendor_id=17011)
+    ],
+
+)
 
 def generate_cmd_window_switch() -> list[Rule]:
     cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
@@ -587,15 +595,113 @@ def generate_kitty() -> list[Rule]:
     ]
 
 
+def hs_command(f):
+    cmd = f"/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c '{f}'"
+    return ToKey(shell_command=cmd)
+
+
+
 # This used to live in hammerspoon, but there was too much flakyness when
 # trying to swtich between the internal vs external bindings
-def generate_window() -> list[Rule]:
-    def hs_command(f):
-        cmd = f"/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c '{f}'"
-        return ToKey(shell_command=cmd)
+def generate_window_external(name: str, condition: Condition) -> list[Rule]:
+    hyper = Modifiers(mandatory=["command", "shift", "option", "control"])
+    return [
+        Rule(
+            description=f"[window management] [{name}] hyper h is move window left",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="h", modifiers=hyper),
+                    to=[hs_command("move_left()")],
+                )
+            ],
+        ),
+        Rule(
+            description=f"[window management] [{name}] hyper l is move window right",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="l", modifiers=hyper),
+                    to=[hs_command("move_right()")],
+                )
+            ],
+        ),
+        Rule(
+            description=f"[window management] [{name}] hyper k is move window up",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="k", modifiers=hyper),
+                    to=[hs_command("move_up()")],
+                )
+            ],
+        ),
+        Rule(
+            description=f"[window management] [{name}] hyper j is move window down",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="j", modifiers=hyper),
+                    to=[hs_command("move_down()")],
+                )
+            ],
+        ),
+        Rule(
+            description=f"[window management] [{name}] hyper f is maximize window",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="f", modifiers=hyper),
+                    to=[hs_command("full()")],
+                )
+            ],
+        ),
+        Rule(
+            description=f"[window management] [{name}] hyper w is move window to north display",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="w", modifiers=hyper),
+                    to=[hs_command("move_screen_north()")],
+                )
+            ],
+        ),
+        Rule(
+            description=f"[window management] [{name}] hyper a is move window to west display",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="a", modifiers=hyper),
+                    to=[hs_command("move_screen_west()")],
+                )
+            ],
+        ),
+        Rule(
+            description=f"[window management] [{name}] hyper d is move window to east display",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="d", modifiers=hyper),
+                    to=[hs_command("move_screen_east()")],
+                )
+            ],
+        ),
+        Rule(
+            description=f"[window management] [{name}] hyper s is move window to south display",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="s", modifiers=hyper),
+                    to=[hs_command("move_screen_south()")],
+                )
+            ],
+        ),
+    ]
 
+# This used to live in hammerspoon, but there was too much flakyness when
+# trying to swtich between the internal vs external bindings
+def generate_window_internal() -> list[Rule]:
     internal_kb = Modifiers(mandatory=["command", "option"])
-    redox_kb = Modifiers(mandatory=["command", "shift", "option", "control"])
     return [
         Rule(
             description="[window management] [Internal Keyboard] cmd+alt h is move window left",
@@ -647,102 +753,13 @@ def generate_window() -> list[Rule]:
                 )
             ],
         ),
-        Rule(
-            description="[window management] [Redox] hyper h is move window left",
-            manipulators=[
-                Manipulator(
-                    conditions=[redox_kb_cond],
-                    _from=FromKey(key_code="h", modifiers=redox_kb),
-                    to=[hs_command("move_left()")],
-                )
-            ],
-        ),
-        Rule(
-            description="[window management] [Redox] hyper l is move window right",
-            manipulators=[
-                Manipulator(
-                    conditions=[redox_kb_cond],
-                    _from=FromKey(key_code="l", modifiers=redox_kb),
-                    to=[hs_command("move_right()")],
-                )
-            ],
-        ),
-        Rule(
-            description="[window management] [Redox] hyper k is move window up",
-            manipulators=[
-                Manipulator(
-                    conditions=[redox_kb_cond],
-                    _from=FromKey(key_code="k", modifiers=redox_kb),
-                    to=[hs_command("move_up()")],
-                )
-            ],
-        ),
-        Rule(
-            description="[window management] [Redox] hyper j is move window down",
-            manipulators=[
-                Manipulator(
-                    conditions=[redox_kb_cond],
-                    _from=FromKey(key_code="j", modifiers=redox_kb),
-                    to=[hs_command("move_down()")],
-                )
-            ],
-        ),
-        Rule(
-            description="[window management] [Redox] hyper f is maximize window",
-            manipulators=[
-                Manipulator(
-                    conditions=[redox_kb_cond],
-                    _from=FromKey(key_code="f", modifiers=redox_kb),
-                    to=[hs_command("full()")],
-                )
-            ],
-        ),
-        Rule(
-            description="[window management] [Redox] hyper w is move window to north display",
-            manipulators=[
-                Manipulator(
-                    conditions=[redox_kb_cond],
-                    _from=FromKey(key_code="w", modifiers=redox_kb),
-                    to=[hs_command("move_screen_north()")],
-                )
-            ],
-        ),
-        Rule(
-            description="[window management] [Redox] hyper a is move window to west display",
-            manipulators=[
-                Manipulator(
-                    conditions=[redox_kb_cond],
-                    _from=FromKey(key_code="a", modifiers=redox_kb),
-                    to=[hs_command("move_screen_west()")],
-                )
-            ],
-        ),
-        Rule(
-            description="[window management] [Redox] hyper d is move window to east display",
-            manipulators=[
-                Manipulator(
-                    conditions=[redox_kb_cond],
-                    _from=FromKey(key_code="d", modifiers=redox_kb),
-                    to=[hs_command("move_screen_east()")],
-                )
-            ],
-        ),
-        Rule(
-            description="[window management] [Redox] hyper s is move window to south display",
-            manipulators=[
-                Manipulator(
-                    conditions=[redox_kb_cond],
-                    _from=FromKey(key_code="s", modifiers=redox_kb),
-                    to=[hs_command("move_screen_south()")],
-                )
-            ],
-        ),
     ]
-
 
 def generate_rules() -> list[Rule]:
     return (
-        generate_window()
+        generate_window_internal()
+        + generate_window_external("Redox", redox_kb_cond)
+        + generate_window_external("Equals 60", equals60_kb_cond)
         + generate_firefox()
         + generate_kitty()
         + generate_alfred()
