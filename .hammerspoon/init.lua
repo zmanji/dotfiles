@@ -58,6 +58,33 @@ end
 local appWatcher = hs.application.watcher.new(appAXEnhance)
 appWatcher:start()
 
+local defocusapps = {
+  'com.spotify.client',
+  'com.grailr.CARROTweather'
+}
+
+function is_defocous_window(w)
+    local app = w:application()
+    if (app == nil) then
+      return false
+    end
+    return hs.fnutils.contains(defocusapps, app:bundleID())
+end
+
+function try_to_defocus(w, name, event) 
+  -- is this the last window of the app? if so try to defocus
+  local app = w:application()
+  if (app == nil) then
+    return
+  end
+
+  local tofocus = filter:getWindows()[1]
+  tofocus:focus()
+end
+
+local defocus = hs.window.filter.new(is_defocous_window)
+defocus:subscribe(hs.window.filter.hasNoWindows, try_to_defocus)
+
 -- Window Management Functions
 -- these are called by karabbiner
 
