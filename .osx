@@ -21,6 +21,9 @@ defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# Place the dock on the right
+defaults write com.apple.dock orientation right
+
 # Automatically open a new Finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
