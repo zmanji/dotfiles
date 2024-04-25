@@ -52,6 +52,7 @@ function appAXEnhance(appName, eventType, app)
         if hs.fnutils.contains(axapps, app:bundleID()) == true then
             local axapp = hs.axuielement.applicationElement(app)
             axapp.AXEnhancedUserInterface = true
+            axapp.AXManualAccessibility = true
         end
     end
 end
@@ -60,7 +61,8 @@ appWatcher:start()
 
 local defocusapps = {
   'com.spotify.client',
-  'com.grailr.CARROTweather'
+  'com.grailr.CARROTweather',
+  'com.apple.MobileSMS'
 }
 
 function is_defocous_window(w)
