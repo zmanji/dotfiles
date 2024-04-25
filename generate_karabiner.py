@@ -116,11 +116,9 @@ redox_kb_cond = Condition(
 equals60_kb_cond = Condition(
     description="Equals 60",
     _type="device_if",
-    identifiers=[
-        Ident(product_id=30344, vendor_id=17011)
-    ],
-
+    identifiers=[Ident(product_id=30344, vendor_id=17011)],
 )
+
 
 def generate_cmd_window_switch() -> list[Rule]:
     cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
@@ -277,6 +275,32 @@ def generate_spotify() -> list[Rule]:
                 )
             ],
         ),
+        Rule(
+            description="[Spotify] use C-h to go previous track",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond],
+                    _from=FromKey(
+                        key_code="h",
+                        modifiers=Modifiers(mandatory=["control"]),
+                    ),
+                    to=[ToKey(key_code="left_arrow", modifiers=["command"])],
+                )
+            ],
+        ),
+        Rule(
+            description="[Spotify] use C-l to go next track",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond],
+                    _from=FromKey(
+                        key_code="l",
+                        modifiers=Modifiers(mandatory=["control"]),
+                    ),
+                    to=[ToKey(key_code="right_arrow", modifiers=["command"])],
+                )
+            ],
+        ),
     ]
 
 
@@ -379,7 +403,9 @@ def generate_messenger() -> list[Rule]:
             description="[Messenger] use C-j for prev convo",
             manipulators=[
                 Manipulator(
-                    conditions=[cond], _from=ctrl_j, to=[ToKey(key_code="close_bracket", modifiers=["command"])]
+                    conditions=[cond],
+                    _from=ctrl_j,
+                    to=[ToKey(key_code="close_bracket", modifiers=["command"])],
                 )
             ],
         ),
@@ -463,7 +489,9 @@ def generate_kitty() -> list[Rule]:
     )
 
     def kitty_command(cmd):
-        kitty_command_prefix = "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket "
+        kitty_command_prefix = (
+            "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket "
+        )
         return ToKey(shell_command=kitty_command_prefix + cmd)
 
     return [
@@ -600,7 +628,6 @@ def hs_command(f):
     return ToKey(shell_command=cmd)
 
 
-
 # This used to live in hammerspoon, but there was too much flakyness when
 # trying to swtich between the internal vs external bindings
 def generate_window_external(name: str, condition: Condition) -> list[Rule]:
@@ -698,6 +725,7 @@ def generate_window_external(name: str, condition: Condition) -> list[Rule]:
         ),
     ]
 
+
 # This used to live in hammerspoon, but there was too much flakyness when
 # trying to swtich between the internal vs external bindings
 def generate_window_internal() -> list[Rule]:
@@ -754,6 +782,7 @@ def generate_window_internal() -> list[Rule]:
             ],
         ),
     ]
+
 
 def generate_rules() -> list[Rule]:
     return (
