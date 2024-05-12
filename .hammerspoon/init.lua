@@ -28,7 +28,7 @@ end)
 function is_enhanced_ui(w)
   local app = w:application()
   local axapp = hs.axuielement.applicationElement(app)
-  local value = axapp.AXEnhancedUserInterface
+  local value = axapp.AXEnhancedUserInterface or axapp.AXManualAccessibility
   return value
 end
 
@@ -36,6 +36,7 @@ function set_enhanced_ui(w, v)
   local app = w:application()
   local axapp = hs.axuielement.applicationElement(app)
   axapp.AXEnhancedUserInterface = v
+  axapp.AXManualAccessibility = v
 end
 
 
@@ -51,6 +52,9 @@ function appAXEnhance(appName, eventType, app)
     if (eventType == hs.application.watcher.activated) then
         if hs.fnutils.contains(axapps, app:bundleID()) == true then
             local axapp = hs.axuielement.applicationElement(app)
+            if (axapp == nil) then
+              return
+            end
             axapp.AXEnhancedUserInterface = true
             axapp.AXManualAccessibility = true
         end
