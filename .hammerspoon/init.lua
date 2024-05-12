@@ -77,6 +77,9 @@ function is_defocous_window(w)
 end
 
 function try_to_defocus(w, name, event) 
+    if (w == nil) then
+      return
+    end
   -- is this the last window of the app? if so try to defocus
   local app = w:application()
   if (app == nil) then
