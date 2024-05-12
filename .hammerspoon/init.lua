@@ -66,6 +66,9 @@ local defocusapps = {
 }
 
 function is_defocous_window(w)
+    if (w == nil) then
+      return false
+    end
     local app = w:application()
     if (app == nil) then
       return false
