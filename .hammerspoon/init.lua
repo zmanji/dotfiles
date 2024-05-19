@@ -66,7 +66,8 @@ appWatcher:start()
 local defocusapps = {
   'com.spotify.client',
   'com.grailr.CARROTweather',
-  'com.apple.MobileSMS'
+  'com.apple.MobileSMS',
+  'com.hnc.Discord'
 }
 
 function is_defocous_window(w)
