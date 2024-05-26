@@ -895,6 +895,330 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_if",
+                                        "description": "Imprint",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 17241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Imprint] hyper h is move window left"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Imprint",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 17241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Imprint] hyper l is move window right"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Imprint",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 17241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Imprint] hyper k is move window up"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Imprint",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 17241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Imprint] hyper j is move window down"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Imprint",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 17241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Imprint] hyper f is maximize window"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Imprint",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 17241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_north()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Imprint] hyper w is move window to north display"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Imprint",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 17241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_west()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Imprint] hyper a is move window to west display"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Imprint",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 17241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_east()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Imprint] hyper d is move window to east display"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Imprint",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 0,
+                                                "vendor_id": 17241
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_south()'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "[window management] [Imprint] hyper s is move window to south display"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^org\\.mozilla\\.firefox$"

@@ -119,6 +119,12 @@ equals60_kb_cond = Condition(
     identifiers=[Ident(product_id=30344, vendor_id=17011)],
 )
 
+imprint_kb_cond = Condition(
+    description="Imprint",
+    _type="device_if",
+    identifiers=[Ident(product_id=0, vendor_id=17241)],
+)
+
 
 def generate_cmd_window_switch() -> list[Rule]:
     cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
@@ -789,6 +795,7 @@ def generate_rules() -> list[Rule]:
         generate_window_internal()
         + generate_window_external("Redox", redox_kb_cond)
         + generate_window_external("Equals 60", equals60_kb_cond)
+        + generate_window_external("Imprint", imprint_kb_cond)
         + generate_firefox()
         + generate_kitty()
         + generate_alfred()
