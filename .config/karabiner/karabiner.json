@@ -23,7 +23,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -41,7 +40,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -68,7 +68,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -86,7 +85,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -113,7 +113,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -131,7 +130,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -158,7 +158,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -176,7 +175,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -203,7 +203,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -221,7 +220,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -248,14 +248,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Redox",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 65261
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -284,14 +284,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Redox",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 65261
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -320,14 +320,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Redox",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 65261
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -356,14 +356,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Redox",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 65261
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -392,14 +392,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Redox",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 65261
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -428,14 +428,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Redox",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 65261
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -464,14 +464,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Redox",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 65261
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -500,14 +500,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Redox",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 65261
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -536,14 +536,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Redox",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 65261
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -572,14 +572,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Equals 60",
                                         "identifiers": [
                                             {
                                                 "product_id": 30344,
                                                 "vendor_id": 17011
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -608,14 +608,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Equals 60",
                                         "identifiers": [
                                             {
                                                 "product_id": 30344,
                                                 "vendor_id": 17011
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -644,14 +644,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Equals 60",
                                         "identifiers": [
                                             {
                                                 "product_id": 30344,
                                                 "vendor_id": 17011
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -680,14 +680,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Equals 60",
                                         "identifiers": [
                                             {
                                                 "product_id": 30344,
                                                 "vendor_id": 17011
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -716,14 +716,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Equals 60",
                                         "identifiers": [
                                             {
                                                 "product_id": 30344,
                                                 "vendor_id": 17011
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -752,14 +752,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Equals 60",
                                         "identifiers": [
                                             {
                                                 "product_id": 30344,
                                                 "vendor_id": 17011
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -788,14 +788,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Equals 60",
                                         "identifiers": [
                                             {
                                                 "product_id": 30344,
                                                 "vendor_id": 17011
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -824,14 +824,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Equals 60",
                                         "identifiers": [
                                             {
                                                 "product_id": 30344,
                                                 "vendor_id": 17011
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -860,14 +860,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Equals 60",
                                         "identifiers": [
                                             {
                                                 "product_id": 30344,
                                                 "vendor_id": 17011
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -896,14 +896,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Imprint",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 17241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -932,14 +932,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Imprint",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 17241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -968,14 +968,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Imprint",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 17241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -1004,14 +1004,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Imprint",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 17241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -1040,14 +1040,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Imprint",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 17241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -1076,14 +1076,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Imprint",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 17241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -1112,14 +1112,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Imprint",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 17241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -1148,14 +1148,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Imprint",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 17241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -1184,14 +1184,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Imprint",
                                         "identifiers": [
                                             {
                                                 "product_id": 0,
                                                 "vendor_id": 17241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -1220,10 +1220,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^org\\.mozilla\\.firefox$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1253,10 +1253,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^org\\.mozilla\\.firefox$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1286,10 +1286,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^org\\.mozilla\\.firefox$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1319,14 +1319,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 0
                                     }
                                 ],
@@ -1359,18 +1359,17 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     },
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -1388,7 +1387,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -1415,14 +1415,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
@@ -1450,14 +1450,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
@@ -1479,14 +1479,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
@@ -1508,14 +1508,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
@@ -1537,14 +1537,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
@@ -1566,14 +1566,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
@@ -1595,14 +1595,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
@@ -1629,14 +1629,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
@@ -1663,14 +1663,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "variable_if",
                                         "name": "kitty_nav_mode",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
@@ -1692,10 +1692,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.runningwithcrayons\\.Alfred$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1721,10 +1721,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.runningwithcrayons\\.Alfred$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1750,10 +1750,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.hnc\\.Discord$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1782,10 +1782,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.hnc\\.Discord$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1814,10 +1814,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.tinyspeck\\.slackmacgap$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1849,10 +1849,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.tinyspeck\\.slackmacgap$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1884,10 +1884,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.facebook\\.archon\\.developerID$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1916,10 +1916,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.facebook\\.archon\\.developerID$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1948,10 +1948,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.spotify\\.client$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -1977,10 +1977,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.spotify\\.client$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -2006,10 +2006,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.spotify\\.client$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -2038,10 +2038,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.spotify\\.client$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -2070,10 +2070,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.MobileSMS$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -2102,10 +2102,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.MobileSMS$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -2135,7 +2135,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -2153,7 +2152,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -2187,7 +2187,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -2205,7 +2204,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -2229,7 +2229,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -2247,7 +2246,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -2276,7 +2276,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -2294,7 +2293,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -2318,7 +2318,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -2336,7 +2335,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -2360,7 +2360,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -2378,7 +2377,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -2402,7 +2402,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "Internal Keyboard",
                                         "identifiers": [
                                             {
@@ -2420,7 +2419,8 @@
                                                 "product_id": 627,
                                                 "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -2503,7 +2503,9 @@
                 {
                     "disable_built_in_keyboard_if_exists": true,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 1957,
@@ -2511,13 +2513,21 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 627,
@@ -2525,13 +2535,21 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
-                    "disable_built_in_keyboard_if_exists": true,
+                    "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 0,
@@ -2539,27 +2557,43 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": false,
                         "is_pointing_device": true,
                         "product_id": 0,
                         "vendor_id": 65261
                     },
-                    "ignore": true,
+                    "ignore": false,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 0,
@@ -2567,13 +2601,21 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": false,
                         "is_pointing_device": true,
                         "product_id": 0,
@@ -2581,6 +2623,78 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 0,
+                        "vendor_id": 17241
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 0,
+                        "vendor_id": 17241
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 613,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 }
