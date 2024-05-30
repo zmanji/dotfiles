@@ -18,6 +18,7 @@
                 },
                 "rules": [
                     {
+                        "description": "[window management] [Internal Keyboard] cmd+alt h is move window left",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -59,10 +60,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Internal Keyboard] cmd+alt h is move window left"
+                        ]
                     },
                     {
+                        "description": "[window management] [Internal Keyboard] cmd+alt l is move window right",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -104,10 +105,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Internal Keyboard] cmd+alt l is move window right"
+                        ]
                     },
                     {
+                        "description": "[window management] [Internal Keyboard] cmd+alt k is move window up",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -149,10 +150,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Internal Keyboard] cmd+alt k is move window up"
+                        ]
                     },
                     {
+                        "description": "[window management] [Internal Keyboard] cmd+alt j is move window down",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -194,10 +195,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Internal Keyboard] cmd+alt j is move window down"
+                        ]
                     },
                     {
+                        "description": "[window management] [Internal Keyboard] cmd+alt f is maximize window",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -239,10 +240,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Internal Keyboard] cmd+alt f is maximize window"
+                        ]
                     },
                     {
+                        "description": "[window management] [Redox] hyper h is move window left",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -275,10 +276,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Redox] hyper h is move window left"
+                        ]
                     },
                     {
+                        "description": "[window management] [Redox] hyper l is move window right",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -311,10 +312,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Redox] hyper l is move window right"
+                        ]
                     },
                     {
+                        "description": "[window management] [Redox] hyper k is move window up",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -347,10 +348,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Redox] hyper k is move window up"
+                        ]
                     },
                     {
+                        "description": "[window management] [Redox] hyper j is move window down",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -383,10 +384,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Redox] hyper j is move window down"
+                        ]
                     },
                     {
+                        "description": "[window management] [Redox] hyper f is maximize window",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -419,10 +420,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Redox] hyper f is maximize window"
+                        ]
                     },
                     {
+                        "description": "[window management] [Redox] hyper w is move window to north display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -455,10 +456,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Redox] hyper w is move window to north display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Redox] hyper a is move window to west display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -491,10 +492,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Redox] hyper a is move window to west display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Redox] hyper d is move window to east display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -527,10 +528,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Redox] hyper d is move window to east display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Redox] hyper s is move window to south display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -563,10 +564,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Redox] hyper s is move window to south display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Equals 60] hyper h is move window left",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -599,10 +600,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Equals 60] hyper h is move window left"
+                        ]
                     },
                     {
+                        "description": "[window management] [Equals 60] hyper l is move window right",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -635,10 +636,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Equals 60] hyper l is move window right"
+                        ]
                     },
                     {
+                        "description": "[window management] [Equals 60] hyper k is move window up",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -671,10 +672,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Equals 60] hyper k is move window up"
+                        ]
                     },
                     {
+                        "description": "[window management] [Equals 60] hyper j is move window down",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -707,10 +708,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Equals 60] hyper j is move window down"
+                        ]
                     },
                     {
+                        "description": "[window management] [Equals 60] hyper f is maximize window",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -743,10 +744,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Equals 60] hyper f is maximize window"
+                        ]
                     },
                     {
+                        "description": "[window management] [Equals 60] hyper w is move window to north display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -779,10 +780,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Equals 60] hyper w is move window to north display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Equals 60] hyper a is move window to west display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -815,10 +816,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Equals 60] hyper a is move window to west display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Equals 60] hyper d is move window to east display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -851,10 +852,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Equals 60] hyper d is move window to east display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Equals 60] hyper s is move window to south display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -887,10 +888,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Equals 60] hyper s is move window to south display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Imprint] hyper h is move window left",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -923,10 +924,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Imprint] hyper h is move window left"
+                        ]
                     },
                     {
+                        "description": "[window management] [Imprint] hyper l is move window right",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -959,10 +960,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Imprint] hyper l is move window right"
+                        ]
                     },
                     {
+                        "description": "[window management] [Imprint] hyper k is move window up",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -995,10 +996,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Imprint] hyper k is move window up"
+                        ]
                     },
                     {
+                        "description": "[window management] [Imprint] hyper j is move window down",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1031,10 +1032,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Imprint] hyper j is move window down"
+                        ]
                     },
                     {
+                        "description": "[window management] [Imprint] hyper f is maximize window",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1067,10 +1068,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Imprint] hyper f is maximize window"
+                        ]
                     },
                     {
+                        "description": "[window management] [Imprint] hyper w is move window to north display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1103,10 +1104,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Imprint] hyper w is move window to north display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Imprint] hyper a is move window to west display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1139,10 +1140,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Imprint] hyper a is move window to west display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Imprint] hyper d is move window to east display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1175,10 +1176,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Imprint] hyper d is move window to east display"
+                        ]
                     },
                     {
+                        "description": "[window management] [Imprint] hyper s is move window to south display",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1211,10 +1212,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[window management] [Imprint] hyper s is move window to south display"
+                        ]
                     },
                     {
+                        "description": "[firefox] Cmd-t to Cmd-Control-t for custom binding",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1244,10 +1245,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[firefox] Cmd-t to Cmd-Control-t for custom binding"
+                        ]
                     },
                     {
+                        "description": "[firefox] Cmd-l to Cmd-Control-l for custom binding",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1277,10 +1278,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[firefox] Cmd-l to Cmd-Control-l for custom binding"
+                        ]
                     },
                     {
+                        "description": "[firefox] Cmd-n to Cmd-Control-n for custom binding",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1310,10 +1311,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[firefox] Cmd-n to Cmd-Control-n for custom binding"
+                        ]
                     },
                     {
+                        "description": "[kitty] use Cmd-w for nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1350,10 +1351,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] use Cmd-w for nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] [Internal Keybord] use caps lock to escape nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1406,10 +1407,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] [Internal Keybord] use caps lock to escape nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] esc to escape nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1441,10 +1442,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] esc to escape nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] h is left in nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1470,10 +1471,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] h is left in nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] l is right in nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1499,10 +1500,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] l is right in nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] j is down in nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1528,10 +1529,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] j is down in nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] k is up in nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1557,10 +1558,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] k is up in nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] q is close window in nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1586,10 +1587,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] q is close window in nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] K is next tab in nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1620,10 +1621,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] K is next tab in nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] J is previous tab in nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1654,10 +1655,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] J is previous tab in nav mode"
+                        ]
                     },
                     {
+                        "description": "[kitty] v is new split in nav mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1683,10 +1684,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[kitty] v is new split in nav mode"
+                        ]
                     },
                     {
+                        "description": "[Alfred] use C-j for down",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1712,10 +1713,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Alfred] use C-j for down"
+                        ]
                     },
                     {
+                        "description": "[Alfred] use C-k for up",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1741,10 +1742,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Alfred] use C-k for up"
+                        ]
                     },
                     {
+                        "description": "[Discord] use C-j for prev convo",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1773,10 +1774,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Discord] use C-j for prev convo"
+                        ]
                     },
                     {
+                        "description": "[Discord] use C-k for next convo",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1805,10 +1806,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Discord] use C-k for next convo"
+                        ]
                     },
                     {
+                        "description": "[Slack] use C-j for prev convo",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1840,10 +1841,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Slack] use C-j for prev convo"
+                        ]
                     },
                     {
+                        "description": "[Slack] use C-k for next convo",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1875,10 +1876,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Slack] use C-k for next convo"
+                        ]
                     },
                     {
+                        "description": "[Messenger] use C-j for prev convo",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1907,10 +1908,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Messenger] use C-j for prev convo"
+                        ]
                     },
                     {
+                        "description": "[Messenger] use C-k for next convo",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1939,10 +1940,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Messenger] use C-k for next convo"
+                        ]
                     },
                     {
+                        "description": "[Spotify] use C-j for down",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1968,10 +1969,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Spotify] use C-j for down"
+                        ]
                     },
                     {
+                        "description": "[Spotify] use C-k for up",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1997,10 +1998,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Spotify] use C-k for up"
+                        ]
                     },
                     {
+                        "description": "[Spotify] use C-h to go previous track",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2029,10 +2030,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Spotify] use C-h to go previous track"
+                        ]
                     },
                     {
+                        "description": "[Spotify] use C-l to go next track",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2061,10 +2062,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[Spotify] use C-l to go next track"
+                        ]
                     },
                     {
+                        "description": "[iMessage] use C-j to navigate down conversation list",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2093,10 +2094,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[iMessage] use C-j to navigate down conversation list"
+                        ]
                     },
                     {
+                        "description": "[iMessage] use C-k to navigate up conversation list",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2126,10 +2127,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "[iMessage] use C-k to navigate up conversation list"
+                        ]
                     },
                     {
+                        "description": "Change caps_lock to control when used as modifier, escape when used alone. (Internal Keyboard)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2178,10 +2179,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "Change caps_lock to control when used as modifier, escape when used alone. (Internal Keyboard)"
+                        ]
                     },
                     {
+                        "description": "Better Shifting: Parentheses on shift keys. (Internal Keyboard)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2267,10 +2268,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "Better Shifting: Parentheses on shift keys. (Internal Keyboard)"
+                        ]
                     },
                     {
+                        "description": "Change Fn + h/j/k/l to Arrows (Internal Keyboard)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2440,10 +2441,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "Change Fn + h/j/k/l to Arrows (Internal Keyboard)"
+                        ]
                     },
                     {
+                        "description": "Rebind Cmd-Tab to Cmd-F19 for Alt-Tab",
                         "manipulators": [
                             {
                                 "from": {
@@ -2467,10 +2468,10 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "Rebind Cmd-Tab to Cmd-F19 for Alt-Tab"
+                        ]
                     },
                     {
+                        "description": "Rebind Cmd-` to Cmd-F18 for Alt-Tab",
                         "manipulators": [
                             {
                                 "from": {
@@ -2494,8 +2495,7 @@
                                 ],
                                 "type": "basic"
                             }
-                        ],
-                        "description": "Rebind Cmd-` to Cmd-F18 for Alt-Tab"
+                        ]
                     }
                 ]
             },

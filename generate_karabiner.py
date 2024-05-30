@@ -62,8 +62,8 @@ class Manipulator:
 
 @dataclass(frozen=True)
 class Rule:
-    manipulators: list[Manipulator]
     description: str
+    manipulators: list[Manipulator]
 
 
 class Encoder(json.JSONEncoder):
