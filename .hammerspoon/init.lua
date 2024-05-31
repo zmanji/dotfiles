@@ -43,6 +43,7 @@ end
 local axapps = {
   "com.spotify.client",
   "org.mozilla.firefox",
+  "org.whispersystems.signal-desktop",
   "com.electron.nativefier.todoist-nativefier-6c11dd",
 }
 
@@ -67,7 +68,8 @@ local defocusapps = {
   'com.spotify.client',
   'com.grailr.CARROTweather',
   'com.apple.MobileSMS',
-  'com.hnc.Discord'
+  'com.hnc.Discord',
+  "org.whispersystems.signal-desktop",
 }
 
 function is_defocous_window(w)
