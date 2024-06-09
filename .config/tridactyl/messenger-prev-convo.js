@@ -1,5 +1,5 @@
 var goup = function () {
-    var links = Array.from(document.querySelectorAll('[role=navigation] a[role=link][href^="/t"]'));
+    var links = Array.from(document.querySelectorAll('[role=navigation] a[role=link][href*="t/"]'));
 
     var current = links.filter(l => {
       var attrs = l.attributes || new NamedNodeMap();
