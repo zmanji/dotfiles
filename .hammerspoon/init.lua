@@ -70,6 +70,7 @@ local defocusapps = {
   'com.apple.MobileSMS',
   'com.hnc.Discord',
   "org.whispersystems.signal-desktop",
+  "com.yahoo.finance",
 }
 
 function is_defocous_window(w)
