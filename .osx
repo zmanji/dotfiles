@@ -49,6 +49,12 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
+# Show Finder status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Set finder default folder to be home directory
+defaults write com.apple.finder NewWindowTarget -string 'PfHm'
+
 # Enable tap to click (Trackpad)
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
