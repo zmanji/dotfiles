@@ -1,21 +1,8 @@
 {
-    "global": {
-        "ask_for_confirmation_before_quitting": true,
-        "check_for_updates_on_startup": true,
-        "show_in_menu_bar": false,
-        "show_profile_name_in_menu_bar": false,
-        "unsafe_ui": false
-    },
+    "global": { "show_in_menu_bar": false },
     "profiles": [
         {
             "complex_modifications": {
-                "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 50,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500,
-                    "mouse_motion_to_scroll.speed": 100
-                },
                 "rules": [
                     {
                         "description": "[window management] [Internal Keyboard] cmd+alt h is move window left",
@@ -25,9 +12,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -46,18 +31,9 @@
                                 ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "option"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -70,9 +46,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -91,18 +65,9 @@
                                 ],
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "option"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -115,9 +80,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -136,18 +99,9 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "option"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -160,9 +114,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -181,18 +133,9 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "option"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -205,9 +148,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -226,18 +167,9 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "option"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -260,20 +192,9 @@
                                 ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -296,20 +217,9 @@
                                 ],
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -332,20 +242,9 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -368,20 +267,9 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -404,20 +292,9 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -440,20 +317,9 @@
                                 ],
                                 "from": {
                                     "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_north()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_north()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -476,20 +342,9 @@
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_west()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_west()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -512,20 +367,9 @@
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_east()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_east()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -548,20 +392,9 @@
                                 ],
                                 "from": {
                                     "key_code": "s",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_south()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_south()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -584,20 +417,9 @@
                                 ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -620,20 +442,9 @@
                                 ],
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -656,20 +467,9 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -692,20 +492,9 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -728,20 +517,9 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -764,20 +542,9 @@
                                 ],
                                 "from": {
                                     "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_north()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_north()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -800,20 +567,9 @@
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_west()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_west()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -836,20 +592,9 @@
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_east()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_east()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -872,20 +617,9 @@
                                 ],
                                 "from": {
                                     "key_code": "s",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_south()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_south()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -908,20 +642,9 @@
                                 ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -944,20 +667,9 @@
                                 ],
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -980,20 +692,9 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -1016,20 +717,9 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -1052,20 +742,9 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -1088,20 +767,9 @@
                                 ],
                                 "from": {
                                     "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_north()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_north()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -1124,20 +792,9 @@
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_west()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_west()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -1160,20 +817,9 @@
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_east()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_east()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -1196,20 +842,9 @@
                                 ],
                                 "from": {
                                     "key_code": "s",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_south()'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_screen_south()'" }],
                                 "type": "basic"
                             }
                         ]
@@ -1228,19 +863,12 @@
                                 ],
                                 "from": {
                                     "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "t",
-                                        "modifiers": [
-                                            "control",
-                                            "command"
-                                        ]
+                                        "modifiers": ["control", "command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1261,19 +889,12 @@
                                 ],
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "l",
-                                        "modifiers": [
-                                            "control",
-                                            "command"
-                                        ]
+                                        "modifiers": ["control", "command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1294,19 +915,12 @@
                                 ],
                                 "from": {
                                     "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "n",
-                                        "modifiers": [
-                                            "control",
-                                            "command"
-                                        ]
+                                        "modifiers": ["control", "command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1332,11 +946,7 @@
                                 ],
                                 "from": {
                                     "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command"] }
                                 },
                                 "to": [
                                     {
@@ -1345,9 +955,7 @@
                                             "value": 1
                                         }
                                     },
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket set-colors -a 'background=#5b6268'"
-                                    }
+                                    { "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket set-colors -a 'background=#5b6268'" }
                                 ],
                                 "type": "basic"
                             }
@@ -1372,9 +980,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -1391,9 +997,7 @@
                                         "type": "device_if"
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "caps_lock"
-                                },
+                                "from": { "key_code": "caps_lock" },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -1401,9 +1005,7 @@
                                             "value": 0
                                         }
                                     },
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket set-colors -a --reset"
-                                    }
+                                    { "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket set-colors -a --reset" }
                                 ],
                                 "type": "basic"
                             }
@@ -1426,9 +1028,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "escape"
-                                },
+                                "from": { "key_code": "escape" },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -1436,9 +1036,7 @@
                                             "value": 0
                                         }
                                     },
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket set-colors -a --reset"
-                                    }
+                                    { "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket set-colors -a --reset" }
                                 ],
                                 "type": "basic"
                             }
@@ -1461,14 +1059,8 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "h"
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py left"
-                                    }
-                                ],
+                                "from": { "key_code": "h" },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py left" }],
                                 "type": "basic"
                             }
                         ]
@@ -1490,14 +1082,8 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "l"
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py right"
-                                    }
-                                ],
+                                "from": { "key_code": "l" },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py right" }],
                                 "type": "basic"
                             }
                         ]
@@ -1519,14 +1105,8 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "j"
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py bottom"
-                                    }
-                                ],
+                                "from": { "key_code": "j" },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py bottom" }],
                                 "type": "basic"
                             }
                         ]
@@ -1548,14 +1128,8 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "k"
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py top"
-                                    }
-                                ],
+                                "from": { "key_code": "k" },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten neighbor.py top" }],
                                 "type": "basic"
                             }
                         ]
@@ -1577,14 +1151,8 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "q"
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket close-window"
-                                    }
-                                ],
+                                "from": { "key_code": "q" },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket close-window" }],
                                 "type": "basic"
                             }
                         ]
@@ -1608,17 +1176,9 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["shift"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten tab.py next"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten tab.py next" }],
                                 "type": "basic"
                             }
                         ]
@@ -1642,17 +1202,9 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["shift"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten tab.py previous"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten tab.py previous" }],
                                 "type": "basic"
                             }
                         ]
@@ -1674,14 +1226,8 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "v"
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket new-window"
-                                    }
-                                ],
+                                "from": { "key_code": "v" },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket new-window" }],
                                 "type": "basic"
                             }
                         ]
@@ -1700,17 +1246,9 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
+                                "to": [{ "key_code": "down_arrow" }],
                                 "type": "basic"
                             }
                         ]
@@ -1729,17 +1267,9 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
+                                "to": [{ "key_code": "up_arrow" }],
                                 "type": "basic"
                             }
                         ]
@@ -1758,18 +1288,12 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "down_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1790,18 +1314,12 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1823,20 +1341,14 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "shift"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["shift"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "down_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1858,20 +1370,14 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "shift"
-                                        ]
+                                        "mandatory": ["control"],
+                                        "optional": ["shift"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1892,18 +1398,12 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "close_bracket",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1924,18 +1424,12 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "open_bracket",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1956,17 +1450,9 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
+                                "to": [{ "key_code": "down_arrow" }],
                                 "type": "basic"
                             }
                         ]
@@ -1985,17 +1471,9 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
+                                "to": [{ "key_code": "up_arrow" }],
                                 "type": "basic"
                             }
                         ]
@@ -2014,18 +1492,12 @@
                                 ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -2046,18 +1518,12 @@
                                 ],
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -2078,18 +1544,12 @@
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
+                                        "modifiers": ["left_control"]
                                     }
                                 ],
                                 "type": "basic"
@@ -2110,19 +1570,12 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control",
-                                            "shift"
-                                        ]
+                                        "modifiers": ["left_control", "shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -2137,9 +1590,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -2160,23 +1611,11 @@
                                     "key_code": "caps_lock",
                                     "modifiers": {
                                         "mandatory": [],
-                                        "optional": [
-                                            "shift",
-                                            "command",
-                                            "option"
-                                        ]
+                                        "optional": ["shift", "command", "option"]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_control"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
+                                "to": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
                         ]
@@ -2189,9 +1628,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -2208,20 +1645,12 @@
                                         "type": "device_if"
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "left_shift"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
+                                "from": { "key_code": "left_shift" },
+                                "to": [{ "key_code": "left_shift" }],
                                 "to_if_alone": [
                                     {
                                         "key_code": "9",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
+                                        "modifiers": ["left_shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -2231,9 +1660,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -2250,20 +1677,12 @@
                                         "type": "device_if"
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "right_shift"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
+                                "from": { "key_code": "right_shift" },
+                                "to": [{ "key_code": "right_shift" }],
                                 "to_if_alone": [
                                     {
                                         "key_code": "0",
-                                        "modifiers": [
-                                            "right_shift"
-                                        ]
+                                        "modifiers": ["right_shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -2278,9 +1697,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -2300,19 +1717,11 @@
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
+                                        "mandatory": ["fn"],
+                                        "optional": ["caps_lock"]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
+                                "to": [{ "key_code": "left_arrow" }],
                                 "type": "basic"
                             },
                             {
@@ -2320,9 +1729,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -2342,19 +1749,11 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
+                                        "mandatory": ["fn"],
+                                        "optional": ["caps_lock"]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
+                                "to": [{ "key_code": "down_arrow" }],
                                 "type": "basic"
                             },
                             {
@@ -2362,9 +1761,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -2384,19 +1781,11 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
+                                        "mandatory": ["fn"],
+                                        "optional": ["caps_lock"]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
+                                "to": [{ "key_code": "up_arrow" }],
                                 "type": "basic"
                             },
                             {
@@ -2404,9 +1793,7 @@
                                     {
                                         "description": "Internal Keyboard",
                                         "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
+                                            { "is_built_in_keyboard": true },
                                             {
                                                 "product_id": 628,
                                                 "vendor_id": 1452
@@ -2426,19 +1813,11 @@
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
+                                        "mandatory": ["fn"],
+                                        "optional": ["caps_lock"]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow"
-                                    }
-                                ],
+                                "to": [{ "key_code": "right_arrow" }],
                                 "type": "basic"
                             }
                         ]
@@ -2450,20 +1829,14 @@
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ],
-                                        "optional": [
-                                            "shift"
-                                        ]
+                                        "mandatory": ["command"],
+                                        "optional": ["shift"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f19",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -2477,20 +1850,14 @@
                                 "from": {
                                     "key_code": "grave_accent_and_tilde",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ],
-                                        "optional": [
-                                            "shift"
-                                        ]
+                                        "mandatory": ["command"],
+                                        "optional": ["shift"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f18",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -2502,337 +1869,101 @@
             "devices": [
                 {
                     "disable_built_in_keyboard_if_exists": true,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
                     "identifiers": {
-                        "is_game_pad": false,
                         "is_keyboard": true,
-                        "is_pointing_device": false,
                         "product_id": 1957,
                         "vendor_id": 1118
                     },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
+                    "manipulate_caps_lock_led": false
                 },
                 {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
                     "identifiers": {
-                        "is_game_pad": false,
                         "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 627,
-                        "vendor_id": 1452
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 0,
                         "vendor_id": 65261
                     },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
+                    "manipulate_caps_lock_led": false
                 },
                 {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
                     "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": false,
                         "is_pointing_device": true,
-                        "product_id": 0,
                         "vendor_id": 65261
                     },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
+                    "ignore": false
                 },
                 {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
                     "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 0,
-                        "vendor_id": 0
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 0,
-                        "vendor_id": 0
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
                         "is_keyboard": true,
                         "is_pointing_device": true,
-                        "product_id": 0,
                         "vendor_id": 17241
                     },
                     "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
+                    "manipulate_caps_lock_led": false
                 },
                 {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
                     "identifiers": {
-                        "is_game_pad": false,
                         "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 0,
                         "vendor_id": 17241
                     },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 613,
-                        "vendor_id": 1452
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
+                    "manipulate_caps_lock_led": false
                 }
             ],
             "fn_function_keys": [
                 {
-                    "from": {
-                        "key_code": "f1"
-                    },
-                    "to": [
-                        {
-                            "key_code": "display_brightness_decrement"
-                        }
-                    ]
+                    "from": { "key_code": "f1" },
+                    "to": [{ "key_code": "display_brightness_decrement" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f2"
-                    },
-                    "to": [
-                        {
-                            "key_code": "display_brightness_increment"
-                        }
-                    ]
+                    "from": { "key_code": "f2" },
+                    "to": [{ "key_code": "display_brightness_increment" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f3"
-                    },
-                    "to": [
-                        {
-                            "key_code": "mission_control"
-                        }
-                    ]
+                    "from": { "key_code": "f3" },
+                    "to": [{ "key_code": "mission_control" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f4"
-                    },
-                    "to": [
-                        {
-                            "key_code": "launchpad"
-                        }
-                    ]
+                    "from": { "key_code": "f4" },
+                    "to": [{ "key_code": "launchpad" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f5"
-                    },
-                    "to": [
-                        {
-                            "key_code": "illumination_decrement"
-                        }
-                    ]
+                    "from": { "key_code": "f5" },
+                    "to": [{ "key_code": "illumination_decrement" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f6"
-                    },
-                    "to": [
-                        {
-                            "key_code": "illumination_increment"
-                        }
-                    ]
+                    "from": { "key_code": "f6" },
+                    "to": [{ "key_code": "illumination_increment" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f7"
-                    },
-                    "to": [
-                        {
-                            "key_code": "rewind"
-                        }
-                    ]
+                    "from": { "key_code": "f7" },
+                    "to": [{ "key_code": "rewind" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f8"
-                    },
-                    "to": [
-                        {
-                            "key_code": "play_or_pause"
-                        }
-                    ]
+                    "from": { "key_code": "f8" },
+                    "to": [{ "key_code": "play_or_pause" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f9"
-                    },
-                    "to": [
-                        {
-                            "key_code": "fastforward"
-                        }
-                    ]
+                    "from": { "key_code": "f9" },
+                    "to": [{ "key_code": "fastforward" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f10"
-                    },
-                    "to": [
-                        {
-                            "key_code": "mute"
-                        }
-                    ]
+                    "from": { "key_code": "f10" },
+                    "to": [{ "key_code": "mute" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f11"
-                    },
-                    "to": [
-                        {
-                            "key_code": "volume_decrement"
-                        }
-                    ]
+                    "from": { "key_code": "f11" },
+                    "to": [{ "key_code": "volume_decrement" }]
                 },
                 {
-                    "from": {
-                        "key_code": "f12"
-                    },
-                    "to": [
-                        {
-                            "key_code": "volume_increment"
-                        }
-                    ]
+                    "from": { "key_code": "f12" },
+                    "to": [{ "key_code": "volume_increment" }]
                 }
             ],
             "name": "Default",
-            "parameters": {
-                "delay_milliseconds_before_open_device": 1000
-            },
             "selected": true,
-            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "country_code": 0,
-                "indicate_sticky_modifier_keys_state": true,
                 "keyboard_type": "ansi",
-                "mouse_key_xy_scale": 100
+                "keyboard_type_v2": "ansi"
             }
         }
     ]
