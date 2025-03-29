@@ -139,7 +139,7 @@ tridactyl: .config/tridactyl
 	$(shell ln -s $(CURDIR)/$^ ~/$^)
 
 .PHONY: atuin
-karabiner: .config/atuin
+atuin: .config/atuin
 	$(shell mkdir -p ~/.config)
 	@echo removing $^; \
 	$(shell rm -rf ~/$^)
