@@ -138,6 +138,14 @@ tridactyl: .config/tridactyl
 	@echo Installing $^; \
 	$(shell ln -s $(CURDIR)/$^ ~/$^)
 
+.PHONY: atuin
+karabiner: .config/atuin
+	$(shell mkdir -p ~/.config)
+	@echo removing $^; \
+	$(shell rm -rf ~/$^)
+	@echo Installing $^; \
+	$(shell ln -s $(CURDIR)/$^ ~/$^)
+
 .PHONY: dicts
 dicts: dicts/en_CA.aff dicts/en_CA.dic dicts/en_US.aff dicts/en_US.dic
 	mkdir -p ~/Library/Spelling/
