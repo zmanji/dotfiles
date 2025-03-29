@@ -29,8 +29,8 @@ fi
 if [[ -f ~/.cargo/env ]]; then source ~/.cargo/env; fi
 if command -v direnv >/dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
 if command -v nodenv >/dev/null 2>&1; then eval "$(nodenv init -)"; fi
-if command -v atuin >/dev/null 2>&1; then eval "$(atuin init zsh)"; fi
 if [[ -f ~/.atuin/bin/env ]]; then source ~/.atuin/bin/env; fi
+if command -v atuin >/dev/null 2>&1; then eval "$(atuin init zsh)"; fi
 
 
 if [[ -d "/Applications/Hammerspoon.app/Contents/Frameworks/hs/" ]]; then
