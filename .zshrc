@@ -29,6 +29,7 @@ fi
 if [[ -f ~/.cargo/env ]]; then source ~/.cargo/env; fi
 if command -v direnv >/dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
 if command -v nodenv >/dev/null 2>&1; then eval "$(nodenv init -)"; fi
+if command -v atuin >/dev/null 2>&1; then eval "$(atuin init zsh)"; fi
 
 
 if [[ -d "/Applications/Hammerspoon.app/Contents/Frameworks/hs/" ]]; then
@@ -188,13 +189,13 @@ if command -v fd >/dev/null 2>&1; then
 fi
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 if command -v brew >/dev/null 2>&1; then
-  if [[ -d $(brew --prefix)/opt/fzf/shell ]]; then
+  #if [[ -d $(brew --prefix)/opt/fzf/shell ]]; then
     # This binds the following:
     # * CTRL-T => find file
     # * ALT-C cd
     # * CTRL-R history search
-    source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
-  fi
+  #  source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+  #fi
 fi
 
 if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then 
