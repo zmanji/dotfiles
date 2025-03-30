@@ -190,13 +190,13 @@ if command -v fd >/dev/null 2>&1; then
 fi
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 if command -v brew >/dev/null 2>&1; then
-  #if [[ -d $(brew --prefix)/opt/fzf/shell ]]; then
+  if [[ -d $(brew --prefix)/opt/fzf/shell ]]; then
     # This binds the following:
     # * CTRL-T => find file
     # * ALT-C cd
     # * CTRL-R history search
-  #  source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
-  #fi
+    source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+  fi
 fi
 
 if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then 
@@ -215,8 +215,13 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab
 # bind k and j for VI mode
 # bindkey -M vicmd 'k' history-substring-search-up
 # bindkey -M vicmd 'j' history-substring-search-down
-# commented out for atuin
+# commented out for atuin above
+
 bindkey -M vicmd 'k' atuin-up-search-vicmd
+
+bindkey -M emacs '^R' atuin-up-search
+bindkey -M vicmd '^R' atuin-search-vicmd
+bindkey -M viins '^R' atuin-search-viins
 
 # Get bacspace to work
 bindkey -M viins "^?" backward-delete-char
