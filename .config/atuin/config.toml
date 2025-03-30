@@ -1,3 +1,5 @@
-filter_mode_shell_up_key_binding = "session"
-style="auto"
-keymap_mode="auto"
+filter_mode_shell_up_key_binding = "host"
+
+style = "auto"
+keymap_mode = "auto"
+enter_accept = false

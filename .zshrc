@@ -213,8 +213,10 @@ zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab
 
 # bind k and j for VI mode
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
+# bindkey -M vicmd 'k' history-substring-search-up
+# bindkey -M vicmd 'j' history-substring-search-down
+# commented out for atuin
+bindkey -M vicmd 'k' atuin-up-search-vicmd
 
 # Get bacspace to work
 bindkey -M viins "^?" backward-delete-char
