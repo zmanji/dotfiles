@@ -226,40 +226,4 @@ function move_screen_west()
   win:moveOneScreenWest(true, true, 0)
 end
 
--- this is called by alfred workflow
-function get_all_windows_json()
-    local items = {}
-    local current_focus = hs.window.focusedWindow()
-
-    hs.fnutils.ieach(filter:getWindows(), function(w)
-      -- Don't add the currently focused window here
-      if current_focus:id() == w:id() then
-        return
-      end
-
-
-      local app = w:application()
-      local title = app:name() .. " " .. w:title()
-
-      if app:bundleID() == nil then
-        return
-      end
-
-      local bundlePath = hs.application.pathForBundleID(app:bundleID())
-      local uid = app:bundleID() .. " " .. w:title()
-
-      table.insert(items, {
-          uid = uid,
-          title = title,
-          subtitle = "Switch to this window...",
-          arg = w:id(),
-          icon = {type = "fileicon", path = bundlePath},
-          type = "file:skipcheck"
-        }
-      )
-    end)
-
-    return hs.json.encode({items = items}, true)
-end
-
 
