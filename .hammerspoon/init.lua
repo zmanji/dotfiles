@@ -68,6 +68,7 @@ local defocusapps = {
   'com.hnc.Discord',
   "org.whispersystems.signal-desktop",
   "com.yahoo.finance",
+  "com.markmcguill.strongbox.pro",
 }
 
 function is_defocous_window(w)
@@ -91,8 +92,11 @@ function try_to_defocus(w, name, event)
     return
   end
 
+  log.w("Trying to defocus " .. app:bundleID())
+
   local tofocus = filter:getWindows()[1]
   tofocus:focus()
+  log.w("Focusing to " .. tofocus:application():bundleID())
 end
 
 local defocus = hs.window.filter.new(is_defocous_window)
