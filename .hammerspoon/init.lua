@@ -1,6 +1,3 @@
-local window_mash = {"cmd", "alt"}
-local meh = {"ctrl", "shift", "alt", "cmd"}
-
 local log = hs.logger.new('zmanji')
 
 require("hs.ipc")
