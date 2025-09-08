@@ -689,46 +689,6 @@ def generate_window_external(name: str, condition: Condition) -> list[Rule]:
                 )
             ],
         ),
-        Rule(
-            description=f"[window management] [{name}] hyper w is move window to north display",
-            manipulators=[
-                Manipulator(
-                    conditions=[condition],
-                    _from=FromKey(key_code="w", modifiers=hyper),
-                    to=[hs_command("move_screen_north()")],
-                )
-            ],
-        ),
-        Rule(
-            description=f"[window management] [{name}] hyper a is move window to west display",
-            manipulators=[
-                Manipulator(
-                    conditions=[condition],
-                    _from=FromKey(key_code="a", modifiers=hyper),
-                    to=[hs_command("move_screen_west()")],
-                )
-            ],
-        ),
-        Rule(
-            description=f"[window management] [{name}] hyper d is move window to east display",
-            manipulators=[
-                Manipulator(
-                    conditions=[condition],
-                    _from=FromKey(key_code="d", modifiers=hyper),
-                    to=[hs_command("move_screen_east()")],
-                )
-            ],
-        ),
-        Rule(
-            description=f"[window management] [{name}] hyper s is move window to south display",
-            manipulators=[
-                Manipulator(
-                    conditions=[condition],
-                    _from=FromKey(key_code="s", modifiers=hyper),
-                    to=[hs_command("move_screen_south()")],
-                )
-            ],
-        ),
     ]
 
 

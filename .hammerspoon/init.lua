@@ -54,7 +54,9 @@ function appAXEnhance(appName, eventType, app)
               return
             end
             axapp.AXEnhancedUserInterface = true
-            axapp.AXManualAccessibility = true
+            if app:bundleID() ~= "org.mozilla.firefox" then
+              axapp.AXManualAccessibility = true
+            end
         end
     end
 end
@@ -104,6 +106,8 @@ defocus:subscribe(hs.window.filter.hasNoWindows, try_to_defocus)
 
 -- Window Management Functions
 -- these are called by karabbiner
+--
+local horizonal_offsets = {1/2, 1/3, 2/3}
 
 function move_left()
   local win = hs.window.focusedWindow()
@@ -117,17 +121,29 @@ function move_left()
 
   -- if moving to position for the first time then always half width
   -- is the screen not on the left half of the screen?
-  if (f.x >= 0.5) then
-    win:move({0, 0, 0.5, 1}, nil, true)
-  elseif math.abs(f.w - 0.5) <= 0.1 then
-    win:move({0, 0, 1/3, 1}, nil, true)
-  elseif math.abs(f.w - 1/3) <= 0.1 then
-    win:move({0, 0, 2/3, 1}, nil, true)
-  else
-    win:move({0, 0, 0.5, 1}, nil, true)
+  if (f.x > 0 or f.h < 0.98 or (f.h >= 0.97 and f.w > 0.97)) then
+    win:move({0, 0, 1/2, 1}, nil, true)
+  else 
+    -- find the closest offset and then shift one over
+    local idx = 1
+    for k,v in pairs(horizonal_offsets) do
+       local diff = math.abs(f.w - v)
+       if diff <= 0.01 then
+         idx = k
+         break
+       end
+    end
+
+    if idx == #horizonal_offsets then
+      idx = 1
+    else 
+      idx = idx + 1
+    end
+
+    win:move({0, 0, horizonal_offsets[idx], 1}, nil, true)
   end
 
-  if is_enhaned then
+  if is_enhanced then
     set_enhanced_ui(win, true)
   end
 end
@@ -144,18 +160,31 @@ function move_right()
 
   -- if moving to position for the first time then always half width
   -- is the screen not on the right half of the screen?
-  if (f.x < 0.5) then
-    win:move({0.5, 0, 0.5, 1}, nil, true)
-  -- otherwise regular logic to size
-  elseif math.abs(f.w - 0.5) <= 0.1 then
-    win:move({2/3, 0, 1/3, 1}, nil, true)
-  elseif math.abs(f.w - 1/3) <= 0.1 then
-    win:move({1/3, 0, 2/3, 1}, nil, true)
-  else
-    win:move({0.5, 0, 0.5, 1}, nil, true)
+  if (f.x < 0.5 or f.h < 0.98 or (f.h >= 0.97 and f.w > 0.97)) then
+    win:move({1/2, 0, 1/2, 1}, nil, true)
+
+  else 
+    -- find the closest offset and then shift one over
+    local idx = 1
+    for k,v in pairs(horizonal_offsets) do
+       local diff = math.abs(f.w - v)
+       if diff <= 0.01 then
+         idx = k
+         break
+       end
+    end
+
+    if idx == #horizonal_offsets then
+      idx = 1
+    else 
+      idx = idx + 1
+    end
+
+    win:move({1 - horizonal_offsets[idx], 0, horizonal_offsets[idx], 1}, nil, true)
+
   end
 
-  if is_enhaned then
+  if is_enhanced then
     set_enhanced_ui(win, true)
   end
 
@@ -163,6 +192,7 @@ end
 
 function move_up()
   local win = hs.window.focusedWindow()
+  local f = win:frame():toUnitRect(win:screen():frame())
   local is_enhanced = false
 
   if is_enhanced_ui(win) then
@@ -170,15 +200,16 @@ function move_up()
     set_enhanced_ui(win, false)
   end
 
-  win:move({0, 0, 1, 0.5}, nil, true)
+  win:move({f.x, 0, f.w, 0.5}, nil, true)
 
-  if is_enhaned then
+  if is_enhanced then
     set_enhanced_ui(win, true)
   end
 end
 
 function move_down()
   local win = hs.window.focusedWindow()
+  local f = win:frame():toUnitRect(win:screen():frame())
   local is_enhanced = false
 
   if is_enhanced_ui(win) then
@@ -186,8 +217,8 @@ function move_down()
     set_enhanced_ui(win, false)
   end
 
-  win:move({0, 0.5, 1, 0.5}, nil, true)
-  if is_enhaned then
+  win:move({f.x, 0.5, f.w, 0.5}, nil, true)
+  if is_enhanced then
     set_enhanced_ui(win, true)
   end
 end
@@ -195,35 +226,5 @@ end
 function full()
   local win = hs.window.focusedWindow()
 
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w
-  f.h = max.h
-  win:setFrame(f, 0)
+  win:move({0, 0, 1, 1}, nil, true)
 end
-
-function move_screen_north()
-  local win = hs.window.focusedWindow()
-  win:moveOneScreenNorth(true, true, 0)
-end
-
-function move_screen_south()
-  local win = hs.window.focusedWindow()
-  win:moveOneScreenSouth(true, true, 0)
-end
-
-function move_screen_east()
-  local win = hs.window.focusedWindow()
-  win:moveOneScreenEast(true, true, 0)
-end
-
-function move_screen_west()
-  local win = hs.window.focusedWindow()
-  win:moveOneScreenWest(true, true, 0)
-end
-
-
