@@ -41,7 +41,12 @@ local axapps = {
   "com.spotify.client",
   "org.mozilla.firefox",
   "org.whispersystems.signal-desktop",
-  "com.electron.nativefier.todoist-nativefier-6c11dd",
+}
+
+local electronapps = {
+  "com.spotify.client",
+  "org.whispersystems.signal-desktop",
+  'com.hnc.Discord',
 }
 
 -- Vimac will set this setting for everything but things can break, so just set
@@ -54,7 +59,7 @@ function appAXEnhance(appName, eventType, app)
               return
             end
             axapp.AXEnhancedUserInterface = true
-            if app:bundleID() ~= "org.mozilla.firefox" then
+            if electronapps[app:bundleID()] ~= nil then
               axapp.AXManualAccessibility = true
             end
         end
@@ -71,6 +76,7 @@ local defocusapps = {
   "org.whispersystems.signal-desktop",
   "com.yahoo.finance",
   "com.markmcguill.strongbox.pro",
+  "com.apple.finder",
 }
 
 function is_defocous_window(w)
