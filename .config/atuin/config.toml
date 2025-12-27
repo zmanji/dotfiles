@@ -1,4 +1,9 @@
-filter_mode_shell_up_key_binding = "host"
+filter_mode = "host"
+filter_mode_shell_up_key_binding = "session"
 
 keymap_mode = "auto"
 enter_accept = false
+
+inline_height = 0
+style = "compact"
+
