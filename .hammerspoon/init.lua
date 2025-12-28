@@ -234,3 +234,67 @@ function full()
 
   win:move({0, 0, 1, 1}, nil, true)
 end
+
+function naturalTrackpadSwipe(direction, strength)
+    strength = strength or 1.0
+    
+    local baseDistance = 100 * strength
+    
+    local directionMap = {
+        left = {baseDistance, 0},
+        right = {-baseDistance, 0},
+        up = {0, baseDistance},
+        down = {0, -baseDistance}
+    }
+    
+    local delta = directionMap[direction]
+    if not delta then return end
+    
+    -- Gesture phases
+    local function sendPhase(dx, dy, scrollPhase, momentumPhase)
+        local event = hs.eventtap.event.newScrollEvent({dx, dy}, {}, "pixel")
+        event:setProperty(hs.eventtap.event.properties.scrollWheelEventScrollPhase, scrollPhase)
+        event:setProperty(hs.eventtap.event.properties.scrollWheelEventMomentumPhase, momentumPhase)
+        event:post()
+    end
+    
+    -- Begin
+    sendPhase(delta[1], delta[2], 1, 0)
+    hs.timer.usleep(10000)
+    
+    -- Changed (accelerating)
+    local steps = {0.7, 1.0, 1.2, 1.0}
+    for _, scale in ipairs(steps) do
+        sendPhase(delta[1] * scale, delta[2] * scale, 2, 0)
+        hs.timer.usleep(10000)
+    end
+    
+    -- Ended
+    sendPhase(0, 0, 4, 0)
+    hs.timer.usleep(10000)
+    
+    -- Momentum (decelerating)
+    local momentumSteps = {0.8, 0.6, 0.4, 0.25, 0.15, 0.08, 0.03}
+    
+    -- Momentum began
+    sendPhase(delta[1] * momentumSteps[1], delta[2] * momentumSteps[1], 0, 1)
+    hs.timer.usleep(10000)
+    
+    -- Momentum changed
+    for i = 2, #momentumSteps do
+        sendPhase(delta[1] * momentumSteps[i], delta[2] * momentumSteps[i], 0, 2)
+        hs.timer.usleep(10000)
+    end
+    
+    -- Momentum ended
+    sendPhase(0, 0, 0, 4)
+end
+
+
+function swipe_left()
+  naturalTrackpadSwipe("left", 1.5)
+end
+
+function swipe_right()
+  naturalTrackpadSwipe("right", 1.5)
+end
