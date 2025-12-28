@@ -2095,6 +2095,23 @@
                         "vendor_id": 17241
                     },
                     "manipulate_caps_lock_led": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 50504,
+                        "vendor_id": 1133
+                    },
+                    "ignore_vendor_events": true
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 50504,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "ignore_vendor_events": true
                 }
             ],
             "fn_function_keys": [
