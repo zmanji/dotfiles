@@ -136,6 +136,12 @@ logitech_bolt_receiver = Condition(
 )
 
 
+mouse_forward = PointingButton(pointing_button="button5")
+mouse_back = PointingButton(pointing_button="button4")
+
+mouse_side = PointingButton(pointing_button="button6")
+
+
 def generate_cmd_window_switch() -> list[Rule]:
     cmd_shift_mods = Modifiers(mandatory=["command"], optional=["shift"])
     return [
@@ -156,6 +162,18 @@ def generate_cmd_window_switch() -> list[Rule]:
                         key_code="grave_accent_and_tilde", modifiers=cmd_shift_mods
                     ),
                     to=[ToKey(key_code="f18", modifiers=["left_command"])],
+                )
+            ],
+        ),
+        Rule(
+            description="Use logitech mouse gesture button for Alt-Tab",
+            manipulators=[
+                Manipulator(
+                    conditions=[logitech_bolt_receiver],
+                    _from=mouse_side,
+                    to=[
+                        ToKey(shell_command="/Applications/AltTab.app/Contents/MacOS/AltTab --show=0")
+                    ],
                 )
             ],
         ),
@@ -235,9 +253,6 @@ ctrl_k_opt = FromKey(
 ctrl_j_opt = FromKey(
     key_code="j", modifiers=Modifiers(mandatory=["control"], optional=["shift"])
 )
-
-mouse_forward = PointingButton(pointing_button="button5")
-mouse_back = PointingButton(pointing_button="button4")
 
 
 def generate_imessage() -> list[Rule]:

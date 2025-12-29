@@ -2196,6 +2196,34 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Use logitech mouse gesture button for Alt-Tab",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "description": "Logitech Bolt",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 50504,
+                                                "vendor_id": 1133
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button6"
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/Applications/AltTab.app/Contents/MacOS/AltTab --show=0"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
