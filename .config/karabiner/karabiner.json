@@ -1244,6 +1244,74 @@
                         ]
                     },
                     {
+                        "description": "[kitty] use logitech mouse forward is next tab",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ]
+                                    },
+                                    {
+                                        "type": "device_if",
+                                        "description": "Logitech Bolt",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 50504,
+                                                "vendor_id": 1133
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten tab.py next"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[kitty] use logitech mouse back is prev tab",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ]
+                                    },
+                                    {
+                                        "type": "device_if",
+                                        "description": "Logitech Bolt",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 50504,
+                                                "vendor_id": 1133
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/opt/homebrew/bin/kitty @ --to=unix:/Users/zmanji/.run/kitty.socket kitten tab.py previous"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "[Alfred] use C-j for down",
                         "manipulators": [
                             {

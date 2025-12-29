@@ -659,6 +659,26 @@ def generate_kitty() -> list[Rule]:
                 )
             ],
         ),
+        Rule(
+            description="[kitty] use logitech mouse forward is next tab",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, logitech_bolt_receiver],
+                    _from=mouse_forward,
+                    to=[kitty_command("kitten tab.py next")],
+                )
+            ],
+        ),
+        Rule(
+            description="[kitty] use logitech mouse back is prev tab",
+            manipulators=[
+                Manipulator(
+                    conditions=[cond, logitech_bolt_receiver],
+                    _from=mouse_back,
+                    to=[kitty_command("kitten tab.py previous")],
+                )
+            ],
+        ),
     ]
 
 
