@@ -210,6 +210,8 @@ defaults write com.lwouis.alt-tab-macos holdShortcut "\\U2318"
 defaults write com.lwouis.alt-tab-macos nextWindowShortcut F19
 defaults write com.lwouis.alt-tab-macos holdShortcut2 "\\U2318"
 defaults write com.lwouis.alt-tab-macos nextWindowShortcut2 F18
+# For mouse triggering to work
+defaults write com.lwouis.alt-tab-macos mouseHoverEnabled -bool true
 
 # This needs brew install duti to be run
 #
