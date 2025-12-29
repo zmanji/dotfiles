@@ -36,6 +36,10 @@ class FromKey:
     key_code: str
     modifiers: Optional[Modifiers] = None
 
+@dataclass(frozen=True)
+class PointingButton:
+    pointing_button: str
+
 
 @dataclass(frozen=True)
 class SetVariable:
@@ -54,7 +58,7 @@ class ToKey:
 @dataclass(frozen=True)
 class Manipulator:
     conditions: Optional[list[Condition]] = None
-    _from: Optional[FromKey] = None
+    _from: Optional[FromKey|PointingButton] = None
     to: Optional[list[ToKey]] = None
     to_if_alone: Optional[list[ToKey]] = None
     _type: str = "basic"
@@ -123,6 +127,12 @@ imprint_kb_cond = Condition(
     description="Imprint",
     _type="device_if",
     identifiers=[Ident(product_id=0, vendor_id=17241)],
+)
+
+logitech_bolt_receiver = Condition(
+    description="Logitech Bolt",
+    _type="device_if",
+    identifiers=[Ident(product_id=50504, vendor_id=1133)],
 )
 
 
@@ -226,6 +236,9 @@ ctrl_j_opt = FromKey(
     key_code="j", modifiers=Modifiers(mandatory=["control"], optional=["shift"])
 )
 
+mouse_forward = PointingButton(pointing_button="button5")
+mouse_back = PointingButton(pointing_button="button4")
+
 
 def generate_imessage() -> list[Rule]:
     imessage_cond = Condition(
@@ -250,6 +263,26 @@ def generate_imessage() -> list[Rule]:
                 Manipulator(
                     conditions=[imessage_cond],
                     _from=ctrl_k,
+                    to=[ToKey(key_code="tab", modifiers=["left_control", "shift"])],
+                )
+            ],
+        ),
+        Rule(
+            description="[iMessage] use logitech mouse back to naviagate down conversation list",
+            manipulators=[
+                Manipulator(
+                    conditions=[imessage_cond, logitech_bolt_receiver],
+                    _from=mouse_back,
+                    to=[ToKey(key_code="tab", modifiers=["left_control"])],
+                )
+            ],
+        ),
+        Rule(
+            description="[iMessage] use logitech mouse forward to naviagate up conversation list",
+            manipulators=[
+                Manipulator(
+                    conditions=[imessage_cond, logitech_bolt_receiver],
+                    _from=mouse_forward,
                     to=[ToKey(key_code="tab", modifiers=["left_control", "shift"])],
                 )
             ],

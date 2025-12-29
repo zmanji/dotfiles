@@ -1687,6 +1687,81 @@
                         ]
                     },
                     {
+                        "description": "[iMessage] use logitech mouse back to naviagate down conversation list",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.MobileSMS$"
+                                        ]
+                                    },
+                                    {
+                                        "type": "device_if",
+                                        "description": "Logitech Bolt",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 50504,
+                                                "vendor_id": 1133
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[iMessage] use logitech mouse forward to naviagate up conversation list",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.MobileSMS$"
+                                        ]
+                                    },
+                                    {
+                                        "type": "device_if",
+                                        "description": "Logitech Bolt",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 50504,
+                                                "vendor_id": 1133
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Change caps_lock to control when used as modifier, escape when used alone. (Internal Keyboard)",
                         "manipulators": [
                             {
