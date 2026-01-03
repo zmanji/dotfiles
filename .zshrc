@@ -66,6 +66,12 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 
+# -i is smart case
+# -R is ANSI color escaping
+# -X don't clear the screen
+# -F quit if the output is smaller than the screen
+export LESS="-iRXF"
+
 if [[ -d "$HOME/Library/Spelling" ]];
 then
   # For hunspell.
