@@ -40,6 +40,7 @@ end
 local axapps = {
   "com.spotify.client",
   "org.mozilla.firefox",
+  "org.mozilla.thunderbird",
   "org.whispersystems.signal-desktop",
 }
 
@@ -77,6 +78,7 @@ local defocusapps = {
   "com.yahoo.finance",
   "com.markmcguill.strongbox.pro",
   "com.apple.finder",
+  "org.mozilla.thunderbird",
 }
 
 function is_defocous_window(w)
