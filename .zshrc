@@ -37,6 +37,10 @@ if [[ -d "/Applications/Hammerspoon.app/Contents/Frameworks/hs/" ]]; then
   export PATH="/Applications/Hammerspoon.app/Contents/Frameworks/hs/:$PATH"
 fi
 
+if command -v bun >/dev/null 2>&1; then
+   export PATH="$HOME/.bun/bin:$PATH"
+fi
+
 export KITTY_SHELL_INTEGRATION="no-cursor no-title"
 # https://sw.kovidgoyal.net/kitty/shell-integration/#manual-shell-integration
 if test -n "$KITTY_INSTALLATION_DIR"; then
