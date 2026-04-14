@@ -140,6 +140,8 @@ setopt NO_CLOBBER
 
 setopt PROMPT_SUBST
 
+setopt PRINT_EXIT_VALUE
+
 # Report CPU Usuage for commands running longer than 10 seconds
 REPORTTIME=10
 
