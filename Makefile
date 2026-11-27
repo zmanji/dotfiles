@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells dns osx git neovim vim hammerspoon emacs emacs-bin hunspell bin karabiner iterm2 tmux idea tweak startpage ripgrep dicts pandoc
+all: submodules shells dns osx git neovim vim hammerspoon emacs emacs-bin hunspell bin karabiner tmux idea tweak startpage ripgrep dicts pandoc
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -108,14 +108,6 @@ hammerspoon: .hammerspoon
 
 .PHONY: karabiner
 karabiner: .config/karabiner
-	$(shell mkdir -p ~/.config)
-	@echo removing $^; \
-	$(shell rm -rf ~/$^)
-	@echo Installing $^; \
-	$(shell ln -s $(CURDIR)/$^ ~/$^)
-
-.PHONY: iterm2
-iterm2: .config/iterm2
 	$(shell mkdir -p ~/.config)
 	@echo removing $^; \
 	$(shell rm -rf ~/$^)
