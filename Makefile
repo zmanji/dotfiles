@@ -177,7 +177,7 @@ bin: emacs-bin personal-bin
 
 # Sub targets for bin
 .PHONY: personal-bin
-personal-bin: bin/git-fb bin/startpage.sh bin/startpage.py bin/term-yank bin/term-paste
+personal-bin: bin/git-fb bin/startpage.py bin/term-yank bin/term-paste
 	$(shell mkdir -p ~/bin)
 	@echo removing $^; \
 	$(foreach df, $^, rm -rf ~/$(df))
