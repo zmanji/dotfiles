@@ -107,6 +107,9 @@ defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
 defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
 defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
 
+# Clicking the wallpaper does not hide all windows (only in Stage Manager)
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
 # Wipe all (default) app icons from the Dock
 defaults write com.apple.dock persistent-apps -array
 
