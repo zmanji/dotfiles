@@ -14,7 +14,14 @@ apps = [
   "com.markmcguill.strongbox.pro",       # Strongbox
   "com.apple.finder",                    # Finder
   "com.apple.Preview",                   # Preview
+]
+
+[quit_on_close]
+# When one of these apps is frontmost and you close its last window, zm quits it (like
+# Cmd-Q; it may still ask to save). Minimizing doesn't count. iPhone apps are never quit.
+apps = [
   "net.sourceforge.skim-app.skim",       # Skim
+  "com.interversehq.qView",              # qView
 ]
 
 [audio]
