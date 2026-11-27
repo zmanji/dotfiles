@@ -101,6 +101,12 @@ defaults write com.apple.HIToolbox AppleDictationAutoEnable -int 0
 # Do not re arrange spaces based on use this breaks a lot of window tooling
 defaults write com.apple.dock mru-spaces -bool false
 
+# Disable built-in window tiling by dragging (edges, top edge, Option-drag)
+# It fights Hammerspoon tiling; the Fn-Ctrl-arrow tiling shortcuts still work
+defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
+
 # Wipe all (default) app icons from the Dock
 defaults write com.apple.dock persistent-apps -array
 
