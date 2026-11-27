@@ -40,6 +40,10 @@ defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
 # Graphite instead of Blue system color
 defaults write NSGlobalDomain AppleAquaColorVariant -int 6
+# Graphite accent and highlight colors; the values are what System Settings
+# writes when Graphite is picked in Appearance
+defaults write NSGlobalDomain AppleAccentColor -int -1
+defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745 Graphite"
 
 # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
 # 2 = on for Sonoma and later (3 was the value on older macOS)
