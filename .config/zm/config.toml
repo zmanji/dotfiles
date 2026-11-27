@@ -43,3 +43,21 @@ input = [
   { uid = "34-0E-22-8C-38-CC:input" },        # zpods mic (puts the AirPods in call quality while recording)
   { uid = "BuiltInMicrophoneDevice" },        # MacBook Pro Microphone
 ]
+
+[dns]
+# zm keeps these services' DNS on `servers` and puts it back if anything changes it (menu bar
+# ZM > Pause DNS guard to change it by hand); every 5 minutes it checks the servers answer.
+# Services by hardware address (`make network-services` in the zm repo lists them).
+servers = ["127.0.0.1"]
+services = [
+  { mac = "5c:e9:1e:bd:90:f1" },   # Wi-Fi
+  { mac = "64:4b:f0:60:4d:0e" },   # the dock's Ethernet
+]
+
+[dns.domains]
+# Every *.test name goes to dnsmasq, whatever DNS the network uses.
+test = "127.0.0.1"
+
+[loopback]
+# Addresses for the local sites in local-services.conf (newtab.test, blog.test), kept from boot.
+aliases = ["127.1.0.1", "127.1.0.2"]
