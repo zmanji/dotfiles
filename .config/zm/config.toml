@@ -15,3 +15,23 @@ apps = [
   "com.apple.finder",                    # Finder
   "com.apple.Preview",                   # Preview
 ]
+
+[audio]
+# zm keeps the default output and input on the first connected device in each list,
+# and switches back if macOS or an app changes them (menu bar ZM > Pause audio pinning to pick
+# by hand). A device missing from a list is never used for that direction. Alert
+# sounds follow the output.
+# Entries: { uid = "..." } (exact, survives renames) or { name = "..." } (ignoring case);
+# a plain string matches either. `make audio-devices` in the zm repo lists both. A name in
+# both lists, like the Yeti's, means its output half in `output` and its mic in `input`.
+output = [
+  { uid = "34-0E-22-8C-38-CC:output" },       # zpods (AirPods)
+  { uid = "BuiltInHeadphoneOutputDevice" },   # External Headphones (the headphone jack)
+  { uid = "BuiltInSpeakerDevice" },           # MacBook Pro Speakers
+  { name = "Yeti Stereo Microphone" },        # the Yeti's headphone jack
+]
+input = [
+  { name = "Yeti Stereo Microphone" },
+  { uid = "34-0E-22-8C-38-CC:input" },        # zpods mic (puts the AirPods in call quality while recording)
+  { uid = "BuiltInMicrophoneDevice" },        # MacBook Pro Microphone
+]
