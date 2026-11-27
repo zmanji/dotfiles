@@ -1,4 +1,4 @@
-# zm config. Read at launch: restart zm after editing (menu bar ZM > Quit, then reopen).
+# zm config. zm reloads it when you save; mistakes show as "Config error" in the menu.
 
 [defocus]
 # When one of these apps is frontmost and its last window closes or is minimized,
