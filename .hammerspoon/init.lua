@@ -6,20 +6,11 @@ require("hs.ipc")
 
 require("hs.json")
 
-hs.window.filter.forceRefreshOnSpaceChange = true
 hs.window.animationDuration = 0
 -- hs.window.setFrameCorrectness = true
 
 -- Disable default callback for hs.chooser
 hs.chooser.globalCallback = function(a) end
-
-function is_important_window(w)
-    return w:isStandard() and w:isVisible()
-end
-
-local filter = hs.window.filter.new(function (w)
-  return is_important_window(w)
-end)
 
 -- see https://github.com/rxhanson/Rectangle/blob/7832ace7bc89824c6321c0f8923c5841f07f249b/Rectangle/AccessibilityElement.swift#L80
 function is_enhanced_ui(w)
@@ -67,48 +58,6 @@ function appAXEnhance(appName, eventType, app)
 end
 local appWatcher = hs.application.watcher.new(appAXEnhance)
 appWatcher:start()
-
-local defocusapps = {
-  'com.spotify.client',
-  'com.grailr.CARROTweather',
-  'com.apple.MobileSMS',
-  'com.hnc.Discord',
-  "org.whispersystems.signal-desktop",
-  "com.yahoo.finance",
-  "com.markmcguill.strongbox.pro",
-  "com.apple.finder",
-}
-
-function is_defocous_window(w)
-    if (w == nil) then
-      return false
-    end
-    local app = w:application()
-    if (app == nil) then
-      return false
-    end
-    return hs.fnutils.contains(defocusapps, app:bundleID())
-end
-
-function try_to_defocus(w, name, event) 
-    if (w == nil) then
-      return
-    end
-  -- is this the last window of the app? if so try to defocus
-  local app = w:application()
-  if (app == nil) then
-    return
-  end
-
-  log.w("Trying to defocus " .. app:bundleID())
-
-  local tofocus = filter:getWindows()[1]
-  tofocus:focus()
-  log.w("Focusing to " .. tofocus:application():bundleID())
-end
-
-local defocus = hs.window.filter.new(is_defocous_window)
-defocus:subscribe(hs.window.filter.hasNoWindows, try_to_defocus)
 
 -- Window Management Functions
 -- these are called by karabbiner
