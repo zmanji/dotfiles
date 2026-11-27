@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells dns osx git neovim vim hammerspoon emacs emacs-bin hunspell bin karabiner kitty atuin tmux idea tweak startpage ripgrep dicts pandoc
+all: submodules shells dns osx git neovim vim hammerspoon emacs emacs-bin hunspell bin karabiner kitty atuin zm tmux idea tweak startpage ripgrep dicts pandoc
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -124,6 +124,14 @@ kitty: .config/kitty
 
 .PHONY: tridactyl
 tridactyl: .config/tridactyl
+	$(shell mkdir -p ~/.config)
+	@echo removing $^; \
+	$(shell rm -rf ~/$^)
+	@echo Installing $^; \
+	$(shell ln -s $(CURDIR)/$^ ~/$^)
+
+.PHONY: zm
+zm: .config/zm
 	$(shell mkdir -p ~/.config)
 	@echo removing $^; \
 	$(shell rm -rf ~/$^)

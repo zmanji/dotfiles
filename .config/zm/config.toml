@@ -1,0 +1,17 @@
+# zm config. Read at launch: restart zm after editing (menu bar ZM > Quit, then reopen).
+
+[defocus]
+# When one of these apps is frontmost and its last window closes or is minimized,
+# zm moves focus to the most recently used app that still has a window.
+# Find an app's bundle ID with: osascript -e 'id of app "Name"'
+apps = [
+  "com.spotify.client",                  # Spotify
+  "com.grailr.CARROTweather",            # CARROT Weather (iPhone app)
+  "com.apple.MobileSMS",                 # Messages
+  "com.hnc.Discord",                     # Discord
+  "org.whispersystems.signal-desktop",   # Signal
+  "com.yahoo.finance",                   # Yahoo Finance (iPhone app)
+  "com.markmcguill.strongbox.pro",       # Strongbox
+  "com.apple.finder",                    # Finder
+  "com.apple.Preview",                   # Preview
+]
