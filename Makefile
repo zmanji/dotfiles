@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells dns osx git neovim vim hammerspoon emacs emacs-bin hunspell bin karabiner tmux idea tweak startpage ripgrep dicts pandoc
+all: submodules shells dns osx git neovim vim hammerspoon emacs emacs-bin hunspell bin karabiner kitty atuin tmux idea tweak startpage ripgrep dicts pandoc
 
 .PHONY: tmux
 tmux: .tmux.conf
