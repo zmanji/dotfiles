@@ -165,12 +165,9 @@ idea: .ideavimrc
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
 .PHONY: bin
-bin: git-squash emacs-bin personal-bin
+bin: emacs-bin personal-bin
 
 # Sub targets for bin
-.PHONY: git-squash
-git-squash: ~/bin/git-squash
-
 .PHONY: personal-bin
 personal-bin: bin/git-fb bin/startpage.sh bin/startpage.py bin/term-yank bin/term-paste
 	$(shell mkdir -p ~/bin)
@@ -186,12 +183,6 @@ emacs-bin: bin/README.emacs bin/ec bin/et
 	$(foreach df, $^, rm -rf ~/$(df))
 	@echo Installing $^; \
 	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~/$(df); )
-
-.PHONY: ~/bin/git-squash
-~/bin/git-squash:
-	mkdir -p ~/bin/
-	wget -O ~/bin/git-squash https://github.com/zmanji/git-squash-rs/releases/download/0.2.0/git-squash-rs.stable-x86_64-apple-darwin
-	chmod +x ~/bin/git-squash
 
 .PHONY: launchd
 launchd: launchd/zmanji.emacs.plist launchd/zmanji.startpage.plist launchd/zmanji.pbcopy.plist launchd/zmanji.pbpaste.plist
