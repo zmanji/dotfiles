@@ -112,6 +112,12 @@ defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
 # Clicking the wallpaper does not hide all windows (only in Stage Manager)
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
+# Disable all hot corners (1 = no action)
+defaults write com.apple.dock wvous-tl-corner -int 1
+defaults write com.apple.dock wvous-tr-corner -int 1
+defaults write com.apple.dock wvous-bl-corner -int 1
+defaults write com.apple.dock wvous-br-corner -int 1
+
 # Wipe all (default) app icons from the Dock
 defaults write com.apple.dock persistent-apps -array
 
