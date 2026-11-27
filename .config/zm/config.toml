@@ -13,7 +13,6 @@ apps = [
   "com.yahoo.finance",                   # Yahoo Finance (iPhone app)
   "com.markmcguill.strongbox.pro",       # Strongbox
   "com.apple.finder",                    # Finder
-  "com.apple.Preview",                   # Preview
 ]
 
 [quit_on_close]
@@ -22,6 +21,7 @@ apps = [
 apps = [
   "net.sourceforge.skim-app.skim",       # Skim
   "com.interversehq.qView",              # qView
+  "com.apple.Preview",                   # Preview
 ]
 
 [audio]
