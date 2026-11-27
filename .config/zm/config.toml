@@ -14,6 +14,7 @@ apps = [
   "com.markmcguill.strongbox.pro",       # Strongbox
   "com.apple.finder",                    # Finder
   "com.apple.Preview",                   # Preview
+  "net.sourceforge.skim-app.skim",       # Skim
 ]
 
 [audio]
