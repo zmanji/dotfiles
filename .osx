@@ -106,6 +106,8 @@ defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
 defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
 defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
+# No margins between windows tiled by macOS
+defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
 
 # Clicking the wallpaper does not hide all windows (only in Stage Manager)
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
