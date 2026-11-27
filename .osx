@@ -75,6 +75,8 @@ mkdir -p ~/Screenshots/
 defaults write com.apple.screencapture location ~/Screenshots/
 # Save screenshots in PNG format
 defaults write com.apple.screencapture type -string "png"
+# Save screenshots straight to disk, no floating thumbnail
+defaults write com.apple.screencapture show-thumbnail -bool false
 
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
