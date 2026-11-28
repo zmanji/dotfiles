@@ -61,3 +61,7 @@ test = "127.0.0.1"
 [loopback]
 # Addresses for the local sites in local-services.conf (newtab.test, blog.test), kept from boot.
 aliases = ["127.1.0.1", "127.1.0.2"]
+
+[wifi]
+# While the dock's Ethernet is up, zm disconnects Wi-Fi (radio stays on) and rejoins on undock.
+disconnect_when = [{ mac = "64:4b:f0:60:4d:0e" }]   # the dock's Ethernet
