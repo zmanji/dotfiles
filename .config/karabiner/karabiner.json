@@ -44,7 +44,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "left"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -89,7 +95,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "right"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -134,7 +146,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "top"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -179,7 +197,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "bottom"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -224,7 +248,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "full"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -260,7 +290,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "left"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -296,7 +332,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "right"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -332,7 +374,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "top"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -368,7 +416,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "bottom"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -404,7 +458,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "full"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -440,7 +500,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "left"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -476,7 +542,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "right"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -512,7 +584,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "top"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -548,7 +626,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "bottom"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -584,7 +668,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "full"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -620,7 +710,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_left()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "left"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -656,7 +752,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_right()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "right"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -692,7 +794,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_up()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "top"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -728,7 +836,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'move_down()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "bottom"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -764,7 +878,13 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c 'full()'"
+                                        "send_user_command": {
+                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
+                                            "payload": {
+                                                "command": "move_window",
+                                                "to": "full"
+                                            }
+                                        }
                                     }
                                 ],
                                 "type": "basic"

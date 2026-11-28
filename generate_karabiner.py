@@ -51,6 +51,7 @@ class SetVariable:
 class ToKey:
     key_code: Optional[str] = None
     shell_command: Optional[str] = None
+    send_user_command: Optional[dict] = None
     modifiers: Optional[list[str]] = None
     set_variable: Optional[SetVariable] = None
 
@@ -668,9 +669,17 @@ def generate_kitty() -> list[Rule]:
     ]
 
 
-def hs_command(f):
-    cmd = f"/Applications/Hammerspoon.app/Contents/Frameworks/hs/hs -c '{f}'"
-    return ToKey(shell_command=cmd)
+# Sends zm a message on its own socket (the endpoint). No process is started per press, so
+# fast repeats aren't dropped as with shell_command.
+zm_socket = os.path.expanduser("~/Library/Application Support/zm/karabiner.sock")
+
+
+def zm_command(command, **args):
+    return ToKey(send_user_command={"endpoint": zm_socket, "payload": {"command": command, **args}})
+
+
+def move_window(to):
+    return zm_command("move_window", to=to)
 
 
 # This used to live in hammerspoon, but there was too much flakyness when
@@ -684,7 +693,7 @@ def generate_window_external(name: str, condition: Condition) -> list[Rule]:
                 Manipulator(
                     conditions=[condition],
                     _from=FromKey(key_code="h", modifiers=hyper),
-                    to=[hs_command("move_left()")],
+                    to=[move_window("left")],
                 )
             ],
         ),
@@ -694,7 +703,7 @@ def generate_window_external(name: str, condition: Condition) -> list[Rule]:
                 Manipulator(
                     conditions=[condition],
                     _from=FromKey(key_code="l", modifiers=hyper),
-                    to=[hs_command("move_right()")],
+                    to=[move_window("right")],
                 )
             ],
         ),
@@ -704,7 +713,7 @@ def generate_window_external(name: str, condition: Condition) -> list[Rule]:
                 Manipulator(
                     conditions=[condition],
                     _from=FromKey(key_code="k", modifiers=hyper),
-                    to=[hs_command("move_up()")],
+                    to=[move_window("top")],
                 )
             ],
         ),
@@ -714,7 +723,7 @@ def generate_window_external(name: str, condition: Condition) -> list[Rule]:
                 Manipulator(
                     conditions=[condition],
                     _from=FromKey(key_code="j", modifiers=hyper),
-                    to=[hs_command("move_down()")],
+                    to=[move_window("bottom")],
                 )
             ],
         ),
@@ -724,7 +733,7 @@ def generate_window_external(name: str, condition: Condition) -> list[Rule]:
                 Manipulator(
                     conditions=[condition],
                     _from=FromKey(key_code="f", modifiers=hyper),
-                    to=[hs_command("full()")],
+                    to=[move_window("full")],
                 )
             ],
         ),
@@ -742,7 +751,7 @@ def generate_window_internal() -> list[Rule]:
                 Manipulator(
                     conditions=[internal_kb_cond],
                     _from=FromKey(key_code="h", modifiers=internal_kb),
-                    to=[hs_command("move_left()")],
+                    to=[move_window("left")],
                 )
             ],
         ),
@@ -752,7 +761,7 @@ def generate_window_internal() -> list[Rule]:
                 Manipulator(
                     conditions=[internal_kb_cond],
                     _from=FromKey(key_code="l", modifiers=internal_kb),
-                    to=[hs_command("move_right()")],
+                    to=[move_window("right")],
                 )
             ],
         ),
@@ -762,7 +771,7 @@ def generate_window_internal() -> list[Rule]:
                 Manipulator(
                     conditions=[internal_kb_cond],
                     _from=FromKey(key_code="k", modifiers=internal_kb),
-                    to=[hs_command("move_up()")],
+                    to=[move_window("top")],
                 )
             ],
         ),
@@ -772,7 +781,7 @@ def generate_window_internal() -> list[Rule]:
                 Manipulator(
                     conditions=[internal_kb_cond],
                     _from=FromKey(key_code="j", modifiers=internal_kb),
-                    to=[hs_command("move_down()")],
+                    to=[move_window("bottom")],
                 )
             ],
         ),
@@ -782,7 +791,7 @@ def generate_window_internal() -> list[Rule]:
                 Manipulator(
                     conditions=[internal_kb_cond],
                     _from=FromKey(key_code="f", modifiers=internal_kb),
-                    to=[hs_command("full()")],
+                    to=[move_window("full")],
                 )
             ],
         ),
