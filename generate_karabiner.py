@@ -805,6 +805,16 @@ def generate_window_internal() -> list[Rule]:
                 )
             ],
         ),
+        Rule(
+            description="[window management] [Internal Keyboard] cmd+alt c is center window",
+            manipulators=[
+                Manipulator(
+                    conditions=[internal_kb_cond],
+                    _from=FromKey(key_code="c", modifiers=internal_kb),
+                    to=[move_window("center")],
+                )
+            ],
+        ),
     ]
 
 
