@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: submodules shells dns osx git neovim vim hammerspoon emacs emacs-bin hunspell bin karabiner kitty atuin zm tmux idea tweak startpage ripgrep dicts pandoc
+all: submodules shells dns osx git neovim vim emacs emacs-bin hunspell bin karabiner kitty atuin zm tmux idea tweak startpage ripgrep dicts pandoc
 
 .PHONY: tmux
 tmux: .tmux.conf
@@ -98,13 +98,6 @@ osx: .osx
 	@echo Running .osx; \
 	sh ~/.osx
 
-
-.PHONY: hammerspoon
-hammerspoon: .hammerspoon
-	@echo removing $^; \
-	$(foreach df, $^, rm -rf ~/$(df))
-	@echo Installing $^; \
-	$(foreach df, $^, ln -s $(CURDIR)/$(df) ~; )
 
 .PHONY: karabiner
 karabiner: .config/karabiner

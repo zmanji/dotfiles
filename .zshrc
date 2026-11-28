@@ -33,10 +33,6 @@ if [[ -f ~/.atuin/bin/env ]]; then source ~/.atuin/bin/env; hash -r; fi
 if command -v atuin >/dev/null 2>&1; then eval "$(atuin init zsh)"; fi
 
 
-if [[ -d "/Applications/Hammerspoon.app/Contents/Frameworks/hs/" ]]; then
-  export PATH="/Applications/Hammerspoon.app/Contents/Frameworks/hs/:$PATH"
-fi
-
 if command -v bun >/dev/null 2>&1; then
    export PATH="$HOME/.bun/bin:$PATH"
 fi
