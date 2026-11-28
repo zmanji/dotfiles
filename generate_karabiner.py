@@ -737,6 +737,16 @@ def generate_window_external(name: str, condition: Condition) -> list[Rule]:
                 )
             ],
         ),
+        Rule(
+            description=f"[window management] [{name}] hyper c is center window",
+            manipulators=[
+                Manipulator(
+                    conditions=[condition],
+                    _from=FromKey(key_code="c", modifiers=hyper),
+                    to=[move_window("center")],
+                )
+            ],
+        ),
     ]
 
 
