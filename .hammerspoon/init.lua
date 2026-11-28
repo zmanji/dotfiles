@@ -34,12 +34,6 @@ local axapps = {
   "org.whispersystems.signal-desktop",
 }
 
-local electronapps = {
-  "com.spotify.client",
-  "org.whispersystems.signal-desktop",
-  'com.hnc.Discord',
-}
-
 -- Vimac will set this setting for everything but things can break, so just set
 -- it for a few apps that work safely.
 function appAXEnhance(appName, eventType, app)
@@ -50,9 +44,6 @@ function appAXEnhance(appName, eventType, app)
               return
             end
             axapp.AXEnhancedUserInterface = true
-            if electronapps[app:bundleID()] ~= nil then
-              axapp.AXManualAccessibility = true
-            end
         end
     end
 end
