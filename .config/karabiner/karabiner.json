@@ -262,57 +262,6 @@
                         ]
                     },
                     {
-                        "description": "[window management] [Internal Keyboard] cmd+alt c is center window",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "type": "device_if",
-                                        "description": "Internal Keyboard",
-                                        "identifiers": [
-                                            {
-                                                "is_built_in_keyboard": true
-                                            },
-                                            {
-                                                "product_id": 628,
-                                                "vendor_id": 1452
-                                            },
-                                            {
-                                                "product_id": 832,
-                                                "vendor_id": 1452
-                                            },
-                                            {
-                                                "product_id": 627,
-                                                "vendor_id": 1452
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "send_user_command": {
-                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
-                                            "payload": {
-                                                "command": "move_window",
-                                                "to": "center"
-                                            }
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "[window management] [Redox] hyper h is move window left",
                         "manipulators": [
                             {
@@ -514,48 +463,6 @@
                                             "payload": {
                                                 "command": "move_window",
                                                 "to": "full"
-                                            }
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[window management] [Redox] hyper c is center window",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "type": "device_if",
-                                        "description": "Redox",
-                                        "identifiers": [
-                                            {
-                                                "product_id": 0,
-                                                "vendor_id": 65261
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "send_user_command": {
-                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
-                                            "payload": {
-                                                "command": "move_window",
-                                                "to": "center"
                                             }
                                         }
                                     }
@@ -775,48 +682,6 @@
                         ]
                     },
                     {
-                        "description": "[window management] [Equals 60] hyper c is center window",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "type": "device_if",
-                                        "description": "Equals 60",
-                                        "identifiers": [
-                                            {
-                                                "product_id": 30344,
-                                                "vendor_id": 17011
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "send_user_command": {
-                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
-                                            "payload": {
-                                                "command": "move_window",
-                                                "to": "center"
-                                            }
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "[window management] [Imprint] hyper h is move window left",
                         "manipulators": [
                             {
@@ -1018,48 +883,6 @@
                                             "payload": {
                                                 "command": "move_window",
                                                 "to": "full"
-                                            }
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[window management] [Imprint] hyper c is center window",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "type": "device_if",
-                                        "description": "Imprint",
-                                        "identifiers": [
-                                            {
-                                                "product_id": 0,
-                                                "vendor_id": 17241
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "send_user_command": {
-                                            "endpoint": "/Users/zmanji/Library/Application Support/zm/karabiner.sock",
-                                            "payload": {
-                                                "command": "move_window",
-                                                "to": "center"
                                             }
                                         }
                                     }

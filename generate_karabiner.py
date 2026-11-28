@@ -737,16 +737,6 @@ def generate_window_external(name: str, condition: Condition) -> list[Rule]:
                 )
             ],
         ),
-        Rule(
-            description=f"[window management] [{name}] hyper c is center window",
-            manipulators=[
-                Manipulator(
-                    conditions=[condition],
-                    _from=FromKey(key_code="c", modifiers=hyper),
-                    to=[move_window("center")],
-                )
-            ],
-        ),
     ]
 
 
@@ -802,16 +792,6 @@ def generate_window_internal() -> list[Rule]:
                     conditions=[internal_kb_cond],
                     _from=FromKey(key_code="f", modifiers=internal_kb),
                     to=[move_window("full")],
-                )
-            ],
-        ),
-        Rule(
-            description="[window management] [Internal Keyboard] cmd+alt c is center window",
-            manipulators=[
-                Manipulator(
-                    conditions=[internal_kb_cond],
-                    _from=FromKey(key_code="c", modifiers=internal_kb),
-                    to=[move_window("center")],
                 )
             ],
         ),
